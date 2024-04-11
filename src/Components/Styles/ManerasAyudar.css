@@ -1,0 +1,71 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+#ContainerAyudar{
+    background-color: #eaf2f2;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 4rem 0;
+}
+
+#TituloBloqueAyudar{
+    text-align: center;
+    gap: 20px;
+}
+
+#TituloAyudar{
+    font-size: 3rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+
+#DescripcionAyudar{
+    font-size: 1.5rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+#BloqueCards{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.card{
+    z-index: 1;
+    padding: 10px;
+    width: 40%;
+    border-radius: 17px;
+    background-color: white;
+    border: 2px rgb(215, 210, 210) solid;
+
+}
+
+.card-title{
+    font-size: 2rem;
+}
+
+.card-text{
+    font-size: 1.2rem;
+}
+
+#BotonVerMas{
+    text-align: center;
+    padding-top: 20px;
+    font-size: 1.2rem;
+    font-family: "Montserrat", sans-serif;
+    padding: .3rem 2em;
+    border-radius: 7px;
+}
+
+.botonDonar{
+    font-size: 1.2rem;
+    font-family: "Montserrat", sans-serif;
+    padding: .3rem 2em;
+    border-radius: 7px;
+}

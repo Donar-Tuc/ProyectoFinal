@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+#ComunidadContainer{
+    display: flex;
+    background: #207593;
+    background-image: url(/src/Images/Noiseimage.png);
+    padding: 4rem;
+    gap: 20px;
+    width: 100%;
+}
+
+.Titulo{
+    width: 50%;
+    color: white;
+    
+   
+
+}
+
+.TituloComunidad{
+    font-size: 4rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    
+}
+
+#DescripcionContainer{
+    width: 50%;
+
+    
+}
+
+.DescripcionComunidad{
+    font-size: 1.5rem;
+    color: white;
+    width: 50%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    
+}
+
+.btnComunidad{
+    font-size: 1.2rem;
+    font-family: "Montserrat", sans-serif;
+    padding: .3rem 2em;
+    border-radius: 7px;
+}

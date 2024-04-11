@@ -1,0 +1,36 @@
+#FooterSection{
+    display: flex;
+    background-color: rgb(248, 242, 242);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 2rem 0;
+}
+
+.Menu{
+    display: flex;
+    flex-direction: row;
+}
+
+.Menu ul{
+    list-style: none;
+}
+
+.Menu ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    transition: .3s ease-in-out;
+}
+
+.Menu ul li a:hover{
+    text-decoration: none;
+    color: rgb(41, 55, 149);
+    font-size: 1.5rem;
+}
+
+#Copyright{
+    font-size: 23px;
+    color: rgb(179, 177, 177);
+}

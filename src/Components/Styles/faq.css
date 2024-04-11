@@ -1,0 +1,27 @@
+#AcordeonContainer{
+    padding:  5rem 10rem;
+}
+
+#BloqueTituloPreguntas{
+    text-align: center;
+    padding: 2rem;
+}
+
+#Titulo{
+    font-size: 4rem;
+}
+
+.accordion-header {
+    /* background-color: #f0f0f0; */
+    color: #333;
+    font-size: 18px;
+    /* padding: 10px; */
+    border-radius: 40px;
+}
+
+.accordion-body {
+    background-color: #fff;
+    color: #0c0c0c;
+    font-size: 16px;
+    /* padding: 15px; */
+}
