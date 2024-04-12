@@ -3,8 +3,8 @@
 
 #AccionContainer{
     display: flex;
-    background: #207593;
-    background-image: url(/src/Images/Noiseimage.png);
+    background: rgb(16,65,83);
+    background: linear-gradient(180deg, rgba(16,65,83,1) 67%, rgba(16,65,83,1)95%);    
     flex-direction: row;
     gap: 30px;
     padding: 30px;
@@ -22,9 +22,13 @@
 }
 
 #TituloAccion{
+    background: radial-gradient(45% 100% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);      
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-family: "Montserrat", sans-serif;
-    font-weight: 800;
-    font-size: 2rem;
+    font-weight: 400;
+    font-size: 5rem;
+
 }
 
 #DescripcionAccion{
@@ -37,4 +41,43 @@
     flex: 1;
     width: 50%;
     border-radius: 0px 40px 0 40px;
+}
+
+@media (max-width: 900px) {
+
+
+
+    #AccionContainer{
+        flex-direction: column;
+        gap: 1px;
+        padding: 1rem;
+    }
+    
+    .content{
+        display: flex;
+        color: white;
+        flex-direction: column;
+        padding: 1rem;
+        width: 100%; 
+        justify-content: center;
+    
+    
+    }
+    
+    #TituloAccion{
+        font-weight: 400;
+        font-size: 3rem;
+    
+    }
+    
+    #DescripcionAccion{
+        font-size: 1rem;    
+    }
+    
+    #ImageDonar{
+        flex: 1;
+        width: 100%;
+        border-radius: 11px;
+    }
+
 }

@@ -1,19 +1,23 @@
 import React, { Component } from "react";
 import "./Styles/ManerasAyudar.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 
 class BloqueAyudar extends Component {
   render() {
+    AOS.init();
     return (
       <>
         <section id="ContainerAyudar">
           <div id="TituloBloqueAyudar">
-            <h2 id="TituloAyudar">Maneras de Ayudar</h2>
-            <p id="DescripcionAyudar">Hay muchas otras maneras de apoyar a la gente más necesitada.</p>
+            <h2 id="TituloAyudar" data-aos="fade-up">Maneras de Ayudar</h2>
+            <p id="DescripcionAyudar" data-aos="fade-up">Hay muchas otras maneras de apoyar a la gente más necesitada.</p>
           </div>
 
-          <div id="BloqueCards">
+          <div id="BloqueCards" data-aos="fade-up">
           <div className="card" >
             <div className="card-body">
               <h5 className="card-title">Dinero</h5>
@@ -76,8 +80,8 @@ class BloqueAyudar extends Component {
           </div>
 
           </div>
-          <div id="BotonVerMas">
-          <button type="button" className="btn btn-primary botonDonar">
+          <div id="BotonVerMasSection" data-aos="fade-up">
+          <button type="button" className="btn btn-primary botonVerMas">
                     Ver Mas
                   </button>
           </div>

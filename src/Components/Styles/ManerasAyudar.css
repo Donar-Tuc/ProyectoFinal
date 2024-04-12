@@ -3,34 +3,40 @@
 
 
 #ContainerAyudar{
-    background-color: #eaf2f2;
+    background: rgb(2,19,25);
+    background: linear-gradient(180deg, rgba(2,19,25,1) 28%, rgba(16,65,83,1) 84%);
     display: flex;
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    padding: 4rem 0;
+    padding: 1rem 0;
 }
 
 #TituloBloqueAyudar{
     text-align: center;
-    gap: 20px;
 }
 
 #TituloAyudar{
-    font-size: 3rem;
+    font-size: 4rem;
+    background: radial-gradient(45% 100% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);      
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-family: "Montserrat", sans-serif;
-    font-weight: 500;
+    font-weight: 400;
+    text-align: center;
 }
 
 #DescripcionAyudar{
+    color: white;
     font-size: 1.5rem;
+    font-weight: 100;
     font-family: "Montserrat", sans-serif;
 }
 
 #BloqueCards{
     display: flex;
     flex-wrap: wrap;
-    padding: 10px;
+    padding: 2rem 15rem;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -38,34 +44,143 @@
 
 .card{
     z-index: 1;
-    padding: 10px;
-    width: 40%;
-    border-radius: 17px;
-    background-color: white;
-    border: 2px rgb(215, 210, 210) solid;
+    /* padding: 10px; */
 
+    line-height:26px;
+    padding: 32px 32px 36px;
+    text-align: left;
+    width: 30%;
+    border-radius: 20px;
+    background-color: #ebefffdb;
+    background-image: url(/src/Images/Noiseimage.png);
+    border:2px #e8e4e4 solid;
+    transition: .3s ease-in-out;
+}
+
+.card:hover{
+    transform: translateY(-2px);
 }
 
 .card-title{
     font-size: 2rem;
+    font-weight: 700;
 }
 
 .card-text{
     font-size: 1.2rem;
+    font-weight: 300;
 }
 
-#BotonVerMas{
+
+#BotonVerMasSection{
     text-align: center;
-    padding-top: 20px;
     font-size: 1.2rem;
     font-family: "Montserrat", sans-serif;
-    padding: .3rem 2em;
-    border-radius: 7px;
+    padding: 1rem 2rem;
 }
 
+/* Boton de las cards */
 .botonDonar{
     font-size: 1.2rem;
     font-family: "Montserrat", sans-serif;
-    padding: .3rem 2em;
-    border-radius: 7px;
+    border-radius: 300px;
+    border: 1px rgba(2, 2, 2, 0.271) solid;
+    background-color: rgba(11, 11, 11, 0.05);
+    color: black;
+}
+
+.botonVerMas{
+    padding: 0 1.5rem;
+    font-size: 1.5rem;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 300px;
+    border: 1px rgba(218, 215, 215, 0.312) solid;
+    background-color: #116EFD;
+    color: rgb(255, 255, 255);
+    transition: .4s all ease-in-out;
+}
+
+.botonVerMas:hover{
+    transform: translateY(-3px);
+    background-color: #1964d3;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 900px) {
+    #ContainerAyudar{
+        width: 100%;
+        padding: 3rem 2rem;
+    }
+    #TituloAyudar{
+        font-size: 2rem;
+        font-weight: 400;
+    }
+    
+    #DescripcionAyudar{
+        color: white;
+        font-size: 1rem;
+        font-weight: 100;
+    }
+    
+    #BloqueCards{
+        padding: 2rem 0;
+        gap: 20px;
+    }
+    
+    .card{
+        z-index: 1;
+        padding: 10px;
+        width: 100%;
+        border-radius: 20px;
+        transition: none;
+    }
+    
+    .card:hover{
+        transform: none;
+    }
+    
+    #BotonVerMasSection{
+        text-align: center;
+        font-size: 1.2rem;
+        font-family: "Montserrat", sans-serif;
+    }
+    
+    /* Boton de las cards */
+    .botonDonar{
+        font-size: 1.2rem;
+        font-family: "Montserrat", sans-serif;
+        border-radius: 300px;
+        border: 1px rgba(2, 2, 2, 0.271) solid;
+        background-color: rgba(11, 11, 11, 0.05);
+        color: black;
+    }
+
+    .botonDonar:hover{
+        border: 1px rgba(2, 2, 2, 0.271) solid;
+    background-color: rgba(11, 11, 11, 0.05);
+    color: black;
+    }
+    
+    .botonVerMas{
+        font-size: 1.5rem;
+        font-family: "Montserrat", sans-serif;
+        border-radius: 300px;
+        border: 1px rgba(218, 215, 215, 0.312) solid;
+        background-color: #116EFD;
+        color: rgb(255, 255, 255);
+        padding: .3rem 1.5rem ;
+    }
+
+    .botonVerMas:hover{
+        background-color: #116EFD;
+
+    }
+
+
 }

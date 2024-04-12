@@ -12,14 +12,14 @@ class Introduction extends Component {
     return (
       <>
         <section id="Introduction">
-                <h1 id="Titulo">Facil, Seguro y Rapido</h1>
+                <h1 id="TituloIntroduction">Facil, Seguro y Rapido</h1>
 
                 <div id="BotonesConteiner">
-                <button type="button" className="btn btn-primary btn-lg">
+                <button type="button" className="btn btn-primary" id="btnDondeDonar">
                     Donde Donar
                   </button>
-                  <button type="button" className="btn btn-dark btn-lg">
-                    Aprende Mas
+                  <button type="button" className="btn" id="btnAprenderMas">
+                    Aprender Mas
                   </button>
                 </div>
 

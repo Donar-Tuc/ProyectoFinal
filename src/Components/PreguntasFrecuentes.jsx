@@ -1,12 +1,16 @@
 import Accordion from 'react-bootstrap/Accordion';
 import "./Styles/faq.css";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function AlwaysOpenExample() {
+  
   return (
+    
     <section id='AcordeonContainer'>
 
     <div id='BloqueTituloPreguntas'>
-        <h2 id='Titulo'>Preguntas Frecuentes</h2>
+        <h2 id='tituloFaq' data-aos="fade-up">Preguntas Frecuentes</h2>
     </div>
 
 <Accordion defaultActiveKey={['0']} alwaysOpen>

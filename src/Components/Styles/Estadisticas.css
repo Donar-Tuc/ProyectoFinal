@@ -1,5 +1,7 @@
 #EstadisticasContainer{
-    padding: 10rem;
+    background: rgb(2,20,25);
+background: linear-gradient(0deg, rgba(2,20,25,1) 12%, rgba(8,71,88,1) 75%);
+        padding: 10rem;
 }
 
 .Bloqueestadisticas{
@@ -19,13 +21,59 @@
 
 #NumeroEst{
     font-size: 5rem;
-    color: #d6b26a;
-            background: -webkit-linear-gradient(146deg, rgb(177, 148, 42) 0%, rgb(222, 196, 196) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    color: #34322f;
+    background: radial-gradient(45% 100% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);      
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
 }
 
 #TextEst{
+    color: white;
     font-size: 3rem;
-    font-weight: 300;
+    font-weight: 500;
+}
+
+
+
+
+
+@media (max-width: 900px) {
+    #EstadisticasContainer{
+        padding: 1rem;
+    }
+    
+    .Bloqueestadisticas{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+        gap: 20px;
+    }
+    
+    /* bloque individual de estadisticas */
+    
+    .Estadistica{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    #NumeroEst{
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    
+    #TextEst{
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 200;
+    }
+    
+
+
 }

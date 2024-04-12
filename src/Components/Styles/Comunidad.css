@@ -3,8 +3,8 @@
 
 #ComunidadContainer{
     display: flex;
-    background: #207593;
-    background-image: url(/src/Images/Noiseimage.png);
+    background: rgb(16,65,83);
+background: linear-gradient(180deg, rgba(16,65,83,1) 65%, rgb(16,70,88) 100%);
     padding: 4rem;
     gap: 20px;
     width: 100%;
@@ -12,16 +12,15 @@
 
 .Titulo{
     width: 50%;
-    color: white;
-    
-   
-
 }
 
 .TituloComunidad{
     font-size: 4rem;
+    background: radial-gradient(45% 100% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);      
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-family: "Montserrat", sans-serif;
-    font-weight: 800;
+    font-weight: 500;
     
 }
 
@@ -45,4 +44,54 @@
     font-family: "Montserrat", sans-serif;
     padding: .3rem 2em;
     border-radius: 7px;
+}
+
+
+
+
+
+
+@media (max-width: 900px) {
+    #ComunidadContainer{
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .Titulo{
+        width: 100%;
+    }
+    
+    .TituloComunidad{
+        font-size: 2.5rem;
+        font-weight: 500;
+        
+    }
+    
+    #DescripcionContainer{
+        width: 100%;
+    
+        
+    }
+    
+    .DescripcionComunidad{
+        font-size: 1rem;
+        color: white;
+        width: 100%;
+        font-weight: 300;
+        
+    }
+    
+    .btnComunidad{
+        font-size: 1rem;
+        font-weight: 500;
+        background-color: rgb(37, 179, 37);
+        font-family: "Montserrat", sans-serif;
+        padding: .3rem 4rem;
+        border-radius: 13px;
+    }
+
+
 }
