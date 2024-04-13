@@ -3,7 +3,7 @@ import "./Styles/TomaAccion.css";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import TomaAccionImage from '../Images/TomaAccionImage.png'
+import TomaAccionImage from '../Home/Images/TomaAccionImage.png'
 
 
 class TomaAccion extends Component {

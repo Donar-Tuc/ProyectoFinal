@@ -18,7 +18,8 @@
 
 #TituloAyudar{
     font-size: 4rem;
-    background: radial-gradient(45% 100% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);      
+    font-family: "Montserrat", sans-serif;
+    background: radial-gradient(15% 60% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);      
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: "Montserrat", sans-serif;
@@ -42,7 +43,7 @@
     gap: 10px;
 }
 
-.card{
+#card{
     z-index: 1;
     /* padding: 10px; */
 
@@ -52,7 +53,7 @@
     width: 30%;
     border-radius: 20px;
     background-color: #ebefffdb;
-    background-image: url(/src/Images/Noiseimage.png);
+    background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
     border:2px #e8e4e4 solid;
     transition: .3s ease-in-out;
 }
@@ -80,7 +81,7 @@
 }
 
 /* Boton de las cards */
-.botonDonar{
+#botonDonar{
     font-size: 1.2rem;
     font-family: "Montserrat", sans-serif;
     border-radius: 300px;
@@ -89,7 +90,7 @@
     color: black;
 }
 
-.botonVerMas{
+#botonVerMas{
     padding: 0 1.5rem;
     font-size: 1.5rem;
     font-family: "Montserrat", sans-serif;
@@ -100,7 +101,7 @@
     transition: .4s all ease-in-out;
 }
 
-.botonVerMas:hover{
+#botonVerMas:hover{
     transform: translateY(-3px);
     background-color: #1964d3;
 }
@@ -113,6 +114,8 @@
 
 
 @media (max-width: 900px) {
+
+
     #ContainerAyudar{
         width: 100%;
         padding: 3rem 2rem;
@@ -120,6 +123,7 @@
     #TituloAyudar{
         font-size: 2rem;
         font-weight: 400;
+
     }
     
     #DescripcionAyudar{
@@ -133,12 +137,10 @@
         gap: 20px;
     }
     
-    .card{
-        z-index: 1;
-        padding: 10px;
+    #card{
+        line-height:26px;
+        padding: 24px 24px 30px;
         width: 100%;
-        border-radius: 20px;
-        transition: none;
     }
     
     .card:hover{

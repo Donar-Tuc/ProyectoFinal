@@ -14,11 +14,15 @@
 }
 
 .Menu ul{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
     list-style: none;
 }
 
 .Menu ul li a{
     text-decoration: none;
+    font-family: "Montserrat", sans-serif;
     color: white;
     font-size: 1.5rem;
     transition: .3s ease-in-out;
@@ -26,12 +30,13 @@
 
 .Menu ul li a:hover{
     text-decoration: none;
-    color: rgb(41, 55, 149);
+    color: #17cf97;
     font-size: 1.5rem;
 }
 
 #Copyright{
     font-size: 23px;
+    font-family: "Montserrat", sans-serif;
     color: rgb(179, 177, 177);
 }
 
@@ -43,12 +48,14 @@
         justify-content: center;
         align-items: center;
         gap: 10px;
-        padding:1rem;
+        padding: 1rem 0;
         text-align: center;
     }
     
     .Menu{
         display: flex;
+        width: 100%;
+        justify-content: center;
         flex-direction: row;
     }
     
@@ -60,7 +67,7 @@
         text-decoration: none;
         color: white;
         font-size: 1rem;
-        transition: nne;
+        transition: none;
     }
     
     .Menu ul li a:hover{
@@ -70,6 +77,8 @@
     }
     
     #Copyright{
+        width: 100%;
+        justify-content: center;
         font-size: .7rem;
         color: rgb(179, 177, 177);
     }

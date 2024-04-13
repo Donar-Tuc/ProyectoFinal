@@ -4,7 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 function AlwaysOpenExample() {
-  
+  AOS.init();
   return (
     
     <section id='AcordeonContainer'>

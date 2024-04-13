@@ -1,5 +1,21 @@
 import React, { Component } from "react";
 import "./Styles/Footer.css";
+import { Link } from "react-router-dom";
+
+const links = [
+  {
+    name: "Inicio",
+    href: "/inicio"
+  },
+  {
+    name: "Eventos",
+    href: "/eventos",
+  },
+  {
+    name: "Soporte",
+    href: "/soporte",
+  }
+]
 
 class Footer extends Component {
 
@@ -32,14 +48,13 @@ class Footer extends Component {
             </svg>
             <div className="Menu">
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
+                {links.map((x, index) => (
+                <li key={index}>
+                  <Link to={x.href}>{x.name}</Link>
+                </li>
+              ))}
                 </ul>
-                <ul>
-                    <li><a href="index.html">Eventos</a></li>
-                </ul>
-                <ul>
-                    <li><a href="index.html">Soporte</a></li>
-                </ul>
+               
             </div>
             <p id="Copyright">Copyright © 2024 Don Ar. All rights reserved.</p> 
          </footer>

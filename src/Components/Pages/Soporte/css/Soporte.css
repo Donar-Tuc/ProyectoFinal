@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.ContainerForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(32,117,147,1) 13%, rgba(16,65,83,1) 53%, rgba(2,19,25,1) 98%);
+    padding: 8rem;
+
+    
+}
+
+
+.form {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    gap: 10px;
+    /* max-width: 450px; */
+    padding: 4rem;
+    border-radius: 20px;
+    position: relative;
+    background-color: #e8e6e649;
+    background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
+    border: 1px solid #f0f0f07b;
+    transition: .6s ease-in-out all;
+  }
+
+  form:hover{
+        border-color: #fffffff1;
+
+        box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+  }
+  
+  
+  .title {
+    font-size: 38px;
+    font-weight: 600;
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    padding-left: 30px;
+    color: white;
+  }
+  
+  .title::before {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+  }
+  
+  .title::before,
+  .title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: #ececec;
+  }
+  
+  .message, 
+  .signin {
+    font-size: 14.5px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .signin {
+    text-align: center;
+  }
+  
+  .signin a:hover {
+    text-decoration: underline royalblue;
+  }
+  
+  .signin a {
+    color: #00bfff;
+  }
+  
+  
+  .form label {
+    position: relative;
+  }
+  
+  .form label .input {
+    background-color: #bfbfbf98;
+    color: white;
+    width: 100%;
+    padding: 20px 05px 05px 10px;
+    outline: 0;
+    border: 1px solid rgba(150, 150, 150, 0.6);
+    border-radius: 10px;
+  }
+  
+  .form label .input + span {
+    color: rgb(255, 254, 254);
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+  }
+  
+  .form label .input:placeholder-shown + span {
+    top: 12.5px;
+    font-size: 0.9em;
+  }
+  
+  .form label .input:focus + span,
+  .form label .input:valid + span {
+    color: royalblue;
+    top: 0px;
+    font-size: 0.9em;
+    font-weight: 600;
+  }
+  
+  .input {
+    font-size: medium;
+  }
+  
+  .btnForm {
+    width: 100px;
+    font-family: inherit;
+    margin: 0 auto;
+    font-size: 1rem;
+    background: #1B7DFC;
+    color: white;
+    padding: 0.7em 1em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin-top: 2rem ;
+  }
+  
+  .btnForm:hover {
+    background-color: #1B7DFC;
+  }
+  .btnForm span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btnForm svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .btnForm:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+  }
+  
+  .btnForm:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+  }
+  
+  .btnForm:hover span {
+    transform: translateX(5em);
+  }
+  
+  .btnForm:active {
+    transform: scale(0.95);
+  }
+  
+  @keyframes fly-1 {
+    from {
+      transform: translateY(0.1em);
+    }
+  
+    to {
+      transform: translateY(-0.1em);
+    }
+  }
+  
+  
+  @keyframes pulse {
+    from {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+  
+    to {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
+
+
+  
+  
+
+  @media (max-width: 900px){
+
+    .ContainerForm{
+        padding: 7rem 0 ;
+    }
+
+    
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        width: 90%;
+        border-radius: 20px;
+        position: relative;
+        transition: .6s ease-in-out all;
+        padding: 2rem 3rem 2rem 2rem;
+        margin:0;
+      }
+          
+      .title {
+        font-size: 1.2rem;
+        /* border: 2px yellow solid; */
+        font-weight: 600;
+        letter-spacing: -1px;
+        position: relative;
+        display: flex;
+        align-items:center;
+      }
+      
+      .title::before {
+        width: 18px;
+        height: 18px;
+      }
+      
+      .title::after {
+        width: 18px;
+        height: 18px;
+        animation: pulse 1s linear infinite;
+      }
+      
+    
+      .message, 
+      .signin {
+        font-size: 12.5px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+      
+      .signin {
+        text-align: center;
+      }
+     
+      label{
+        width: 100%;
+    }
+      
+      .form label {
+        position: relative;
+      }
+      
+      .form label .input {
+        width: 100%;
+        padding: 20px 05px 05px 10px;
+        outline: 0;
+        border-radius: 10px;
+      }
+      
+      .form label .input + span {
+        position: absolute;
+        left: 15px;
+        top: 0px;
+        font-size: 0.9rem;
+        cursor: text;
+        transition: 0.3s ease;
+      }
+      
+      .form label .input:placeholder-shown + span {
+        top: 12.5px;
+        font-size: 0.8em;
+      }
+      
+      .form label .input:focus + span,
+      .form label .input:valid + span {
+        top: 0px;
+        font-size: 0.5em;
+        font-weight: 600;
+      }
+      
+      .input {
+        font-size: medium;
+      }
+    
+      .btnForm {
+        margin-top: 1rem ;
+      }
+      
+  
+      .btnForm:hover {
+        background-color: #ceac6d;
+      }
+      .btnForm span {
+        display: block;
+        margin-left: 0.3em;
+        transition: all 0.3s ease-in-out;
+      }
+      
+      .btnForm svg {
+        display: block;
+        transform-origin: center center;
+        transition: transform 0.3s ease-in-out;
+      }
+      
+      @keyframes fly-1 {
+        from {
+          transform: translateY(0.1em);
+        }
+      
+        to {
+          transform: translateY(-0.1em);
+        }
+      }
+      
+      
+      @keyframes pulse {
+        from {
+          transform: scale(0.9);
+          opacity: 1;
+        }
+      
+        to {
+          transform: scale(1.8);
+          opacity: 0;
+        }
+      }
+  }

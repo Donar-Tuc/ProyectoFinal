@@ -1,29 +1,26 @@
 import './App.css';
-import Navbar from './Components/Header';
-import Introduction from './Components/Introduction';
-import Carrousel from './Components/Carrousel';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import BloqueAyudar from './Components/ManerasAyudar';
-import TomaAccion from './Components/TomaAccion';
-import Comunidad from './Components/Comunidad'
-import Estadisticas from './Components/Estadisticas';
-import Faq from './Components/PreguntasFrecuentes';
-import Footer from './Components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './Components/Pages/General/Header.jsx';
+import Inicio from './Components/Pages/Home/Home.jsx';
+import Eventos from './Components/Pages/Eventos/Eventos.jsx';
+import Footer from './Components/Pages/General/Footer.jsx';
+import Soporte from './Components/Pages/Soporte/Soporte.jsx';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Introduction />
-      <BloqueAyudar />
-      <TomaAccion />
-      <Comunidad />
-      <Estadisticas />
-      <Faq />
-      <Footer />
-  
-    </div>
+    <Router>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path='/inicio' element={<Inicio/>}></Route>
+          <Route path='/eventos' element={<Eventos/>}></Route>
+          <Route path='/soporte' element={<Soporte/>}></Route>
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
 export default App;
+
