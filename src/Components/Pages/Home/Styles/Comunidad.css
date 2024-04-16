@@ -33,7 +33,7 @@ background: linear-gradient(180deg, rgba(16,65,83,1) 65%, rgb(16,70,88) 100%);
 .DescripcionComunidad{
     font-size: 1.5rem;
     color: white;
-    width: 50%;
+    width: 100%;
     font-family: "Montserrat", sans-serif;
     font-weight: 300;
     

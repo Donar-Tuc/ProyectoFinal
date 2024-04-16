@@ -7,7 +7,7 @@ class Soporte extends Component {
       <div className="ContainerForm">
         <form className="form" action="https://api.web3forms.com/submit" method="POST">
 
-          <input type="hidden" name="access_key" value="40c6f85c-2ded-4339-bbb6-23b58402d514" />
+          <input type="hidden" name="access_key" value="50e21fd4-36fa-4bfd-85c8-cb279489ba9b" />
 
           <p className="title">Contactate con Soporte</p>
           <p className="message">te ayudamos con cualquier duda que tengas</p>
