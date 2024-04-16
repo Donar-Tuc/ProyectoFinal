@@ -8,6 +8,7 @@
     flex-direction: row;
     gap: 30px;
     padding: 30px;
+    width: 100%;
 }
 
 .content{

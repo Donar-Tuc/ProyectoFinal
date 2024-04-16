@@ -1,175 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-body {
-    background-color: linear-gradient(180deg, rgba(32, 117, 147, 1) 13%, rgba(16, 65, 83, 1) 53%, rgba(2, 19, 25, 1) 98%);
-}
-
-#EventosContainer {
-    display: flex;
-    background: rgba(32, 117, 147, 1);
-    flex-direction: row;
-    gap: 30px;
-    padding-top: 100px;
-    justify-content: center;
-}
-
-#TituloEventos {
-    /* font-size: 4rem;
-    color: rgb(249, 244, 244);
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    text-align: center;
-    font-weight: bold; */
-
-    font-size: 4rem;
-    font-family: "Montserrat", sans-serif;
-    background: radial-gradient(15% 60% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    text-align: center;
-
-}
-
-#BloqueCards {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-.card1 {
-    z-index: 1;
-    padding: 35px 50px;
-    width: 70%;
-    border-radius: 17px;
-    background: #ebefffdb;
-    border-radius: 20px;
-    /* filter: blur(10px); */
-    border: 2px rgb(215, 210, 210) solid;
-    transition: .4s ease-in-out;
-
-}
-
-.card1:hover {
-    transform: translateY(-7px);
-}
-
-
-#CardsContainer {
-    display: flex;
-    background: linear-gradient(180deg, rgba(32, 117, 147, 1) 13%, rgba(16, 65, 83, 1) 53%, rgba(2, 19, 25, 1) 98%);
-    flex-direction: row;
-    gap: 30px;
-    padding: 30px;
-    justify-content: center;
-}
-
-h5 {
-    font-size: 4rem;
-    color: rgb(249, 244, 244);
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    text-align: center;
-    font-weight: bold;
-    height: 80px;
-}
-
-.card-text {
-    text-align: center;
-    font-family: "Montserrat", sans-serif;
-}
-
-#BotonSaberMas {
-    text-align: center;
-    padding-top: 20px;
-    font-size: 1.7rem;
-    font-family: "Montserrat", sans-serif;
-    padding: .5rem 2em;
-    border-radius: 7px;
-}
-
-.horarios {
-    text-align: center;
-    font-family: "Montserrat", sans-serif;
-    font-size: medium;
-    height: 50px;
-}
-
-#BancoAlimentosLogo {
-    width: 150px;
-    border: 2px;
-    display: flex;
-    justify-content: center;
-    /* height: 200px; */
-    /* margin-top: 50px; */
-}
-
-#ConinLogo {
-    width: 200px;
-    display: flex;
-    justify-content: left;
-}
-
-#FannLogo {
-    width: 150px;
-    display: flex;
-    justify-content: left;
-}
-
-#FundacionLeonLogo {
-    width: 120px;
-    display: flex;
-    justify-content: left;
-}
-
-
-.card-body {
+.EventosContainer {
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-/* .card-body img{
-    display: inline-block;
-}
-
-.card-body h5{
-    display: inline-block;
-} */
-
-
-@media (max-width: 900px) {
-#EventosContainer {
-      gap: 10px;
-      padding-top: 100px;
-      justify-content: center;
-}
-
-#CardsContainer {
     gap: 20px;
-    padding: 10px;
-    justify-content: center;
+    background: rgb(2,20,25);
+    background: linear-gradient(0deg, rgba(2,20,25,1) 12%, rgba(8,71,88,1) 75%);
+    padding: 9rem 2rem;
 }
 
-.card1 {
-        z-index: 1;
-        padding: 5px 1rem;
-        width: 100%;
-        transition: none;
+.CardEventos{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    background-color: #ebefff46;
+    background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
+    border:2px #e8e4e4 solid;
+}
 
-    }
+#textoContainer{
+    color: white;
+}
 
-        #BotonSaberMas {
-            text-align: center;
-            padding-top: 20px;
-            font-size: 1.7rem;
-            font-family: "Montserrat", sans-serif;
-            padding: .3rem 2em;
-            border-radius: 7px;
-        }
+#TituloEventos{
+    font-size: 2.5rem;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+}
 
+#HorarioEventos{
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+}
+
+#DecripcionEventos{
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+}
+#ContainerBotones{
+    display: flex;
+    gap: 20px;
+}
+
+.BotonesEventos{
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    border-radius: 20px;
+    padding: 1rem 1rem;
+    border: 2px rgb(218, 218, 218) solid;
+    background-color: #027DFC;
+    background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
+    color: white;
+    font-weight: 300;
 }

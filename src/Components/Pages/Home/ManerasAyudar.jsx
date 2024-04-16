@@ -1,14 +1,9 @@
 import React, { Component } from "react";
 import "./Styles/ManerasAyudar.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
-
 
 class BloqueAyudar extends Component {
   render() {
-    AOS.init();
     return (
       <>
         <section id="ContainerAyudar">
