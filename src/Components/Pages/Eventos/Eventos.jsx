@@ -3,10 +3,11 @@ import Card from "./CardsEventos.jsx";
 import "./css/eventos.css";
 
 
-import BancoAlimentos from "./imagenes/BancoAlimentosLogo.png";
-import Conin from "./imagenes/ConinLogo.png";
-import Fann from "./imagenes/FannLogo.png";
-import FundacionLeon from "./imagenes/FundacionLeonLogo.png";
+
+import BancoAlimentos from "./imagenes/BancoAlimentos.png";
+import Conin from "./imagenes/Conin.png";
+import Fann from "./imagenes/Fann.png";
+import FundacionLeon from "./imagenes/Leon.png";
 
 // Importa otras imágenes necesarias
 
@@ -24,14 +25,14 @@ class Eventos extends Component {
 
                 <Card
                     imagen={Conin}
-                    titulo="Banco de Alimentos"
+                    titulo="Conin"
                     horario="9am - 4pm de lunes a viernes"
                     descripcion="El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada."
                 />
 
                 <Card
                     imagen={Fann}
-                    titulo="Banco de Alimentos"
+                    titulo="Fann"
                     horario="9am - 4pm de lunes a viernes"
                     descripcion="El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada."
                 />
@@ -39,7 +40,7 @@ class Eventos extends Component {
 
                 <Card
                     imagen={FundacionLeon}
-                    titulo="Banco de Alimentos"
+                    titulo="Fundacion Leon"
                     horario="9am - 4pm de lunes a viernes"
                     descripcion="El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada."
                 />

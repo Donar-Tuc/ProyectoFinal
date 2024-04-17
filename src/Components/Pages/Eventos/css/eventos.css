@@ -9,27 +9,44 @@
     padding: 9rem 2rem;
 }
 
+
+
 .CardEventos{
     display: flex;
     justify-content: left;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 2rem 0rem 2rem 0rem;
     border-radius: 30px;
     background-color: #ebefff46;
     background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
-    border:2px #e8e4e4 solid;
+    border:1px #e8e4e4 solid;
+}
+.ImagenContainer{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px yellow solid; */
+}
+
+#ImagenCard{
+    margin: 10px;
+    height: 300px ;
 }
 
 #textoContainer{
+    width: 70%;
     color: white;
 }
 
 #TituloEventosContainer{
     text-align: center;
-    color: white;
-    font-size: 2rem;
+    font-size: 4rem;
+    background: radial-gradient(25% 40% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);      
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-family: "Montserrat", sans-serif;
-    font-weight: 700;
+    font-weight: 400;
 }
 
 #TituloEventos{
@@ -55,13 +72,13 @@
 }
 
 .BotonesEventos{
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 300;
     font-family: "Montserrat", sans-serif;
     border-radius: 300px;
     padding:  .5rem 2rem;
-    border: 1px rgba(255, 253, 253, 0.368) solid;
-    background-color: #116ffd;
+    border: 1px rgba(132, 132, 132, 0.139) solid;
+    background-color: #0C6DFD;
     color: white;
     transition: .3s all ease-in-out;
 }

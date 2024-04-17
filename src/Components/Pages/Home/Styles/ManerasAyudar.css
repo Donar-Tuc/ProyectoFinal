@@ -52,9 +52,9 @@
     text-align: left;
     width: 30%;
     border-radius: 20px;
-    background-color: #ebefffdb;
+    background-color: #ebefffb8;
     background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
-    border:2px #e8e4e4 solid;
+    border:1px #ffffff62 solid;
     transition: .3s ease-in-out;
 }
 
@@ -86,19 +86,19 @@
     font-family: "Montserrat", sans-serif;
     border-radius: 300px;
     border: 1px rgba(2, 2, 2, 0.271) solid;
-    background-color: rgba(11, 11, 11, 0.05);
-    color: black;
+    background-color: #0C6DFD;
+    color: white;
     transition:  .3s all ease-in-out;
 }
 
 #botonDonar:hover{
-    background-color: #0C6DFD;
+    background-color: #3a85f4;
     color: white;
 }
 
 #botonVerMas{
     padding: .5rem 1.9rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-family: "Montserrat", sans-serif;
     border-radius: 300px;
     border: 1px rgba(218, 215, 215, 0.312) solid;

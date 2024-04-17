@@ -8,7 +8,10 @@ class Card extends Component {
         return (
             <>
                     <div className="CardEventos">
+                        <div className="ImagenContainer">
                         <img src={imagen} alt="" id="ImagenCard"/>
+                        </div>
+                       
                         <div className="textoContainer">
                             <h3 id="TituloEventos">{titulo}</h3>
                             <p id="HorarioEventos">{horario}</p>
