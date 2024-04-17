@@ -13,11 +13,11 @@
 
 .form {
     display: flex;
-    width: 50%;
+    width: 70%;
     flex-direction: column;
     gap: 10px;
     /* max-width: 450px; */
-    padding: 4rem;
+    padding: 3rem;
     border-radius: 20px;
     position: relative;
     background-color: #e8e6e649;
@@ -68,7 +68,7 @@
   
   .message, 
   .signin {
-    font-size: 14.5px;
+    font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.7);
   }
   
@@ -77,7 +77,7 @@
   }
   
   .signin a:hover {
-    text-decoration: underline royalblue;
+    text-decoration: underline #6d87d6;
   }
   
   .signin a {
@@ -111,14 +111,14 @@
   
   .form label .input:placeholder-shown + span {
     top: 12.5px;
-    font-size: 0.9em;
+    font-size: 1rem;
   }
   
   .form label .input:focus + span,
   .form label .input:valid + span {
-    color: royalblue;
+    color: #6d87d6;
     top: 0px;
-    font-size: 0.9em;
+    font-size: .9rem;
     font-weight: 600;
   }
   

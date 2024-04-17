@@ -4,7 +4,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1b2430;
+    background-color: rgba(0, 0, 0, 0.445);
+    backdrop-filter: blur(20px);
     padding: 20px 80px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
     position: fixed;
@@ -62,6 +63,9 @@ nav {
     display: none;
 }
 
+#bar{
+    display: none;
+}
 
 @media screen and (max-width: 769px){
     #navbar {
@@ -95,6 +99,7 @@ nav {
     }
     
     #mobile i {
+        display: block;
         font-size: 34px;
          cursor: pointer;
          color: white;

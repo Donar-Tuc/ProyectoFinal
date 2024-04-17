@@ -4,13 +4,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
     padding: 2rem 0;
 }
 
 .Menu{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    width: 100%;
 }
 
 .Menu ul{
@@ -24,18 +26,20 @@
     text-decoration: none;
     font-family: "Montserrat", sans-serif;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     transition: .3s ease-in-out;
 }
 
 .Menu ul li a:hover{
     text-decoration: none;
     color: #17cf97;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 
 #Copyright{
-    font-size: 23px;
+    font-size: 1rem;
+    text-align: center;
+    width: 100%;
     font-family: "Montserrat", sans-serif;
     color: rgb(179, 177, 177);
 }

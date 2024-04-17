@@ -12,12 +12,12 @@ class TomaAccion extends Component {
     AOS.init();
     return (
       <>
-        <section id="AccionContainer">
-            <div className="content">
-                <h2 id="TituloAccion" data-aos="fade-right">Toma Accion</h2>
-                <p id="DescripcionAccion" data-aos="fade-right">Tu ayuda puede cambiar vidas. Doná hoy para apoyar causas importantes. Desde educación hasta justicia social, cada donación cuenta. Juntos, podemos crear un mundo mejor.</p>
+        <section id="AccionContainer" >
+            <div className="content" data-aos="fade-up">
+                <h2 id="TituloAccion" >Toma Accion</h2>
+                <p id="DescripcionAccion" >Tu ayuda puede cambiar vidas. Doná hoy para apoyar causas importantes. Desde educación hasta justicia social, cada donación cuenta. Juntos, podemos crear un mundo mejor.</p>
             </div>
-            <img src= {TomaAccionImage} alt="" id="ImageDonar" data-aos="fade-left"/>
+            <img src= {TomaAccionImage} alt="" id="ImageDonar" data-aos="fade-up" />
         </section>
             
       </>

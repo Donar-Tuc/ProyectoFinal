@@ -1,92 +1,24 @@
 import React, { Component } from "react";
-import "./Styles/ManerasAyudar.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import CardsAyudar from "./CardsManerasAyuda.jsx";
 
-class BloqueAyudar extends Component {
+class ManerasAyudar extends Component {
   render() {
+    const opcionesDeAyuda = [
+      { titulo: "Dinero", descripcion: "Dona dinero. Ayuda causas importantes. Transforma vidas.", url: "/donar-dinero" },
+      { titulo: "Comida", descripcion: "Dona comida. Alimenta a quienes lo necesitan.", url: "/donar-comida" },
+      { titulo: "Hogar", descripcion: "Dona hogar. Brinda refugio a personas sin vivienda.", url: "/donar-hogar" },
+      { titulo: "Escolar", descripcion: "Dona material escolar. Facilita el acceso a la educación.", url: "/donar-escolar" },
+      { titulo: "Vestimenta", descripcion: "Dona ropa. Ayuda a personas a vestirse adecuadamente.", url: "/donar-ropa" },
+      { titulo: "Asistencia", descripcion: "Proporciona asistencia directa a personas necesitadas.", url: "/asistencia" },
+      // Agrega más opciones de ayuda aquí según sea necesario
+    ];
+
     return (
-      <>
-        <section id="ContainerAyudar">
-          <div id="TituloBloqueAyudar">
-            <h2 id="TituloAyudar" data-aos="fade-up">Maneras de Ayudar</h2>
-            <p id="DescripcionAyudar" data-aos="fade-up">Hay muchas otras maneras de apoyar a la gente más necesitada.</p>
-          </div>
-
-          <div id="BloqueCards" data-aos="fade-up">
-          <div className="card" id="card">
-            <div className="card-body">
-              <h5 className="card-title">Dinero</h5>
-              <p className="card-text">Dona dinero. Ayuda causas importantes. Transforma vidas.</p>
-              <button type="button" className="btn btn-primary " id="botonDonar">
-                    Donar
-                  </button>
-            </div>
-          </div>
-
-          <div className="card" id="card">
-            <div className="card-body">
-              <h5 className="card-title">Comida</h5>
-              <h6 className="card-subtitle mb-2 text-body-secondary"></h6>
-              <p className="card-text">Dona dinero. Ayuda causas importantes. Transforma vidas.</p>
-              <button type="button" className="btn btn-primary" id="botonDonar">
-                    Donar
-                  </button>
-            </div>
-          </div>
-
-          <div className="card" id="card" >
-            <div className="card-body">
-              <h5 className="card-title">Hogar</h5>
-              <p className="card-text">Dona dinero. Ayuda causas importantes. Transforma vidas.</p>
-              <button type="button" className="btn btn-primary" id="botonDonar">
-                    Donar
-                  </button>
-            </div>
-          </div>
-
-          <div className="card" id="card">
-            <div className="card-body">
-              <h5 className="card-title">Escolar</h5>
-              <p className="card-text">Dona dinero. Ayuda causas importantes. Transforma vidas.</p>
-              <button type="button" className="btn btn-primary" id="botonDonar">
-                    Donar
-                  </button>
-            </div>
-          </div>
-
-          <div className="card" id="card">
-            <div className="card-body">
-              <h5 className="card-title">Vestimenta</h5>
-              <p className="card-text">Dona dinero. Ayuda causas importantes. Transforma vidas.</p>
-              <button type="button" className="btn btn-primary" id="botonDonar">
-                    Donar
-                  </button>
-            </div>
-          </div>
-
-          <div className="card" id="card">
-            <div className="card-body">
-              <h5 className="card-title">Asistencia</h5>
-              <p className="card-text">Dona dinero. Ayuda causas importantes. Transforma vidas.</p>
-              <button type="button" className="btn btn-primary " id="botonDonar">
-                    Donar
-                  </button>
-            </div>
-          </div>
-
-          </div>
-          <div id="BotonVerMasSection" data-aos="fade-up">
-          <button type="button" className="btn btn-primary " id="botonVerMas">
-                    Ver Mas
-                  </button>
-          </div>
-          
-
-         
-        </section>
-      </>
+      <div>
+        <CardsAyudar opciones={opcionesDeAyuda} />
+      </div>
     );
   }
 }
 
-export default BloqueAyudar;
+export default ManerasAyudar;

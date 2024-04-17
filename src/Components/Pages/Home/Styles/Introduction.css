@@ -41,30 +41,32 @@
 }
 
 #btnDondeDonar{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 300;
     font-family: "Montserrat", sans-serif;
     border-radius: 300px;
     padding:  .5rem 2rem;
     border: 1px rgba(255, 253, 253, 0.368) solid;
-    background-color: #116EFD;
+    filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.387));
+    background-color: #116ffd;
     color: white;
     transition: .3s all ease-in-out;
 }
 
 #btnDondeDonar:hover{
     transform: translateY(-2px);
-    background-color: #116EFD;
+    background-color: #3b80e8;
 
 }
 
 #btnAprenderMas{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 300;
     font-family: "Montserrat", sans-serif;
     border-radius: 300px;
     padding:  .5rem 2rem;
     background-color: #eaebed52;
+    filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.546));
     border: 1px rgb(177, 175, 175) solid;
     color: white;
     transition: .3s all ease-in-out;
@@ -72,6 +74,7 @@
 
 #btnAprenderMas:hover{
     transform: translateY(-2px);
+    background-color: #ffffff52;
 }
 
 @media (max-width: 900px) {

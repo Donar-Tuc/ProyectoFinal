@@ -20,18 +20,19 @@ background: linear-gradient(180deg, rgba(16,65,83,1) 65%, rgb(16,70,88) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: "Montserrat", sans-serif;
-    font-weight: 500;
+    font-weight: 400;
     
 }
 
 #DescripcionContainer{
     width: 50%;
 
+
     
 }
 
 .DescripcionComunidad{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: white;
     width: 100%;
     font-family: "Montserrat", sans-serif;
@@ -39,12 +40,20 @@ background: linear-gradient(180deg, rgba(16,65,83,1) 65%, rgb(16,70,88) 100%);
     
 }
 
-.btnComunidad{
+#btnComunidad{
     font-size: 1.2rem;
     font-family: "Montserrat", sans-serif;
-    padding: .3rem 2em;
-    border-radius: 7px;
+    padding: .5rem 3em;
+    border-radius: 35px;
+    background-color: #0dda7e5a;
+    background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
+    border:1px #e8e4e471 solid;
+    transition: .3s all ease-in-out;
 }
+
+#btnComunidad:hover{
+    background-color: #0dda7e95;
+}   
 
 
 

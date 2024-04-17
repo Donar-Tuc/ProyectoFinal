@@ -28,12 +28,13 @@
     -webkit-text-fill-color: transparent;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    font-size: 5rem;
+    font-size: 4rem;
 
 }
 
 #DescripcionAccion{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 200;
     font-family: "Montserrat", sans-serif;
 
 }

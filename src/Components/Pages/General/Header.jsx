@@ -42,6 +42,12 @@ class Navbar extends Component {
                   <Link to={x.href}>{x.name}</Link>
                 </li>
               ))}
+
+            <a href="index.html" className="btnLoginMobile">
+            <button type="button" className="btn btn-primary">
+              Login
+            </button>
+          </a>
             </ul>
           </div>
 

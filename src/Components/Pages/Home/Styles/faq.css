@@ -11,7 +11,7 @@
 }
 
 #tituloFaq{
-    font-size: 3rem;
+    font-size: 4rem;
     background: radial-gradient(20% 50% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, 0.445) 100%);      
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -23,11 +23,13 @@
     /* background-color: #f0f0f0; */
     color: #333;
     font-size: 18px;
+    font-family: "Montserrat", sans-serif;
     /* padding: 10px; */
 }
 
 .accordion-body {
     background-color: #fff;
+    font-family: "Montserrat", sans-serif;
     color: #0c0c0c;
     font-size: 16px;
     /* padding: 15px; */
@@ -49,6 +51,7 @@
 @media (max-width: 900px) {
     #AcordeonContainer{
         padding:  2rem 1rem;
+ 
     }
     
     #BloqueTituloPreguntas{

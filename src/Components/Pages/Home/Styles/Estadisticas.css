@@ -1,8 +1,8 @@
 #EstadisticasContainer{
     background: rgb(2,20,25);
     background: linear-gradient(0deg, rgba(2,20,25,1) 12%, rgba(8,71,88,1) 75%);
-        padding: 10rem;
-        max-width: 100%;
+    padding: 5rem;
+    max-width: 100%;
 }
 
 .Bloqueestadisticas{
@@ -22,19 +22,20 @@
 
 #NumeroEst{
     font-size: 5rem;
-    font-weight: 700;
+    font-weight: 800;
     color: #34322f;
     background: radial-gradient(45% 100% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);      
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: "Montserrat", sans-serif;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 #TextEst{
     color: white;
-    font-size: 3rem;
-    font-weight: 500;
+    font-size: 2rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
 }
 
 

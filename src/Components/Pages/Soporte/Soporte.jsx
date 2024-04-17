@@ -10,7 +10,7 @@ class Soporte extends Component {
           <input type="hidden" name="access_key" value="50e21fd4-36fa-4bfd-85c8-cb279489ba9b" />
 
           <p className="title">Contactate con Soporte</p>
-          <p className="message">te ayudamos con cualquier duda que tengas</p>
+          <p className="message">Te ayudamos con cualquier duda que tengas</p>
 
         
             <label>
