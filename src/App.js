@@ -5,6 +5,8 @@ import Inicio from './Components/Pages/Home/Home.jsx';
 import Eventos from './Components/Pages/Eventos/Eventos.jsx';
 import Footer from './Components/Pages/General/Footer.jsx';
 import Soporte from './Components/Pages/Soporte/Soporte.jsx';
+import Login from "./Components/Pages/Login/Login.jsx"; // Importa el componente de Login
+
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
           <Route path='/' element={<Inicio/>}></Route>
           <Route path='/eventos' element={<Eventos/>}></Route>
           <Route path='/soporte' element={<Soporte/>}></Route>
+          <Route path="/login" component={Login} /> {/* Agrega esta línea para la ruta de login */}
+
         </Routes>
         <Footer />
       </div>
