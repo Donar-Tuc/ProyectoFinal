@@ -1,4 +1,35 @@
-#Bloque1{
-background-color: red;
-font-size: 400px;
+
+
+/* Estilo de container grande */
+.LoginContainer{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    padding-top: 8rem;
+    background: linear-gradient(180deg, rgba(32,117,147,1) 13%, rgba(16,65,83,1) 53%, rgba(2,19,25,1) 98%);
+
+}
+
+/* Container de form */
+
+#FormularioLoginContainer{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 100vh;
+    border: 2px yellow solid;
+}
+
+/* Bloques 1 y 2 */
+
+.bloque1{
+    width: 50%;
+    border: 2px yellow solid;
+}
+
+.bloque2{
+    width: 50%;
+
+    border: 2px yellow solid;
+
 }

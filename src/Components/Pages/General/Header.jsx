@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Styles/Navbar.css";
 import { Link } from "react-router-dom";
-import Eventos from "../Eventos/Eventos";
+// import Eventos from "../Eventos/Eventos";
 
 const links = [
   {
@@ -51,13 +51,13 @@ class Navbar extends Component {
                   <Link to={x.href}>{x.name}</Link>
                 </li>
               ))}
-
-            <a href="index.html" className="btnLoginMobile">
-            <button type="button" className="btn btn-primary">
-              Login
-            </button>
-          </a>
             </ul>
+
+            {/* {LinkLogin.map((x, index) => (
+                <li key={index}>
+                  <Link to={x.href}>{x.name}</Link>
+                </li>
+              ))} */}
           </div>
 
           <ul
