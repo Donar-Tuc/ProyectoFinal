@@ -7,6 +7,8 @@ import Footer from './Components/Pages/General/Footer.jsx';
 import Soporte from './Components/Pages/Soporte/Soporte.jsx';
 import Login from './Components/Pages/Login/Login.jsx'; // Importa el componente de Login
 import Categorias from './Components/Pages/Categorias/Categorias.jsx';
+import Dinero from './Components/Pages/Categorias/Perfil/Dinero.jsx'
+import Perfiles from './Components/Pages/Categorias/Perfiles/containerPerfiles.jsx'
 
 
 
@@ -21,6 +23,9 @@ function App() {
           <Route path='/soporte' element={<Soporte/>}></Route>
           <Route path='/login' element={<Login/>}></Route>
           <Route path= '/categorias' element={<Categorias/>}></Route>
+          <Route path= '/dinero' element={<Dinero/>}></Route>
+          <Route path= '/perfiles' element={<Perfiles/>}></Route>
+
 
         </Routes>
         <Footer />

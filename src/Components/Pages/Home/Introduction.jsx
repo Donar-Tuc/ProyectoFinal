@@ -29,7 +29,7 @@ class Introduction extends Component {
     return (
       <>
         <section id="Introduction">
-                <h1 id="TituloIntroduction">Tus donaciones, nuestro compromiso</h1>
+                <h1 id="TituloIntroduction">Tus donaciones. <br /> Nuestro compromiso.</h1>
 
                 <div id="BotonesConteiner">
 
@@ -50,7 +50,7 @@ class Introduction extends Component {
                   </div>
                 </div>
 
-                <p id="DescripcionIntroduccion">Potenciando recursos y enlaces de compañías internacionales para organizaciones benéficas</p>
+                <p id="DescripcionIntroduccion">Potenciando recursos y enlaces de compañías locales para organizaciones benéficas</p>
         </section>
             
       </>

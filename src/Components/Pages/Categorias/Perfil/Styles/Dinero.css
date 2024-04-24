@@ -1,0 +1,182 @@
+#ContainerDineroPadre {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10rem 5rem; /* Corregido */
+    align-items: center;
+    /* height: 100vh; */
+    background: linear-gradient(180deg, rgba(32, 117, 147, 1) 13%, rgba(16, 65, 83, 1) 53%, rgba(2, 19, 25, 1) 98%);
+    font-family: "Montserrat", sans-serif;
+    max-width: 100%;
+}
+
+#LogoDinero {
+    width: 100%;
+    border-radius: 24px 24px 0px 0px;
+}
+
+.DineroHijo {
+    border-radius: 24px;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0rem 0rem 2rem 0;
+    background-color: rgb(216, 210, 210);
+}
+
+#ContainerTituloBtn {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+}
+
+#Box1Texto {
+    width: 100%;
+}
+
+#Box1Texto a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.Box2Btn {
+    width: 100%;
+    padding: 2rem 0rem 2rem 0rem;
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.BtnDinero {
+    width: 20%;
+    /* height: 3rem; */
+    padding: .5rem 0;
+    border-radius: 10px;
+    border: none;
+    background-color: #387BDE;
+}
+
+.BtnDinero a {
+    color: white;
+    text-decoration: none;
+}
+
+.TextoDinero {
+    padding: 3rem 3rem;
+}
+
+#TituloDinero {
+    font-size: 3rem;
+}
+
+#DescripcionDinero {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    padding-top: 0;
+    padding-bottom: 1rem;
+}
+
+#BulletDinero {
+    font-size: 1.5rem;
+}
+
+.Mapa {
+    width: 95%;
+    justify-content: center;
+}
+
+#MapaGoogle {
+    width: 100%;
+    height: 30rem;
+    border-radius: 16px;
+}
+
+/* Media Query */
+@media (max-width: 900px) {
+    #ContainerDineroPadre {
+        padding: 4.5rem 0; /* Corregido */
+    }
+
+    #LogoDinero {
+        border-radius: 0px;
+    }
+
+    .DineroHijo {
+        width: 100%;
+        border-radius: 0px;
+    }
+
+    #ContainerTituloBtn {
+        flex-direction: column;
+        padding-bottom: 1rem;
+    }
+
+    #Box1Texto {
+        width: 100%;
+    }
+
+    #Box1Texto a {
+        text-decoration: none;
+        font-size: 1rem;
+        color: black;
+        cursor: pointer;
+    }
+
+    .Box2Btn {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding-top: 1rem;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .BtnDinero {
+        width: 40%;
+        padding: .7rem ; /* Corregido */
+    }
+
+    .BtnDinero a {
+        font-size: .7rem;
+        color: white;
+        width: 100%;
+        text-decoration: none;
+    }
+
+    .TextoDinero {
+        padding: 2rem; /* Ajustado */
+    }
+
+    #TituloDinero {
+        font-size: 2.5rem; /* Ajustado */
+    }
+
+    #DescripcionDinero {
+        font-size: 1rem; /* Ajustado */
+        line-height: 2rem; /* Ajustado */
+        padding-top: 1.5rem; /* Ajustado */
+        padding-bottom: 1.5rem; /* Ajustado */
+    }
+
+    #BulletDinero {
+        font-size: 1rem; /* Ajustado */
+    }
+
+    .Mapa {
+        width: 95%;
+    }
+
+    #MapaGoogle {
+        width: 100%;
+        height: 30rem;
+        border-radius: 5px;
+    }
+}

@@ -9,8 +9,9 @@
     display: flex;
     flex-direction: column;
     background: linear-gradient(180deg, rgba(32,117,147,1) 13%, rgba(16,65,83,1) 53%, rgba(2,19,25,1) 98%);
-    /* padding: 40rem 8rem; */
+    padding: 5rem 0rem;
     gap: 30px;
+
 }
 
 /* Titulo de categorias */
@@ -37,8 +38,7 @@
     align-items: center;
     flex-direction: column;
     z-index: 1;
-    line-height:26px;
-    padding: 42px 42px 56px;
+    padding: 42px 32px 56px;
     font-family: "Montserrat", sans-serif;
     text-align: center;
     width: 30%;
@@ -54,14 +54,28 @@
     color: white;
 }
 
+#EnlaceCategorias{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#EnlaceCategorias li a {
+    text-decoration: none;
+}
+
+#EnlaceCategorias li {
+    
+    list-style: none;
+}
+
+
 #BtnCategoria{
-    margin-top: 2rem;
     padding: .7rem;
     font-size: 1.2rem;
-    width: 70%;
+    width: 60%;
     font-family: "Montserrat", sans-serif;
     border-radius: 300px;
-    border: 1px rgba(2, 2, 2, 0.271) solid;
+    border: 1px rgba(21, 119, 216, 0.53) solid;
     background-color: #0C6DFD;
     color: white;
     transition:  .3s all ease-in-out;
@@ -114,10 +128,13 @@
             font-size: 2rem;
             color: white;
         }
+
+
+        
         
         #BtnCategoria{
-            margin-top: 1rem;
-            padding: .7rem;
+            /* margin-top: 1rem; */
+            padding: .6rem 1rem;
             font-size: 1.2rem;
             width: 70%;
             font-family: "Montserrat", sans-serif;

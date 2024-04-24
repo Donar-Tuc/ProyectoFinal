@@ -15,6 +15,7 @@ nav {
 
 .logo {
     flex: 0 0 auto;
+    user-select: none;
 }
 
 #Menu {
@@ -83,7 +84,7 @@ nav {
         align-items: center;
         background-color: rgba(0, 0, 0, 0.445);
         backdrop-filter: blur(20px);
-        padding: 20px 40px;
+        padding: 15px 40px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
         position: fixed;
         width: 100%;
@@ -96,7 +97,7 @@ nav {
         align-items: center;
         justify-content: flex-start;
         position: fixed;
-        top: 79px;
+        top: 70px;
         right: -300px;
         width: 300px;
         height: 100vh;
@@ -113,14 +114,14 @@ nav {
 
     #navbar li {
         margin-bottom: 25px;
-        font-size: 20px;
+        font-size: 15px;
     }
 
     #mobile {
         display: block;
         align-items: center;
         /* position: fixed; */
-        /* top: 20px; */
+        top: 20px;
         /* right: 20px; */
         z-index: 1001;
         /* border: 2px yellow solid; */
@@ -131,7 +132,7 @@ nav {
 
     #bar {
         display: block;
-        font-size: 34px;
+        font-size: 30px;
         text-align: right;
         color: white;
         cursor: pointer;
