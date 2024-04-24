@@ -1,12 +1,20 @@
 import React, { Component } from "react";
 import "./Styles/ManerasAyudar.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from "react-router-dom";
+
+const LinkCategorias = [
+  {
+    name: "Ver Mas",
+    href: "/categorias",
+  }
+];
 
 class CardsAyudar extends Component {
   render() {
     return (
       <>
-      <section id="ContainerAyudar">
+        <section id="ContainerAyudar">
           <div id="TituloBloqueAyudar">
             <h2 id="TituloAyudar" data-aos="fade-up">Maneras de Ayudar</h2>
             <p id="DescripcionAyudar" data-aos="fade-up">Hay muchas otras maneras de apoyar a la gente más necesitada.</p>
@@ -25,11 +33,14 @@ class CardsAyudar extends Component {
               </div>
             ))}
           </div>
-          
-          <div id="BotonVerMasSection" data-aos="fade-up">
-            <button type="button" className="btn btn-primary" id="botonVerMas">
-              Ver Mas
-            </button>
+
+          {/* Enlace a la sección de categorías */}
+          <div id="EnlaceVerMas" data-aos="fade-up">
+            {LinkCategorias.map((x, index) => (
+              <li key={index}>
+                <Link className="btn btn-primary" id="BotonVerMas" to={x.href}>{x.name}</Link>
+              </li>
+            ))}
           </div>
         </section>
       </>

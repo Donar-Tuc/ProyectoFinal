@@ -6,6 +6,8 @@ import Eventos from './Components/Pages/Eventos/Eventos.jsx';
 import Footer from './Components/Pages/General/Footer.jsx';
 import Soporte from './Components/Pages/Soporte/Soporte.jsx';
 import Login from './Components/Pages/Login/Login.jsx'; // Importa el componente de Login
+import Categorias from './Components/Pages/Categorias/Categorias.jsx';
+
 
 
 function App() {
@@ -18,6 +20,7 @@ function App() {
           <Route path='/eventos' element={<Eventos/>}></Route>
           <Route path='/soporte' element={<Soporte/>}></Route>
           <Route path='/login' element={<Login/>}></Route>
+          <Route path= '/categorias' element={<Categorias/>}></Route>
 
         </Routes>
         <Footer />

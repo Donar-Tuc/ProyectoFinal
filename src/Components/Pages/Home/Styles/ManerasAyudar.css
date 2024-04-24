@@ -46,7 +46,7 @@
 #card{
     z-index: 1;
     /* padding: 10px; */
-
+    height: 15rem;
     line-height:26px;
     padding: 32px 32px 36px;
     text-align: left;
@@ -73,11 +73,32 @@
 }
 
 
-#BotonVerMasSection{
+#EnlaceIntroduccion{
     text-align: center;
     font-size: 1.2rem;
     font-family: "Montserrat", sans-serif;
     padding: 1rem 2rem;
+}
+
+#EnlaceIntroduccion li {
+    text-decoration: none;
+    list-style: none;
+}
+
+
+#EnlaceVerMas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: "Montserrat", sans-serif;
+    padding: 1rem 2rem;
+}
+
+#EnlaceVerMas li {
+    text-decoration: none;
+    list-style: none;
 }
 
 /* Boton de las cards */
@@ -96,7 +117,7 @@
     color: white;
 }
 
-#botonVerMas{
+#BotonVerMas{
     padding: .5rem 1.9rem;
     font-size: 1.2rem;
     font-family: "Montserrat", sans-serif;
@@ -107,7 +128,7 @@
     transition: .4s all ease-in-out;
 }
 
-#botonVerMas:hover{
+#BotonVerMas:hover{
     transform: translateY(-3px);
     background-color: #1964d3;
 }
@@ -157,6 +178,18 @@
         text-align: center;
         font-size: 1.2rem;
         font-family: "Montserrat", sans-serif;
+    }
+
+    #EnlaceIntroduccion{
+        text-align: center;
+        font-size: 1.2rem;
+        font-family: "Montserrat", sans-serif;
+        padding: 1rem 2rem;
+    }
+    
+    #EnlaceIntroduccion li {
+        text-decoration: none;
+        list-style: none;
     }
     
     /* Boton de las cards */

@@ -1,0 +1,133 @@
+/* Container general */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+#ContainerCategorias{
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, rgba(32,117,147,1) 13%, rgba(16,65,83,1) 53%, rgba(2,19,25,1) 98%);
+    /* padding: 40rem 8rem; */
+    gap: 30px;
+}
+
+/* Titulo de categorias */
+
+#TituloCategoria{
+    font-size: 3rem;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+}
+
+/* Bloque Cards */
+.CardsBloque{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.CardsCategorias{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    line-height:26px;
+    padding: 42px 42px 56px;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    width: 30%;
+    border-radius: 20px;
+    background-color: #ebefff76;
+    background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
+    border:1px #ffffff62 solid;
+    transition: .3s ease-in-out;
+}
+
+#tituloInteriorCards{
+    font-size: 2rem;
+    color: white;
+}
+
+#BtnCategoria{
+    margin-top: 2rem;
+    padding: .7rem;
+    font-size: 1.2rem;
+    width: 70%;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 300px;
+    border: 1px rgba(2, 2, 2, 0.271) solid;
+    background-color: #0C6DFD;
+    color: white;
+    transition:  .3s all ease-in-out;
+}
+
+#BtnCategoria:hover{
+    background-color: #347eec;}
+
+
+@media (max-width: 900px) {
+
+        #ContainerCategorias{
+            padding-top: 120px;
+            height: fit-content;
+            gap: 30px;
+        }
+        
+        /* Titulo de categorias */
+        
+        #TituloCategoria{
+            font-size: 2rem;
+        }
+        
+        /* Bloque Cards */
+        .CardsBloque{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 100%;
+            gap: 20px;
+        }
+        
+        .CardsCategorias{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 1;
+            padding: 20px 0;
+            font-family: "Montserrat", sans-serif;
+            text-align: center;
+            width: 90%;
+            border-radius: 20px;
+            transition: none;
+        }
+        
+        #tituloInteriorCards{
+            font-size: 2rem;
+            color: white;
+        }
+        
+        #BtnCategoria{
+            margin-top: 1rem;
+            padding: .7rem;
+            font-size: 1.2rem;
+            width: 70%;
+            font-family: "Montserrat", sans-serif;
+            border-radius: 300px;
+            border: 1px rgba(2, 2, 2, 0.271) solid;
+            background-color: #0C6DFD;
+            color: white;
+            transition:  none;
+        }
+        
+        #BtnCategoria:hover{
+            background-color:#0C6DFD ;}
+    }

@@ -2,11 +2,11 @@
 
 nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: right;
+    align-items: right;
     background-color: rgba(0, 0, 0, 0.445);
     backdrop-filter: blur(20px);
-    padding: 20px 80px;
+    padding: 15px 60px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
     position: fixed;
     width: 100%;
@@ -20,10 +20,10 @@ nav {
 #Menu {
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: right;
 }
 
-#navbar {
+#navbar { /* Estilo de navbar */
     display: flex;
     align-items: center;
     list-style: none;
@@ -33,15 +33,13 @@ nav {
 
 #navbar li {
     padding: 0 30px;
-
 }
 
-#navbar li a {
+#navbar li a { /* Estilo de letras del menu */
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     text-decoration: none;
-    font-size: 1.3rem;
-    font-weight: 400;
+    font-size: 1.1rem;
     color: white;
     transition: 0.3s ease-in-out;
 }
@@ -50,24 +48,48 @@ nav {
     color: #17cf97;
 }
 
+#navbar li:last-child a:hover {
+    color: white;
+}
+
+
 .btnLogin {
-    flex: 0 0 auto;
-}
-
-.btn{
-    background-color: #8B5CF6 ;
+    display: flex;
+    align-items: center;
     font-family: "Poppins", sans-serif;
+    background-color: #3b80e8ec;
+    border: 1px rgba(255, 255, 255, 0.238) solid;
+    padding: 8px 20px;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    transition: .3s 0.3s ease-in-out;
+ }
+
+.btnLogin:hover {
+    background-color: #3a85f4;
+    transform: translateY(-1px);
 }
 
-.btnLoginMobile{
+#mobile {
     display: none;
 }
 
-#bar{
-    display: none;
-}
+@media screen and (max-width: 769px) {
 
-@media screen and (max-width: 769px){
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.445);
+        backdrop-filter: blur(20px);
+        padding: 20px 40px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+
     #navbar {
         display: flex;
         flex-direction: column;
@@ -81,35 +103,42 @@ nav {
         background-color: #2a3239;
         box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
         padding: 40px 0 0 15px;
-        transition:  0.3s ease-in-out;
+        transition: 0.3s ease-in-out;
+        z-index: 999;
     }
 
-#navbar.active{
-    right: 0px;
+    #navbar.active {
+        right: 0px;
     }
 
-    #navbar li{
-
+    #navbar li {
         margin-bottom: 25px;
         font-size: 20px;
     }
 
-    #mobile{
+    #mobile {
         display: block;
+        align-items: center;
+        /* position: fixed; */
+        /* top: 20px; */
+        /* right: 20px; */
+        z-index: 1001;
+        /* border: 2px yellow solid; */
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
     }
-    
-    #mobile i {
+
+    #bar {
         display: block;
         font-size: 34px;
-         cursor: pointer;
-         color: white;
-}
+        text-align: right;
+        color: white;
+        cursor: pointer;
+    }
 
-.btnLogin {
-    display: none;
-}
-
-.btnLoginMobile{
-    display: block;
-}
+    .btnLogin {
+        display: block;
+        margin-top: 20px; /* Agregar margen superior para separar del resto de los elementos */
+    }
 }
