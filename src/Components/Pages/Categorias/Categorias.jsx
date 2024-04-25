@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Styles/Categorias.css";
-// import cardsCategorias from "./cardsCategorias.jsx";
+// import TemplatePerfiles from './Perfiles/TemplatePerfiles';
 import { Link } from "react-router-dom";
 
 

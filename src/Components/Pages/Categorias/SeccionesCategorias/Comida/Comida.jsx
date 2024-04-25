@@ -1,43 +1,53 @@
-// poner aca las props ya hechas con la informacion
-
 import React, { Component } from "react";
-import TemplatePerfiles from "./TemplatePerfiles";
-import "./styles/ContainerPerfiles.css";
+import CardComida from "./CardsTemplate";
+import "./Styles/Comida.css";
 
-import BancoAlimentos from "./imagenes/BancoAlimentos.png";
-import Conin from "./imagenes/Conin.png";
-import Fann from "./imagenes/Fann.png";
-import FundacionLeon from "./imagenes/Leon.png";
+
+
+// Imagenes 
+
+import BancoAlimentos from "./Imagenes/BancoAlimentosLogo.png";
+import ConinLogo from "./Imagenes/ConinLogoGrande.png";
+import Fann from "./Imagenes/FannLogoGrande.png";
+import FundacionLeon from "./Imagenes/LeonLogoGrande.png";
+
 
 // Importa otras imágenes necesarias
 
-class Perfiles extends Component {
+class Comida extends Component {
     render() {
         return (
-            <div className="PerfilesContainer">
-                <h2 id="TituloPerfilesContainer">Organizaciones</h2>
-                <TemplatePerfiles
+            <div className="AsistenciaContainer">
+                <h2 id="TituloAsistenciaContainer">Comida</h2>
+
+
+                <CardComida
+                    imagen={ConinLogo}
+                    titulo="Banco de Alimentos"
+                    horario="9am - 4pm de lunes a viernes"
+                    descripcion="El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada."
+                />
+                <CardComida
                     imagen={BancoAlimentos}
                     titulo="Banco de Alimentos"
+                    horario="9am - 4pm de lunes a viernes"
                     descripcion="El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada."
                 />
 
-                <TemplatePerfiles
-                    imagen={Conin}
-                    titulo="Conin"
-                    descripcion="El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada."
-                />
+              
 
-                <TemplatePerfiles
+                <CardComida
                     imagen={Fann}
-                    titulo="Fann"
+                    titulo="Banco de Alimentos"
+                    horario="9am - 4pm de lunes a viernes"
                     descripcion="El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada."
                 />
 
 
-                <TemplatePerfiles
+                <CardComida
                     imagen={FundacionLeon}
-                    titulo="Fundacion Leon"
+                    titulo="Banco de Alimentos"
+                    horario="9am - 4pm de lunes a viernes"
                     descripcion="El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada."
                 />
         
@@ -46,4 +56,4 @@ class Perfiles extends Component {
     }
 }
 
-export default Perfiles;
+export default Comida;
