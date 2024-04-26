@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import CardRopa from "./CardsTemplate.jsx";
-import "./Styles/Ropa.css";
+import "../Style.css";
 
 
 

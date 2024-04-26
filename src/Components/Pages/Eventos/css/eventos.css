@@ -41,7 +41,7 @@
 
 #TituloEventosContainer{
     text-align: center;
-    font-size: 4rem;
+    font-size: 3rem;
     background: radial-gradient(25% 40% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);      
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -66,7 +66,7 @@
     font-family: "Montserrat", sans-serif;
     color: white;
 }
-#ContainerBotones{
+#ContainerEventosBotones{
     display: flex;
     gap: 20px;
 }
@@ -103,7 +103,7 @@
         gap: 20px;
         background: rgb(2,20,25);
         background: linear-gradient(0deg, rgba(2,20,25,1) 12%, rgba(8,71,88,1) 75%);
-        padding: 8rem 1rem;
+        padding: 6rem 1rem;
     }
     
     .CardEventos{
@@ -128,7 +128,7 @@
     #DecripcionEventos{
         font-size: 1rem;
     }
-    #ContainerBotones{
+    #ContainerEventosBotones{
         display: flex;
         flex-direction: column;
         gap:10px;

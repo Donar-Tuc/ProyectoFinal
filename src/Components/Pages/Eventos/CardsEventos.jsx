@@ -16,7 +16,7 @@ class Card extends Component {
                             <h3 id="TituloEventos">{titulo}</h3>
                             <p id="HorarioEventos">{horario}</p>
                             <p id="DecripcionEventos">{descripcion}</p>
-                            <div id="ContainerBotones">
+                            <div id="ContainerEventosBotones">
                                 <button className="BotonesEventos"> Saber mas</button>
                                 <button className="BotonesEventos"> Llamar</button>
                             </div>

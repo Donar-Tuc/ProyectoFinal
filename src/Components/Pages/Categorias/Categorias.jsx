@@ -6,41 +6,41 @@ import { Link } from "react-router-dom";
 
 const LinkDinero = [
   {
-    name: "Ver Perfiles",
+    name: "Donar",
     href: "/dinero"
   }
 ]
   const LinkComida = [
     {
-      name: "Ver Perfiles",
+      name: "Donar",
       href: "/comida"
     }
   ]
 
   const LinkHogar = [
     {
-      name: "Ver Perfiles",
+      name: "Donar",
       href: "/hogar"
     }
   ]
 
   const LinkEscolar = [
     {
-      name: "Ver Perfiles",
+      name: "Donar",
       href: "/escolar"
     }
   ]
 
   const LinkRopa = [
     {
-      name: "Ver Perfiles",
+      name: "Donar",
       href: "/ropa"
     }
   ]
 
   const LinkAsistencia = [
     {
-      name: "Ver Perfiles",
+      name: "Donar",
       href: "/asistencia"
     }
   ]

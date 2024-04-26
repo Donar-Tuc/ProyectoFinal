@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import "./Styles/Dinero.css";
 
-class DineroComponente extends Component {
+class TemplatePerfil extends Component {
     render() {
         const { opciones } = this.props; // Cambio aquí
         const { logo, titulo, horario, direccion, telefono, sitioWeb, email, mapa, descripcion } = opciones; // Cambio aquí
@@ -17,14 +17,24 @@ class DineroComponente extends Component {
                                 <h2 id="TituloDinero">{titulo}</h2>
                                 <p>{horario}</p>
                                 <a href={mapa}>{direccion}</a>
-                                <div className="Box2Btn">
-                                <button className="BtnDinero"><a href={`tel:${telefono}`}>Llamar</a></button>
-                                <button className="BtnDinero"><a href={sitioWeb}>Sitio Web</a></button>
-                                <button className="BtnDinero"><a href={mapa}>Mapa</a></button>
-                                <button className="BtnDinero"><a href={`mailto:${email}`}>Email</a></button>
-                            </div>
                             </div>
                            
+                            <div className="Box2Btn">
+
+                            <a href={`tel:${telefono}`}>
+                                <ion-icon name="call-outline" size='large' id='icon'></ion-icon>
+                            </a>
+                            <a href={sitioWeb}>
+                                <ion-icon name="globe-outline" size='large' id='icon'></ion-icon>
+                            </a>
+                            <a href={mapa}>
+                                <ion-icon name="map-outline" size='large' id='icon'></ion-icon>
+                            </a>
+                            <a href={`mailto:${email}`}>
+                                <ion-icon name="mail-outline" size='large' id='icon'></ion-icon>
+                            </a>
+
+                            </div>
                         </div>
 
                         <p>{descripcion}</p>
@@ -39,8 +49,8 @@ class DineroComponente extends Component {
     }
 }
 
-DineroComponente.propTypes = {
+TemplatePerfil.propTypes = {
     opciones: PropTypes.object.isRequired, // Cambio aquí
 };
 
-export default DineroComponente;
+export default TemplatePerfil;

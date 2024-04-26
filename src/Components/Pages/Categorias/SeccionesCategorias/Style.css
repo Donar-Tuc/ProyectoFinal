@@ -3,11 +3,13 @@
 
 .AsistenciaContainer {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /*Esto hace que sea en columnas*/
+    justify-content: center;
+    align-items: center;
     gap: 20px;
+    padding: 9rem 4rem; /*Padding lateral y de arriba del container*/
     background: rgb(2,20,25);
     background: linear-gradient(0deg, rgba(2,20,25,1) 12%, rgba(8,71,88,1) 75%);
-    padding: 9rem 2rem;
 }
 
 
@@ -18,33 +20,33 @@
 
 .CardAsistencia{
     display: flex;
+    flex-direction: row;
     justify-content: left;
     align-items: center;
-    height: 315px;
+    height: auto;
+    width: 90%;
     padding: 0;
     border-radius: 30px ;
     background-color: #ebefff46;
     background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
-    border:1px #e8e4e4 solid;
+    border:1px #e8e4e46e solid;
 }
 .ImagenContainer{
-    width: 30%;
-    align-items: center;
+    width: 40%;
+    align-items: center; 
     display: flex;
-    justify-content: center;
-    align-items: center;
-    /* border: 2px yellow solid; */
+    justify-content: center; 
+     align-items: center; 
 }
 
-#ImagenCard{
+#ImagenCategoriaCard{
     width: 100%;
     border-radius: 30px 0 0px 30px ;
-    height: 100%;
 }
 
 .textoAsistenciaContainer{
-    padding: 1rem 4rem;
-    width: 70%;
+    padding: 1rem 2rem;
+    width: 60%;
     color: white;
 }
 
@@ -59,7 +61,7 @@
 }
 
 #TituloAsistencia{
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-family: "Montserrat", sans-serif;
     color: white;
 }
@@ -77,11 +79,11 @@
 }
 #ContainerBotones{
     display: flex;
-    gap: 20px;
+    gap: 1px;
 }
 
-.BotonesAsistencia{
-    font-size: 1.2rem;
+#BotonLink{
+    font-size: 1rem;
     font-weight: 300;
     font-family: "Montserrat", sans-serif;
     border-radius: 300px;
@@ -92,7 +94,7 @@
     transition: .3s all ease-in-out;
 }
 
-.BotonesAsistencia:hover{
+#BotonLink:hover{
     transform: translateY(-2px);
     background-color: #3b80e8;
 
@@ -101,53 +103,99 @@
 
 @media (max-width: 900px) {
 
-    .ImagenCard{
-        align-items: center;
-    }
+
 
     .AsistenciaContainer {
         display: flex;
-        flex-direction: column;
+        flex-direction: column; /*Esto hace que sea en columnas*/
+        justify-content: center;
+        align-items: center;
         gap: 20px;
-        background: rgb(2,20,25);
-        background: linear-gradient(0deg, rgba(2,20,25,1) 12%, rgba(8,71,88,1) 75%);
-        padding: 8rem 1rem;
+        padding: 7rem 0; /*Padding lateral y de arriba del container*/
     }
+        
+    /* CardsTemplate.jsx */
     
     .CardAsistencia{
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: left;
         align-items: center;
-        padding: 2rem 2rem;
+        height: auto;
+        width: 90%;
+        border-radius: 30px ;
     }
-
+    .ImagenContainer{
+        width: 100%;
+        align-items: center; 
+        display: flex;
+        justify-content: center; 
+         align-items: center; 
+    }
+    
+    #ImagenCategoriaCard{
+        width: 100%;
+        border-radius: 30px 30px 0px 0px ;
+    }
+    
+    .textoAsistenciaContainer{
+        padding: 2rem 3rem;
+        width: 100%;
+        color: white;
+    }
+    
+    #TituloAsistenciaContainer{
+        text-align: center;
+        font-size: 3rem;
+        background: radial-gradient(25% 40% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);      
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+    }
     
     #TituloAsistencia{
-        font-size: 2rem;
+        font-size: 1.5rem;
         font-family: "Montserrat", sans-serif;
         color: white;
     }
     
     #HorarioAsistencia{
         font-size: 1rem;
+        font-family: "Montserrat", sans-serif;
+        color: white;
     }
     
     #DecripcionAsistencia{
         font-size: 1rem;
+        font-family: "Montserrat", sans-serif;
+        color: white;
     }
     #ContainerBotones{
         display: flex;
-        flex-direction: column;
-        gap:10px;
+        align-items: left;
+        gap: 0;
     }
     
-    .BotonesAsistencia{
+    #BotonLink{
         font-size: 1rem;
         font-weight: 300;
+        width: 100%;
+        font-family: "Montserrat", sans-serif;
         border-radius: 300px;
-        padding:  .5rem 2rem;
+        padding: .7rem ;
+        border: 1px rgba(195, 195, 195, 0.139) solid;
+        background-color: #0C6DFD;
+        color: white;
+        transition: none;
     }
+    
+    #BotonLink:hover{
+        transform: translateY(0);
+        background-color: #0C6DFD;
+    
+    }
+
 
 
 }

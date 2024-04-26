@@ -22,7 +22,11 @@ import Ropa from './Components/Pages/Categorias/SeccionesCategorias/Ropa/Ropa.js
 
 //perfiles
 
-import BancoAlimentos from './Components/Pages/Categorias/Perfiles/BancoAlimentosPerfil/BancoAlimentosPerfil.jsx';
+import BancoAlimentosPerfil from './Components/Pages/Categorias/Perfiles/BancoAlimentosPerfil/BancoAlimentosPerfil.jsx';
+import LeonPerfil from './Components/Pages/Categorias/Perfiles/BancoAlimentosPerfil/FundacionLeon.jsx';
+import FannPerfil from './Components/Pages/Categorias/Perfiles/BancoAlimentosPerfil/Fann.jsx';
+import ConinPerfil from './Components/Pages/Categorias/Perfiles/BancoAlimentosPerfil/Conin.jsx';
+
 
 
 function App() {
@@ -42,7 +46,12 @@ function App() {
           <Route path= '/escolar' element={<Escolar/>}></Route>
           <Route path= '/hogar' element={<Hogar/>}></Route>
           <Route path= '/ropa' element={<Ropa/>}></Route>
-          <Route path= '/banco-alimentos' element={<BancoAlimentos/>}></Route>
+          
+          <Route path= '/banco-alimentos' element={<BancoAlimentosPerfil/>}></Route>
+          <Route path= '/leon' element={<LeonPerfil/>}></Route>
+          <Route path= '/fann' element={<FannPerfil/>}></Route>
+          <Route path= '/conin' element={<ConinPerfil/>}></Route>
+
 
         </Routes>
         <Footer />

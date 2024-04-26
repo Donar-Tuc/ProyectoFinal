@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import "./Styles/Ropa.css";
+import { Link } from "react-router-dom"; // Importa Link
+import "../Style.css";
 
 class CardRopa extends Component {
     render() {
@@ -9,7 +10,7 @@ class CardRopa extends Component {
             <>
                     <div className="CardAsistencia">
                         <div className="ImagenContainer">
-                        <img src={imagen} alt="" id="ImagenCard"/>
+                        <img src={imagen} alt="" id="ImagenCategoriaCard"/>
                         </div>
                        
                         <div className="textoAsistenciaContainer">
@@ -17,7 +18,9 @@ class CardRopa extends Component {
                             <p id="HorarioAsistencia">{horario}</p>
                             <p id="DecripcionAsistencia">{descripcion}</p>
                             <div id="ContainerBotones">
-                                <button className="BotonesAsistencia"> Saber mas</button>
+                            <Link to={this.props.url}>
+                                    <button id="BotonLink">Ver perfil</button> 
+                                </Link>  
                             </div>
                         </div>
                     </div>
@@ -25,5 +28,4 @@ class CardRopa extends Component {
         );
     }
 }
-
 export default CardRopa;

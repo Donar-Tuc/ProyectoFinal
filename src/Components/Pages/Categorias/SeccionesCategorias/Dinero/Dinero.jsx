@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import CardDinero from "./CardsTemplate.jsx";
-import "./Styles/Dinerotemplate.css";
+import "../Style.css";
 
 
 
@@ -26,13 +26,14 @@ class Dinero extends Component {
                     titulo="Banco de Alimentos"
                     horario="9am - 4pm de lunes a viernes"
                     descripcion="El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada."
+                    url="/fann"
                 />
                 <CardDinero
                     imagen={BancoAlimentos}
                     titulo="Banco de Alimentos"
                     horario="9am - 4pm de lunes a viernes"
                     descripcion="El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada."
-                    url= '/dinero'
+                    url= '/banco-alimentos'
                 />
 
                 <CardDinero
@@ -40,6 +41,7 @@ class Dinero extends Component {
                     titulo="Banco de Alimentos"
                     horario="9am - 4pm de lunes a viernes"
                     descripcion="El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada."
+                    url="/conin"
                 />
 
                
@@ -50,6 +52,7 @@ class Dinero extends Component {
                     titulo="Banco de Alimentos"
                     horario="9am - 4pm de lunes a viernes"
                     descripcion="El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada."
+                    url="/leon"
                 />
         
             </div>

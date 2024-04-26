@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import "./Styles/Hogar.css";
+import { Link } from "react-router-dom"; // Importa Link
+import "../Style.css";
 
 class CardHogar extends Component {
     render() {
@@ -9,7 +10,7 @@ class CardHogar extends Component {
             <>
                     <div className="CardAsistencia">
                         <div className="ImagenContainer">
-                        <img src={imagen} alt="" id="ImagenCard"/>
+                        <img src={imagen} alt="" id="ImagenCategoriaCard"/>
                         </div>
                        
                         <div className="textoAsistenciaContainer">
@@ -17,7 +18,9 @@ class CardHogar extends Component {
                             <p id="HorarioAsistencia">{horario}</p>
                             <p id="DecripcionAsistencia">{descripcion}</p>
                             <div id="ContainerBotones">
-                                <button className="BotonesAsistencia"> Saber mas</button>
+                                <Link to={this.props.url}>
+                                    <button id="BotonLink">Ver perfil</button> 
+                                </Link> 
                             </div>
                         </div>
                     </div>
