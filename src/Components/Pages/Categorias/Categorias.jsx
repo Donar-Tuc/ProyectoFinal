@@ -45,6 +45,13 @@ const LinkDinero = [
     }
   ]
 
+  const LinkVerTodo = [
+    {
+      name: "Ver todas las categorias",
+      href: "/todo"
+    }
+  ]
+
 
 
 
@@ -120,6 +127,14 @@ class Categorias extends Component {
                     </div>
 
             </div>
+
+            <div id="EnlaceVerMas" data-aos="fade-up">
+            {LinkVerTodo.map((x, index) => (
+              <li key={index}>
+                <Link className="btn btn-primary" id="BotonVerMas" to={x.href}>{x.name}</Link>
+              </li>
+            ))}
+          </div>
 
             
                 

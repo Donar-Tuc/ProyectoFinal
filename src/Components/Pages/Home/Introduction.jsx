@@ -13,7 +13,7 @@ const LinkIntroduction = [
 const LinkAprenderMas = [
   {
     name: "Aprender Mas",
-    href: "/categorias",
+    href: "/nosotros",
   }
 ]
 

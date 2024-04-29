@@ -1,0 +1,32 @@
+#NosotrosContainer{
+    display: flex;
+    justify-content: center;
+    padding: 8em 0;
+    background: rgb(2,19,25);
+    background: linear-gradient(180deg, rgba(2,19,25,1) 28%, rgba(16,65,83,1) 84%);
+    color: white;
+    font-family: "Montserrat", sans-serif;
+}
+
+#TextosNosotros{
+    width: 50%;
+    padding: 0 1rem;
+}
+
+
+
+@media (max-width: 900px) {
+    #NosotrosContainer{
+        padding: 8em 0;
+        background: rgb(2,19,25);
+        background: linear-gradient(180deg, rgba(2,19,25,1) 28%, rgba(16,65,83,1) 84%);
+        color: white;
+        font-family: "Montserrat", sans-serif;
+    }
+    
+    #TextosNosotros{
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+}

@@ -19,6 +19,8 @@ import Dinero from './Components/Pages/Categorias/SeccionesCategorias/Dinero/Din
 import Escolar from './Components/Pages/Categorias/SeccionesCategorias/Escolar/Escolar.jsx';
 import Hogar from './Components/Pages/Categorias/SeccionesCategorias/Hogar/Hogar.jsx';
 import Ropa from './Components/Pages/Categorias/SeccionesCategorias/Ropa/Ropa.jsx';
+import Nosotros from './Components/Pages/QuienesSomos/Nosotros.jsx';
+import VerTodo from './Components/Pages/Categorias/SeccionesCategorias/VerTodo/VerTodo.jsx';
 
 //perfiles
 
@@ -46,6 +48,10 @@ function App() {
           <Route path= '/escolar' element={<Escolar/>}></Route>
           <Route path= '/hogar' element={<Hogar/>}></Route>
           <Route path= '/ropa' element={<Ropa/>}></Route>
+          <Route path= '/nosotros' element={<Nosotros/>}></Route>
+          <Route path= '/todo' element={<VerTodo/>}></Route>
+
+
           
           <Route path= '/banco-alimentos' element={<BancoAlimentosPerfil/>}></Route>
           <Route path= '/leon' element={<LeonPerfil/>}></Route>
