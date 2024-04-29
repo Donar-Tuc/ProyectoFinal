@@ -5,7 +5,7 @@ import "./Styles/Dinero.css";
 class TemplatePerfil extends Component {
     render() {
         const { opciones } = this.props; // Cambio aquí
-        const { logo, titulo, horario, direccion, telefono, sitioWeb, email, mapa, descripcion } = opciones; // Cambio aquí
+        const { logo, titulo, horario, direccion, telefono, sitioWeb, email, mapaBoton, mapa, descripcion } = opciones; // Cambio aquí
         return (
             <section id="ContainerDineroPadre">
                 <div className="DineroHijo">
@@ -27,7 +27,7 @@ class TemplatePerfil extends Component {
                             <a href={sitioWeb}>
                                 <ion-icon name="globe-outline" size='large' id='icon'></ion-icon>
                             </a>
-                            <a href={mapa}>
+                            <a href={mapaBoton}>
                                 <ion-icon name="map-outline" size='large' id='icon'></ion-icon>
                             </a>
                             <a href={`mailto:${email}`}>
