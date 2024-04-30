@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./css/eventos.css";
 
 class Card extends Component {
     render() {
-        const { imagen, titulo, horario, descripcion } = this.props;
+        const { imagen, titulo, horario, descripcion,url } = this.props;
         
         return (
             <>
@@ -16,10 +17,9 @@ class Card extends Component {
                             <h3 id="TituloEventos">{titulo}</h3>
                             <p id="HorarioEventos">{horario}</p>
                             <p id="DecripcionEventos">{descripcion}</p>
-                            <div id="ContainerEventosBotones">
-                                <button className="BotonesEventos"> Saber mas</button>
-                                <button className="BotonesEventos"> Llamar</button>
-                            </div>
+                            <Link to={url}>
+                                    <button id="BotonLink">Saber Mas</button> 
+                                </Link>
                         </div>
                     </div>
             </>

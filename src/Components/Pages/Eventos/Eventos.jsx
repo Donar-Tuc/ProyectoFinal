@@ -21,6 +21,7 @@ class Eventos extends Component {
                     titulo="Banco de Alimentos"
                     horario="9am - 4pm de lunes a viernes"
                     descripcion="El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada."
+                    url="/banco-alimentos"
                 />
 
                 <Card
@@ -28,6 +29,7 @@ class Eventos extends Component {
                     titulo="Conin"
                     horario="9am - 4pm de lunes a viernes"
                     descripcion="El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada."
+                    url="/conin"
                 />
 
                 <Card
@@ -35,6 +37,7 @@ class Eventos extends Component {
                     titulo="Fann"
                     horario="9am - 4pm de lunes a viernes"
                     descripcion="El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada."
+                    url="/fann"
                 />
 
 
@@ -43,6 +46,7 @@ class Eventos extends Component {
                     titulo="Fundacion Leon"
                     horario="9am - 4pm de lunes a viernes"
                     descripcion="El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada."
+                    url="/leon"
                 />
         
             </div>
