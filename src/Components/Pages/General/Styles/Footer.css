@@ -1,0 +1,89 @@
+#FooterSection{
+    display: flex;
+    background-color: #1b2430;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 2rem 0;
+}
+
+.Menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.Menu ul{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    list-style: none;
+}
+
+.Menu ul li a{
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    font-size: 1.4rem;
+    transition: .3s ease-in-out;
+}
+
+.Menu ul li a:hover{
+    text-decoration: none;
+    color: #17cf97;
+    font-size: 1.4rem;
+}
+
+#Copyright{
+    font-size: 1rem;
+    text-align: center;
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+    color: rgb(179, 177, 177);
+}
+
+
+@media (max-width: 900px) {
+    #FooterSection{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 1rem 0;
+        text-align: center;
+    }
+    
+    .Menu{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-direction: row;
+    }
+    
+    .Menu ul{
+        list-style: none;
+    }
+    
+    .Menu ul li a{
+        text-decoration: none;
+        color: white;
+        font-size: 1rem;
+        transition: none;
+    }
+    
+    .Menu ul li a:hover{
+        text-decoration: none;
+        color: white;
+        font-size: 1rem;
+    }
+    
+    #Copyright{
+        width: 100%;
+        justify-content: center;
+        font-size: .7rem;
+        color: rgb(179, 177, 177);
+    }
+}
