@@ -7,7 +7,9 @@ import Inicio from './Components/Pages/Home/Home.jsx';
 import Eventos from './Components/Pages/Eventos/Eventos.jsx';
 import Footer from './Components/Pages/General/Footer.jsx';
 import Soporte from './Components/Pages/Soporte/Soporte.jsx';
-import Login from './Components/Pages/Login/Login.jsx'; // Importa el componente de Login
+import Signup from './Components/Pages/Login/Signup.jsx';
+import Login from './Components/Pages/Login/Login.jsx';
+import OlvidasteContraseña from './Components/Pages/Login/OlvidasteContraseña.jsx'
 
 // Categocio Container
 import Categorias from './Components/Pages/Categorias/Categorias.jsx';
@@ -21,6 +23,7 @@ import Hogar from './Components/Pages/Categorias/SeccionesCategorias/Hogar/Hogar
 import Ropa from './Components/Pages/Categorias/SeccionesCategorias/Ropa/Ropa.jsx';
 import Nosotros from './Components/Pages/QuienesSomos/Nosotros.jsx';
 import VerTodo from './Components/Pages/Categorias/SeccionesCategorias/VerTodo/VerTodo.jsx';
+
 
 //perfiles
 
@@ -50,6 +53,12 @@ function App() {
           <Route path= '/ropa' element={<Ropa/>}></Route>
           <Route path= '/nosotros' element={<Nosotros/>}></Route>
           <Route path= '/todo' element={<VerTodo/>}></Route>
+
+
+          <Route path= '/registrarse' element={<Signup/>}></Route>
+          <Route path= '/recuperar-contrasena' element={<OlvidasteContraseña/>}></Route>
+
+
 
 
           

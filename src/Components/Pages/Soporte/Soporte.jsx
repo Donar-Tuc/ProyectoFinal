@@ -5,7 +5,7 @@ class Soporte extends Component {
   render() {
     return (
       <div className="ContainerForm">
-        <form className="form" action="https://api.web3forms.com/submit" method="POST">
+        <form className="formSoporte" action="https://api.web3forms.com/submit" method="POST">
 
           <input type="hidden" name="access_key" value="50e21fd4-36fa-4bfd-85c8-cb279489ba9b" />
 

@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Estilo de container grande */
+.LoginContainer {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    padding-top: 8rem;
+    background: linear-gradient(180deg, rgba(32, 117, 147, 1) 13%, rgba(16, 65, 83, 1) 53%, rgba(2, 19, 25, 1) 98%);
+}
+
+/* Container de form */
+
+#FormularioLoginContainer {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    height: 100vh;
+    /* border: 2px yellow solid; */
+}
+
+/* Bloques 1 y 2 */
+
+.bloque1 {
+    width: 50%;
+    border-radius: 5%;
+    height: 675px;
+    /* border: 2px yellow solid; */
+}
+
+.bloque2 {
+    width: 50%;
+    height: 10em;
+    border-radius: 5%;
+    background-color: white;
+    display: flex;
+    direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 100%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 0.4em;
+    border-radius: 30px 0 0 30px;
+}
+
+.form:hover {
+    transform: none;
+    border: none;
+}
+
+
+
+#heading1 {
+    text-align: center;
+    margin: 2em;
+    color: black;
+    font-size: 1.5em;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+}
+
+/* .field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    border-radius: 25px;
+    padding: 0.6em;
+    border: none;
+    outline: none;
+    color: black;
+    background-color: rgb(212, 211, 211);
+} */
+
+.input-icon {
+    height: 1.3em;
+    width: 1.3em;
+    fill: black;
+}
+
+.input-field {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    /* color: #d3d3d3; */
+    color: black;
+}
+
+.form .botonesLogincontainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 2.5em;
+}
+
+.form .botonesLogincontainer:hover{
+    border: none;
+}
+
+
+.button1 {
+    padding: 0.5em;
+    padding-left: 1.1em;
+    padding-right: 1.1em;
+    border-radius: 5px;
+    margin-right: 0.5em;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: #0C6DFD;
+    color: white;
+}
+
+.button1:hover {
+    background-color: #3b80e8;
+    color: white;
+}
+
+.button2 {
+    padding: 0.5em;
+    padding-left: 2.3em;
+    padding-right: 2.3em;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: #0C6DFD;
+    color: white;
+}
+
+.button2:hover {
+    background-color: #3b80e8;
+    color: white;
+}
+
+.button3 {
+    margin-bottom: 3em;
+    padding: 0.5em;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: grey;
+    color: white;
+}
+
+.button3:hover {
+    background-color: orange;
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons:hover{
+    border: none;
+}

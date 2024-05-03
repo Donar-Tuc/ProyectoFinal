@@ -11,7 +11,7 @@
 }
 
 
-.form {
+.formSoporte {
     display: flex;
     width: 70%;
     flex-direction: column;
@@ -26,12 +26,7 @@
     transition: .6s ease-in-out all;
   }
 
-  form:hover{
-        border-color: #fffffff1;
 
-        box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
-  }
-  
   
   .title {
     font-size: 38px;
@@ -85,11 +80,11 @@
   }
   
   
-  .form label {
+  .formSoporte label {
     position: relative;
   }
   
-  .form label .input {
+  .formSoporte label .input {
     background-color: #bfbfbf98;
     color: white;
     width: 100%;
@@ -99,7 +94,7 @@
     border-radius: 10px;
   }
   
-  .form label .input + span {
+  .formSoporte label .input + span {
     color: rgb(255, 254, 254);
     position: absolute;
     left: 10px;
@@ -109,17 +104,18 @@
     transition: 0.3s ease;
   }
   
-  .form label .input:placeholder-shown + span {
+  .formSoporte label .input:placeholder-shown + span {
     top: 12.5px;
     font-size: 1rem;
   }
   
-  .form label .input:focus + span,
-  .form label .input:valid + span {
-    color: #6d87d6;
+  .formSoporte label .input:focus + span,
+  .formSoporte label .input:valid + span {
+    color: rgb(226, 226, 226);
     top: 0px;
     font-size: .9rem;
     font-weight: 600;
+    padding-top: .2rem;
   }
   
   .input {
@@ -210,7 +206,7 @@
     }
 
     
-    .form {
+    .formSoporte {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -259,18 +255,18 @@
         width: 100%;
     }
       
-      .form label {
+      .formSoporte label {
         position: relative;
       }
       
-      .form label .input {
+      .formSoporte label .input {
         width: 100%;
         padding: 20px 05px 05px 10px;
         outline: 0;
         border-radius: 10px;
       }
       
-      .form label .input + span {
+      .formSoporte label .input + span {
         position: absolute;
         left: 15px;
         top: 0px;
@@ -279,17 +275,8 @@
         transition: 0.3s ease;
       }
       
-      .form label .input:placeholder-shown + span {
-        top: 12.5px;
-        font-size: 0.8em;
-      }
-      
-      .form label .input:focus + span,
-      .form label .input:valid + span {
-        top: 0px;
-        font-size: 0.5em;
-        font-weight: 600;
-      }
+  
+    
       
       .input {
         font-size: medium;
