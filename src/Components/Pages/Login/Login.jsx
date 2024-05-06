@@ -37,7 +37,7 @@ class Login extends Component {
                     <button class="button1">Acceder</button>
 
                     <Link to="/registrarse">
-                      <button class="button2">Registrate</button>
+                      <button class="button2">Registrarse</button>
                     </Link>
                   </div>
 
