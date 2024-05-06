@@ -13,11 +13,11 @@
 
 .formSoporte {
     display: flex;
-    width: 70%;
+    width: 50%;
     flex-direction: column;
     gap: 10px;
     /* max-width: 450px; */
-    padding: 3rem;
+    padding: 3rem 3rem;
     border-radius: 20px;
     position: relative;
     background-color: #e8e6e649;
@@ -215,7 +215,7 @@
         border-radius: 20px;
         position: relative;
         transition: .6s ease-in-out all;
-        padding: 2rem 3rem 2rem 2rem;
+        padding: 3rem 2rem 3rem 2rem;
         margin:0;
       }
           

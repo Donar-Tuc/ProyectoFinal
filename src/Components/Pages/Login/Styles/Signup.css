@@ -153,9 +153,10 @@ img {
 
 .bloque3 {
     width: 100%;
+    padding: 3rem 0; /* podding top y bottom*/
     height: 100%;
     border-radius: 0;
-    margin-bottom: 4rem;
+    /* margin-bottom: 4rem; */
 
 
 

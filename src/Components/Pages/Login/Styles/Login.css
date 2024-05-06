@@ -5,8 +5,9 @@
     display: flex;
     justify-content: center;
     /* height: 100vh; */
-    padding-top: 8rem;
+    padding: 10rem  0rem 8rem 0rem;
     background: linear-gradient(180deg, rgba(32, 117, 147, 1) 13%, rgba(16, 65, 83, 1) 53%, rgba(2, 19, 25, 1) 98%);
+    height: auto;
 }
 
 /* Container de form */
@@ -15,7 +16,7 @@
     display: flex;
     flex-direction: row;
     width: 60%;
-    height: 100vh;
+    height: auto;
     /* border: 2px yellow solid; */
 
 }
@@ -179,7 +180,9 @@ img {
         justify-content: center;
         padding-top: 4.4rem;
         width: 100%;
-        overflow: hidden;
+        padding: rem 0;
+        padding: 4.3rem 0rem 0rem 0rem;
+
     }
     
     /* Container de form */
@@ -197,6 +200,8 @@ img {
     .bloque1 {
         display: none;
     }
+
+    
     
     .bloque2 {
         width: 100%;
@@ -213,7 +218,7 @@ img {
         width: 100%;
         flex-direction: column;
         gap: 20px;
-        padding: 2rem;
+        padding: 5rem 3rem;
         /* border: 2px yellow solid; */
     }
     

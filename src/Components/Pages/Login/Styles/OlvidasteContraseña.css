@@ -44,6 +44,7 @@
     direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0 4rem ;
 }
 
 .bloque4:hover {
@@ -55,7 +56,7 @@
 @media (max-width: 900px) {
 
     .formRecuperar{
-        padding: 2rem;
+        padding: 1rem;
     }
     #heading3 {
         text-align: center;
@@ -92,7 +93,8 @@
     
     .bloque4 {
         width: 100%;
-        height: 675px;
+        height: 600px;
+        padding: 0 2rem;
         border-radius: 0 ;
         background-color: white;
         display: flex;

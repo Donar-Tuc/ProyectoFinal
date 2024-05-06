@@ -23,16 +23,18 @@
     flex-direction: row;
     justify-content: left;
     align-items: center;
-    height: auto;
+    height: 400px;
     width: 90%;
     padding: 0;
     border-radius: 30px ;
     background-color: #ebefff46;
     background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
-    border:1px #e8e4e46e solid;
+    border:1px #f1f1f1bd solid;
+    overflow:hidden;
+
 }
 .ImagenContainer{
-    width: 40%;
+    /* width: 30%; */
     align-items: center; 
     display: flex;
     justify-content: center; 
@@ -40,6 +42,7 @@
 }
 
 #ImagenCategoriaCard{
+    height: 400px;
     width: 100%;
     border-radius: 30px 0 0px 30px ;
 }
@@ -134,12 +137,12 @@
     }
     
     #ImagenCategoriaCard{
-        width: 100%;
+        height: 200px;
         border-radius: 30px 30px 0px 0px ;
     }
     
     .textoAsistenciaContainer{
-        padding: 2rem 3rem;
+        padding: 2rem 2rem;
         width: 100%;
         color: white;
     }
@@ -158,12 +161,13 @@
         font-size: 1.5rem;
         font-family: "Montserrat", sans-serif;
         color: white;
+        font-weight: 700;
     }
     
     #HorarioAsistencia{
         font-size: 1rem;
         font-family: "Montserrat", sans-serif;
-        color: white;
+        color: rgb(201, 198, 198);
     }
     
     #DecripcionAsistencia{
