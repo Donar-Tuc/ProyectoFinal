@@ -16,6 +16,7 @@ class Comunidad extends Component {
             <div id="DescripcionContainer" data-aos="fade-up">
                 <p className="DescripcionComunidad" >Ingresá a nuestra comunidad de WhatsApp para estar al tanto de todos los eventos de caridad cerca tuyo.</p>
                 <button type="button" className="btn btn-success btn-lg" id="btnComunidad" >
+                    <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
                     Comunidad de Whatsapp
                   </button>
             </div>

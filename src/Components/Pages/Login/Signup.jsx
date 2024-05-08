@@ -26,37 +26,27 @@ class Signup extends Component {
                                 </div>
                                 <div class="field">
 
-                                    <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-
-                                    </svg>
+                                    <ion-icon classname='iconoInputForm' name="business-outline"></ion-icon>
                                     <input className="input-field" type="text" name="Institucion" placeholder="Nombre de institucion" required="required" id="firstname" />
 
                                 </div>
                                 <div class="field">
-                                    <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-
-                                    </svg>
+                                    <ion-icon classname='iconoInputForm' name="id-card-outline"></ion-icon>
                                     <input className="input-field" type="text" name="Cuit" placeholder="Cuit" required="required" id="firstname" />
 
                                 </div>
                                 <div class="field">
-                                    <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-
-                                    </svg>
+                                    <ion-icon classname='iconoInputForm' name="navigate-circle-outline"></ion-icon>
                                     <input className="input-field" type="text" name="Direccion" placeholder="Direccion fisica" required="required" id="firstname" />
 
                                 </div>
                                 <div class="field">
-                                    <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-
-                                    </svg>
+                                    <ion-icon classname='iconoInputForm' name="call-outline"></ion-icon>
                                     <input className="input-field" type="text" name="Contacto" placeholder="Contacto" required="required" id="firstname" />
 
                                 </div>
                                 <div class="field" id="descripcion">
-                                    <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-
-                                    </svg>
+                                    <ion-icon classname='iconoInputForm' name="help-outline"></ion-icon>
                                     <input className="input-field" type="text" name="Descripcion" placeholder="Porque necesitan la visibilidad?" required="required" id="firstname" />
 
                                 </div>

@@ -10,6 +10,13 @@
     height: auto;
 }
 
+.field ion-icon {
+    font-size: 24px;
+    color: rgb(99, 98, 98);
+    margin-right: .5rem;
+    margin-left: .2rem;
+}
+
 /* Container de form */
 
 #FormularioLoginContainer {
@@ -89,13 +96,6 @@ img {
     outline: none;
     color: black;
     background-color: rgb(238, 238, 238);
-}
-
-.input-icon {
-    height: 1.3em;
-    margin-right: .5rem;
-    width: 1.3em;
-    fill: black;
 }
 
 .input-field {

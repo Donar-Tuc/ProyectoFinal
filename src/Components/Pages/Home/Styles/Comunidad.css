@@ -41,9 +41,14 @@ background: linear-gradient(180deg, rgba(16,65,83,1) 65%, rgb(16,70,88) 100%);
 }
 
 #btnComunidad{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 20px;
     font-size: 1.2rem;
     font-family: "Montserrat", sans-serif;
-    padding: .5rem 3em;
+    padding: .5rem 1rem;
     border-radius: 35px;
     background-color: #0dda7e5a;
     background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);

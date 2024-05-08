@@ -24,8 +24,7 @@ class OlvidasteContraseña extends Component {
                                     <p id="aclaracion2">Ingresa tu correo y te mandaremos un mail con el codigo de recuperación</p>
                                 </div>
                                 <div class="field">
-                                    <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                    </svg>
+                                    <ion-icon name="at-outline" classname='iconoInputForm'></ion-icon>
                                     <input autocomplete="off" placeholder="Ingresa tu mail" class="input-field" type="text" />
                                 </div>
 
