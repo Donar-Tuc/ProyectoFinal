@@ -1,5 +1,9 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './ScrollToTop.js'; // Importa el componente ScrollToTop
+import React from 'react';
+
+
 
 //Imports eventos, soporte, inicio y login
 import Navbar from './Components/Pages/General/Header.jsx';
@@ -37,35 +41,36 @@ import ConinPerfil from './Components/Pages/Categorias/Perfiles/BancoAlimentosPe
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div>
         <Navbar />
         <Routes>
-          <Route path='/' element={<Inicio/>}></Route>
-          <Route path='/eventos' element={<Eventos/>}></Route>
-          <Route path='/soporte' element={<Soporte/>}></Route>
-          <Route path='/login' element={<Login/>}></Route>
-          <Route path= '/categorias' element={<Categorias/>}></Route>
-          <Route path= '/asistencia' element={<Asistencia/>}></Route>
-          <Route path= '/comida' element={<Comida/>}></Route>
-          <Route path= '/dinero' element={<Dinero/>}></Route>
-          <Route path= '/escolar' element={<Escolar/>}></Route>
-          <Route path= '/hogar' element={<Hogar/>}></Route>
-          <Route path= '/ropa' element={<Ropa/>}></Route>
-          <Route path= '/nosotros' element={<Nosotros/>}></Route>
-          <Route path= '/todo' element={<VerTodo/>}></Route>
+          <Route path='/' element={<Inicio />}></Route>
+          <Route path='/eventos' element={<Eventos />}></Route>
+          <Route path='/soporte' element={<Soporte />}></Route>
+          <Route path='/login' element={<Login />}></Route>
+          <Route path='/categorias' element={<Categorias />}></Route>
+          <Route path='/asistencia' element={<Asistencia />}></Route>
+          <Route path='/comida' element={<Comida />}></Route>
+          <Route path='/dinero' element={<Dinero />}></Route>
+          <Route path='/escolar' element={<Escolar />}></Route>
+          <Route path='/hogar' element={<Hogar />}></Route>
+          <Route path='/ropa' element={<Ropa />}></Route>
+          <Route path='/nosotros' element={<Nosotros />}></Route>
+          <Route path='/todo' element={<VerTodo />}></Route>
 
 
-          <Route path= '/registrarse' element={<Signup/>}></Route>
-          <Route path= '/recuperar-contrasena' element={<OlvidasteContraseña/>}></Route>
+          <Route path='/registrarse' element={<Signup />}></Route>
+          <Route path='/recuperar-contrasena' element={<OlvidasteContraseña />}></Route>
 
 
 
 
-          
-          <Route path= '/banco-alimentos' element={<BancoAlimentosPerfil/>}></Route>
-          <Route path= '/leon' element={<LeonPerfil/>}></Route>
-          <Route path= '/fann' element={<FannPerfil/>}></Route>
-          <Route path= '/conin' element={<ConinPerfil/>}></Route>
+
+          <Route path='/banco-alimentos' element={<BancoAlimentosPerfil />}></Route>
+          <Route path='/leon' element={<LeonPerfil />}></Route>
+          <Route path='/fann' element={<FannPerfil />}></Route>
+          <Route path='/conin' element={<ConinPerfil />}></Route>
 
 
         </Routes>

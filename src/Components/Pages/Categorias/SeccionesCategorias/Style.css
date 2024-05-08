@@ -3,22 +3,41 @@
 
 .AsistenciaContainer {
     display: flex;
-    flex-direction: column; /*Esto hace que sea en columnas*/
+    flex-direction: column;
+    /*Esto hace que sea en columnas*/
     justify-content: center;
     align-items: center;
     gap: 20px;
-    padding: 9rem 4rem; /*Padding lateral y de arriba del container*/
-    background: rgb(2,20,25);
-    background: linear-gradient(0deg, rgba(2,20,25,1) 12%, rgba(8,71,88,1) 75%);
+    padding: 9rem 4rem;
+    /*Padding lateral y de arriba del container*/
+    background: rgb(2, 20, 25);
+    background: linear-gradient(0deg, rgba(2, 20, 25, 1) 12%, rgba(8, 71, 88, 1) 75%);
 }
 
 
 
 
 /* CardsTemplate.jsx */
+#etiquetasContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
 
+#EtiquetaCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: .5rem .8rem;
+    background-color: rgba(233, 233, 233, 0.322);
+    color: white;
+    border: 1px white solid;
+    font-weight: 600;
+    /* width: 20%; */
+    border-radius: 10px;
+}
 
-.CardAsistencia{
+.CardAsistencia {
     display: flex;
     flex-direction: row;
     justify-content: left;
@@ -26,95 +45,97 @@
     height: 400px;
     width: 90%;
     padding: 0;
-    border-radius: 30px ;
+    border-radius: 30px;
     background-color: #ebefff46;
     background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
-    border:1px #f1f1f1bd solid;
-    overflow:hidden;
+    border: 1px #f1f1f1bd solid;
+    overflow: hidden;
 
 }
-.ImagenContainer{
+
+.ImagenContainer {
     /* width: 30%; */
-    align-items: center; 
+    align-items: center;
     display: flex;
-    justify-content: center; 
-     align-items: center; 
+    justify-content: center;
+    align-items: center;
 }
 
-#ImagenCategoriaCard{
+#ImagenCategoriaCard {
     height: 400px;
     width: 100%;
-    border-radius: 30px 0 0px 30px ;
+    border-radius: 30px 0 0px 30px;
 }
 
-.textoAsistenciaContainer{
+.textoAsistenciaContainer {
     padding: 1rem 2rem;
     width: 60%;
     color: white;
 }
 
-#TituloAsistenciaContainer{
+#TituloAsistenciaContainer {
     text-align: center;
     font-size: 4rem;
-    background: radial-gradient(25% 40% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);      
+    background: radial-gradient(25% 40% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
 }
 
-#TituloAsistencia{
+#TituloAsistencia {
     font-size: 1.5rem;
     font-family: "Montserrat", sans-serif;
     color: white;
 }
 
-#HorarioAsistencia{
+#HorarioAsistencia {
     font-size: 1rem;
     font-family: "Montserrat", sans-serif;
     color: white;
 }
 
-#DecripcionAsistencia{
+#DecripcionAsistencia {
     font-size: 1rem;
     font-family: "Montserrat", sans-serif;
     color: white;
 }
-#ContainerBotones{
+
+#ContainerBotones {
     display: flex;
     gap: 1px;
 }
 
-#BotonLink{
+#BotonLink {
     font-size: 1rem;
     font-weight: 300;
     font-family: "Montserrat", sans-serif;
     border-radius: 300px;
-    padding:  .5rem 2rem;
+    padding: .5rem 2rem;
     border: 1px rgba(132, 132, 132, 0.139) solid;
     background-color: #0C6DFD;
     color: white;
     transition: .3s all ease-in-out;
 }
 
-#BotonLink:hover{
+#BotonLink:hover {
     transform: translateY(-2px);
     background-color: #3b80e8;
 
 }
 
 /* container exterior botones */
-#PaginationButtons{
+#PaginationButtons {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    
+
 }
 
 /* Estilos de boton */
-.BtnNextAndPrevious{
+.BtnNextAndPrevious {
     display: flex;
     padding: .5rem 1.5rem;
     border-radius: 40px;
@@ -123,7 +144,7 @@
     transition: .2s all ease-in;
 }
 
-.OnBtnContainerDespues{
+.OnBtnContainerDespues {
     display: flex;
     gap: 20px;
     flex-direction: row;
@@ -133,6 +154,7 @@
     font-family: "Montserrat", sans-serif;
     color: white;
 }
+
 .OnBtnContainerAntes {
     display: flex;
     gap: 20px;
@@ -146,7 +168,7 @@
 
 ion-icon {
     font-size: 34px;
-    color: white ;
+    color: white;
     transition: .2s all ease-in;
 }
 
@@ -158,7 +180,7 @@ ion-icon {
     transform: translateX(-3px);
 }
 
-.BtnNextAndPrevious:hover  {
+.BtnNextAndPrevious:hover {
     background-color: #378add;
 }
 
@@ -181,149 +203,155 @@ ion-icon {
 
     .AsistenciaContainer {
         display: flex;
-        flex-direction: column; /*Esto hace que sea en columnas*/
+        flex-direction: column;
+        /*Esto hace que sea en columnas*/
         justify-content: center;
         align-items: center;
         gap: 20px;
-        padding: 7rem 0; /*Padding lateral y de arriba del container*/
+        padding: 7rem 0;
+        /*Padding lateral y de arriba del container*/
     }
-        
+
     /* CardsTemplate.jsx */
-    
-    .CardAsistencia{
+
+    .CardAsistencia {
         display: flex;
         flex-direction: column;
         justify-content: left;
         align-items: center;
         height: auto;
         width: 90%;
-        border-radius: 30px ;
+        border-radius: 30px;
     }
-    .ImagenContainer{
+
+    .ImagenContainer {
         width: 100%;
-        align-items: center; 
+        align-items: center;
         display: flex;
-        justify-content: center; 
-         align-items: center; 
+        justify-content: center;
+        align-items: center;
     }
-    
-    #ImagenCategoriaCard{
+
+    #ImagenCategoriaCard {
         height: 200px;
-        border-radius: 30px 30px 0px 0px ;
+        border-radius: 30px 30px 0px 0px;
     }
-    
-    .textoAsistenciaContainer{
+
+    .textoAsistenciaContainer {
         padding: 2rem 2rem;
         width: 100%;
         color: white;
     }
-    
-    #TituloAsistenciaContainer{
+
+    #TituloAsistenciaContainer {
         text-align: center;
         font-size: 3rem;
-        background: radial-gradient(25% 40% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);      
+        background: radial-gradient(25% 40% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         font-family: "Montserrat", sans-serif;
         font-weight: 400;
     }
-    
-    #TituloAsistencia{
+
+    #TituloAsistencia {
         font-size: 1.5rem;
         font-family: "Montserrat", sans-serif;
         color: white;
         font-weight: 700;
     }
-    
-    #HorarioAsistencia{
+
+    #HorarioAsistencia {
         font-size: 1rem;
         font-family: "Montserrat", sans-serif;
         color: rgb(201, 198, 198);
     }
-    
-    #DecripcionAsistencia{
+
+    #DecripcionAsistencia {
         font-size: 1rem;
         font-family: "Montserrat", sans-serif;
         color: white;
     }
-    #ContainerBotones{
+
+    #ContainerBotones {
         display: flex;
         align-items: left;
         gap: 0;
     }
-    
-    #BotonLink{
+
+    #BotonLink {
         font-size: 1rem;
         font-weight: 300;
         width: 100%;
         font-family: "Montserrat", sans-serif;
         border-radius: 300px;
-        padding: .7rem ;
+        padding: .7rem;
         border: 1px rgba(195, 195, 195, 0.139) solid;
         background-color: #0C6DFD;
         color: white;
         transition: none;
     }
-    
-    #BotonLink:hover{
+
+    #BotonLink:hover {
         transform: translateY(0);
         background-color: #0C6DFD;
-    
+
     }
 
     /* container exterior botones */
-#PaginationButtons{
-    padding: 2rem 0rem 0rem 0rem;
-    gap: 10px;
-    
-}
+    #PaginationButtons {
+        padding: 2rem 0rem 0rem 0rem;
+        gap: 10px;
 
-/* Estilos de boton */
-.BtnNextAndPrevious{
-    display: flex;
-    padding: .5rem 1rem;
-    border-radius: 40px;
-    border: none;
-    background-color: #2f74db;
-    transition: .2s all ease-in;
-}
+    }
 
-.OnBtnContainerDespues{
-    display: flex;
-    gap: 10px;
-    font-family: "Montserrat", sans-serif;
-    color: white;
-    font-size: .9rem;
-    /* padding: 0 .5rem; */
-}
-.OnBtnContainerAntes {
-    display: flex;
-    gap: 10px;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-weight: 600;
-    font-family: "Montserrat", sans-serif;
-    color: white;
-    font-size: .9rem;
-    /* padding: 0 .5rem; */
-}
+    /* Estilos de boton */
+    .BtnNextAndPrevious {
+        display: flex;
+        padding: .5rem 1rem;
+        border-radius: 40px;
+        border: none;
+        background-color: #2f74db;
+        transition: .2s all ease-in;
+    }
 
-ion-icon {
-    font-size: 1.8rem;
-    transition: none;
-}
+    .OnBtnContainerDespues {
+        display: flex;
+        gap: 10px;
+        font-family: "Montserrat", sans-serif;
+        color: white;
+        font-size: .9rem;
+        /* padding: 0 .5rem; */
+    }
 
-.OnBtnContainerDespues:hover ion-icon {
-    transform: none;
-}
+    .OnBtnContainerAntes {
+        display: flex;
+        gap: 10px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+        font-family: "Montserrat", sans-serif;
+        color: white;
+        font-size: .9rem;
+        /* padding: 0 .5rem; */
+    }
 
-.OnBtnContainerAntes:hover ion-icon {
-    transform: none;}
+    ion-icon {
+        font-size: 1.8rem;
+        transition: none;
+    }
 
-.BtnNextAndPrevious:hover  {
-    background-color: #2f74db;
-}
+    .OnBtnContainerDespues:hover ion-icon {
+        transform: none;
+    }
+
+    .OnBtnContainerAntes:hover ion-icon {
+        transform: none;
+    }
+
+    .BtnNextAndPrevious:hover {
+        background-color: #2f74db;
+    }
 
 
 

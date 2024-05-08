@@ -26,6 +26,17 @@ class Signup extends Component {
                                 </div>
                                 <div class="field">
 
+                                    <ion-icon classname='iconoInputForm' name="at-outline"></ion-icon>
+                                    <input className="input-field" type="text" name="Correo Electronico" placeholder="Correo Electronico" required="required" id="Correo Electronico" />
+
+                                </div>
+                                <div class="field">
+                                    <ion-icon classname='iconoInputForm' name="call-outline"></ion-icon>
+                                    <input className="input-field" type="text" name="Contacto" placeholder="Contacto" required="required" id="firstname" />
+
+                                </div>
+                                <div class="field">
+
                                     <ion-icon classname='iconoInputForm' name="business-outline"></ion-icon>
                                     <input className="input-field" type="text" name="Institucion" placeholder="Nombre de institucion" required="required" id="firstname" />
 
@@ -40,11 +51,7 @@ class Signup extends Component {
                                     <input className="input-field" type="text" name="Direccion" placeholder="Direccion fisica" required="required" id="firstname" />
 
                                 </div>
-                                <div class="field">
-                                    <ion-icon classname='iconoInputForm' name="call-outline"></ion-icon>
-                                    <input className="input-field" type="text" name="Contacto" placeholder="Contacto" required="required" id="firstname" />
 
-                                </div>
                                 <div class="field" id="descripcion">
                                     <ion-icon classname='iconoInputForm' name="help-outline"></ion-icon>
                                     <input className="input-field" type="text" name="Descripcion" placeholder="Porque necesitan la visibilidad?" required="required" id="firstname" />

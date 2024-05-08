@@ -18,21 +18,21 @@ class TemplatePerfil extends Component {
                                 <p>{horario}</p>
                                 <a href={mapa}>{direccion}</a>
                             </div>
-                           
+
                             <div className="Box2Btn">
 
-                            <a href={`tel:${telefono}`}>
-                                <ion-icon name="call-outline" size='large' id='icon'></ion-icon>
-                            </a>
-                            <a href={sitioWeb}>
-                                <ion-icon name="globe-outline" size='large' id='icon'></ion-icon>
-                            </a>
-                            <a href={mapaBoton}>
-                                <ion-icon name="map-outline" size='large' id='icon'></ion-icon>
-                            </a>
-                            <a href={`mailto:${email}`}>
-                                <ion-icon name="mail-outline" size='large' id='icon'></ion-icon>
-                            </a>
+                                <a href={`tel:${telefono}`}>
+                                    <ion-icon name="call-outline" size='large' id='icon'></ion-icon>
+                                </a>
+                                <a href={sitioWeb}>
+                                    <ion-icon name="globe-outline" size='large' id='icon'></ion-icon>
+                                </a>
+                                <a href={mapaBoton}>
+                                    <ion-icon name="navigate-circle-outline" size='large' id='icon'></ion-icon>
+                                </a>
+                                <a href={`mailto:${email}`}>
+                                    <ion-icon name="at-outline" size='large' id='icon'></ion-icon>
+                                </a>
 
                             </div>
                         </div>

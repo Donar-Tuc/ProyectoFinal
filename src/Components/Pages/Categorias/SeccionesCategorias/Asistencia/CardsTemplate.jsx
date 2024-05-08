@@ -4,29 +4,36 @@ import "../Style.css";
 
 class CardAsistencia extends Component {
     render() {
-        const { imagen, titulo,horario, descripcion } = this.props;
-        
+        const { imagen, titulo, horario, etiquetas, descripcion } = this.props;
+
         return (
             <>
-                    <div className="CardAsistencia">
-                        <div className="ImagenContainer">
-                        <img src={imagen} alt="" id="ImagenCategoriaCard"/>
+                <div className="CardAsistencia">
+                    <div className="ImagenContainer">
+                        <img src={imagen} alt="" id="ImagenCategoriaCard" />
+                    </div>
+
+                    <div className="textoAsistenciaContainer">
+                        <h3 id="TituloAsistencia">{titulo}</h3>
+                        <p id="HorarioAsistencia">{horario}</p>
+                        <div id="etiquetasContainer">
+                            {/* Recorre el array de etiquetas y muestra cada una */}
+                            {etiquetas.map((etiqueta, index) => (
+                                <p key={index} id="EtiquetaCard">{etiqueta}</p>
+                            ))}
                         </div>
-                       
-                        <div className="textoAsistenciaContainer">
-                            <h3 id="TituloAsistencia">{titulo}</h3>
-                            <p id="HorarioAsistencia">{horario}</p>
-                            <p id="DecripcionAsistencia">{descripcion}</p>
-                            <div id="ContainerBotones">
+                        <p id="DecripcionAsistencia">{descripcion}</p>
+                        <div id="ContainerBotones">
                             <Link to={this.props.url}>
-                                    <button id="BotonLink">Ver perfil</button> 
-                                </Link> 
-                            </div>
+                                <button id="BotonLink">Ver perfil</button>
+                            </Link>
                         </div>
                     </div>
+                </div>
             </>
         );
     }
 }
 
 export default CardAsistencia;
+

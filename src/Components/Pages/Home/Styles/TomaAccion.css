@@ -1,29 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 
-#AccionContainer{
+#AccionContainer {
     display: flex;
-    background: rgb(16,65,83);
-    background: linear-gradient(180deg, rgba(16,65,83,1) 67%, rgba(16,65,83,1)95%);    
+    background: rgb(16, 65, 83);
+    background: linear-gradient(180deg, rgba(16, 65, 83, 1) 67%, rgba(16, 65, 83, 1)95%);
     flex-direction: row;
     gap: 30px;
-    padding: 30px;
+    padding: 3rem;
     width: 100%;
 }
 
-.content{
+.content {
     display: flex;
     color: white;
     flex-direction: column;
     padding: 30px;
-    width: 50%; 
+    width: 50%;
     justify-content: center;
 
 
 }
 
-#TituloAccion{
-    background: radial-gradient(45% 100% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);      
+#TituloAccion {
+    background: radial-gradient(45% 100% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: "Montserrat", sans-serif;
@@ -32,16 +32,17 @@
 
 }
 
-#DescripcionAccion{
+#DescripcionAccion {
     font-size: 1.2rem;
     font-weight: 200;
     font-family: "Montserrat", sans-serif;
 
 }
 
-#ImageDonar{
+#ImageDonar {
     flex: 1;
     width: 50%;
+    height: auto;
     border-radius: 0px 40px 0 40px;
 }
 
@@ -49,34 +50,34 @@
 
 
 
-    #AccionContainer{
+    #AccionContainer {
         flex-direction: column;
         gap: 1px;
         padding: 1rem;
     }
-    
-    .content{
+
+    .content {
         display: flex;
         color: white;
         flex-direction: column;
         padding: 1rem;
-        width: 100%; 
+        width: 100%;
         justify-content: center;
-    
-    
+
+
     }
-    
-    #TituloAccion{
+
+    #TituloAccion {
         font-weight: 400;
         font-size: 3rem;
-    
+
     }
-    
-    #DescripcionAccion{
-        font-size: 1rem;    
+
+    #DescripcionAccion {
+        font-size: 1rem;
     }
-    
-    #ImageDonar{
+
+    #ImageDonar {
         flex: 1;
         width: 100%;
         border-radius: 11px;
