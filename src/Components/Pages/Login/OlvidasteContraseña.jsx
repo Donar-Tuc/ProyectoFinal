@@ -21,15 +21,15 @@ class OlvidasteContraseña extends Component {
                             <form class="formRecuperar">
                                 <div className="TitulosContainer">
                                     <p id="heading3">Recuperar contraseña</p>
-                                    <p id="aclaracion2">Ingresa tu correo y te mandaremos un mail con el codigo de recuperación</p>
+                                    <p id="aclaracion2">Ingresa tu correo y te mandaremos un correo con el código de recuperación</p>
                                 </div>
                                 <div class="field">
                                     <ion-icon name="at-outline" classname='iconoInputForm'></ion-icon>
-                                    <input autocomplete="off" placeholder="Ingresa tu mail" class="input-field" type="text" />
+                                    <input autocomplete="off" placeholder="Ingresa tu correo electrónico" class="input-field" type="text" />
                                 </div>
 
                                 <div class="btnOlvideContrasena">
-                                    <button class="button4">Enviar codigo</button>
+                                    <button class="button4">Enviar código</button>
                                 </div>
                             </form>
 

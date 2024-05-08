@@ -20,7 +20,8 @@ class Login extends Component {
               <form class="form1">
                 <p id="heading1">Inicio de sesión</p>
                 <div class="field">
-                <ion-icon classname='iconoInputForm' name="at-outline"></ion-icon>                  <input autocomplete="off" placeholder="Correo Electronico" class="input-field" type="text" />
+                  <ion-icon classname='iconoInputForm' name="at-outline"></ion-icon>
+                  <input autocomplete="off" placeholder="Correo Electrónico" class="input-field" type="text" />
                 </div>
                 <div class="field">
                   <ion-icon classname='iconoInputForm' name="lock-closed-outline"></ion-icon>
