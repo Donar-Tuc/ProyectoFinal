@@ -19,6 +19,16 @@ const Comida = () => {
 
     const paginate = pageNumber => setCurrentPage(pageNumber);
 
+    const handlePreviousButtonClick = () => {
+        paginate(currentPage - 1);
+        window.scrollTo(0, 0); // Desplazar hacia arriba al presionar el botón "Anterior"
+    };
+
+    const handleNextButtonClick = () => {
+        paginate(currentPage + 1);
+        window.scrollTo(0, 0); // Desplazar hacia arriba al presionar el botón "Siguiente"
+    };
+
     return (
         <div className="AsistenciaContainer">
             <h2 id="TituloAsistenciaContainer">Asistencia</h2>
@@ -36,19 +46,17 @@ const Comida = () => {
             ))}
 
             <div id="PaginationButtons">
-                <button className="BtnNextAndPrevious" onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1}>
+                <button className="BtnNextAndPrevious" onClick={handlePreviousButtonClick} disabled={currentPage === 1}>
                     <div className="OnBtnContainerAntes">
                         <ion-icon name="arrow-back-circle-outline"></ion-icon>
                         Anterior
                     </div>
                 </button>
-                <button className="BtnNextAndPrevious" onClick={() => paginate(currentPage + 1)} disabled={currentCards.length < cardsPerPage}>
+                <button className="BtnNextAndPrevious" onClick={handleNextButtonClick} disabled={currentCards.length < cardsPerPage}>
                     <div className="OnBtnContainerDespues">
                         Siguiente
                         <ion-icon name="arrow-forward-circle-outline"></ion-icon>
-
                     </div>
-
                 </button>
             </div>
         </div>

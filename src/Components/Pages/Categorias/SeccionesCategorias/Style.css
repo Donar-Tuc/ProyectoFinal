@@ -26,7 +26,8 @@
 
 #EtiquetaCard {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
     justify-content: center;
     padding: .5rem .8rem;
     background-color: rgba(233, 233, 233, 0.322);

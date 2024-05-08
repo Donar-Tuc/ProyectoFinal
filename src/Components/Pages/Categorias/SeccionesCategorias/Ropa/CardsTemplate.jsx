@@ -4,7 +4,7 @@ import "../Style.css";
 
 class CardRopa extends Component {
     render() {
-        const { imagen, titulo, horario, etiqueta, descripcion } = this.props;
+        const { imagen, titulo, horario, etiquetas, descripcion } = this.props;
 
         return (
             <>
@@ -16,7 +16,12 @@ class CardRopa extends Component {
                     <div className="textoAsistenciaContainer">
                         <h3 id="TituloAsistencia">{titulo}</h3>
                         <p id="HorarioAsistencia">{horario}</p>
-                        <p id="EtiquetaCard">{etiqueta}</p>
+                        <div id="etiquetasContainer">
+                            {/* Recorre el array de etiquetas y muestra cada una */}
+                            {etiquetas.map((etiqueta, index) => (
+                                <p key={index} id="EtiquetaCard">{etiqueta}</p>
+                            ))}
+                        </div>
                         <p id="DecripcionAsistencia">{descripcion}</p>
                         <div id="ContainerBotones">
                             <Link to={this.props.url}>
