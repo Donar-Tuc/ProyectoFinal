@@ -4,7 +4,7 @@ import "../Soporte/css/Soporte.css";
 class Soporte extends Component {
   render() {
     return (
-      <div className="ContainerForm">
+      <div className="ContainerForm" id="SoporteTop">
         <form className="formSoporte" action="https://api.web3forms.com/submit" method="POST">
 
           <input type="hidden" name="access_key" value="50e21fd4-36fa-4bfd-85c8-cb279489ba9b" />
@@ -12,24 +12,24 @@ class Soporte extends Component {
           <p className="title">Contactate con Soporte</p>
           <p className="message">Te ayudamos con cualquier duda que tengas</p>
 
-        
-            <label>
-              <input className="input" type="text" name="Nombre" placeholder="" required="required" id="firstname" />
-              <span>Nombre</span>
-            </label>
 
-          
+          <label>
+            <input className="input" type="text" name="Nombre" placeholder="" required="required" id="firstname" />
+            <span>Nombre</span>
+          </label>
+
+
           <label>
             <input className="input" type="text" name="Numero" placeholder="" required="required" id="Numero" />
             <span>Numero</span>
           </label>
-  
+
           <label>
             <input className="input" type="email" name="Email" placeholder="" required="required" id="email" />
             <span>Email</span>
           </label>
 
-         
+
           <label>
             <input className="input" name="Consulta" type="text" placeholder="" required="required" />
             <span>Describi tu consulta</span>

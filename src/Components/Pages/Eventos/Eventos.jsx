@@ -14,7 +14,7 @@ import FundacionLeon from "./imagenes/Leon.png";
 class Eventos extends Component {
     render() {
         return (
-            <div className="EventosContainer">
+            <div className="EventosContainer" id="EventosTop">
                 <h2 id="TituloEventosContainer">Eventos</h2>
                 <Card
                     imagen={BancoAlimentos}
@@ -48,7 +48,7 @@ class Eventos extends Component {
                     descripcion="El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada."
                     url="/leon"
                 />
-        
+
             </div>
         );
     }
