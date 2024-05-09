@@ -1,8 +1,13 @@
+/* Seccion De Perfiles */
+
+/* Contenedor padre */
+
 #ContainerDineroPadre {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 10rem 5rem; /* Corregido */
+    padding: 10rem 5rem;
+    /* Corregido */
     align-items: center;
     /* height: 100vh; */
     background: linear-gradient(180deg, rgba(32, 117, 147, 1) 13%, rgba(16, 65, 83, 1) 53%, rgba(2, 19, 25, 1) 98%);
@@ -10,13 +15,7 @@
     max-width: 100%;
 }
 
-
-
-#LogoDinero {
-    width: 100%;
-    border-radius: 24px 24px 0 0px;
-
-}
+/* Card perfil */
 
 .DineroHijo {
     border-radius: 24px;
@@ -27,8 +26,20 @@
     flex-direction: column;
     padding: 0rem 0rem 2rem 0;
     background-color: rgb(216, 210, 210);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.562);
 }
 
+
+/* Logo */
+
+#LogoDinero {
+    width: 100%;
+    border-radius: 24px 24px 0 0px;
+
+}
+
+
+/* Container con titulos */
 #ContainerTituloBtn {
     display: flex;
     flex-direction: row;
@@ -47,17 +58,17 @@
 }
 
 .Box2Btn {
-    width: 30%;
+    width: 50%;
     /* border: 2px yellow solid; */
     gap: 5px;
     display: flex;
-    justify-content:center ;
+    justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
 }
 
-#icon{
+#icon {
     color: rgb(255, 255, 255);
     background-color: rgba(42, 42, 42, 0.147);
     border: 1px rgba(255, 255, 255, 0.841) solid;
@@ -68,7 +79,7 @@
     transition: .2s all ease-in-out;
 }
 
-#icon:hover{
+#icon:hover {
     transform: translateY(-3px);
 }
 
@@ -106,12 +117,15 @@
 /* Media Query */
 @media (max-width: 900px) {
     #ContainerDineroPadre {
-        padding: 4.5rem 0; /* Corregido */
+        padding: 4.5rem 0;
+        /* Corregido */
     }
 
     #LogoDinero {
         border-radius: 0px;
         height: 250px;
+        object-fit: cover;
+        object-position: center;
     }
 
     .DineroHijo {
@@ -146,14 +160,14 @@
         align-items: center;
     }
 
-    #icon{
-    
+    #icon {
+
         padding: .6rem;
         font-size: 64px;
         transition: none;
     }
-    
-    #icon:hover{
+
+    #icon:hover {
         transform: none;
     }
 
@@ -161,22 +175,29 @@
 
 
     .TextoDinero {
-        padding: 2rem; /* Ajustado */
+        padding: 2rem;
+        /* Ajustado */
     }
 
     #TituloDinero {
-        font-size: 2.5rem; /* Ajustado */
+        font-size: 2.5rem;
+        /* Ajustado */
     }
 
     #DescripcionDinero {
-        font-size: 1rem; /* Ajustado */
-        line-height: 2rem; /* Ajustado */
-        padding-top: 1.5rem; /* Ajustado */
-        padding-bottom: 1.5rem; /* Ajustado */
+        font-size: 1rem;
+        /* Ajustado */
+        line-height: 2rem;
+        /* Ajustado */
+        padding-top: 1.5rem;
+        /* Ajustado */
+        padding-bottom: 1.5rem;
+        /* Ajustado */
     }
 
     #BulletDinero {
-        font-size: 1rem; /* Ajustado */
+        font-size: 1rem;
+        /* Ajustado */
     }
 
     .Mapa {

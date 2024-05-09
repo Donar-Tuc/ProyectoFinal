@@ -4,17 +4,19 @@
 .LoginContainer {
     display: flex;
     justify-content: center;
-    /* height: 100vh; */
-    padding: 10rem  0rem 8rem 0rem;
+    padding: 10rem 0rem 8rem 0rem;
     background: linear-gradient(180deg, rgba(32, 117, 147, 1) 13%, rgba(16, 65, 83, 1) 53%, rgba(2, 19, 25, 1) 98%);
     height: auto;
 }
 
-.field ion-icon {
-    font-size: 24px;
-    color: rgb(99, 98, 98);
-    margin-right: .5rem;
-    margin-left: .2rem;
+/* Titulo header */
+
+#heading1 {
+    text-align: center;
+    color: black;
+    font-size: 2rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
 }
 
 /* Container de form */
@@ -22,7 +24,7 @@
 #FormularioLoginContainer {
     display: flex;
     flex-direction: row;
-    width: 60%;
+    width: 70%;
     height: auto;
     /* border: 2px yellow solid; */
 
@@ -30,33 +32,40 @@
 
 /* Bloques 1 y 2 */
 
+/* bloque de foto */
+
 .bloque1 {
     width: 50%;
-    height: 675px;
     border-radius: 30px 0px 0px 30px;
     /* border: 2px yellow solid; */
 }
 
-.bloque2 {
-    width: 50%;
-    height: 675px;
-    border-radius: 0 30px 30px 0px;
-    background-color: white;
-    display: flex;
-    direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-img {
+#FondoLogin {
     width: 100%;
-    height: 675px;
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
     border-radius: 30px 0 0 30px;
 }
 
+
+/* Bloque de inputs */
+.bloque2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    border-radius: 0 30px 30px 0px;
+    background-color: white;
+
+}
+
+/* Form dentro de bloque 2 */
+
 .form1 {
     display: flex;
-    width: 90%;
+    width: 85%;
     flex-direction: column;
     gap: 10px;
     padding-left: 1em;
@@ -65,37 +74,39 @@ img {
     /* border: 2px yellow solid; */
 }
 
-.form1:hover{
+.form1:hover {
     background-color: white;
     box-shadow: none;
 }
 
-.formRecuperar.hover{
+
+.formRecuperar.hover {
     background-color: white;
     box-shadow: none
-
 }
 
-#heading1 {
-    text-align: center;
-    margin: 2em;
-    color: black;
-    font-size: 1.5em;
-    font-family: "Montserrat", sans-serif;
-    font-weight: bold;
+
+/* Icons de inputs */
+.field ion-icon {
+    font-size: 24px;
+    color: rgb(99, 98, 98);
+    margin-right: .5rem;
+    margin-left: .2rem;
 }
 
+/* inputs  */
 .field {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5em;
-    border-radius: 35px;
+    border-radius: 30px;
     padding: 0.7em;
     border: 1px rgba(19, 19, 19, 0.071) solid;
     outline: none;
     color: black;
     background-color: rgb(238, 238, 238);
+    font-family: "Montserrat", sans-serif;
 }
 
 .input-field {
@@ -107,31 +118,41 @@ img {
     color: black;
 }
 
-.form .botonesLogincontainer {
+/* Container de botones de login */
+
+.botonesLogincontainer {
     display: flex;
+    width: 40%;
+    flex-direction: column;
+    gap: 1rem;
+    /* border: 2px yellow solid; */
     justify-content: center;
-    flex-direction: row;
-    margin-top: 2.5em;
-    border: none;
+    /* margin-top: 2.5em; */
+    /* border: none; */
+    font-family: "Montserrat", sans-serif;
 }
 
-.button1 {
+/* Boton acceder */
+.buttonLoginAccess {
+    width: 100%;
     padding: .7rem 2rem;
     border-radius: 30px;
     margin-right: 0.5em;
     border: none;
     outline: none;
-    transition: .4s ease-in-out;
+    transition: .2s ease-in-out;
     background-color: #387CDF;
     color: white;
 }
 
-.button1:hover {
-    background-color: #387CDF;
-    transform: translateY(-1px);
+.buttonLoginAccess:hover {
+    background-color: #3d85f0;
 }
 
-.button2 {
+/* Boton registrarse */
+
+.buttonRegister {
+    width: 100%;
     padding: .7rem 2rem;
     border-radius: 30px;
     border: none;
@@ -141,26 +162,24 @@ img {
     color: white;
 }
 
-.button2:hover {
-    background-color: #31a44c;
+.buttonRegister:hover {
+    background-color: #4fad65;
     transform: translateY(-1px);
     color: white;
 }
 
-.button3 {
-    padding: .7rem 2.8rem;
-    margin-top: .5rem;
+.buttonForgotPassword {
+    font-family: "Montserrat", sans-serif;
+    margin-top: 1.5rem;
     border-radius: 30px;
     border: none;
-    outline: none;
-    transition: .4s ease-in-out;
-    background-color: rgb(0, 0, 0);
-    color: white;
+    background-color: none;
+    color: black;
+    text-decoration: dashed;
 }
 
-.button3:hover {
-    transform: translateY(-1px);
-    color: white;
+.buttonForgotPassword:hover {
+    transform: none;
 }
 
 .buttons {
@@ -184,34 +203,34 @@ img {
         padding: 4.3rem 0rem 0rem 0rem;
 
     }
-    
+
     /* Container de form */
-    
+
     #FormularioLoginContainer {
         display: flex;
         flex-direction: column;
         width: 100%;
         /* border: 2px yellow solid; */
-    
+
     }
-    
+
     /* Bloques 1 y 2 */
-    
+
     .bloque1 {
         display: none;
     }
 
-    
-    
+
+
     .bloque2 {
         width: 100%;
         height: 100%;
-        border-radius:0px;
+        border-radius: 0px;
         background-color: white;
         display: flex;
         direction: column;
     }
-    
+
 
     .form1 {
         display: flex;
@@ -221,64 +240,62 @@ img {
         padding: 5rem 3rem;
         /* border: 2px yellow solid; */
     }
-    
-    .form1:hover{
+
+    .form1:hover {
         background-color: white;
         box-shadow: none;
     }
-    
-    .formRecuperar.hover{
+
+    .formRecuperar.hover {
         background-color: white;
         box-shadow: none
-    
     }
-    
-    #heading1 {
-        margin: 0;
-        color: black;
-        font-size: 1.5em;
-    }
-    
+
     .field {
-    
+
         gap: 0.8em;
         border-radius: 35px;
         padding: 0.7em;
         border: 1px rgba(19, 19, 19, 0.071) solid;
     }
-            
 
-    
+    .botonesLogincontainer {
+        display: flex;
+        width: 80%;
+        flex-direction: column;
+        gap: .5rem;
+    }
+
     .button1 {
         width: 100%;
         margin-bottom: .5rem;
         outline: none;
         transition: none;
     }
-    
+
     .button1:hover {
         transform: none;
     }
-    
+
     .button2 {
         width: 100%;
         transition: none;
 
     }
-    
+
     .button2:hover {
-        transform:none;
+        transform: none;
     }
-    
+
     .button3 {
         width: 100%;
         transition: none;
     }
-    
+
     .button3:hover {
-        transform:none;
+        transform: none;
     }
-    
+
     .buttons {
         display: flex;
         flex-direction: column;

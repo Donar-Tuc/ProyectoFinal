@@ -28,8 +28,8 @@ class OlvidasteContraseña extends Component {
                                     <input autocomplete="off" placeholder="Ingresa tu correo electrónico" class="input-field" type="text" />
                                 </div>
 
-                                <div class="btnOlvideContrasena">
-                                    <button class="button4">Enviar código</button>
+                                <div class="ContainerBotonOlvideContrasena">
+                                    <button id="btnSendCode">Enviar código</button>
                                 </div>
                             </form>
 

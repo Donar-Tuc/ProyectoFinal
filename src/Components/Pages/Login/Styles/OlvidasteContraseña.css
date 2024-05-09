@@ -1,11 +1,9 @@
 #heading3 {
     text-align: center;
-    margin: 2em;
     color: black;
-    font-size: 1.5em;
+    font-size: 2rem;
     font-family: "Montserrat", sans-serif;
-    font-weight: bold;
-    margin-top: 2px;
+    font-weight: 500;
 }
 
 #aclaracion2 {
@@ -13,18 +11,18 @@
     margin-bottom: 20px;
 }
 
-.form{
+.form {
     width: 90%;
     /* border: 2px yellow solid; */
-    
+
 }
 
-.form:hover{
+.form:hover {
     width: 90%;
     border: none;
 }
 
-.btnOlvideContrasena{
+.btnOlvideContrasena {
     margin: 0;
     padding: 1rem;
     /* border: 2px yellow solid; */
@@ -33,54 +31,76 @@
     align-items: center;
 }
 
-
-
-.bloque4 {
-    width: 50%;
-    height: 675px;
-    border-radius: 0 30px 30px 0;
-    background-color: white;
+/* container boton olvide contrasena */
+.ContainerBotonOlvideContrasena {
+    margin: 0;
+    padding: 1rem;
+    /* border: 2px yellow solid; */
     display: flex;
-    direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 4rem ;
+}
+
+#btnSendCode {
+    padding: 0.5em;
+    padding-left: 2.3em;
+    padding-right: 2.3em;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: #0C6DFD;
+    transition: .2s all ease-in-out;
+    color: white;
+    /* margin-bottom: 20px; */
+}
+
+#btnSendCode:hover {
+    background-color: #4a88e6;
+}
+
+/* Bloque de inputs de olvide contraseña */
+
+.bloque4 {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    border-radius: 0 30px 30px 0px;
+    background-color: white;
 }
 
 .bloque4:hover {
-   background-color: white;
-   box-shadow: none;
-   transform: none;
+    background-color: white;
+    box-shadow: none;
+    transform: none;
 }
 
 @media (max-width: 900px) {
 
-    .formRecuperar{
+    .formRecuperar {
         padding: 1rem;
     }
-    #heading3 {
-        text-align: center;
-        margin: 0;
-        margin-bottom: 2rem;
-    }
-    
+
     #aclaracion2 {
         text-align: center;
         margin-bottom: 2rem;
     }
-    
-    .form{
+
+    .form {
         width: 100%;
         /* border: 2px yellow solid; */
-        
+
     }
-    
-    .form:hover{
+
+    .form:hover {
         width: 90%;
         border: none;
     }
-    
-    .btnOlvideContrasena{
+
+    .btnOlvideContrasena {
         margin: 0;
         padding: 1rem;
         /* border: 2px yellow solid; */
@@ -88,24 +108,24 @@
         justify-content: center;
         align-items: center;
     }
-    
-    
-    
+
+
+
     .bloque4 {
         width: 100%;
         height: 600px;
         padding: 0 2rem;
-        border-radius: 0 ;
+        border-radius: 0;
         background-color: white;
         display: flex;
         direction: column;
         justify-content: center;
         align-items: center;
     }
-    
+
     .bloque4:hover {
-       background-color: white;
-       box-shadow: none;
-       transform: none;
+        background-color: white;
+        box-shadow: none;
+        transform: none;
     }
 }

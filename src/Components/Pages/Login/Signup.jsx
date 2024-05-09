@@ -59,7 +59,7 @@ class Signup extends Component {
                                 </div>
 
                                 <div class="btnRegistrarse">
-                                    <button class="button4">Registrarme</button>
+                                    <button class="buttonSendRequestRegister">Registrarme</button>
                                 </div>
                             </form>
 

@@ -19,7 +19,7 @@
 #FormularioLoginContainer {
     display: flex;
     flex-direction: row;
-    width: 60%;
+    width: 80%;
     height: 100vh;
     /* border: 2px yellow solid; */
 }
@@ -33,19 +33,18 @@
 }
 
 .bloque3 {
-    width: 50%;
-    height: 675px;
-    border-radius: 0 30px 30px 0;
-    background-color: white;
     display: flex;
-    direction: column;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 60%;
+    border-radius: 0 30px 30px 0px;
+    background-color: white;
 }
 
 
 
-img {
+#FondoLogin {
     width: 100%;
 }
 
@@ -56,25 +55,27 @@ img {
 
 #heading {
     text-align: center;
-    margin: 2em;
     color: black;
-    font-size: 1.5em;
+    font-size: 2rem;
     font-family: "Montserrat", sans-serif;
-    font-weight: bold;
-    margin: 2px;
+    font-weight: 500;
 }
 
-.button4 {
+.buttonSendRequestRegister {
     padding: 0.5em;
     padding-left: 2.3em;
     padding-right: 2.3em;
     border-radius: 30px;
     border: none;
     outline: none;
-    transition: .4s ease-in-out;
+    transition: .2s ease-in-out;
     background-color: #0C6DFD;
     color: white;
     /* margin-bottom: 20px; */
+}
+
+.buttonSendRequestRegister:hover {
+    background-color: #3d85f0;
 }
 
 .form2 {
@@ -87,7 +88,7 @@ img {
     border-radius: 30px;
 }
 
-.form2:hover{
+.form2:hover {
     background-color: white;
     box-shadow: none;
     transform: none;
@@ -132,88 +133,86 @@ img {
     margin: 10px;
 }
 
-.btnRegistrarse:hover{
-    transform: translateY(-1px);
-}
 
 
 @media (max-width: 900px) {
 
 
 
-#FormularioLoginContainer {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100vh;
-    /* border: 2px yellow solid; */ 
-}
+    #FormularioLoginContainer {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100vh;
+        /* border: 2px yellow solid; */
+    }
 
 
-/* Bloques 1 y 2 */
+    /* Bloques 1 y 2 */
 
-.bloque1 {
-    display: none;
-}
+    .bloque1 {
+        display: none;
+    }
 
-.bloque3 {
-    width: 100%;
-    padding: 3rem 0; /* podding top y bottom*/
-    height: 100%;
-    border-radius: 0;
-    /* margin-bottom: 4rem; */
-
-
-
-}
+    .bloque3 {
+        width: 100%;
+        padding: 3rem 0;
+        /* podding top y bottom*/
+        height: 100%;
+        border-radius: 0;
+        /* margin-bottom: 4rem; */
 
 
-img {
-    width: 100%;
-}
 
-#aclaracion {
-    margin-bottom: 1rem;
-    margin-left: 0 ;
-    margin-right: 0 ;
-    text-align: center;
-}
+    }
 
-#heading {
-    margin-bottom: 1rem;
-}
 
-.button4 {
-    padding: 0.5em;
-    padding-left: 2.3em;
-    padding-right: 2.3em;
-    border-radius: 30px;
-    transition: none;
+    img {
+        width: 100%;
+    }
 
-}
+    #aclaracion {
+        margin-bottom: 1rem;
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+    }
 
-.form2 {
-    display: flex;
-    flex-direction: column;
-    gap: 0.7em;
-    border-radius: 0;
-}
+    #heading {
+        margin-bottom: 1rem;
+    }
 
-.form2:hover{
-    background-color: white;
-    box-shadow: none;
-    transform: none;
-}
+    .button4 {
+        padding: 0.5em;
+        padding-left: 2.3em;
+        padding-right: 2.3em;
+        border-radius: 30px;
+        transition: none;
 
-.form2 .btnRegistrarse {
-    flex-direction: column;
-    transition: none;
-    margin: 10px;
-}
+    }
 
-.btnRegistrarse:hover{
-    transform: none;
-}
+    .form2 {
+        display: flex;
+        flex-direction: column;
+        gap: 0.7em;
+        border-radius: 0;
+    }
+
+    .form2:hover {
+        background-color: white;
+        box-shadow: none;
+        transform: none;
+    }
+
+    .form2 .btnRegistrarse {
+        flex-direction: column;
+        transition: none;
+        margin: 10px;
+    }
+
+    .btnRegistrarse:hover {
+        transform: none;
+    }
 
 
 }

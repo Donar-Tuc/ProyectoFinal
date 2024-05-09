@@ -1,27 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+
+/* Container padre eventos */
+
 .EventosContainer {
     display: flex;
     flex-direction: column;
+    /* pone las cards en columnas */
+    justify-content: center;
+    align-items: center;
+    /* Centra las cards al medio */
     gap: 20px;
-    background: rgb(2,20,25);
-    background: linear-gradient(0deg, rgba(2,20,25,1) 12%, rgba(8,71,88,1) 75%);
-    padding: 9rem 2rem;
+    /* Espacio entre cards */
+    background: rgb(2, 20, 25);
+    background: linear-gradient(0deg, rgba(2, 20, 25, 1) 12%, rgba(8, 71, 88, 1) 75%);
+    padding: 9rem 0;
+    /* Padding de arriba*/
 }
 
 
 
-.CardEventos{
+.CardEventos {
     display: flex;
+    width: 70%;
+    /* Ancho de las cards */
     justify-content: left;
     align-items: center;
     padding: 2rem 0rem 2rem 0rem;
     border-radius: 30px;
     background-color: #ebefff46;
     background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
-    border:1px #e8e4e4 solid;
+    border: 1px #e8e4e4 solid;
 }
-.ImagenContainer{
+
+.ImagenContainer {
     align-items: center;
     display: flex;
     justify-content: center;
@@ -29,61 +41,63 @@
     /* border: 2px yellow solid; */
 }
 
-#ImagenCard{
+#ImagenCard {
     margin: 10px;
-    height: 300px ;
+    height: 300px;
 }
 
-#textoContainer{
-    width: 70%;
+.textoContainer {
+    padding: 0 2rem;
+    width: 100%;
     color: white;
 }
 
-#TituloEventosContainer{
+#TituloEventosContainer {
     text-align: center;
-    font-size: 3rem;
-    background: radial-gradient(25% 40% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);      
+    font-size: 4rem;
+    background: radial-gradient(25% 40% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
 }
 
-#TituloEventos{
+#TituloEventos {
     font-size: 2.5rem;
     font-family: "Montserrat", sans-serif;
     color: white;
 }
 
-#HorarioEventos{
+#HorarioEventos {
     font-size: 1rem;
     font-family: "Montserrat", sans-serif;
     color: white;
 }
 
-#DecripcionEventos{
+#DecripcionEventos {
     font-size: 1rem;
     font-family: "Montserrat", sans-serif;
     color: white;
 }
-#ContainerEventosBotones{
+
+#ContainerEventosBotones {
     display: flex;
     gap: 20px;
 }
 
-.BotonesEventos{
+.BotonesEventos {
     font-size: 1.2rem;
     font-weight: 300;
     font-family: "Montserrat", sans-serif;
     border-radius: 300px;
-    padding:  .5rem 2rem;
+    padding: .5rem 2rem;
     border: 1px rgba(132, 132, 132, 0.139) solid;
     background-color: #0C6DFD;
     color: white;
     transition: .3s all ease-in-out;
 }
 
-.BotonesEventos:hover{
+.BotonesEventos:hover {
     transform: translateY(-2px);
     background-color: #3b80e8;
 
@@ -93,52 +107,62 @@
 
 @media (max-width: 900px) {
 
-    .ImagenCard{
+    #ImagenCard {
         align-items: center;
+        height: 200px;
+        object-fit: cover;
+        object-position: center;
     }
 
     .EventosContainer {
         display: flex;
         flex-direction: column;
         gap: 20px;
-        background: rgb(2,20,25);
-        background: linear-gradient(0deg, rgba(2,20,25,1) 12%, rgba(8,71,88,1) 75%);
-        padding: 6rem 1rem;
+        background: rgb(2, 20, 25);
+        background: linear-gradient(0deg, rgba(2, 20, 25, 1) 12%, rgba(8, 71, 88, 1) 75%);
+        padding: 6rem 0;
     }
-    
-    .CardEventos{
+
+    .CardEventos {
         display: flex;
+        width: 90%;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 2rem 2rem;
     }
 
-    
-    #TituloEventos{
+    .textoContainer {
+        padding: 0 .1rem;
+        width: 100%;
+        color: white;
+    }
+
+    #TituloEventos {
         font-size: 2rem;
         font-family: "Montserrat", sans-serif;
         color: white;
     }
-    
-    #HorarioEventos{
+
+    #HorarioEventos {
         font-size: 1rem;
     }
-    
-    #DecripcionEventos{
+
+    #DecripcionEventos {
         font-size: 1rem;
     }
-    #ContainerEventosBotones{
+
+    #ContainerEventosBotones {
         display: flex;
         flex-direction: column;
-        gap:10px;
+        gap: 10px;
     }
-    
-    .BotonesEventos{
+
+    .BotonesEventos {
         font-size: 1rem;
         font-weight: 300;
         border-radius: 300px;
-        padding:  .5rem 2rem;
+        padding: .5rem 2rem;
     }
 
 

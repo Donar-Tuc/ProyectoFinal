@@ -30,15 +30,15 @@ class Login extends Component {
 
                 <div className="buttons">
                   <div class="botonesLogincontainer">
-                    <button class="button1">Acceder</button>
+                    <button class="buttonLoginAccess">Acceder</button>
 
                     <Link to="/registrarse">
-                      <button class="button2">Registrarse</button>
+                      <button class="buttonRegister"> Registrarse</button>
                     </Link>
                   </div>
 
                   <Link to="/recuperar-contrasena">
-                    <button class="button3">Olvidaste tu contraseña?</button>
+                    <button class="buttonForgotPassword">Olvidaste tu contraseña?</button>
                   </Link>
                 </div>
 
