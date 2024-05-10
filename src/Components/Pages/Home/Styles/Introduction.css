@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Container padre */
 
-
-#Introduction{
+#Introduction {
     display: flex;
-    background: linear-gradient(180deg, rgba(32,117,147,1) 13%, rgba(16,65,83,1) 53%, rgba(2,19,25,1) 98%);
+    background: linear-gradient(180deg, rgba(32, 117, 147, 1) 13%, rgba(16, 65, 83, 1) 53%, rgba(2, 19, 25, 1) 98%);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -13,9 +13,10 @@
     width: 100%;
 }
 
-#TituloIntroduction{
+/* Titulo  */
+#TituloIntroduction {
     font-size: 4rem;
-    background: radial-gradient(45% 100% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);      
+    background: radial-gradient(45% 100% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: "Montserrat", sans-serif;
@@ -23,29 +24,34 @@
     text-align: center;
 }
 
-#BotonesConteiner{
+/* Container de btn */
+
+#BotonesConteiner {
     display: flex;
     justify-content: center;
     width: 100%;
     padding: 3rem;
     display: flex;
-    flex-direction: row; /* Mantiene botones en fila*/
-    gap: 1px; /* Espacio ente botones*/
-    margin-bottom: 60px; /* con esto empujo la descripcion para abajo*/
+    flex-direction: row;
+    /* Mantiene botones en fila*/
+    gap: 1px;
+    /* Espacio ente botones*/
+    margin-bottom: 60px;
+    /* con esto empujo la descripcion para abajo*/
     font-family: "Montserrat", sans-serif;
 }
 
 
-#EnlaceIntroduccion{
+#EnlaceIntroduccion {
     padding: 0;
 }
 
-#btnDondeDonar{
+#btnDondeDonar {
     font-size: 1.3rem;
     font-weight: 300;
     font-family: "Montserrat", sans-serif;
     border-radius: 300px;
-    padding:  .4rem 2rem;
+    padding: .4rem 2rem;
     border: 1px rgba(255, 253, 253, 0.368) solid;
     filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.387));
     background-color: #116ffd;
@@ -53,18 +59,18 @@
     transition: .3s all ease-in-out;
 }
 
-#btnDondeDonar:hover{
+#btnDondeDonar:hover {
     transform: translateY(-2px);
     background-color: #3b80e8;
 
 }
 
-#btnAprenderMas{
+#btnAprenderMas {
     font-size: 1.3rem;
     font-weight: 300;
     font-family: "Montserrat", sans-serif;
     border-radius: 300px;
-    padding:  .5rem 2rem;
+    padding: .5rem 2rem;
     background-color: #eaebed52;
     filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.546));
     border: 1px rgb(177, 175, 175) solid;
@@ -72,12 +78,12 @@
     transition: .3s all ease-in-out;
 }
 
-#btnAprenderMas:hover{
+#btnAprenderMas:hover {
     transform: translateY(-2px);
     background-color: #ffffff52;
 }
 
-#DescripcionIntroduccion{
+#DescripcionIntroduccion {
     font-size: large;
     color: rgb(221, 215, 215);
     text-align: center;
@@ -87,18 +93,18 @@
 
 
 @media (max-width: 900px) {
-    #Introduction{
-        padding: 5rem 2rem 0rem 2rem ;
+    #Introduction {
+        padding: 5rem 1.2rem 0rem 1.2rem;
         align-items: center;
         height: 90vh;
     }
-    
-    #TituloIntroduction{
-        font-size: 2.5rem;
+
+    #TituloIntroduction {
+        font-size: 2rem;
         font-weight: 500;
     }
-    
-    #DescripcionIntroduccion{
+
+    #DescripcionIntroduccion {
         font-size: 1rem;
         color: rgb(221, 215, 215);
         text-align: center;
@@ -107,58 +113,57 @@
 
     }
 
-    #BotonesConteiner{
+    #BotonesConteiner {
 
         padding: 0;
         display: flex;
-        flex-direction: column; /* Mantiene botones en fila*/
-        gap: 1px; /* Espacio ente botones*/
-        margin-bottom: 30px; /* con esto empujo la descripcion para abajo*/
+        flex-direction: column;
+        margin-bottom: 20px;
     }
 
-    #EnlaceIntroduccion{
+    #EnlaceIntroduccion {
         width: 100%;
 
     }
-    
-    #btnDondeDonar{
-        font-size: 1.4rem;
+
+    #btnDondeDonar {
+        font-size: 1rem;
         font-weight: 300;
         font-family: "Montserrat", sans-serif;
         border-radius: 300px;
-        padding:  .5rem 2rem;
+        padding: .5rem 1.5rem;
         border: 1px rgba(255, 253, 253, 0.368) solid;
         filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.387));
         background-color: #116ffd;
         color: white;
-        transition: .3s all ease-in-out;
+        transition: none;
     }
-    
-    #btnDondeDonar:hover{
-        transform: translateY(-2px);
-        background-color: #3b80e8;
-    
+
+    #btnDondeDonar:hover {
+        transform: none;
+        background-color: #116ffd;
+
     }
-    
-    #btnAprenderMas{
-        font-size: 1.4rem;
+
+    #btnAprenderMas {
+        font-size: 1rem;
         font-weight: 300;
         font-family: "Montserrat", sans-serif;
         border-radius: 300px;
-        padding:  .5rem 2rem;
+        padding: .5rem 1.5rem;
         background-color: #eaebed52;
         filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.546));
         border: 1px rgb(177, 175, 175) solid;
         color: white;
-        transition: .3s all ease-in-out;
+        transition: none;
     }
-    
-    #btnAprenderMas:hover{
-        transform: translateY(-2px);
-        background-color: #ffffff52;
+
+    #btnAprenderMas:hover {
+        transform: none;
+        background-color: #eaebed52;
     }
-    
-    
-    
+
+
+
 
 }
