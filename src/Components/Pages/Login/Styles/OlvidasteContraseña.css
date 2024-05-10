@@ -29,6 +29,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: none;
+    background-color: none;
 }
 
 /* container boton olvide contrasena */
