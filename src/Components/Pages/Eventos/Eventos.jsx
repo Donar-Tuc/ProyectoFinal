@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "./CardsEventos.jsx";
 import "./css/eventos.css";
 
@@ -19,7 +19,14 @@ const Eventos = () => {
     const indexOfFirstCard = indexOfLastCard - cardsPerPage;
     const currentCards = data.slice(indexOfFirstCard, indexOfLastCard);
 
-    const paginate = pageNumber => setCurrentPage(pageNumber);
+    useEffect(() => {
+        window.scrollTo(0, 0); // Desplazar hacia arriba al cambiar de página
+    }, [currentPage]); // Se ejecuta cada vez que cambia la página actual
+
+    const paginate = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+
 
     return (
         <div className="EventosContainer">
@@ -39,19 +46,25 @@ const Eventos = () => {
             ))}
 
             <div id="PaginationButtons">
-                <button className="BtnNextAndPrevious" onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1}>
+                <button
+                    className="BtnNextAndPrevious"
+                    onClick={() => paginate(currentPage - 1)}
+                    disabled={currentPage === 1}
+                >
                     <div className="OnBtnContainerAntes">
                         <ion-icon name="arrow-back-circle-outline"></ion-icon>
                         Anterior
                     </div>
                 </button>
-                <button className="BtnNextAndPrevious" onClick={() => paginate(currentPage + 1)} disabled={currentCards.length < cardsPerPage}>
+                <button
+                    className="BtnNextAndPrevious"
+                    onClick={() => paginate(currentPage + 1)}
+                    disabled={currentCards.length < cardsPerPage}
+                >
                     <div className="OnBtnContainerDespues">
                         Siguiente
                         <ion-icon name="arrow-forward-circle-outline"></ion-icon>
-
                     </div>
-
                 </button>
             </div>
         </div>

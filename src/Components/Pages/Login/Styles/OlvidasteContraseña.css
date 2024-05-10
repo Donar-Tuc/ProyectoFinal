@@ -59,12 +59,20 @@
     background-color: #4a88e6;
 }
 
+/* bloque de foto */
+
+.bloque1 {
+    width: 50%;
+    border-radius: 30px 0px 0px 30px;
+    /* border: 2px yellow solid; */
+}
+
 /* Bloque de inputs de olvide contraseña */
 
 .bloque4 {
     display: flex;
     flex-direction: column;
-    padding: 4rem;
+    /* padding: 4rem; */
     justify-content: center;
     align-items: center;
     width: 60%;
