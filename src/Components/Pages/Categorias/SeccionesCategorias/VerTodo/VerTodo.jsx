@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CardVerTodo from "./CardTemplate.jsx";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "../Style.css";
 
 // Imagenes 

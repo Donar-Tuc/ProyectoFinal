@@ -1,12 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./Styles/Navbar.css";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [clicked, setClicked] = useState(false);
+
   useEffect(() => {
     const closeMenu = () => {
-      const navbar = document.getElementById("navbar");
-      navbar.classList.remove("active");
+      setClicked(false);
       window.scrollTo(0, 0); // Desplazar hacia arriba al hacer clic en cualquier enlace
     };
 
@@ -44,6 +45,10 @@ const Navbar = () => {
     }
   ];
 
+  const handleClick = () => {
+    setClicked(!clicked);
+  };
+
   return (
     <>
       <nav>
@@ -76,7 +81,7 @@ const Navbar = () => {
         <div id="Menu">
           <ul
             id="navbar"
-            className="navbar"
+            className={clicked ? "navbar active" : "navbar"}
           >
             {links.map((x, index) => (
               <li key={index}>
@@ -93,10 +98,10 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div id="mobile">
+        <div id="mobile" onClick={handleClick}>
           <i
             id="bar"
-            className="fas fa-bars"
+            className={clicked ? "fas fa-times" : "fas fa-bars"}
           ></i>
         </div>
       </nav>

@@ -54,7 +54,7 @@
 
 #TituloEventosContainer {
     text-align: center;
-    font-size: 4rem;
+    font-size: 3rem;
     background: radial-gradient(25% 40% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -130,6 +130,11 @@
         justify-content: center;
         align-items: center;
         padding: 2rem 2rem;
+    }
+
+    #TituloEventosContainer {
+        font-weight: 500;
+        font-size: 2.5rem;
     }
 
     .textoContainer {
