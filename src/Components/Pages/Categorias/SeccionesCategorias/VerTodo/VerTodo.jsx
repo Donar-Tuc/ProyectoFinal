@@ -29,7 +29,7 @@ const VerTodo = () => {
 
     return (
         <div className="AsistenciaContainer">
-            <h2 id="TituloAsistenciaContainer">Escolar</h2>
+            <h2 id="TituloAsistenciaContainer">Ver todo</h2>
 
             {currentCards.map((card, index) => (
                 <CardVerTodo

@@ -29,7 +29,7 @@ const Comida = () => {
 
     return (
         <div className="AsistenciaContainer">
-            <h2 id="TituloAsistenciaContainer">Asistencia</h2>
+            <h2 id="TituloAsistenciaContainer">Comida</h2>
 
             {currentCards.map((card, index) => (
                 <CardComida

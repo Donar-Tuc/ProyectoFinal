@@ -29,7 +29,7 @@ const Ropa = () => {
 
     return (
         <div className="AsistenciaContainer">
-            <h2 id="TituloAsistenciaContainer">Escolar</h2>
+            <h2 id="TituloAsistenciaContainer">Ropa</h2>
 
             {currentCards.map((card, index) => (
                 <CardRopa
