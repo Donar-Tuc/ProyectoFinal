@@ -112,7 +112,7 @@
     outline: none;
     /* color: black; */
 
-    color: white;
+    color: black;
 
     background-color: rgb(255, 255, 255);
     font-family: "Montserrat", sans-serif;
@@ -123,9 +123,7 @@
     border: none;
     outline: none;
     width: 100%;
-    /* color: #d3d3d3; */
-    /* color: black; */
-    color: rgb(240, 239, 239);
+    color: black;
 }
 
 /* Container de botones de login */
