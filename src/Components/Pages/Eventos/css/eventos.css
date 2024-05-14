@@ -6,12 +6,9 @@
 .EventosContainer {
     display: flex;
     flex-direction: column;
-    /* pone las cards en columnas */
     justify-content: center;
     align-items: center;
-    /* Centra las cards al medio */
     gap: 20px;
-    /* Espacio entre cards */
     background: rgb(2, 20, 25);
     background: linear-gradient(0deg, rgba(2, 20, 25, 1) 12%, rgba(8, 71, 88, 1) 75%);
     padding: 9rem 0;
@@ -22,28 +19,28 @@
 
 .CardEventos {
     display: flex;
-    width: 70%;
-    /* Ancho de las cards */
+    flex-direction: row;
     justify-content: left;
     align-items: center;
-    padding: 2rem 0rem 2rem 0rem;
+    width: 70%;
+    padding: 0;
     border-radius: 30px;
     background-color: #ebefff46;
     background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
-    border: 1px #e8e4e4 solid;
+    border: 1px #f1f1f1bd solid;
+    overflow: hidden;
 }
 
 .ImagenContainer {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* border: 2px yellow solid; */
+    width: 50%;
 }
 
 #ImagenCard {
-    margin: 10px;
-    height: 300px;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px 0 0px 30px;
 }
 
 .textoContainer {
@@ -107,11 +104,17 @@
 
 @media (max-width: 900px) {
 
+    .ImagenContainer {
+        width: 100%;
+
+    }
+    
     #ImagenCard {
-        align-items: center;
-        height: 200px;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
         object-position: center;
+        border-radius: 30px 30px 0px 0px;
     }
 
     .EventosContainer {
@@ -129,28 +132,28 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 2rem 2rem;
+        padding: 0rem 0rem;
     }
-
     #TituloEventosContainer {
         font-weight: 500;
         font-size: 2.5rem;
     }
 
     .textoContainer {
-        padding: 0 .1rem;
+        padding: 1.5rem 2rem 2rem;
         width: 100%;
         color: white;
     }
 
     #TituloEventos {
-        font-size: 2rem;
+        font-size: 1.5rem;
         font-family: "Montserrat", sans-serif;
         color: white;
     }
 
     #HorarioEventos {
         font-size: 1rem;
+        color: rgb(230, 228, 228);
     }
 
     #DecripcionEventos {

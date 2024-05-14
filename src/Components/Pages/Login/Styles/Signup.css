@@ -39,7 +39,10 @@
     align-items: center;
     width: 60%;
     border-radius: 0 30px 30px 0px;
-    background-color: white;
+    /* background-color: white; */
+
+    background-color: #ffffff38;
+    background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
 }
 
 
@@ -51,11 +54,13 @@
 #aclaracion {
     margin: 2em;
     text-align: center;
+    color: white ; /* el original es negro*/
 }
 
 #heading {
     text-align: center;
-    color: black;
+    /* color: black; */
+    color: white;
     font-size: 2rem;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
@@ -89,7 +94,6 @@
 }
 
 .form2:hover {
-    background-color: white;
     box-shadow: none;
     transform: none;
 }
@@ -199,7 +203,6 @@
     }
 
     .form2:hover {
-        background-color: white;
         box-shadow: none;
         transform: none;
     }

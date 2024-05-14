@@ -13,7 +13,8 @@
 
 #heading1 {
     text-align: center;
-    color: black;
+    /* color: black; */
+    color: white;
     font-size: 2rem;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
@@ -57,7 +58,10 @@
     align-items: center;
     width: 60%;
     border-radius: 0 30px 30px 0px;
-    background-color: white;
+    /* background-color: white; */
+
+    background-color: #ffffff38;
+  background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
 
 }
 
@@ -75,7 +79,7 @@
 }
 
 .form1:hover {
-    background-color: white;
+    background-color: none;
     box-shadow: none;
 }
 
@@ -89,7 +93,8 @@
 /* Icons de inputs */
 .field ion-icon {
     font-size: 24px;
-    color: rgb(99, 98, 98);
+    /* color: rgb(99, 98, 98); */  /*color original*/
+    color: rgb(166, 166, 166);
     margin-right: .5rem;
     margin-left: .2rem;
 }
@@ -100,12 +105,16 @@
     align-items: center;
     justify-content: center;
     gap: 0.5em;
-    border-radius: 30px;
+    border-radius: 10px;  /*   30px original*/
     padding: 0.7em;
-    border: 1px rgba(19, 19, 19, 0.071) solid;
+    /* border: 1px rgba(19, 19, 19, 0.071) solid; */
+    border: 1px rgba(255, 255, 255, 0.574) solid;
     outline: none;
-    color: black;
-    background-color: rgb(238, 238, 238);
+    /* color: black; */
+
+    color: white;
+
+    background-color: rgb(255, 255, 255);
     font-family: "Montserrat", sans-serif;
 }
 
@@ -115,26 +124,27 @@
     outline: none;
     width: 100%;
     /* color: #d3d3d3; */
-    color: black;
+    /* color: black; */
+    color: rgb(240, 239, 239);
 }
 
 /* Container de botones de login */
 
 .botonesLogincontainer {
     display: flex;
-    width: 40%;
+    width: 100%;
     flex-direction: column;
+    align-items: center;
     gap: 1rem;
     /* border: 2px yellow solid; */
     justify-content: center;
     /* margin-top: 2.5em; */
-    /* border: none; */
     font-family: "Montserrat", sans-serif;
 }
 
 /* Boton acceder */
 .buttonLoginAccess {
-    width: 100%;
+    width: 50%;
     padding: .7rem 2rem;
     border-radius: 30px;
     margin-right: 0.5em;
@@ -173,8 +183,8 @@
     margin-top: 1.5rem;
     border-radius: 30px;
     border: none;
-    background-color: none;
-    color: black;
+    background-color: transparent;
+    color: white;
     text-decoration: dashed;
 }
 
@@ -226,7 +236,6 @@
         width: 100%;
         height: 100%;
         border-radius: 0px;
-        background-color: white;
         display: flex;
         direction: column;
     }
@@ -237,24 +246,22 @@
         width: 100%;
         flex-direction: column;
         gap: 20px;
-        padding: 5rem 3rem;
+        padding: 5rem 2rem;
         /* border: 2px yellow solid; */
     }
 
     .form1:hover {
-        background-color: white;
         box-shadow: none;
     }
 
     .formRecuperar.hover {
-        background-color: white;
         box-shadow: none
     }
 
     .field {
 
         gap: 0.8em;
-        border-radius: 35px;
+        border-radius: 10px;  
         padding: 0.7em;
         border: 1px rgba(19, 19, 19, 0.071) solid;
     }

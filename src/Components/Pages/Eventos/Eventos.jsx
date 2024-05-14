@@ -82,7 +82,7 @@ const data = [
     },
     {
         imagen: Conin,
-        titulo: "FundacionConin",
+        titulo: "Fundacion Conin",
         etiquetas: ["Dinero"],
         horario: "9am - 4pm de lunes a viernes",
         descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", url: "/conin"

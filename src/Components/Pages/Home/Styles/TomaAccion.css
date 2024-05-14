@@ -23,7 +23,7 @@
 }
 
 #TituloAccion {
-    background: radial-gradient(45% 100% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);
+    background: radial-gradient(20% 100% at 25% 50%, #ffffffe0 30%, hsla(0, 0%, 100%, .35) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: "Montserrat", sans-serif;

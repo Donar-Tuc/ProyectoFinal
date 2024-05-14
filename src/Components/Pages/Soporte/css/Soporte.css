@@ -12,17 +12,19 @@
 
 .formSoporte {
   display: flex;
-  width: 50%;
+  width: 60%;
   flex-direction: column;
   gap: 10px;
   /* max-width: 450px; */
-  padding: 3rem 3rem;
+  padding: 4rem 4rem;
   border-radius: 20px;
   position: relative;
-  background-color: #e8e6e649;
+  background-color: #ffffff38;
   background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
   border: 1px solid #f0f0f07b;
   transition: .6s ease-in-out all;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.399);
+
 }
 
 
@@ -122,14 +124,14 @@
 }
 
 .btnForm {
-  width: 100px;
+  width: 150px;
   font-family: inherit;
   margin: 0 auto;
   font-size: 1rem;
   background: #1B7DFC;
   color: white;
   padding: 0.7em 1em;
-  padding-left: 0.9em;
+  /* padding-left: 0.9em; */
   display: flex;
   align-items: center;
   border: none;
@@ -138,6 +140,8 @@
   transition: all 0.2s;
   cursor: pointer;
   margin-top: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.295);
+
 }
 
 .btnForm:hover {
@@ -146,12 +150,14 @@
 
 .btnForm span {
   display: block;
-  margin-left: 0.3em;
+  margin-left: 1rem;
   transition: all 0.3s ease-in-out;
+  font-weight: 500;
 }
 
 .btnForm svg {
   display: block;
+  margin-left: .5rem;
   transform-origin: center center;
   transition: transform 0.3s ease-in-out;
 }
@@ -161,11 +167,11 @@
 }
 
 .btnForm:hover svg {
-  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+  transform: translateX(2.5rem) rotate(45deg) scale(1.1);
 }
 
 .btnForm:hover span {
-  transform: translateX(5em);
+  transform: translateX(8rem);
 }
 
 .btnForm:active {

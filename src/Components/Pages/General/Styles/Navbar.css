@@ -43,15 +43,30 @@ nav {
     font-size: 1.1rem;
     color: white;
     transition: 0.3s ease-in-out;
+    position: relative;
 }
 
-#navbar li a:hover {
-    color: #17cf97;
+#navbar li:not(:last-child) a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    bottom: -7px; /* Ajusta este valor para cambiar el espacio */
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
 }
 
-#navbar li:last-child a:hover {
-    color: white;
+#navbar li:not(:last-child) a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
 }
+
+  
+
 
 
 .btnLogin {
@@ -142,4 +157,27 @@ nav {
         display: block;
         margin-top: 20px; /* Agregar margen superior para separar del resto de los elementos */
     }
+
+
+    /* animaciones de hover */
+
+    #navbar li a { /* Estilo de letras del menu */
+        
+        transition: none;
+        position: relative;
+    }
+    
+    #navbar li:not(:last-child) a::before {
+        position: relative;
+        transform-origin: none;
+        transform: none;
+        transition: none;
+    }
+    
+    #navbar li:not(:last-child) a:hover::before {
+        transform-origin: none;
+        transform: none;
+    }
+
+
 }
