@@ -4,10 +4,19 @@ import CardComida from "./CardsTemplate.jsx";
 import "../Style.css";
 
 // Imagenes 
-import BancoAlimentos from "./Imagenes/BancoAlimentosLogo.png";
-import ConinLogo from "./Imagenes/ConinLogoGrande.png";
-import Fann from "./Imagenes/FannLogoGrande.png";
-import FundacionLeon from "./Imagenes/LeonLogoGrande.png";
+import conin from "./Imagenes/ConinLogoGrande.png";
+import bancoAlimentos from "./Imagenes/BancoAlimentosLogo.png";
+import fann from "./Imagenes/FannLogoGrande copy.png";
+import confluir from "./Imagenes/ConfluirPerfil.png";
+import CocinaMariaGuadalupePerfil from "./Imagenes/cocinaGuada.png";
+import fundacionManosSolidarias from "./Imagenes/FundacionManosSolidarias.png";
+import CocinaNuevaAmanecer from "./Imagenes/CocinaNuevaAmanecer.png";
+import cocinaUnidosTriunfar from "./Imagenes/CocinaUnidosTriunfar.png";
+import comedorManosOlla from "./Imagenes/ComedorManosOlla.png";
+import secretariaNinez from "./Imagenes/Subsecretaría.png";
+import comedorReyes from "./Imagenes/comedorReyes.png";
+
+
 
 const Comida = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -69,19 +78,113 @@ const Comida = () => {
 };
 
 const data = [
-    { imagen: BancoAlimentos, titulo: "Banco de Alimentos", etiquetas: ["Dinero", "Comida"], horario: "9am - 4pm de lunes a viernes", descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", url: "/banco-alimentos" },
-    { imagen: ConinLogo, titulo: "FundacionConin", etiquetas: ["Dinero"], horario: "9am - 4pm de lunes a viernes", descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", url: "/conin" },
-    { imagen: Fann, titulo: "Fundacion Fann", etiquetas: ["Dinero", "Comida", "Asistencia"], horario: "9am - 4pm de lunes a viernes", descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", url: "/fann" },
-    { imagen: FundacionLeon, titulo: "Fundacion Leon", etiquetas: ["Dinero", "Hogar"], horario: "9am - 4pm de lunes a viernes", descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", url: "/leon" },
-    { imagen: BancoAlimentos, titulo: "Banco de Alimentos", etiquetas: ["Dinero", "Comida"], horario: "9am - 4pm de lunes a viernes", descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", url: "/banco-alimentos" },
-    { imagen: ConinLogo, titulo: "Fundacion Conin", etiquetas: ["Dinero"], horario: "9am - 4pm de lunes a viernes", descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", url: "/conin" },
-    { imagen: Fann, titulo: "Fundacion Fann", etiquetas: ["Dinero", "Comida"], horario: "9am - 4pm de lunes a viernes", descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", url: "/fann" },
-    { imagen: FundacionLeon, titulo: "Fundacion Leon", etiquetas: ["Dinero"], horario: "9am - 4pm de lunes a viernes", descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", url: "/leon" },
-    { imagen: BancoAlimentos, titulo: "Fundacion Banco de Alimentos", etiquetas: ["Dinero", "Comida"], horario: "9am - 4pm de lunes a viernes", descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", url: "/banco-alimentos" },
-    { imagen: ConinLogo, titulo: "Fundacion Conin", etiquetas: ["Dinero"], horario: "9am - 4pm de lunes a viernes", descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", url: "/conin" },
-    { imagen: Fann, titulo: "Fundacion Fann", etiquetas: ["Dinero", "Hogar", "Asistencia"], horario: "9am - 4pm de lunes a viernes", descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", url: "/fann" },
-    { imagen: FundacionLeon, titulo: "Fundacion Leon", etiquetas: ["Dinero", "Hogar"], horario: "9am - 4pm de lunes a viernes", descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", url: "/leon" },
+    { 
+        imagen: bancoAlimentos, 
+        titulo: "Banco de Alimentos", 
+        etiquetas: ["Dinero", "Comida"], 
+        horario: "9am - 4pm de lunes a viernes", 
+        descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", 
+        url: "/banco-alimentos" 
+        },
 
+        { 
+            imagen: fann, 
+            titulo: "Fundacion Fann", 
+            etiquetas: ["Dinero", "Comida"], 
+            horario: "9am - 4pm de lunes a viernes", 
+            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", 
+            url: "/banco-alimentos" 
+            },
+        
+            { 
+                imagen: conin, 
+                titulo: "Fundacion Conin", 
+                etiquetas: ["Dinero", "Comida", "Asistencia"], 
+                horario: "9am - 4pm de lunes a viernes", 
+                descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", 
+                url: "/conin" 
+                },
+            
+                { 
+                    imagen: CocinaMariaGuadalupePerfil, 
+                    titulo: "Comunitaria María de Guadalupe", 
+                    etiquetas: ["Dinero", "Comida"], 
+                    horario: "9am - 4pm de lunes a viernes", 
+                    descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", 
+                    url: "/cocina-comunitaria-maria-guadalupe" 
+                    },
+                
+                    { 
+                        imagen: CocinaNuevaAmanecer, 
+                        titulo: "Cocina Comunitaria Nueva", 
+                        etiquetas: ["Dinero", "Comida"], 
+                        horario: "9am - 4pm de lunes a viernes", 
+                        descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", 
+                        url: "/cocina-nueva-amanecer" 
+                        },
+                    
+
+                        { 
+                            imagen: cocinaUnidosTriunfar, 
+                            titulo: "Comunitaria Unidos para Triunfar", 
+                            etiquetas: ["Dinero", "Comida"], 
+                            horario: "9am - 4pm de lunes a viernes", 
+                            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", 
+                            url: "/cocina-comunitaria-unidos"
+                            },
+                            
+                            { 
+                                imagen: comedorManosOlla, 
+                                titulo: "Comedor Manos a la Olla", 
+                                etiquetas: ["Dinero", "Comida"], 
+                                horario: "9am - 4pm de lunes a viernes", 
+                                descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", 
+                                url: "/comedor-manos-olla" 
+                                },
+
+                                { 
+                                    imagen: comedorReyes, 
+                                    titulo: "Comedor Reyes", 
+                                    etiquetas: ["Dinero", "Comida"], 
+                                    horario: "9am - 4pm de lunes a viernes", 
+                                    descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", 
+                                    url: "/comedor-reyes" 
+                                    },
+
+
+                                    { 
+                                        imagen: confluir, 
+                                        titulo: "Confluir", 
+                                        etiquetas: ["Asistencia", "Comida"], 
+                                        horario: "9am - 4pm de lunes a viernes", 
+                                        descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", 
+                                        url: "/confluir" 
+                                        },
+
+                                        
+
+                                            { 
+                                                imagen: fundacionManosSolidarias, 
+                                                titulo: "Fundación Manos Solidarias", 
+                                                etiquetas: ["Dinero", "Comida", "Asistencia"], 
+                                                horario: "9am - 4pm de lunes a viernes", 
+                                                descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", 
+                                                url: "/fundacion-manos-solidarias" 
+                                            },
+
+                                                    { 
+                                                        imagen: secretariaNinez, 
+                                                        titulo: "Subsecretaría de Niñez", 
+                                                        etiquetas: ["Dinero", "Comida", "Asistencia"], 
+                                                        horario: "9am - 4pm de lunes a viernes", 
+                                                        descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", 
+                                                        url: "/secretaria-ninez" },
+                                                    
+                                                    
+                                        
+                                    
+                                
+                            
 ];
 
 

@@ -33,7 +33,7 @@ class Introduction extends Component {
 
                 <div id="BotonesConteiner">
 
-                  <div id="EnlaceIntroduccion" data-aos="fade-up">
+                  <div id="EnlaceIntroduccion" >
                       {LinkIntroduction.map((x, index) => (
                         <li key={index}>
                           <Link className="btn btn-primary" id="btnDondeDonar" to={x.href}>{x.name}</Link>
@@ -41,7 +41,7 @@ class Introduction extends Component {
                        ))}
                   </div>
 
-                  <div id="EnlaceIntroduccion" data-aos="fade-up">
+                  <div id="EnlaceIntroduccion" >
                       {LinkAprenderMas.map((x, index) => (
                         <li key={index}>
                           <Link className="btn btn-primary" id="btnAprenderMas" to={x.href}>{x.name}</Link>

@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import CardEscolar from "./CardsTemplate.jsx";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "../Style.css";
 
 // Imagenes 
-import BancoAlimentos from "./Imagenes/BancoAlimentosLogo.png";
-import ConinLogo from "./Imagenes/ConinLogoGrande.png";
-import Fann from "./Imagenes/FannLogoGrande.png";
-import FundacionLeon from "./Imagenes/LeonLogoGrande.png";
+import Casacuna from "./Imagenes/casaCuna.png";
+
 
 const Escolar = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -70,20 +68,15 @@ const Escolar = () => {
 };
 
 const data = [
-    { imagen: BancoAlimentos, titulo: "Banco de Alimentos", etiquetas: ["Dinero", "Comida"], horario: "9am - 4pm de lunes a viernes", descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", url: "/banco-alimentos" },
-    { imagen: ConinLogo, titulo: "FundacionConin", etiquetas: ["Dinero"], horario: "9am - 4pm de lunes a viernes", descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", url: "/conin" },
-    { imagen: Fann, titulo: "Fundacion Fann", etiquetas: ["Dinero", "Hogar", "Asistencia"], horario: "9am - 4pm de lunes a viernes", descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", url: "/fann" },
-    { imagen: FundacionLeon, titulo: "Fundacion Leon", etiquetas: ["Dinero", "Hogar"], horario: "9am - 4pm de lunes a viernes", descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", url: "/leon" },
-    { imagen: BancoAlimentos, titulo: "Banco de Alimentos", etiquetas: ["Dinero", "Comida"], horario: "9am - 4pm de lunes a viernes", descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", url: "/banco-alimentos" },
-    { imagen: ConinLogo, titulo: "Fundacion Conin", etiquetas: ["Dinero"], horario: "9am - 4pm de lunes a viernes", descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", url: "/conin" },
-    { imagen: Fann, titulo: "Fundacion Fann", etiquetas: ["Dinero", "Comida"], horario: "9am - 4pm de lunes a viernes", descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", url: "/fann" },
-    { imagen: FundacionLeon, titulo: "Fundacion Leon", etiquetas: ["Dinero"], horario: "9am - 4pm de lunes a viernes", descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", url: "/leon" },
-    { imagen: BancoAlimentos, titulo: "Fundacion Banco de Alimentos", etiquetas: ["Dinero", "Comida"], horario: "9am - 4pm de lunes a viernes", descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", url: "/banco-alimentos" },
-    { imagen: ConinLogo, titulo: "Fundacion Conin", etiquetas: ["Dinero"], horario: "9am - 4pm de lunes a viernes", descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", url: "/conin" },
-    { imagen: Fann, titulo: "Fundacion Fann", etiquetas: ["Dinero", "Hogar", "Asistencia"], horario: "9am - 4pm de lunes a viernes", descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", url: "/fann" },
-    { imagen: FundacionLeon, titulo: "Fundacion Leon", etiquetas: ["Dinero", "Hogar"], horario: "9am - 4pm de lunes a viernes", descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", url: "/leon" },
-
-];
-;
+    { 
+        imagen: Casacuna, 
+        titulo: "Casa Cuna", 
+        etiquetas: ["Asistencia", "Hogar", "Escolar", "Ropa"], 
+        horario: "9am - 4pm de lunes a viernes", 
+        descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", 
+        url: "/casa-cuna" 
+        },
+    
+];;
 
 export default Escolar;
