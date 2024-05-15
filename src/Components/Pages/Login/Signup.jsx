@@ -58,8 +58,10 @@ class Signup extends Component {
 
                                 </div>
 
-                                <div class="btnRegistrarse">
-                                    <button class="buttonSendRequestRegister">Registrarme</button>
+                                <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+
+                                <div class="btnRegistrarse" >
+                                    <button type="submit" class="buttonSendRequestRegister">Registrarme</button>
                                 </div>
                             </form>
 
