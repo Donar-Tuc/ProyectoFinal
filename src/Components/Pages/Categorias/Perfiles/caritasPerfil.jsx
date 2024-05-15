@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import "./Styles/Dinero.css";
 import TemplatePerfil from "./TemplatePerfil.jsx";
-import CaritasPerfil from "./Imagenes/caritas.png";
+import caritasPerfil from "./Imagenes/caritas.png";
 
 class CaritasPerfil extends Component {
   render() {
     const opcionesDePerfiles = [
       {
-        logo: CaritasPerfil,
+        logo: caritasPerfil,
         titulo: "Caritas",
         horario: "9am a 5pm",
         direccion: "San Lorenzo 441. S. M. de Tucumán",

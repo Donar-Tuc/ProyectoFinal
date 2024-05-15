@@ -99,7 +99,7 @@ const data = [
             etiquetas: ["Dinero", "Comida"], 
             horario: "9am - 4pm de lunes a viernes", 
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", 
-            url: "/banco-alimentos" 
+            url: "/fann" 
             },
 
             { 
@@ -176,7 +176,7 @@ const data = [
                                         etiquetas: ["Dinero", "Asistencia"], 
                                         horario: "9am - 4pm de lunes a viernes", 
                                         descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", 
-                                        url: "/fundacion-leon" 
+                                        url: "/leon" 
                                         },
 
                                         { 
@@ -222,7 +222,7 @@ const data = [
                                             etiquetas: ["Dinero", "Asistencia"], 
                                             horario: "9am - 4pm de lunes a viernes", 
                                             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", 
-                                            url: "/banco-alimentos" 
+                                            url: "/fundacion-vallecito-de-la-guadalupe" 
                                         },
                                         
                                         

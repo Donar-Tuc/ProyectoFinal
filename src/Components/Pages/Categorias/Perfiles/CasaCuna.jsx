@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import "./Styles/Dinero.css";
 import TemplatePerfil from "./TemplatePerfil.jsx";
-import CasaCuna from "./Imagenes/casaCuna.png";
+import casaCuna from "./Imagenes/casaCuna.png";
 
 class CasaCuna extends Component {
   render() {
     const opcionesDePerfiles = [
       {
-        logo: CasaCuna,
+        logo: casaCuna,
         titulo: "Casa Cuna",
         horario: "Abierto 24hrs",
         direccion: "San Martín al 100",
