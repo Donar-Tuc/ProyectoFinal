@@ -41,7 +41,8 @@ class TemplatePerfil extends Component {
                     </div>
 
                     <div className="Mapa">
-                        <iframe id="MapaGoogle" src={mapa} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe id="MapaGoogle" src={mapa} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"  title="Mapa de Google con ubicaciones"
+></iframe>
                     </div>
                 </div>
             </section>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CardDinero from "./CardsTemplate.jsx";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "../Style.css";
 
 // Imagenes 

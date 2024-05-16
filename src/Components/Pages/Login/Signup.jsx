@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Styles/Signup.css";
 import Fondo from './images/fondo.png'
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 
 class Signup extends Component {

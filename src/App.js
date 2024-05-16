@@ -52,7 +52,7 @@ import SubsecretariaNinez from './Components/Pages/Categorias/Perfiles/subsecret
 import TechoPerfil from './Components/Pages/Categorias/Perfiles/Techo.jsx';
 import VallecitoGuada from './Components/Pages/Categorias/Perfiles/vallecitoGuada.jsx';
 
-import hospitalMaternidadPerfil from './Components/Pages/Categorias/Perfiles/HospitalMaternidad.jsx'
+// import hospitalMaternidadPerfil from './Components/Pages/Categorias/Perfiles/HospitalMaternidad.jsx'
 
 
 

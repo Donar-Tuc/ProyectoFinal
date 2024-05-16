@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Styles/OlvidasteContraseña.css";
 import Fondo from './images/fondo.png'
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 
 class OlvidasteContraseña extends Component {

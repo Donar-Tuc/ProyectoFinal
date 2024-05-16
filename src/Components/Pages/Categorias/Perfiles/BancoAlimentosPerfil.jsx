@@ -3,11 +3,7 @@ import "./Styles/Dinero.css";
 import TemplatePerfil from "./TemplatePerfil.jsx";
 import LogoBancoAlimentos from "./Imagenes/BancoAlimentosLogo.png";
 
-const Link = [
-  {
-    name: ""
-  }
-]
+
 
 class BancoAlimentosPerfil extends Component {
   render() {
