@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Styles/Dinero.css";
 import TemplatePerfil from "./TemplatePerfil.jsx";
-import subsecretaria from "./Imagenes/Subsecretaría.png";
+import subsecretaria from "./Imagenes/subsecretaria.png";
 
 class SubsecretariaNinez extends Component {
   render() {
