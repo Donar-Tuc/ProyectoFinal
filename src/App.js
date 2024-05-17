@@ -52,7 +52,7 @@ import SubsecretariaNinez from './Components/Pages/Categorias/Perfiles/subsecret
 import TechoPerfil from './Components/Pages/Categorias/Perfiles/Techo.jsx';
 import VallecitoGuada from './Components/Pages/Categorias/Perfiles/vallecitoGuada.jsx';
 
-// import hospitalMaternidadPerfil from './Components/Pages/Categorias/Perfiles/HospitalMaternidad.jsx'
+import HospitalMaternidadPerfil from './Components/Pages/Categorias/Perfiles/HospitalMaternidad.jsx'
 
 
 
@@ -83,9 +83,6 @@ function App() {
           <Route path='/recuperar-contrasena' element={<OlvidasteContraseña />}></Route>
 
 
-
-
-
           <Route path='/banco-alimentos' element={<BancoAlimentosPerfil />}></Route>
           <Route path='/leon' element={<LeonPerfil />}></Route>
           <Route path='/fann' element={<FannPerfil />}></Route>
@@ -106,7 +103,7 @@ function App() {
           <Route path='/secretaria-ninez' element={<SubsecretariaNinez />}></Route>
           <Route path='/techo' element={<TechoPerfil />}></Route>
           <Route path='/fundacion-vallecito-de-la-guadalupe' element={<VallecitoGuada />}></Route>
-          <Route path='/instituto-las-mercedes' element={<hospitalMaternidadPerfil />}></Route>
+          <Route path='/instituto-las-mercedes' element={<HospitalMaternidadPerfil />}></Route>
 
 
         </Routes>

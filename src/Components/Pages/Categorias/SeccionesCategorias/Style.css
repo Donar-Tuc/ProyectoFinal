@@ -152,6 +152,16 @@
     transition: .2s all ease-in;
 }
 
+.BtnNextAndPrevious:disabled {
+    background-color: gray;
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.5;
+    user-select: none;
+}
+
+
+
 .OnBtnContainerDespues {
     display: flex;
     gap: 20px;
@@ -188,22 +198,6 @@ ion-icon {
     transform: translateX(-3px);
 }
 
-.BtnNextAndPrevious:hover {
-    background-color: #378add;
-}
-
-/* Estilos del botón "Anterior" cuando está deshabilitado */
-.BtnPreviousDisabled {
-    opacity: 0.5;
-    pointer-events: none;
-
-}
-
-/* Estilos del botón "Siguiente" cuando está deshabilitado */
-.BtnNextDisabled {
-    opacity: 0.5;
-    pointer-events: none;
-}
 
 @media (max-width: 900px) {
 

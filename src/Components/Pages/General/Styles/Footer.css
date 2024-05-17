@@ -1,4 +1,4 @@
-#FooterSection{
+#FooterSection {
     display: flex;
     background-color: #1b2430;
     flex-direction: column;
@@ -8,7 +8,7 @@
     padding: 2rem 0;
 }
 
-.Menu{
+.Menu {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -17,20 +17,23 @@
     width: 100%;
 }
 
-.Menu ul{
+.Menu ul {
     display: flex;
     justify-content: space-between;
     gap: 30px;
     list-style: none;
 }
 
-.Menu ul li a{
+.Menu ul li a {
     text-decoration: none;
+    color: white;
+    font-family: "Montserrat", sans-serif;
 }
 
 
-.Menu ul li a { /* Estilo de letras del menu */
-        
+.Menu ul li a {
+    /* Estilo de letras del menu */
+
     transition: none;
     position: relative;
 }
@@ -47,7 +50,7 @@
     transform: none;
 }
 
-#Copyright{
+#Copyright {
     font-size: 1rem;
     text-align: center;
     width: 100%;
@@ -57,7 +60,7 @@
 
 
 @media (max-width: 900px) {
-    #FooterSection{
+    #FooterSection {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -66,8 +69,8 @@
         padding: 1rem 0;
         text-align: center;
     }
-    
-    .Menu{
+
+    .Menu {
         display: flex;
         width: 100%;
         justify-content: center;
@@ -75,19 +78,19 @@
         /* border: 2px yellow solid; */
 
     }
-    
-    .Menu ul{
+
+    .Menu ul {
         list-style: none;
     }
-    
-    .Menu ul li a{
+
+    .Menu ul li a {
         text-decoration: none;
         color: white;
         font-size: 1rem;
         transition: none;
     }
-    
-    .Menu ul li a:hover{
+
+    .Menu ul li a:hover {
         text-decoration: none;
         color: white;
         font-size: 1rem;
@@ -100,19 +103,20 @@
         height: none;
         border-radius: 4px;
         background-color: none;
-        bottom: none; /* Ajusta este valor para cambiar el espacio */
+        bottom: none;
+        /* Ajusta este valor para cambiar el espacio */
         left: none;
         transform-origin: none;
         transform: none;
         transition: none;
     }
-    
+
     .Menu ul li a:hover::before {
         transform-origin: none;
         transform: none;
     }
-    
-    #Copyright{
+
+    #Copyright {
         width: 100%;
         justify-content: center;
         font-size: .7rem;
