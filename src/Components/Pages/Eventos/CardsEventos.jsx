@@ -4,7 +4,7 @@ import "./css/eventos.css";
 
 class Card extends Component {
     render() {
-        const { imagen, titulo, horario, descripcion, url, etiquetas } = this.props;
+        const { imagen, titulo, horario, etiquetas,url, descripcion, tituloEtiquetas } = this.props;
 
         return (
             <>
@@ -17,11 +17,13 @@ class Card extends Component {
                         <h3 id="TituloEventos">{titulo}</h3>
                         <p id="HorarioEventos">{horario}</p>
                         <div id="etiquetasContainer">
-                            {/* Recorre el array de etiquetas y muestra cada una */}
-                            {etiquetas.map((etiqueta, index) => (
-                                <p key={index} id="EtiquetaCard">{etiqueta}</p>
-                            ))}
-                        </div>
+                        {etiquetas.map((etiqueta, index) => (
+                            <div className="EtiquetaContainer " key={index}>
+                                <img src={etiqueta} id="EtiquetaCard" alt="categoria" />
+                                <p className="TituloEtiqueta">{tituloEtiquetas[index]}</p>
+                            </div>
+                        ))}
+                    </div>
                         <p id="DecripcionEventos">{descripcion}</p>
                         <Link to={url}>
                             <button id="BotonLink">Saber Mas</button>
