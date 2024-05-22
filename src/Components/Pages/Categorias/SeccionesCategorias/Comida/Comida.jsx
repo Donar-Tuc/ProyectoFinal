@@ -16,7 +16,13 @@ import comedorManosOlla from "./Imagenes/ComedorManosOlla.png";
 import secretariaNinez from "./Imagenes/Subsecretaría.png";
 import comedorReyes from "./Imagenes/comedorReyes.png";
 
-
+// icons etiquetas
+import dineroEtiqueta from './Imagenes/card-outline.svg';
+import comidaEtiqueta from './Imagenes/fast-food-outline.svg';
+import asistenciaEtiqueta from './Imagenes/alarm-outline.svg';
+import hogarEtiqueta from './Imagenes/home-outline.svg';
+import escolarEtiqueta from './Imagenes/school-outline.svg';
+import ropaEtiqueta from './Imagenes/shirt-outline.svg'
 
 const Comida = () => {
 
@@ -25,92 +31,107 @@ const Comida = () => {
         return savedPage ? parseInt(savedPage, 10) : 1;
     });
 
-    // No necesitas esta variable si no la estás utilizando
-    // const [currentSection, setCurrentSection] = useState('');
 
-    // Define los datos en el componente directamente, ya que solo los utilizas aquí
     const data = [
         {
             imagen: bancoAlimentos,
             titulo: "Banco de Alimentos",
-            etiquetas: ["Dinero", "Comida"],
+            etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/banco-alimentos"
+            url: "/banco-alimentos",
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos"]
+
         },
 
         {
             imagen: fann,
             titulo: "Fundacion Fann",
-            etiquetas: ["Dinero", "Comida"],
+            etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/fann"
+            url: "/fann",
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos"]
+
         },
 
         {
             imagen: conin,
             titulo: "Fundacion Conin",
-            etiquetas: ["Dinero", "Comida", "Asistencia"],
+            etiquetas: [dineroEtiqueta, comidaEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/conin"
+            url: "/conin",
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados"]
+
         },
 
         {
             imagen: CocinaMariaGuadalupePerfil,
             titulo: "Comunitaria María de Guadalupe",
-            etiquetas: ["Dinero", "Comida"],
+            etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/cocina-comunitaria-maria-guadalupe"
+            url: "/cocina-comunitaria-maria-guadalupe",
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados"]
+
         },
 
         {
             imagen: CocinaNuevaAmanecer,
             titulo: "Cocina Comunitaria Nueva",
-            etiquetas: ["Dinero", "Comida"],
+            etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/cocina-nueva-amanecer"
+            url: "/cocina-nueva-amanecer",
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos"]
+
         },
 
 
         {
             imagen: cocinaUnidosTriunfar,
             titulo: "Comunitaria Unidos para Triunfar",
-            etiquetas: ["Dinero", "Comida"],
+            etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/cocina-comunitaria-unidos"
+            url: "/cocina-comunitaria-unidos",
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos"]
+
         },
 
         {
             imagen: comedorManosOlla,
             titulo: "Comedor Manos a la Olla",
-            etiquetas: ["Dinero", "Comida"],
+            etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/comedor-manos-olla"
+            url: "/comedor-manos-olla",
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos"]
+
         },
 
         {
             imagen: comedorReyes,
             titulo: "Comedor Reyes",
-            etiquetas: ["Dinero", "Comida"],
+            etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/comedor-reyes"
+            url: "/comedor-reyes",
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos"]
+
         },
 
 
         {
             imagen: confluir,
             titulo: "Confluir",
-            etiquetas: ["Asistencia", "Comida"],
+            etiquetas: [comidaEtiqueta , asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/confluir"
+            url: "/confluir",
+            tituloEtiquetas: ["Alimentos no perecederos", "Asistencia y voluntariados"]
+
         },
 
 
@@ -118,19 +139,23 @@ const Comida = () => {
         {
             imagen: fundacionManosSolidarias,
             titulo: "Fundación Manos Solidarias",
-            etiquetas: ["Dinero", "Comida", "Asistencia"],
+            etiquetas: [dineroEtiqueta, comidaEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/fundacion-manos-solidarias"
+            url: "/fundacion-manos-solidarias",
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados"]
+
         },
 
         {
             imagen: secretariaNinez,
             titulo: "Subsecretaría de Niñez",
-            etiquetas: ["Dinero", "Comida", "Asistencia"],
+            etiquetas: [dineroEtiqueta, comidaEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/secretaria-ninez"
+            url: "/secretaria-ninez",
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados"]
+
         },
     ];
 
@@ -144,11 +169,6 @@ const Comida = () => {
         window.scrollTo(0, 0);
     }, [currentPage]);
 
-    // No necesitas esta useEffect si no estás utilizando currentSection
-    // useEffect(() => {
-    //     // Al cambiar de sección, reiniciar la ubicación
-    //     window.scrollTo(0, 0);
-    // }, [currentSection]);
 
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
@@ -168,6 +188,7 @@ const Comida = () => {
                     etiquetas={card.etiquetas}
                     descripcion={card.descripcion}
                     url={card.url}
+                    tituloEtiquetas={card.tituloEtiquetas}
                 />
             ))}
             <div id="PaginationButtons">

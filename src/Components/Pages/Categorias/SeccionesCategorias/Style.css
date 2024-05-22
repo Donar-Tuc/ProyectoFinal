@@ -42,24 +42,54 @@
 #etiquetasContainer {
     display: flex;
     flex-direction: row;
-    gap: 5px;
+    gap: 10px;
+    margin-bottom: 1rem;
 }
 
-/* Estiqueta estilo */
-
+/* Estilo para la etiqueta */
 #EtiquetaCard {
-    display: flex;
-    /* flex-direction: row; */
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: .5rem .8rem;
+    padding: .3rem .4rem;
     background-color: rgba(233, 233, 233, 0.322);
     color: white;
-    border: 1px white solid;
     font-weight: 600;
-    /* width: 20%; */
+    width: 100%;
     border-radius: 10px;
 }
+
+/* Estilo para el contenedor de la etiqueta */
+.EtiquetaContainer {
+    position: relative; /* Posición relativa para el posicionamiento absoluto del título */
+    display: inline-block; /* Para que el contenedor se ajuste al contenido */
+    width: 50px;
+}
+
+/* Estilo para el título de la etiqueta */
+.TituloEtiqueta {
+  position: absolute;
+  width: 200px;
+  bottom: -90px;
+text-align: center;
+  left: 80%;
+  transform: translateX(-60%);
+  background-color: #ebefff;
+  color: black;
+  font-weight: 600;
+  padding: 10px 10px ;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: .8rem;
+  font-family: "Montserrat", sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Estilo para mostrar el título de la etiqueta al pasar el ratón sobre ella */
+.EtiquetaContainer:hover .TituloEtiqueta {
+    opacity: 1;
+    visibility: visible;
+    bottom: -65px;    
+}
+
 
 /* imagen container */
 
@@ -355,6 +385,35 @@ ion-icon {
         background-color: #2f74db;
     }
 
+
+    /* Icons hover */
+
+
+    .TituloEtiqueta {
+        position: absolute;
+        width: 100px;
+        bottom: -90px;
+      text-align: center;
+        left: 80%;
+        transform: translateX(-60%);
+        background-color: #ebefff;
+        color: black;
+        font-weight: 600;
+        padding: 10px 10px ;
+        border-radius: 5px;
+        opacity: 0;
+        visibility: hidden;
+        font-size: .7em;
+        font-family: "Montserrat", sans-serif;
+        transition: all 0.3s ease;
+      }
+      
+      /* Estilo para mostrar el título de la etiqueta al pasar el ratón sobre ella */
+      .EtiquetaContainer:hover .TituloEtiqueta {
+          opacity: 1;
+          visibility: visible;
+          bottom: -78px;    
+      }
 
 
 }

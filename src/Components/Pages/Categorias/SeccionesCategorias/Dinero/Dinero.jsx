@@ -23,6 +23,14 @@ import secretariaNinez from "./Imagenes/Subsecretaría.png";
 import techo from "./Imagenes/techoPerfil.png";
 
 
+// icons etiquetas
+import dineroEtiqueta from './Imagenes/card-outline.svg';
+import comidaEtiqueta from './Imagenes/fast-food-outline.svg';
+import asistenciaEtiqueta from './Imagenes/alarm-outline.svg';
+import hogarEtiqueta from './Imagenes/home-outline.svg';
+// import escolarEtiqueta from './Imagenes/school-outline.svg';
+import ropaEtiqueta from './Imagenes/shirt-outline.svg'
+
 
 const Dinero = () => {
     const [currentPage, setCurrentPage] = useState(() => {
@@ -30,150 +38,176 @@ const Dinero = () => {
         return savedPage ? parseInt(savedPage, 10) : 1;
     });
 
-    // No necesitas esta variable si no la estás utilizando
-    // const [currentSection, setCurrentSection] = useState('');
-
-    // Define los datos en el componente directamente, ya que solo los utilizas aquí
     const data = [
         {
             imagen: BancoAlimentos,
             titulo: "Banco de Alimentos",
-            etiquetas: ["Dinero", "Comida"],
+            etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/banco-alimentos"
+            url: "/banco-alimentos",
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos"]
+
         },
 
         {
             imagen: fann,
             titulo: "Fundacion Fann",
-            etiquetas: ["Dinero", "Comida"],
+            etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/fann"
+            url: "/fann",
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos"]
+
         },
 
         {
             imagen: conin,
             titulo: "Fundacion Conin",
-            etiquetas: ["Dinero", "Comida", "Asistencia"],
+            etiquetas: [dineroEtiqueta, comidaEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/conin"
+            url: "/conin",
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados"]
+
         },
 
 
         {
             imagen: Caritas,
             titulo: "Fundacion Caritas",
-            etiquetas: ["Dinero", "Hogar", "Ropa"],
+            etiquetas: [dineroEtiqueta, hogarEtiqueta, ropaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/caritas"
+            url: "/caritas",
+            tituloEtiquetas: ["Donaciones monetarias", "Elementos del hogar", "Vestimenta"]
+
         },
 
 
         {
             imagen: centroMoritas,
             titulo: "Centro de Rehabilitación Las Moritas",
-            etiquetas: ["Dinero", "Asistencia"],
+            etiquetas: [dineroEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/Centro-las-moritas"
+            url: "/Centro-las-moritas",
+            tituloEtiquetas: ["Donaciones monetarias", "Asistencia y voluntariados"]
+
         },
 
         {
             imagen: CocinaMariaGuadalupePerfil,
             titulo: "Cocina Comunitaria María de Guadalupe",
-            etiquetas: ["Dinero", "Comida"],
+            etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/cocina-comunitaria-maria-guadalupe"
+            url: "/cocina-comunitaria-maria-guadalupe",
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos"]
+
         },
 
         {
             imagen: CocinaNuevaAmanecer,
             titulo: "Cocina Comunitaria Nueva",
-            etiquetas: ["Dinero", "Comida"],
+            etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/cocina-nueva-amanecer"
+            url: "/cocina-nueva-amanecer",
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos"]
+
         },
 
 
         {
             imagen: comedorManosOlla,
             titulo: "Comedor Manos a la Olla",
-            etiquetas: ["Dinero", "Comida"],
+            etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/comedor-manos-olla"
+            url: "/comedor-manos-olla",
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos"]
+
         },
 
 
         {
             imagen: comedorReyes,
             titulo: "Comedor Reyes",
-            etiquetas: ["Dinero", "Comida"],
+            etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/comedor-reyes"
+            url: "/comedor-reyes",
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos"]
+
         },
 
 
         {
             imagen: LeonPerfil,
             titulo: "Fundación Leon",
-            etiquetas: ["Dinero", "Asistencia"],
+            etiquetas: [dineroEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/leon"
+            url: "/leon",
+            tituloEtiquetas: ["Donaciones monetarias","Asistencia y voluntariados"]
+
         },
 
         {
             imagen: fundacionManosSolidarias,
             titulo: "Fundación Manos Solidarias",
-            etiquetas: ["Dinero", "Comida", "Asistencia"],
+            etiquetas: [dineroEtiqueta, comidaEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/fundacion-manos-solidarias"
+            url: "/fundacion-manos-solidarias",
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados"]
+
         },
 
         {
             imagen: nodoAmbiental,
             titulo: "Nodo Ambiental",
-            etiquetas: ["Dinero", "Asistencia"],
+            etiquetas: [dineroEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/nodo-ambiental"
+            url: "/nodo-ambiental",
+            tituloEtiquetas: ["Donaciones monetarias", "Asistencia y voluntariados"]
+
         },
 
         {
             imagen: secretariaNinez,
             titulo: "Subsecretaría de Niñez, Adolescencia y Familia",
-            etiquetas: ["Dinero", "Comida", "Asistencia"],
+            etiquetas: [dineroEtiqueta, comidaEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/secretaria-ninez"
+            url: "/secretaria-ninez",
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados"]
+
         },
 
 
         {
             imagen: techo,
             titulo: "Techo",
-            etiquetas: ["Dinero", "Asistencia"],
+            etiquetas: [dineroEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/techo"
+            url: "/techo",
+            tituloEtiquetas: ["Donaciones monetarias", "Asistencia y voluntariados"]
+
         },
 
         {
             imagen: fundacionGuada,
             titulo: "El vallecito de la Guadalupe",
-            etiquetas: ["Dinero", "Asistencia"],
+            etiquetas: [dineroEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/fundacion-vallecito-de-la-guadalupe"
+            url: "/fundacion-vallecito-de-la-guadalupe",
+            tituloEtiquetas: ["Donaciones monetarias", "Asistencia y voluntariados"]
+
         },
 
 
@@ -189,11 +223,6 @@ const Dinero = () => {
         window.scrollTo(0, 0);
     }, [currentPage]);
 
-    // No necesitas esta useEffect si no estás utilizando currentSection
-    // useEffect(() => {
-    //     // Al cambiar de sección, reiniciar la ubicación
-    //     window.scrollTo(0, 0);
-    // }, [currentSection]);
 
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
@@ -212,6 +241,8 @@ const Dinero = () => {
                     etiquetas={card.etiquetas}
                     descripcion={card.descripcion}
                     url={card.url}
+                    tituloEtiquetas={card.tituloEtiquetas}
+
                 />
             ))}
 

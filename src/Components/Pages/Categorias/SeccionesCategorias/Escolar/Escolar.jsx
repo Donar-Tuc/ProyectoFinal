@@ -5,24 +5,34 @@ import "../Style.css";
 // Importa la imagen
 import Casacuna from "./Imagenes/casaCuna.png";
 
+
+
+// icons etiquetas
+import dineroEtiqueta from './Imagenes/card-outline.svg';
+import comidaEtiqueta from './Imagenes/fast-food-outline.svg';
+import asistenciaEtiqueta from './Imagenes/alarm-outline.svg';
+import hogarEtiqueta from './Imagenes/home-outline.svg';
+import escolarEtiqueta from './Imagenes/school-outline.svg';
+import ropaEtiqueta from './Imagenes/shirt-outline.svg'
+
+
 const Escolar = () => {
     const [currentPage, setCurrentPage] = useState(() => {
         const savedPage = localStorage.getItem("currentPage");
         return savedPage ? parseInt(savedPage, 10) : 1;
     });
 
-    // No necesitas esta variable si no la estás utilizando
-    // const [currentSection, setCurrentSection] = useState('');
 
-    // Define los datos en el componente directamente, ya que solo los utilizas aquí
     const data = [
         {
             imagen: Casacuna,
             titulo: "Casa Cuna",
-            etiquetas: ["Asistencia", "Hogar", "Escolar", "Ropa"],
+            etiquetas: [asistenciaEtiqueta, hogarEtiqueta, escolarEtiqueta, ropaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
-            url: "/casa-cuna"
+            url: "/casa-cuna",
+            tituloEtiquetas: ["Asistencia y voluntariados", "Elementos del hogar", "Útiles escolares","Vestimenta"]
+
         },
     ];
 
@@ -36,11 +46,6 @@ const Escolar = () => {
         window.scrollTo(0, 0);
     }, [currentPage]);
 
-    // No necesitas esta useEffect si no estás utilizando currentSection
-    // useEffect(() => {
-    //     // Al cambiar de sección, reiniciar la ubicación
-    //     window.scrollTo(0, 0);
-    // }, [currentSection]);
 
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
@@ -59,6 +64,8 @@ const Escolar = () => {
                     etiquetas={card.etiquetas}
                     descripcion={card.descripcion}
                     url={card.url}
+                    tituloEtiquetas={card.tituloEtiquetas}
+
                 />
             ))}
 
