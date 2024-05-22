@@ -18,7 +18,7 @@ class Card extends Component {
                         <p id="HorarioEventos">{horario}</p>
                         <div id="etiquetasContainer">
                         {etiquetas.map((etiqueta, index) => (
-                            <div className="EtiquetaContainer " key={index}>
+                            <div className="EtiquetaContainer" key={index}>
                                 <img src={etiqueta} id="EtiquetaCard" alt="categoria" />
                                 <p className="TituloEtiqueta">{tituloEtiquetas[index]}</p>
                             </div>

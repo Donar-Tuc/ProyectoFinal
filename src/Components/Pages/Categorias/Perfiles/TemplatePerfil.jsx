@@ -5,7 +5,7 @@ import "./Styles/Dinero.css";
 class TemplatePerfil extends Component {
     render() {
         const { opciones } = this.props; // Cambio aquí
-        const { logo, titulo, horario, direccion, telefono, sitioWeb, email, mapaBoton, mapa, descripcion } = opciones; // Cambio aquí
+        const { logo, titulo, horario, direccion, telefono, sitioWeb, email, mapaBoton, mapa, descripcion, tituloEtiquetas,etiquetas } = opciones; // Cambio aquí
         return (
             <section id="ContainerDineroPadre">
                 <div className="DineroHijo">
@@ -15,6 +15,14 @@ class TemplatePerfil extends Component {
                         <div id="ContainerTituloBtn">
                             <div id="Box1Texto">
                                 <h2 id="TituloDinero">{titulo}</h2>
+                                <div id="etiquetasContainer">
+                        {etiquetas.map((etiqueta, index) => (
+                            <div className="EtiquetaContainer " key={index}>
+                                <img src={etiqueta} id="EtiquetaCard" alt="categoria" />
+                                <p className="TituloEtiqueta">{tituloEtiquetas[index]}</p>
+                            </div>
+                        ))}
+                    </div>
                                 <p>{horario}</p>
                                 <a href={mapa}>{direccion}</a>
                             </div>
