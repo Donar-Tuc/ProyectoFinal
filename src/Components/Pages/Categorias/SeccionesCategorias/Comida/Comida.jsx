@@ -20,9 +20,11 @@ import comedorReyes from "./Imagenes/comedorReyes.png";
 import dineroEtiqueta from './Imagenes/card-outline.svg';
 import comidaEtiqueta from './Imagenes/fast-food-outline.svg';
 import asistenciaEtiqueta from './Imagenes/alarm-outline.svg';
-import hogarEtiqueta from './Imagenes/home-outline.svg';
-import escolarEtiqueta from './Imagenes/school-outline.svg';
-import ropaEtiqueta from './Imagenes/shirt-outline.svg'
+import juguetesEtiqueta from './Imagenes/extension-puzzle-outline.svg';
+
+// import hogarEtiqueta from './Imagenes/home-outline.svg';
+// import escolarEtiqueta from './Imagenes/school-outline.svg';
+// import ropaEtiqueta from './Imagenes/shirt-outline.svg'
 
 const Comida = () => {
 
@@ -150,11 +152,11 @@ const Comida = () => {
         {
             imagen: secretariaNinez,
             titulo: "Subsecretaría de Niñez",
-            etiquetas: [dineroEtiqueta, comidaEtiqueta, asistenciaEtiqueta],
+            etiquetas: [dineroEtiqueta, comidaEtiqueta, asistenciaEtiqueta, juguetesEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/secretaria-ninez",
-            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados"]
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados","Juguetes"]
 
         },
     ];

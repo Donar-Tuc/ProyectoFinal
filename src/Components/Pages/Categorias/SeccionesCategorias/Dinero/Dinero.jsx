@@ -27,9 +27,11 @@ import techo from "./Imagenes/techoPerfil.png";
 import dineroEtiqueta from './Imagenes/card-outline.svg';
 import comidaEtiqueta from './Imagenes/fast-food-outline.svg';
 import asistenciaEtiqueta from './Imagenes/alarm-outline.svg';
-import hogarEtiqueta from './Imagenes/home-outline.svg';
+// import hogarEtiqueta from './Imagenes/home-outline.svg';
 // import escolarEtiqueta from './Imagenes/school-outline.svg';
-import ropaEtiqueta from './Imagenes/shirt-outline.svg'
+import ropaEtiqueta from './Imagenes/shirt-outline.svg';
+import medicamentosEtiqueta from './Imagenes/medkit-outline.svg';
+import juguetesEtiqueta from './Imagenes/extension-puzzle-outline.svg';
 
 
 const Dinero = () => {
@@ -72,15 +74,14 @@ const Dinero = () => {
 
         },
 
-
         {
             imagen: Caritas,
             titulo: "Fundacion Caritas",
-            etiquetas: [dineroEtiqueta, hogarEtiqueta, ropaEtiqueta],
+            etiquetas: [dineroEtiqueta, ropaEtiqueta, juguetesEtiqueta, medicamentosEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/caritas",
-            tituloEtiquetas: ["Donaciones monetarias", "Elementos del hogar", "Vestimenta"]
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos","Asistencia y voluntariados", "Medicamentos" ],
 
         },
 

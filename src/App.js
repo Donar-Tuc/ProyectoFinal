@@ -25,6 +25,8 @@ import Dinero from './Components/Pages/Categorias/SeccionesCategorias/Dinero/Din
 import Escolar from './Components/Pages/Categorias/SeccionesCategorias/Escolar/Escolar.jsx';
 import Hogar from './Components/Pages/Categorias/SeccionesCategorias/Hogar/Hogar.jsx';
 import Ropa from './Components/Pages/Categorias/SeccionesCategorias/Ropa/Ropa.jsx';
+import Medicamentos from './Components/Pages/Categorias/SeccionesCategorias/Medicamentos/medicamentos.jsx';
+import Juguetes from './Components/Pages/Categorias/SeccionesCategorias/Juguetes/Juguetes.jsx';
 import Nosotros from './Components/Pages/QuienesSomos/Nosotros.jsx';
 import VerTodo from './Components/Pages/Categorias/SeccionesCategorias/VerTodo/VerTodo.jsx';
 
@@ -64,10 +66,19 @@ function App() {
       <div>
         <Navbar />
         <Routes>
+          {/* Secciones */}
           <Route path='/' element={<Inicio />}></Route>
           <Route path='/eventos' element={<Eventos />}></Route>
           <Route path='/soporte' element={<Soporte />}></Route>
+          <Route path='/nosotros' element={<Nosotros />}></Route>
+
+          {/* Login */}
+
           <Route path='/login' element={<Login />}></Route>
+          <Route path='/registrarse' element={<Signup />}></Route>
+          <Route path='/recuperar-contrasena' element={<OlvidasteContraseña />}></Route>
+
+          {/* Categorias */}
           <Route path='/categorias' element={<Categorias />}></Route>
           <Route path='/asistencia' element={<Asistencia />}></Route>
           <Route path='/comida' element={<Comida />}></Route>
@@ -75,13 +86,13 @@ function App() {
           <Route path='/escolar' element={<Escolar />}></Route>
           <Route path='/hogar' element={<Hogar />}></Route>
           <Route path='/ropa' element={<Ropa />}></Route>
-          <Route path='/nosotros' element={<Nosotros />}></Route>
+          <Route path='/medicamentos-y-higiene' element={<Medicamentos />}></Route>
+          <Route path='/juguetes' element={<Juguetes />}></Route>
           <Route path='/todo' element={<VerTodo />}></Route>
 
 
-          <Route path='/registrarse' element={<Signup />}></Route>
-          <Route path='/recuperar-contrasena' element={<OlvidasteContraseña />}></Route>
-
+   
+        {/* Perfiles de organizaciones */}
 
           <Route path='/banco-alimentos' element={<BancoAlimentosPerfil />}></Route>
           <Route path='/leon' element={<LeonPerfil />}></Route>

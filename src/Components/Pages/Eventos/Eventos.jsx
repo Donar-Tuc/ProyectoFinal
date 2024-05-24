@@ -16,7 +16,9 @@ import comidaEtiqueta from './imagenes/fast-food-outline.svg';
 import asistenciaEtiqueta from './imagenes/alarm-outline.svg';
 import hogarEtiqueta from './imagenes/home-outline.svg';
 // import escolarEtiqueta from './Imagenes/school-outline.svg';
-// import ropaEtiqueta from './Imagenes/shirt-outline.svg'
+// import ropaEtiqueta from './Imagenes/shirt-outline.svg';
+// import medicamentosEtiqueta from './Imagenes/medkit-outline.svg';
+// import juguetesEtiqueta from './Imagenes/extension-puzzle-outline.svg';
 
 
 const Eventos = () => {

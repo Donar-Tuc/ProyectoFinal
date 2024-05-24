@@ -23,7 +23,9 @@ import comidaEtiqueta from './Imagenes/fast-food-outline.svg';
 import asistenciaEtiqueta from './Imagenes/alarm-outline.svg';
 import hogarEtiqueta from './Imagenes/home-outline.svg';
 import escolarEtiqueta from './Imagenes/school-outline.svg';
-import ropaEtiqueta from './Imagenes/shirt-outline.svg'
+import ropaEtiqueta from './Imagenes/shirt-outline.svg';
+import juguetesEtiqueta from './Imagenes/extension-puzzle-outline.svg';
+
 
 const Asistencia = () => {
     const [currentPage, setCurrentPage] = useState(() => {
@@ -56,13 +58,12 @@ const Asistencia = () => {
         {
             imagen: casaCuna,
             titulo: "Casa Cuna",
-            etiquetas: [asistenciaEtiqueta, hogarEtiqueta, escolarEtiqueta, ropaEtiqueta],
+            etiquetas: [asistenciaEtiqueta, hogarEtiqueta, escolarEtiqueta, ropaEtiqueta, juguetesEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/casa-cuna",
-            tituloEtiquetas: ["Asistencia y voluntariados","Elementos del hogar", "Útiles escolares", "Vestimenta"  ]
+            tituloEtiquetas: ["Asistencia y voluntariados", "Elementos del hogar","Útiles escolares","Vestimenta", "Juguetes" ]
 
-            
         },
 
         {
@@ -83,7 +84,7 @@ const Asistencia = () => {
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/confluir",
-            tituloEtiquetas: ["Asistencia y voluntariados", "Asistencia y voluntariados"]
+            tituloEtiquetas: ["Asistencia y voluntariados", "Alimentos no perecederos"]
 
         },
 
@@ -117,7 +118,7 @@ const Asistencia = () => {
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/instituto-las-mercedes",
-             tituloEtiquetas: ["Donaciones monetarias", "Asistencia y voluntariados"]
+             tituloEtiquetas: ["Asistencia y voluntariados","Vestimenta"]
 
         },
 
@@ -146,11 +147,11 @@ const Asistencia = () => {
         {
             imagen: secretariaNinez,
             titulo: "Subsecretaría de Niñez",
-            etiquetas: [dineroEtiqueta, comidaEtiqueta, asistenciaEtiqueta],
+            etiquetas: [dineroEtiqueta, comidaEtiqueta, asistenciaEtiqueta, juguetesEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/secretaria-ninez",
-             tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados"]
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados","Juguetes"]
 
         },
 

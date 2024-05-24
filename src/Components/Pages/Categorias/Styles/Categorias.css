@@ -39,14 +39,24 @@
     flex-direction: column;
     z-index: 1;
     padding: 2rem;
+    gap: 10px;
     font-family: "Montserrat", sans-serif;
     text-align: center;
-    width: 30%;
+    width: 20%;
     border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.21);
     background-color: #ebefff76;
     background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
     border:1px #ffffff62 solid;
     transition: .3s ease-in-out;
+}
+
+.CardsCategorias:hover{
+    transform: translateY(-3px);
+}
+
+#IconCategoria{
+    width: 20%;
 }
 
 #tituloInteriorCards{
@@ -96,6 +106,7 @@
         /* Titulo de categorias */
         
         #TituloCategoria{
+            text-align: center;
             font-size: 2rem;
         }
         
@@ -104,7 +115,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
+            flex-direction: row;
             flex-wrap: wrap;
             width: 100%;
             gap: 20px;
@@ -119,13 +130,17 @@
             padding: 20px 0;
             font-family: "Montserrat", sans-serif;
             text-align: center;
-            width: 90%;
+            width: 40%;
             border-radius: 20px;
             transition: none;
         }
+
+        .CardsCategorias:hover{
+            transform: none;
+        }
         
         #tituloInteriorCards{
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: white;
         }
 

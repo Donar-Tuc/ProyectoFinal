@@ -8,12 +8,14 @@ import Casacuna from "./Imagenes/casaCuna.png";
 
 
 // icons etiquetas
-import dineroEtiqueta from './Imagenes/card-outline.svg';
-import comidaEtiqueta from './Imagenes/fast-food-outline.svg';
+// import dineroEtiqueta from './Imagenes/card-outline.svg';
+// import comidaEtiqueta from './Imagenes/fast-food-outline.svg';
 import asistenciaEtiqueta from './Imagenes/alarm-outline.svg';
 import hogarEtiqueta from './Imagenes/home-outline.svg';
 import escolarEtiqueta from './Imagenes/school-outline.svg';
 import ropaEtiqueta from './Imagenes/shirt-outline.svg'
+import juguetesEtiqueta from './Imagenes/extension-puzzle-outline.svg'
+
 
 
 const Escolar = () => {
@@ -27,11 +29,11 @@ const Escolar = () => {
         {
             imagen: Casacuna,
             titulo: "Casa Cuna",
-            etiquetas: [asistenciaEtiqueta, hogarEtiqueta, escolarEtiqueta, ropaEtiqueta],
+            etiquetas: [asistenciaEtiqueta, hogarEtiqueta, escolarEtiqueta, ropaEtiqueta, juguetesEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/casa-cuna",
-            tituloEtiquetas: ["Asistencia y voluntariados", "Elementos del hogar", "Útiles escolares","Vestimenta"]
+            tituloEtiquetas: ["Asistencia y voluntariados", "Elementos del hogar","Útiles escolares","Vestimenta", "Juguetes" ]
 
         },
     ];
