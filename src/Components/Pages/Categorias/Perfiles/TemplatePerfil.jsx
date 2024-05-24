@@ -24,7 +24,7 @@ class TemplatePerfil extends Component {
                         ))}
                     </div>
                                 <p>{horario}</p>
-                                <a href={mapa}>{direccion}</a>
+                                <a href={mapaBoton}>{direccion}</a>
                             </div>
 
                             <div className="Box2Btn">
