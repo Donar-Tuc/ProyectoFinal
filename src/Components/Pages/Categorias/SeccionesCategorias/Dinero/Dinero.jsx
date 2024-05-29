@@ -1,10 +1,9 @@
 import React, { useEffect, useRef } from "react";
-import { useScroll } from '../../../../../ScrollContext.js';
+import { useScroll } from '../../../../../ScrollContext';
 import CardDinero from "./CardsTemplate.jsx";
 import "../Style.css";
 
 // Imagenes 
-
 import BancoAlimentos from "./Imagenes/BancoAlimentosLogo.png";
 import fann from "./Imagenes/FannLogoGrande copy.png";
 import conin from "./Imagenes/ConinLogoGrande.png";
@@ -21,17 +20,13 @@ import nodoAmbiental from "./Imagenes/NodoAmbiental.png";
 import secretariaNinez from "./Imagenes/Subsecretaría.png";
 import techo from "./Imagenes/techoPerfil.png";
 
-
 // icons etiquetas
 import dineroEtiqueta from './Imagenes/card-outline.svg';
 import comidaEtiqueta from './Imagenes/fast-food-outline.svg';
 import asistenciaEtiqueta from './Imagenes/alarm-outline.svg';
-// import hogarEtiqueta from './Imagenes/home-outline.svg';
-// import escolarEtiqueta from './Imagenes/school-outline.svg';
 import ropaEtiqueta from './Imagenes/shirt-outline.svg';
 import medicamentosEtiqueta from './Imagenes/medkit-outline.svg';
 import juguetesEtiqueta from './Imagenes/extension-puzzle-outline.svg';
-
 
 const Dinero = () => {
     const { scrollPosition, setScrollPosition, page, setPage } = useScroll();
@@ -207,10 +202,7 @@ const Dinero = () => {
             tituloEtiquetas: ["Donaciones monetarias", "Asistencia y voluntariados"]
 
         },
-
-
     ];
-
     const cardsPerPage = 5;
     const indexOfLastCard = page * cardsPerPage;
     const indexOfFirstCard = indexOfLastCard - cardsPerPage;
@@ -229,14 +221,11 @@ const Dinero = () => {
             }
         };
 
-        if (scrollRef.current) {
-            scrollRef.current.addEventListener('scroll', handleScroll);
-        }
+        const element = scrollRef.current;
+        element.addEventListener('scroll', handleScroll);
 
         return () => {
-            if (scrollRef.current) {
-                scrollRef.current.removeEventListener('scroll', handleScroll);
-            }
+            element.removeEventListener('scroll', handleScroll);
         };
     }, [setScrollPosition]);
 

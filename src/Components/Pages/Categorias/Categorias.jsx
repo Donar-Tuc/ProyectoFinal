@@ -22,6 +22,9 @@ const categorias = [
   { name: "Juguetes", href: "/juguetes", etiqueta: JugueteEtiqueta }
 ];
 
+const verTodoCategoria = { name: "Ver todo", href: "/todo" };
+
+
 const Categorias = () => {
   return (
     <section id="ContainerCategorias">
@@ -36,7 +39,7 @@ const Categorias = () => {
       </div>
       <div id="EnlaceVerMas">
         <li>
-          <Link className="btn btn-primary" id="BotonVerMas" to="/todo">Ver todas las categorias</Link>
+          <Link className="btn btn-primary" id="BotonVerMas" onClick={() => window.location.href = verTodoCategoria.href} >Ver todas las categorias</Link>
         </li>
       </div>
     </section>

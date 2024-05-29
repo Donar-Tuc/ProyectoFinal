@@ -118,7 +118,6 @@ function App() {
           <Route path='/fundacion-vallecito-de-la-guadalupe' element={<VallecitoGuada />}></Route>
           <Route path='/instituto-las-mercedes' element={<HospitalMaternidadPerfil />}></Route>
 
-
         </Routes>
         <Footer />
       </div>
