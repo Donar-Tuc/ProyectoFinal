@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
-import CardJuguetes from "./CardsTemplate.jsx";
+import React, { useEffect, useRef } from "react";
+import { useScroll } from '../../../../../ScrollContext';
+import CardJuguetes from './CardsTemplate';
 import "../Style.css";
 
 // Imagenes 
@@ -20,10 +21,8 @@ import medicamentosEtiqueta from './Imagenes/medkit-outline.svg'
 
 
 const Juguetes = () => {
-    const [currentPage, setCurrentPage] = useState(() => {
-        const savedPage = localStorage.getItem("currentPage");
-        return savedPage ? parseInt(savedPage, 10) : 1;
-    });
+    const { scrollPosition, setScrollPosition, page, setPage } = useScroll();
+    const scrollRef = useRef();
 
 
     const data = [
@@ -61,22 +60,42 @@ const Juguetes = () => {
     ];
 
     const cardsPerPage = 5;
-    const indexOfLastCard = currentPage * cardsPerPage;
+    const indexOfLastCard = page * cardsPerPage;
     const indexOfFirstCard = indexOfLastCard - cardsPerPage;
     const currentCards = data.slice(indexOfFirstCard, indexOfLastCard);
 
     useEffect(() => {
-        localStorage.setItem("currentPage", currentPage);
-        window.scrollTo(0, 0);
-    }, [currentPage]);
+        if (scrollRef.current) {
+            scrollRef.current.scrollTop = scrollPosition;
+        }
+    }, [scrollPosition]);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if (scrollRef.current) {
+                setScrollPosition(scrollRef.current.scrollTop);
+            }
+        };
+
+        const element = scrollRef.current;
+        element.addEventListener('scroll', handleScroll);
+
+        return () => {
+            element.removeEventListener('scroll', handleScroll);
+        };
+    }, [setScrollPosition]);
+
+    useEffect(() => {
+        localStorage.setItem("currentPage", page);
+        window.scrollTo(0, 0);
+    }, [page]);
 
     const paginate = (pageNumber) => {
-        setCurrentPage(pageNumber);
+        setPage(pageNumber);
     };
 
     return (
-        <div className="AsistenciaContainer">
+        <div className="AsistenciaContainer" ref={scrollRef} style={{ height: '100%', overflowY: 'scroll' }}>
             <h2 id="TituloAsistenciaContainer">Juguetes</h2>
 
             {currentCards.map((card, index) => (
@@ -92,11 +111,11 @@ const Juguetes = () => {
                 />
             ))}
 
-            <div id="PaginationButtons">
+<div id="PaginationButtons">
                 <button
                     className="BtnNextAndPrevious"
-                    onClick={() => paginate(currentPage - 1)}
-                    disabled={currentPage === 1}
+                    onClick={() => paginate(page - 1)}
+                    disabled={page === 1}
                 >
                     <div className="OnBtnContainerAntes">
                         <ion-icon name="arrow-back-circle-outline"></ion-icon>
@@ -105,7 +124,7 @@ const Juguetes = () => {
                 </button>
                 <button
                     className="BtnNextAndPrevious"
-                    onClick={() => paginate(currentPage + 1)}
+                    onClick={() => paginate(page + 1)}
                     disabled={currentCards.length < cardsPerPage}
                 >
                     <div className="OnBtnContainerDespues">

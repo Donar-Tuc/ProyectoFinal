@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useRef } from "react";
+import { useScroll } from '../../../../../ScrollContext.js';
 import CardDinero from "./CardsTemplate.jsx";
-
-
 import "../Style.css";
 
 // Imagenes 
@@ -35,10 +34,8 @@ import juguetesEtiqueta from './Imagenes/extension-puzzle-outline.svg';
 
 
 const Dinero = () => {
-    const [currentPage, setCurrentPage] = useState(() => {
-        const savedPage = localStorage.getItem("currentPage");
-        return savedPage ? parseInt(savedPage, 10) : 1;
-    });
+    const { scrollPosition, setScrollPosition, page, setPage } = useScroll();
+    const scrollRef = useRef();
 
     const data = [
         {
@@ -215,22 +212,45 @@ const Dinero = () => {
     ];
 
     const cardsPerPage = 5;
-    const indexOfLastCard = currentPage * cardsPerPage;
+    const indexOfLastCard = page * cardsPerPage;
     const indexOfFirstCard = indexOfLastCard - cardsPerPage;
     const currentCards = data.slice(indexOfFirstCard, indexOfLastCard);
 
     useEffect(() => {
-        localStorage.setItem("currentPage", currentPage);
-        window.scrollTo(0, 0);
-    }, [currentPage]);
+        if (scrollRef.current) {
+            scrollRef.current.scrollTop = scrollPosition;
+        }
+    }, [scrollPosition]);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if (scrollRef.current) {
+                setScrollPosition(scrollRef.current.scrollTop);
+            }
+        };
+
+        if (scrollRef.current) {
+            scrollRef.current.addEventListener('scroll', handleScroll);
+        }
+
+        return () => {
+            if (scrollRef.current) {
+                scrollRef.current.removeEventListener('scroll', handleScroll);
+            }
+        };
+    }, [setScrollPosition]);
+
+    useEffect(() => {
+        localStorage.setItem("currentPage", page);
+        window.scrollTo(0, 0);
+    }, [page]);
 
     const paginate = (pageNumber) => {
-        setCurrentPage(pageNumber);
+        setPage(pageNumber);
     };
 
     return (
-        <div className="AsistenciaContainer">
+        <div className="AsistenciaContainer" ref={scrollRef}>
             <h2 id="TituloAsistenciaContainer">Dinero</h2>
 
             {currentCards.map((card, index) => (
@@ -243,15 +263,13 @@ const Dinero = () => {
                     descripcion={card.descripcion}
                     url={card.url}
                     tituloEtiquetas={card.tituloEtiquetas}
-
                 />
             ))}
-
             <div id="PaginationButtons">
                 <button
                     className="BtnNextAndPrevious"
-                    onClick={() => paginate(currentPage - 1)}
-                    disabled={currentPage === 1}
+                    onClick={() => paginate(page - 1)}
+                    disabled={page === 1}
                 >
                     <div className="OnBtnContainerAntes">
                         <ion-icon name="arrow-back-circle-outline"></ion-icon>
@@ -260,7 +278,7 @@ const Dinero = () => {
                 </button>
                 <button
                     className="BtnNextAndPrevious"
-                    onClick={() => paginate(currentPage + 1)}
+                    onClick={() => paginate(page + 1)}
                     disabled={currentCards.length < cardsPerPage}
                 >
                     <div className="OnBtnContainerDespues">
@@ -272,7 +290,5 @@ const Dinero = () => {
         </div>
     );
 };
-
-
 
 export default Dinero;

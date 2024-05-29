@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ScrollToTop from './ScrollToTop.js'; // Importa el componente ScrollToTop
+import { ScrollProvider } from './ScrollContext.js';
 import React from 'react';
 
 
@@ -62,6 +63,7 @@ import HospitalMaternidadPerfil from './Components/Pages/Categorias/Perfiles/Hos
 function App() {
   return (
     <Router>
+      <ScrollProvider>
       <ScrollToTop />
       <div>
         <Navbar />
@@ -120,6 +122,8 @@ function App() {
         </Routes>
         <Footer />
       </div>
+      </ ScrollProvider>
+
     </Router>
   );
 }
