@@ -28,9 +28,8 @@ const Hogar = () => {
             titulo: "Fundacion Caritas",
             etiquetas: [dineroEtiqueta, hogarEtiqueta, ropaEtiqueta, juguetesEtiqueta, medicamentosEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/caritas",
-            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos","Asistencia y voluntariados", "Medicamentos" ],
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados", "Medicamentos"],
 
         },
         {
@@ -38,14 +37,13 @@ const Hogar = () => {
             titulo: "Casa Cuna",
             etiquetas: [asistenciaEtiqueta, hogarEtiqueta, escolarEtiqueta, ropaEtiqueta, juguetesEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/casa-cuna",
-            tituloEtiquetas: ["Asistencia y voluntariados", "Elementos del hogar","Útiles escolares","Vestimenta", "Juguetes" ]
+            tituloEtiquetas: ["Asistencia y voluntariados", "Elementos del hogar", "Útiles escolares", "Vestimenta", "Juguetes"]
 
         },
     ];
 
-    const cardsPerPage = 5;
+    const cardsPerPage = 6;
     const indexOfLastCard = page * cardsPerPage;
     const indexOfFirstCard = indexOfLastCard - cardsPerPage;
     const currentCards = data.slice(indexOfFirstCard, indexOfLastCard);
@@ -83,21 +81,23 @@ const Hogar = () => {
     return (
         <div className="AsistenciaContainer" ref={scrollRef} style={{ height: '100%', overflowY: 'scroll' }}>
             <h2 id="TituloAsistenciaContainer">Hogar</h2>
+            <div className="containerCards">
 
-            {currentCards.map((card, index) => (
-                <CardEscolar
-                    key={index}
-                    imagen={card.imagen}
-                    titulo={card.titulo}
-                    horario={card.horario}
-                    etiquetas={card.etiquetas}
-                    descripcion={card.descripcion}
-                    url={card.url}
-                    tituloEtiquetas={card.tituloEtiquetas}
-                />
-            ))}
+                {currentCards.map((card, index) => (
+                    <CardEscolar
+                        key={index}
+                        imagen={card.imagen}
+                        titulo={card.titulo}
+                        horario={card.horario}
+                        etiquetas={card.etiquetas}
+                        descripcion={card.descripcion}
+                        url={card.url}
+                        tituloEtiquetas={card.tituloEtiquetas}
+                    />
+                ))}
+            </div>
 
-<div id="PaginationButtons">
+            <div id="PaginationButtons">
                 <button
                     className="BtnNextAndPrevious"
                     onClick={() => paginate(page - 1)}
@@ -111,7 +111,7 @@ const Hogar = () => {
                 <button
                     className="BtnNextAndPrevious"
                     onClick={() => paginate(page + 1)}
-                    disabled={currentCards.length < cardsPerPage}
+                    disabled={indexOfLastCard >= data.length}
                 >
                     <div className="OnBtnContainerDespues">
                         Siguiente

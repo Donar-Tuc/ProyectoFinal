@@ -24,7 +24,7 @@ import hogarEtiqueta from './imagenes/home-outline.svg';
 const Eventos = () => {
     const [currentPage, setCurrentPage] = useState(1);
 
-    const cardsPerPage = 5;
+    const cardsPerPage = 6;
     const indexOfLastCard = currentPage * cardsPerPage;
     const indexOfFirstCard = indexOfLastCard - cardsPerPage;
     const currentCards = data.slice(indexOfFirstCard, indexOfLastCard);
@@ -37,25 +37,30 @@ const Eventos = () => {
         setCurrentPage(pageNumber);
     };
 
+    const isLastPage = currentCards.length < cardsPerPage || indexOfLastCard >= data.length;
+
+
 
     return (
         <div className="EventosContainer">
             <h2 id="TituloEventosContainer">Eventos</h2>
+            <div className="containerCardsEventos">
 
 
-            {currentCards.map((card, index) => (
-                <Card
-                    key={index}
-                    imagen={card.imagen}
-                    titulo={card.titulo}
-                    horario={card.horario}
-                    etiquetas={card.etiquetas}
-                    descripcion={card.descripcion}
-                    url={card.url}
-                    tituloEtiquetas={card.tituloEtiquetas}
+                {currentCards.map((card, index) => (
+                    <Card
+                        key={index}
+                        imagen={card.imagen}
+                        titulo={card.titulo}
+                        horario={card.horario}
+                        etiquetas={card.etiquetas}
+                        descripcion={card.descripcion}
+                        url={card.url}
+                        tituloEtiquetas={card.tituloEtiquetas}
 
-                />
-            ))}
+                    />
+                ))}
+            </div>
 
             <div id="PaginationButtons">
                 <button
@@ -71,7 +76,7 @@ const Eventos = () => {
                 <button
                     className="BtnNextAndPrevious"
                     onClick={() => paginate(currentPage + 1)}
-                    disabled={currentCards.length < cardsPerPage}
+                    disabled={isLastPage}
                 >
                     <div className="OnBtnContainerDespues">
                         Siguiente
@@ -99,7 +104,7 @@ const data = [
         titulo: "Fundacion Conin",
         etiquetas: [dineroEtiqueta],
         horario: "9am - 4pm de lunes a viernes",
-        descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", 
+        descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
         url: "/conin",
         tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados"]
 
@@ -148,8 +153,8 @@ const data = [
     {
         imagen: Fann,
         titulo: "Fundacion Fann",
-        etiquetas: [dineroEtiqueta, comidaEtiqueta], horario: "9am - 4pm de lunes a viernes", 
-        descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", 
+        etiquetas: [dineroEtiqueta, comidaEtiqueta], horario: "9am - 4pm de lunes a viernes",
+        descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
         url: "/fann",
         tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados"]
 
@@ -199,7 +204,7 @@ const data = [
         titulo: "Fundacion Leon",
         etiquetas: [dineroEtiqueta, hogarEtiqueta],
         horario: "9am - 4pm de lunes a viernes",
-        descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.", 
+        descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
         url: "/leon",
         tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados"]
 

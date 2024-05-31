@@ -51,7 +51,7 @@
 /* Estilo para la etiqueta */
 #EtiquetaCard {
     padding: .3rem .4rem;
-    background-color: rgba(0, 0, 0, 0.371);
+    background-color: rgba(104, 104, 104, 0.329);
     background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
     color: white;
     font-weight: 600;
@@ -61,36 +61,38 @@
 
 /* Estilo para el contenedor de la etiqueta */
 .EtiquetaContainer {
-    position: relative; /* Posición relativa para el posicionamiento absoluto del título */
-    display: inline-block; /* Para que el contenedor se ajuste al contenido */
+    position: relative;
+    /* Posición relativa para el posicionamiento absoluto del título */
+    display: inline-block;
+    /* Para que el contenedor se ajuste al contenido */
     width: 50px;
 }
 
 /* Estilo para el título de la etiqueta */
 .TituloEtiqueta {
-  position: absolute;
-  width: 200px;
-  bottom: -90px;
-text-align: center;
-  left: 80%;
-  transform: translateX(-60%);
-  background-color: #ebefff;
-  color: black;
-  font-weight: 600;
-  padding: 10px 10px ;
-  border-radius: 5px;
-  opacity: 0;
-  visibility: hidden;
-  font-size: .8rem;
-  font-family: "Montserrat", sans-serif;
-  transition: all 0.3s ease;
+    position: absolute;
+    width: 200px;
+    bottom: -90px;
+    text-align: center;
+    left: 80%;
+    transform: translateX(-20%);
+    background-color: #ebefff;
+    color: black;
+    font-weight: 600;
+    padding: 10px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    font-size: .8rem;
+    font-family: "Montserrat", sans-serif;
+    transition: all 0.3s ease;
 }
 
 /* Estilo para mostrar el título de la etiqueta al pasar el ratón sobre ella */
 .EtiquetaContainer:hover .TituloEtiqueta {
     opacity: 1;
     visibility: visible;
-    bottom: -65px;    
+    bottom: -65px;
 }
 
 
@@ -272,27 +274,27 @@ text-align: center;
         position: absolute;
         width: 100px;
         bottom: -90px;
-      text-align: center;
+        text-align: center;
         left: 80%;
         transform: translateX(-60%);
         background-color: #ebefff;
         color: black;
         font-weight: 600;
-        padding: 10px 10px ;
+        padding: 10px 10px;
         border-radius: 5px;
         opacity: 0;
         visibility: hidden;
         font-size: .7em;
         font-family: "Montserrat", sans-serif;
         transition: all 0.3s ease;
-      }
-      
-      /* Estilo para mostrar el título de la etiqueta al pasar el ratón sobre ella */
-      .EtiquetaContainer:hover .TituloEtiqueta {
-          opacity: 1;
-          visibility: visible;
-          bottom: -78px;    
-      }
+    }
+
+    /* Estilo para mostrar el título de la etiqueta al pasar el ratón sobre ella */
+    .EtiquetaContainer:hover .TituloEtiqueta {
+        opacity: 1;
+        visibility: visible;
+        bottom: -78px;
+    }
 
 
 }

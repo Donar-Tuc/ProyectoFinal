@@ -35,7 +35,6 @@ const Asistencia = () => {
             titulo: "Fundacion Conin",
             etiquetas: [dineroEtiqueta, comidaEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/conin",
             tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados"]
         },
@@ -45,7 +44,6 @@ const Asistencia = () => {
             titulo: "Banco de Sangre",
             etiquetas: [asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/banco-de-sangre",
             tituloEtiquetas: ["Asistencia y voluntariados"]
 
@@ -56,18 +54,16 @@ const Asistencia = () => {
             titulo: "Casa Cuna",
             etiquetas: [asistenciaEtiqueta, hogarEtiqueta, escolarEtiqueta, ropaEtiqueta, juguetesEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/casa-cuna",
-            tituloEtiquetas: ["Asistencia y voluntariados", "Elementos del hogar","Útiles escolares","Vestimenta", "Juguetes" ]
+            tituloEtiquetas: ["Asistencia y voluntariados", "Elementos del hogar", "Útiles escolares", "Vestimenta", "Juguetes"]
 
         },
 
         {
             imagen: centroMoritas,
-            titulo: "Centro de Rehabilitación Las Moritas",
+            titulo: "C.R Las Moritas",
             etiquetas: [dineroEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/Centro-las-moritas",
             tituloEtiquetas: ["Donaciones monetarias", "Asistencia y voluntariados"]
 
@@ -78,7 +74,6 @@ const Asistencia = () => {
             titulo: "Confluir",
             etiquetas: [asistenciaEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/confluir",
             tituloEtiquetas: ["Asistencia y voluntariados", "Alimentos no perecederos"]
 
@@ -89,9 +84,8 @@ const Asistencia = () => {
             titulo: "Fundación Leon",
             etiquetas: [dineroEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/leon",
-             tituloEtiquetas: ["Donaciones monetarias", "Asistencia y voluntariados"]
+            tituloEtiquetas: ["Donaciones monetarias", "Asistencia y voluntariados"]
 
         },
 
@@ -101,7 +95,6 @@ const Asistencia = () => {
             titulo: "Fundación Manos Solidarias",
             etiquetas: [dineroEtiqueta, comidaEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/fundacion-manos-solidarias",
             tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados"]
 
@@ -109,12 +102,11 @@ const Asistencia = () => {
 
         {
             imagen: maternidadMercedes,
-            titulo: "Instituto de Maternidad y Ginecología Nuestra Señora de Las Mercedes",
+            titulo: "Instituto de Maternidad",
             etiquetas: [asistenciaEtiqueta, ropaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/instituto-las-mercedes",
-             tituloEtiquetas: ["Asistencia y voluntariados","Vestimenta"]
+            tituloEtiquetas: ["Asistencia y voluntariados", "Vestimenta"]
 
         },
 
@@ -123,9 +115,8 @@ const Asistencia = () => {
             titulo: "Nodo Ambiental",
             etiquetas: [dineroEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/nodo-ambiental",
-             tituloEtiquetas: ["Donaciones monetarias", "Asistencia y voluntariados"]
+            tituloEtiquetas: ["Donaciones monetarias", "Asistencia y voluntariados"]
 
         },
 
@@ -134,9 +125,8 @@ const Asistencia = () => {
             titulo: "Onat",
             etiquetas: [asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/onat",
-             tituloEtiquetas: ["Asistencia y voluntariados"]
+            tituloEtiquetas: ["Asistencia y voluntariados"]
 
         },
 
@@ -145,9 +135,8 @@ const Asistencia = () => {
             titulo: "Subsecretaría de Niñez",
             etiquetas: [dineroEtiqueta, comidaEtiqueta, asistenciaEtiqueta, juguetesEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/secretaria-ninez",
-            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados","Juguetes"]
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados", "Juguetes"]
 
         },
 
@@ -156,7 +145,6 @@ const Asistencia = () => {
             titulo: "Techo",
             etiquetas: [dineroEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/techo",
             tituloEtiquetas: ["Donaciones monetarias", "Asistencia y voluntariados"]
 
@@ -168,7 +156,6 @@ const Asistencia = () => {
             titulo: "El vallecito de la Guadalupe",
             etiquetas: [dineroEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/fundacion-vallecito-de-la-guadalupe",
             tituloEtiquetas: ["Donaciones monetarias", "Asistencia y voluntariados"]
 
@@ -176,7 +163,7 @@ const Asistencia = () => {
 
     ];
 
-    const cardsPerPage = 5;
+    const cardsPerPage = 6;
     const indexOfLastCard = page * cardsPerPage;
     const indexOfFirstCard = indexOfLastCard - cardsPerPage;
     const currentCards = data.slice(indexOfFirstCard, indexOfLastCard);
@@ -213,19 +200,23 @@ const Asistencia = () => {
 
     return (
         <div className="AsistenciaContainer" ref={scrollRef} style={{ height: '100%', overflowY: 'scroll' }}>
+
             <h2 id="TituloAsistenciaContainer">Asistencia</h2>
-            {currentCards.map((card, index) => (
-                <CardAsistencia
-                    key={index}
-                    imagen={card.imagen}
-                    titulo={card.titulo}
-                    horario={card.horario}
-                    etiquetas={card.etiquetas}
-                    descripcion={card.descripcion}
-                    url={card.url}
-                    tituloEtiquetas={card.tituloEtiquetas}
-                />
-            ))}
+            <div className="containerCards">
+                {currentCards.map((card, index) => (
+                    <CardAsistencia
+                        key={index}
+                        imagen={card.imagen}
+                        titulo={card.titulo}
+                        horario={card.horario}
+                        etiquetas={card.etiquetas}
+                        descripcion={card.descripcion}
+                        url={card.url}
+                        tituloEtiquetas={card.tituloEtiquetas}
+                    />
+                ))}
+            </div>
+
             <div id="PaginationButtons">
                 <button
                     className="BtnNextAndPrevious"
@@ -240,7 +231,7 @@ const Asistencia = () => {
                 <button
                     className="BtnNextAndPrevious"
                     onClick={() => paginate(page + 1)}
-                    disabled={currentCards.length < cardsPerPage}
+                    disabled={indexOfLastCard >= data.length}
                 >
                     <div className="OnBtnContainerDespues">
                         Siguiente

@@ -38,7 +38,6 @@ const Comida = () => {
             titulo: "Banco de Alimentos",
             etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/banco-alimentos",
             tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos"]
 
@@ -49,7 +48,6 @@ const Comida = () => {
             titulo: "Fundacion Fann",
             etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/fann",
             tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos"]
 
@@ -60,7 +58,6 @@ const Comida = () => {
             titulo: "Fundacion Conin",
             etiquetas: [dineroEtiqueta, comidaEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/conin",
             tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados"]
 
@@ -68,10 +65,9 @@ const Comida = () => {
 
         {
             imagen: CocinaMariaGuadalupePerfil,
-            titulo: "Comunitaria María de Guadalupe",
+            titulo: "C. Maria de Guadalupe",
             etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/cocina-comunitaria-maria-guadalupe",
             tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados"]
 
@@ -79,10 +75,9 @@ const Comida = () => {
 
         {
             imagen: CocinaNuevaAmanecer,
-            titulo: "Cocina Comunitaria Nueva",
+            titulo: "C.C Nueva Amanecer",
             etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/cocina-nueva-amanecer",
             tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos"]
 
@@ -91,10 +86,9 @@ const Comida = () => {
 
         {
             imagen: cocinaUnidosTriunfar,
-            titulo: "Comunitaria Unidos para Triunfar",
+            titulo: "C. Unidos para Triunfar",
             etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/cocina-comunitaria-unidos",
             tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos"]
 
@@ -102,10 +96,9 @@ const Comida = () => {
 
         {
             imagen: comedorManosOlla,
-            titulo: "Comedor Manos a la Olla",
+            titulo: "C. Manos a la Olla",
             etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/comedor-manos-olla",
             tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos"]
 
@@ -116,7 +109,6 @@ const Comida = () => {
             titulo: "Comedor Reyes",
             etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/comedor-reyes",
             tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos"]
 
@@ -126,9 +118,8 @@ const Comida = () => {
         {
             imagen: confluir,
             titulo: "Confluir",
-            etiquetas: [comidaEtiqueta , asistenciaEtiqueta],
+            etiquetas: [comidaEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/confluir",
             tituloEtiquetas: ["Alimentos no perecederos", "Asistencia y voluntariados"]
 
@@ -141,7 +132,6 @@ const Comida = () => {
             titulo: "Fundación Manos Solidarias",
             etiquetas: [dineroEtiqueta, comidaEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/fundacion-manos-solidarias",
             tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados"]
 
@@ -152,14 +142,13 @@ const Comida = () => {
             titulo: "Subsecretaría de Niñez",
             etiquetas: [dineroEtiqueta, comidaEtiqueta, asistenciaEtiqueta, juguetesEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/secretaria-ninez",
-            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados","Juguetes"]
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados", "Juguetes"]
 
         },
     ];
 
-    const cardsPerPage = 5;
+    const cardsPerPage = 6;
     const indexOfLastCard = page * cardsPerPage;
     const indexOfFirstCard = indexOfLastCard - cardsPerPage;
     const currentCards = data.slice(indexOfFirstCard, indexOfLastCard);
@@ -196,19 +185,20 @@ const Comida = () => {
     return (
         <div className="AsistenciaContainer" ref={scrollRef} style={{ height: '100%', overflowY: 'scroll' }}>
             <h2 id="TituloAsistenciaContainer">Comida</h2>
-
-            {currentCards.map((card, index) => (
-                <CardComida
-                    key={index}
-                    imagen={card.imagen}
-                    titulo={card.titulo}
-                    horario={card.horario}
-                    etiquetas={card.etiquetas}
-                    descripcion={card.descripcion}
-                    url={card.url}
-                    tituloEtiquetas={card.tituloEtiquetas}
-                />
-            ))}
+            <div className="containerCards">
+                {currentCards.map((card, index) => (
+                    <CardComida
+                        key={index}
+                        imagen={card.imagen}
+                        titulo={card.titulo}
+                        horario={card.horario}
+                        etiquetas={card.etiquetas}
+                        descripcion={card.descripcion}
+                        url={card.url}
+                        tituloEtiquetas={card.tituloEtiquetas}
+                    />
+                ))}
+            </div>
             <div id="PaginationButtons">
                 <button
                     className="BtnNextAndPrevious"
@@ -223,7 +213,7 @@ const Comida = () => {
                 <button
                     className="BtnNextAndPrevious"
                     onClick={() => paginate(page + 1)}
-                    disabled={currentCards.length < cardsPerPage}
+                    disabled={indexOfLastCard >= data.length}
                 >
                     <div className="OnBtnContainerDespues">
                         Siguiente

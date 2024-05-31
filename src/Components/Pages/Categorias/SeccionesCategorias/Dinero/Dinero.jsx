@@ -38,7 +38,6 @@ const Dinero = () => {
             titulo: "Banco de Alimentos",
             etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/banco-alimentos",
             tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos"]
 
@@ -49,7 +48,6 @@ const Dinero = () => {
             titulo: "Fundacion Fann",
             etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/fann",
             tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos"]
 
@@ -60,7 +58,6 @@ const Dinero = () => {
             titulo: "Fundacion Conin",
             etiquetas: [dineroEtiqueta, comidaEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/conin",
             tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados"]
 
@@ -71,19 +68,17 @@ const Dinero = () => {
             titulo: "Fundacion Caritas",
             etiquetas: [dineroEtiqueta, ropaEtiqueta, juguetesEtiqueta, medicamentosEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/caritas",
-            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos","Asistencia y voluntariados", "Medicamentos" ],
+            tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados", "Medicamentos"],
 
         },
 
 
         {
             imagen: centroMoritas,
-            titulo: "Centro de Rehabilitación Las Moritas",
+            titulo: "C.R Las Moritas",
             etiquetas: [dineroEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/Centro-las-moritas",
             tituloEtiquetas: ["Donaciones monetarias", "Asistencia y voluntariados"]
 
@@ -91,10 +86,9 @@ const Dinero = () => {
 
         {
             imagen: CocinaMariaGuadalupePerfil,
-            titulo: "Cocina Comunitaria María de Guadalupe",
+            titulo: "Cocina C. Maria de Guadalupe",
             etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/cocina-comunitaria-maria-guadalupe",
             tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos"]
 
@@ -102,10 +96,9 @@ const Dinero = () => {
 
         {
             imagen: CocinaNuevaAmanecer,
-            titulo: "Cocina Comunitaria Nueva",
+            titulo: "C.C Nueva Amanecer",
             etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/cocina-nueva-amanecer",
             tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos"]
 
@@ -114,10 +107,9 @@ const Dinero = () => {
 
         {
             imagen: comedorManosOlla,
-            titulo: "Comedor Manos a la Olla",
+            titulo: "C. Manos a la Olla",
             etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/comedor-manos-olla",
             tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos"]
 
@@ -129,7 +121,6 @@ const Dinero = () => {
             titulo: "Comedor Reyes",
             etiquetas: [dineroEtiqueta, comidaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/comedor-reyes",
             tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos"]
 
@@ -141,9 +132,8 @@ const Dinero = () => {
             titulo: "Fundación Leon",
             etiquetas: [dineroEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/leon",
-            tituloEtiquetas: ["Donaciones monetarias","Asistencia y voluntariados"]
+            tituloEtiquetas: ["Donaciones monetarias", "Asistencia y voluntariados"]
 
         },
 
@@ -152,7 +142,6 @@ const Dinero = () => {
             titulo: "Fundación Manos Solidarias",
             etiquetas: [dineroEtiqueta, comidaEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/fundacion-manos-solidarias",
             tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados"]
 
@@ -163,7 +152,6 @@ const Dinero = () => {
             titulo: "Nodo Ambiental",
             etiquetas: [dineroEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/nodo-ambiental",
             tituloEtiquetas: ["Donaciones monetarias", "Asistencia y voluntariados"]
 
@@ -171,10 +159,9 @@ const Dinero = () => {
 
         {
             imagen: secretariaNinez,
-            titulo: "Subsecretaría de Niñez, Adolescencia y Familia",
+            titulo: "Subsecretaría de Niñez",
             etiquetas: [dineroEtiqueta, comidaEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/secretaria-ninez",
             tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos", "Asistencia y voluntariados"]
 
@@ -186,7 +173,6 @@ const Dinero = () => {
             titulo: "Techo",
             etiquetas: [dineroEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/techo",
             tituloEtiquetas: ["Donaciones monetarias", "Asistencia y voluntariados"]
 
@@ -197,13 +183,12 @@ const Dinero = () => {
             titulo: "El vallecito de la Guadalupe",
             etiquetas: [dineroEtiqueta, asistenciaEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
-            descripcion: "El día 3 de julio estaremos en la Facultad de Ingeniería de la UNSTA a las 15 horas recibiendo donaciones de comidas no perecederas y leche descremada.",
             url: "/fundacion-vallecito-de-la-guadalupe",
             tituloEtiquetas: ["Donaciones monetarias", "Asistencia y voluntariados"]
 
         },
     ];
-    const cardsPerPage = 5;
+    const cardsPerPage = 6;
     const indexOfLastCard = page * cardsPerPage;
     const indexOfFirstCard = indexOfLastCard - cardsPerPage;
     const currentCards = data.slice(indexOfFirstCard, indexOfLastCard);
@@ -241,19 +226,20 @@ const Dinero = () => {
     return (
         <div className="AsistenciaContainer" ref={scrollRef}>
             <h2 id="TituloAsistenciaContainer">Dinero</h2>
-
-            {currentCards.map((card, index) => (
-                <CardDinero
-                    key={index}
-                    imagen={card.imagen}
-                    titulo={card.titulo}
-                    horario={card.horario}
-                    etiquetas={card.etiquetas}
-                    descripcion={card.descripcion}
-                    url={card.url}
-                    tituloEtiquetas={card.tituloEtiquetas}
-                />
-            ))}
+            <div className="containerCards">
+                {currentCards.map((card, index) => (
+                    <CardDinero
+                        key={index}
+                        imagen={card.imagen}
+                        titulo={card.titulo}
+                        horario={card.horario}
+                        etiquetas={card.etiquetas}
+                        descripcion={card.descripcion}
+                        url={card.url}
+                        tituloEtiquetas={card.tituloEtiquetas}
+                    />
+                ))}
+            </div>
             <div id="PaginationButtons">
                 <button
                     className="BtnNextAndPrevious"
@@ -268,7 +254,7 @@ const Dinero = () => {
                 <button
                     className="BtnNextAndPrevious"
                     onClick={() => paginate(page + 1)}
-                    disabled={currentCards.length < cardsPerPage}
+                    disabled={indexOfLastCard >= data.length}
                 >
                     <div className="OnBtnContainerDespues">
                         Siguiente
