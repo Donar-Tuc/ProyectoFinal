@@ -1,0 +1,122 @@
+.PerfilContainer {
+    display: flex;
+    background: linear-gradient(180deg, rgba(32, 117, 147, 1) 13%, rgba(16, 65, 83, 1) 53%, rgba(2, 19, 25, 1) 98%);
+    flex-direction: column;
+    padding: 8rem 5rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+    /* Esto hay que cambiar, no puede ser fijo el valor  */
+}
+
+.TituloPerfil {
+    text-align: center;
+    padding: 2rem;
+    font-weight: 600;
+    color: white;
+}
+
+.ProfileInformation {
+    background-color: white;
+    padding: 4rem;
+    border-radius: 35px;
+    max-width: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.562);
+}
+
+.containerFoto {
+    display: flex;
+    justify-content: center;
+}
+
+.ImagePerfil {
+    width: 50%;
+
+}
+
+.infoPerfil {
+    font-family: inherit;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+}
+
+.ContainerDataSave {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* Alineación horizontal a la izquierda */
+    flex-direction: column;
+    align-items: center;
+    /* Centrado vertical */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.form-label {
+    font-weight: 600;
+    font-size: 1rem;
+
+}
+
+.DatoSave {
+    font-weight: 600;
+}
+
+.TituloDropdown {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+#btnEditarPerfil {
+    width: 20%;
+    margin-top: 20px;
+    /* Agregamos un margen superior para separarlo del resto de los elementos */
+}
+
+.DataPefil {
+    margin: 10px 0;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.descripcion {
+    width: 100%;
+    white-space: pre-wrap;
+    /* Permite que los saltos de línea y espacios en blanco se mantengan */
+    word-wrap: break-word;
+    /* Permite que las palabras largas se dividan y se ajusten a la ventana */
+    overflow-wrap: break-word;
+    /* Similar a word-wrap pero más moderno */
+}
+
+@media (max-width: 900px) {
+    .PerfilContainer {
+        display: flex;
+        background: linear-gradient(180deg, rgba(32, 117, 147, 1) 13%, rgba(16, 65, 83, 1) 53%, rgba(2, 19, 25, 1) 98%);
+        flex-direction: column;
+        padding: 5rem 1rem;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        font-family: "Montserrat", sans-serif;
+        /* Esto hay que cambiar, no puede ser fijo el valor  */
+    }
+
+    .ProfileInformation {
+        background-color: white;
+        padding: 2rem 2rem;
+        border-radius: 35px;
+        max-width: 100%;
+    }
+
+    .ImagePerfil {
+        width: 100%;
+    }
+
+    #btnEditarPerfil {
+        width: 60%;
+
+    }
+}

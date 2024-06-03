@@ -24,7 +24,8 @@ nav {
     justify-content: right;
 }
 
-#navbar { /* Estilo de navbar */
+#navbar {
+    /* Estilo de navbar */
     display: flex;
     align-items: center;
     list-style: none;
@@ -36,7 +37,8 @@ nav {
     padding: 0 30px;
 }
 
-#navbar li a { /* Estilo de letras del menu */
+#navbar li a {
+    /* Estilo de letras del menu */
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     text-decoration: none;
@@ -53,7 +55,8 @@ nav {
     height: 2px;
     border-radius: 4px;
     background-color: #ffffff;
-    bottom: -7px; /* Ajusta este valor para cambiar el espacio */
+    bottom: -7px;
+    /* Ajusta este valor para cambiar el espacio */
     left: 0;
     transform-origin: right;
     transform: scaleX(0);
@@ -65,7 +68,7 @@ nav {
     transform: scaleX(1);
 }
 
-  
+
 
 
 
@@ -80,11 +83,21 @@ nav {
     color: white;
     text-decoration: none;
     transition: .3s 0.3s ease-in-out;
- }
+}
 
 .btnLogin:hover {
     background-color: #3a85f4;
     transform: translateY(-1px);
+}
+
+#BotonContainer {
+    padding: 0 1rem;
+    background-color: transparent;
+    border: none;
+}
+
+.LogOutIcon {
+    width: 34px;
 }
 
 #mobile {
@@ -155,29 +168,55 @@ nav {
 
     .btnLogin {
         display: block;
-        margin-top: 20px; /* Agregar margen superior para separar del resto de los elementos */
+        margin-top: 20px;
+        /* Agregar margen superior para separar del resto de los elementos */
     }
 
 
     /* animaciones de hover */
 
-    #navbar li a { /* Estilo de letras del menu */
-        
+    #navbar li a {
+        /* Estilo de letras del menu */
+
         transition: none;
         position: relative;
     }
-    
+
     #navbar li:not(:last-child) a::before {
         position: relative;
         transform-origin: none;
         transform: none;
         transition: none;
     }
-    
+
     #navbar li:not(:last-child) a:hover::before {
         transform-origin: none;
         transform: none;
     }
+
+
+    #BotonContainer {
+        padding: 0 1rem;
+        background-color: transparent;
+        border: none;
+    }
+
+    .ProfileLoginContainer {
+        margin: 0 auto;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .LogOutIcon {
+        width: 34px;
+    }
+
+    .PerfilBtn {
+        width: 34px;
+    }
+
 
 
 }

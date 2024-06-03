@@ -14,6 +14,7 @@ import Footer from './Components/Pages/General/Footer.jsx';
 import Soporte from './Components/Pages/Soporte/Soporte.jsx';
 import Signup from './Components/Pages/Login/Signup.jsx';
 import Login from './Components/Pages/Login/Login.jsx';
+import Perfil from './Components/Pages/Login/Perfil.jsx';
 import OlvidasteContraseña from './Components/Pages/Login/OlvidasteContraseña.jsx'
 
 // Categocio Container
@@ -64,63 +65,65 @@ function App() {
   return (
     <Router>
       <ScrollProvider>
-      <ScrollToTop />
-      <div>
-        <Navbar />
-        <Routes>
-          {/* Secciones */}
-          <Route path='/' element={<Inicio />}></Route>
-          <Route path='/eventos' element={<Eventos />}></Route>
-          <Route path='/soporte' element={<Soporte />}></Route>
-          <Route path='/nosotros' element={<Nosotros />}></Route>
+        <ScrollToTop />
+        <div>
+          <Navbar />
+          <Routes>
+            {/* Secciones */}
+            <Route path='/' element={<Inicio />}></Route>
+            <Route path='/eventos' element={<Eventos />}></Route>
+            <Route path='/soporte' element={<Soporte />}></Route>
+            <Route path='/nosotros' element={<Nosotros />}></Route>
 
-          {/* Login */}
+            {/* Login */}
 
-          <Route path='/login' element={<Login />}></Route>
-          <Route path='/registrarse' element={<Signup />}></Route>
-          <Route path='/recuperar-contrasena' element={<OlvidasteContraseña />}></Route>
-
-          {/* Categorias */}
-          <Route path='/categorias' element={<Categorias />}></Route>
-          <Route path='/asistencia' element={<Asistencia />}></Route>
-          <Route path='/comida' element={<Comida />}></Route>
-          <Route path='/dinero' element={<Dinero />}></Route>
-          <Route path='/escolar' element={<Escolar />}></Route>
-          <Route path='/hogar' element={<Hogar />}></Route>
-          <Route path='/ropa' element={<Ropa />}></Route>
-          <Route path='/medicamentos-y-higiene' element={<Medicamentos />}></Route>
-          <Route path='/juguetes' element={<Juguetes />}></Route>
-          <Route path='/todo' element={<VerTodo />}></Route>
+            <Route path='/login' element={<Login />}></Route>
+            <Route path='/registrarse' element={<Signup />}></Route>
+            <Route path='/recuperar-contrasena' element={<OlvidasteContraseña />}></Route>
+            <Route path='/perfil' element={<Perfil />}></Route>
 
 
-   
-        {/* Perfiles de organizaciones */}
+            {/* Categorias */}
+            <Route path='/categorias' element={<Categorias />}></Route>
+            <Route path='/asistencia' element={<Asistencia />}></Route>
+            <Route path='/comida' element={<Comida />}></Route>
+            <Route path='/dinero' element={<Dinero />}></Route>
+            <Route path='/escolar' element={<Escolar />}></Route>
+            <Route path='/hogar' element={<Hogar />}></Route>
+            <Route path='/ropa' element={<Ropa />}></Route>
+            <Route path='/medicamentos-y-higiene' element={<Medicamentos />}></Route>
+            <Route path='/juguetes' element={<Juguetes />}></Route>
+            <Route path='/todo' element={<VerTodo />}></Route>
 
-          <Route path='/banco-alimentos' element={<BancoAlimentosPerfil />}></Route>
-          <Route path='/leon' element={<LeonPerfil />}></Route>
-          <Route path='/fann' element={<FannPerfil />}></Route>
-          <Route path='/conin' element={<ConinPerfil />}></Route>
-          <Route path='/banco-de-sangre' element={<BancoSangre />}></Route>
-          <Route path='/caritas' element={<CaritasPerfil />}></Route>
-          <Route path='/casa-cuna' element={<CasaCuna />}></Route>
-          <Route path='/Centro-las-moritas' element={<CentroLasMoritas />}></Route>
-          <Route path='/cocina-comunitaria-maria-guadalupe' element={<CocinaMariaGuadalupe />}></Route>
-          <Route path='/cocina-nueva-amanecer' element={<CocinaComNuevAmanecer />}></Route>
-          <Route path='/cocina-comunitaria-unidos' element={<CocinaUnidosTriunfar />}></Route>
-          <Route path='/comedor-manos-olla' element={<ComedorManosOlla />}></Route>
-          <Route path='/comedor-reyes' element={<ComedorReyes />}></Route>
-          <Route path='/confluir' element={<Confluir />}></Route>
-          <Route path='/fundacion-manos-solidarias' element={<FundacionManosSolidarias />}></Route>
-          <Route path='/nodo-ambiental' element={<NodoAmbiental />}></Route>
-          <Route path='/onat' element={<OnatPerfil />}></Route>
-          <Route path='/secretaria-ninez' element={<SubsecretariaNinez />}></Route>
-          <Route path='/techo' element={<TechoPerfil />}></Route>
-          <Route path='/fundacion-vallecito-de-la-guadalupe' element={<VallecitoGuada />}></Route>
-          <Route path='/instituto-las-mercedes' element={<HospitalMaternidadPerfil />}></Route>
 
-        </Routes>
-        <Footer />
-      </div>
+
+            {/* Perfiles de organizaciones */}
+
+            <Route path='/banco-alimentos' element={<BancoAlimentosPerfil />}></Route>
+            <Route path='/leon' element={<LeonPerfil />}></Route>
+            <Route path='/fann' element={<FannPerfil />}></Route>
+            <Route path='/conin' element={<ConinPerfil />}></Route>
+            <Route path='/banco-de-sangre' element={<BancoSangre />}></Route>
+            <Route path='/caritas' element={<CaritasPerfil />}></Route>
+            <Route path='/casa-cuna' element={<CasaCuna />}></Route>
+            <Route path='/Centro-las-moritas' element={<CentroLasMoritas />}></Route>
+            <Route path='/cocina-comunitaria-maria-guadalupe' element={<CocinaMariaGuadalupe />}></Route>
+            <Route path='/cocina-nueva-amanecer' element={<CocinaComNuevAmanecer />}></Route>
+            <Route path='/cocina-comunitaria-unidos' element={<CocinaUnidosTriunfar />}></Route>
+            <Route path='/comedor-manos-olla' element={<ComedorManosOlla />}></Route>
+            <Route path='/comedor-reyes' element={<ComedorReyes />}></Route>
+            <Route path='/confluir' element={<Confluir />}></Route>
+            <Route path='/fundacion-manos-solidarias' element={<FundacionManosSolidarias />}></Route>
+            <Route path='/nodo-ambiental' element={<NodoAmbiental />}></Route>
+            <Route path='/onat' element={<OnatPerfil />}></Route>
+            <Route path='/secretaria-ninez' element={<SubsecretariaNinez />}></Route>
+            <Route path='/techo' element={<TechoPerfil />}></Route>
+            <Route path='/fundacion-vallecito-de-la-guadalupe' element={<VallecitoGuada />}></Route>
+            <Route path='/instituto-las-mercedes' element={<HospitalMaternidadPerfil />}></Route>
+
+          </Routes>
+          <Footer />
+        </div>
       </ ScrollProvider>
 
     </Router>
