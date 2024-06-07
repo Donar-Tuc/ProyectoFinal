@@ -23,7 +23,7 @@
   background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
   border: 1px solid #f0f0f07b;
   transition: .6s ease-in-out all;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.399);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.144);
 
 }
 
@@ -65,7 +65,8 @@
 .message,
 .signin {
   font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  color: rgb(230, 230, 230);
 }
 
 .signin {
@@ -86,21 +87,23 @@
 }
 
 .formSoporte label .input {
-  background-color: #bfbfbf98;
-  color: white;
+  background-color: #f3f3f3;
+  color: #0c0c0c;
   width: 100%;
   padding: 20px 05px 05px 10px;
   outline: 0;
-  border: 1px solid rgba(150, 150, 150, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.315);
   border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.144);
 }
 
 .formSoporte label .input+span {
-  color: rgb(255, 254, 254);
+  color: #0c0c0c;
   position: absolute;
   left: 10px;
   top: 0px;
   font-size: 0.9em;
+  font-weight: 400;
   cursor: text;
   transition: 0.3s ease;
 }
@@ -112,7 +115,7 @@
 
 .formSoporte label .input:focus+span,
 .formSoporte label .input:valid+span {
-  color: rgb(226, 226, 226);
+  color: #1B7DFC;
   top: 0px;
   font-size: .9rem;
   font-weight: 600;
@@ -251,7 +254,6 @@
   .signin {
     font-size: 1rem;
     font-family: "Montserrat", sans-serif;
-    color: rgba(255, 255, 255, 0.7);
   }
 
   .signin {
@@ -291,17 +293,13 @@
 
 
   .btnForm {
-    background: #1B7DFC;
-    color: white;
+
     overflow: hidden;
     transition: none;
     margin-top: 1rem;
     justify-content: center;
   }
 
-  .btnForm:hover {
-    background-color: #1B7DFC;
-  }
 
   .btnForm span {
     display: block;
@@ -310,7 +308,6 @@
   }
 
   .btnForm span:hover {
-    color: white;
     transform: none;
   }
 

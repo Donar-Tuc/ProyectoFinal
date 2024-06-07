@@ -97,15 +97,18 @@ const Navbar = () => {
               <li>
                 <Link className="PerfilBtn" to="/perfil">
                   <img src={ProfileImage} alt="Perfil" />
+                  <p className="TituloEtiquetaIngresar">Ingresar</p>
+
                 </Link>
                 <button onClick={handleLogout} id="BotonContainer">
                   <img src={LogOut} alt="Cerrar Sesion" className="LogOutIcon" />
+                  <p className="TituloEtiquetaLogOut">Cerrar Sesion</p>
                 </button>
               </li>
             ) : (
               <li>
                 <Link className="btnLogin" to="/login" onClick={handleLogin}>
-                  Login
+                  Ingresa
                 </Link>
               </li>
             )}

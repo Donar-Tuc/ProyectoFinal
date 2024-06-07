@@ -8,7 +8,7 @@
     align-items: center;
     gap: 20px;
     padding: 9rem 0rem;
-    /*Padding lateral y de arriba del container*/
+
     background: rgb(2, 20, 25);
     background: linear-gradient(0deg, rgba(2, 20, 25, 1) 12%, rgba(8, 71, 88, 1) 75%);
 }
@@ -27,6 +27,7 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+
 }
 
 /* Cards container */
@@ -40,7 +41,7 @@
     height: 500px;
     padding: 0;
     border-radius: 30px;
-    background-color: #f1f1f1;
+    background-color: #e4e4e4;
     background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
     border: 1px #3d3d3d solid;
     overflow: hidden;
