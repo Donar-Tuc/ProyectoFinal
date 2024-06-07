@@ -27,7 +27,7 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-
+    height: 100%;
 }
 
 /* Cards container */
@@ -38,7 +38,7 @@
     justify-content: center;
     align-items: center;
     width: 25%;
-    height: 500px;
+    height: 30rem;
     padding: 0;
     border-radius: 30px;
     background-color: #e4e4e4;
@@ -139,12 +139,12 @@
 
 #TituloAsistenciaContainer {
     text-align: center;
-    font-size: 4rem;
+    font-size: 3rem;
     background: radial-gradient(25% 40% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: "Montserrat", sans-serif;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 #TituloAsistencia {
@@ -171,13 +171,14 @@
 #ContainerBotones {
     display: flex;
     justify-content: center;
-    width: 100%;
+    /* width: 90%; */
+    padding: .5rem 1rem;
     /* border: 2px yellow solid; */
     gap: 1px;
 }
 
 #BotonLink {
-    width: 23rem;
+    width: 100%;
     font-size: 1rem;
     font-weight: 300;
     font-family: "Montserrat", sans-serif;
@@ -262,6 +263,25 @@ ion-icon {
     transform: translateX(-3px);
 }
 
+@media (max-width: 1280px) {
+    .CardAsistencia {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+        height: 28rem;
+        padding: 0;
+        border-radius: 30px;
+        background-color: #e4e4e4;
+        background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
+        border: 1px #3d3d3d solid;
+        overflow: hidden;
+        transition: .3s ease-in all;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.541);
+
+    }
+}
 
 @media (max-width: 900px) {
 
@@ -353,7 +373,7 @@ ion-icon {
         width: 100%;
         font-family: "Montserrat", sans-serif;
         border-radius: 10px;
-        padding: .5rem 4rem;
+        padding: .5rem 3rem;
         border: 1px rgba(195, 195, 195, 0.139) solid;
         transition: none;
     }
