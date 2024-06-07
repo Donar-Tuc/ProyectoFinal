@@ -60,6 +60,10 @@
 
 }
 
+.form-control {
+    background-color: rgb(236, 236, 236);
+}
+
 .DatoSave {
     font-weight: 600;
 }
