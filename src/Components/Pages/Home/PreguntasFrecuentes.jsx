@@ -10,9 +10,9 @@ function AlwaysOpenExample() {
     <section id='AcordeonContainer' >
 
     <div id='BloqueTituloPreguntas'>
-        <h2 id='tituloFaq' data-aos="fade-up">Preguntas Frecuentes</h2>
+        <h2 id='tituloFaq'>Preguntas Frecuentes</h2>
     </div>
-    <div data-aos="fade-up">
+    <div>
     <Accordion >
       <Accordion.Item eventKey="0" >
         <Accordion.Header>¿Dónde se destinan las donaciones que recibe su organización?</Accordion.Header>

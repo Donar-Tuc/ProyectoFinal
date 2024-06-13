@@ -1,16 +1,16 @@
 #heading3 {
     text-align: center;
-    /* color: black; */
+    color: black;
     font-size: 2rem;
     font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    color: white;
+    font-weight: 600;
 }
 
 #aclaracion2 {
     text-align: center;
     margin-bottom: 20px;
-    color: white;
+    font-family: "Montserrat", sans-serif;
+    color: black;
 }
 
 .form {
@@ -40,24 +40,20 @@
 .ContainerBotonOlvideContrasena {
     margin: 0;
     padding: 1rem;
-    /* border: 2px yellow solid; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #btnSendCode {
-    padding: 0.5em;
-    padding-left: 2.3em;
-    padding-right: 2.3em;
+    padding: .7rem 3rem;
     border-radius: 30px;
     border: none;
     outline: none;
-    transition: .4s ease-in-out;
+    transition: .2s ease-in-out;
+    font-family: "Montserrat", sans-serif;
     background-color: #0C6DFD;
-    transition: .2s all ease-in-out;
     color: white;
-    /* margin-bottom: 20px; */
 }
 
 #btnSendCode:hover {
@@ -68,7 +64,7 @@
 
 .bloque1 {
     width: 50%;
-    border-radius: 30px 0px 0px 30px;
+    /* border-radius: 30px 0px 0px 30px; */
     /* border: 2px yellow solid; */
 }
 
@@ -80,12 +76,11 @@
     padding: 4rem;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 50%;
     border-radius: 0 30px 30px 0px;
     /* background-color: white; */
-
-    background-color: #ffffff38;
-    background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
+    background-color: rgba(0, 0, 0, 0.086);
+  background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
 }
 
 .bloque4:hover {

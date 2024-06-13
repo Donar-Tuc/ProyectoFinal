@@ -4,8 +4,6 @@
 .LoginContainer {
     display: flex;
     justify-content: center;
-    padding: 10rem 0rem 8rem 0rem;
-    background: linear-gradient(180deg, rgba(32, 117, 147, 1) 13%, rgba(16, 65, 83, 1) 53%, rgba(2, 19, 25, 1) 98%);
     height: auto;
 }
 
@@ -13,11 +11,10 @@
 
 #heading1 {
     text-align: center;
-    /* color: black; */
-    color: white;
+    color: black;
     font-size: 2rem;
     font-family: "Montserrat", sans-serif;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 /* Container de form */
@@ -25,7 +22,7 @@
 #FormularioLoginContainer {
     display: flex;
     flex-direction: row;
-    width: 70%;
+    width: 100%;
     height: auto;
     /* border: 2px yellow solid; */
 
@@ -37,16 +34,15 @@
 
 .bloque1 {
     width: 50%;
-    border-radius: 30px 0px 0px 30px;
     /* border: 2px yellow solid; */
 }
 
 #FondoLogin {
     width: 100%;
-    object-fit: cover;
+    object-fit:fill;
     object-position: center;
-    height: 100%;
-    border-radius: 30px 0 0 30px;
+    height: 100vh;
+    /* border-radius: 30px 0 0 30px; */
 }
 
 
@@ -56,12 +52,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60%;
-    border-radius: 0 30px 30px 0px;
-    /* background-color: white; */
+    width: 50%;
+    /* border-radius: 0 30px 30px 0px; */
+    background-color: rgba(213, 212, 212, 0.337);
+    background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
 
-    background-color: #ffffff38;
-  background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
 
 }
 
@@ -172,7 +167,6 @@
 
 .buttonRegister:hover {
     background-color: #4fad65;
-    transform: translateY(-1px);
     color: white;
 }
 
@@ -182,7 +176,7 @@
     border-radius: 30px;
     border: none;
     background-color: transparent;
-    color: white;
+    color: black;
     text-decoration: dashed;
 }
 

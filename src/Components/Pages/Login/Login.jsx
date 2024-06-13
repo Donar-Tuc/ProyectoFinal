@@ -38,7 +38,7 @@ class Login extends Component {
                   </div>
 
                   <Link to="/recuperar-contrasena">
-                    <button class="buttonForgotPassword">Olvidaste tu contraseña?</button>
+                    <button class="buttonForgotPassword">¿Olvidaste tu contraseña?</button>
                   </Link>
                 </div>
 

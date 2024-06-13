@@ -1,6 +1,7 @@
 #EstadisticasContainer{
-    background: rgb(2,20,25);
-    background: linear-gradient(0deg, rgba(2,20,25,1) 12%, rgba(8,71,88,1) 75%);
+    /* background: rgb(2,20,25);
+    background: linear-gradient(0deg, rgba(2,20,25,1) 12%, rgba(8,71,88,1) 75%); */
+    background-color: #f3f6f9;
     padding: 5rem;
     max-width: 100%;
 }
@@ -11,6 +12,7 @@
     flex-wrap: wrap;
     align-items: center;
     width: 100%;
+    padding: 2rem 10rem;
 }
 
 /* bloque individual de estadisticas */
@@ -19,21 +21,44 @@
 
     text-align: center;
 }
+#TituloEstadisticas{
+    text-align: center;
+    font-size: 2rem;
+    padding-bottom: 2rem;
+    color: black;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
 
-#NumeroEst{
-    font-size: 5rem;
-    font-weight: 800;
-    color: #34322f;
-    background: radial-gradient(45% 100% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);      
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+/* descripcion estadisticas */
+
+.descripcionEstadisticas{
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 0 5rem;
+    padding-bottom: 2rem;
+    color: black;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
 }
 
+
+#NumeroEst{
+    font-size: 3.2rem;
+    font-weight:bolder;
+    color: #027DFC;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+.SignoMas{
+    color: #027DFC;
+}
+
 #TextEst{
-    color: white;
-    font-size: 2rem;
+    /* color: white; */
+    color: black;
+    font-size: 1.2rem;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
 }
@@ -44,36 +69,66 @@
 
 @media (max-width: 900px) {
     #EstadisticasContainer{
-        padding: 1rem;
+        padding: 2rem 2rem;
+        max-width: 100%;
     }
     
     .Bloqueestadisticas{
         display: flex;
+        justify-content: center;
         flex-direction: column;
-        justify-content: space-around;
         flex-wrap: wrap;
         align-items: center;
         width: 100%;
-        gap: 20px;
+        padding: 0;
     }
     
     /* bloque individual de estadisticas */
     
     .Estadistica{
-        display: flex;
-        flex-direction: column;
+
         text-align: center;
     }
+    #TituloEstadisticas{
+        text-align: center;
+        font-size: 2rem;
+        padding-bottom: 2rem;
+        color: black;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+    }
+    
+    /* descripcion estadisticas */
+    
+    .descripcionEstadisticas{
+        text-align: center;
+        font-size: 1.1rem;
+        padding: 0rem;
+        padding-bottom: 2rem;
+        color: black;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+    }
+    
     
     #NumeroEst{
         font-size: 2rem;
-        font-weight: 500;
+        font-weight:bolder;
+        color: #027DFC;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+    }
+    
+    .SignoMas{
+        color: #027DFC;
     }
     
     #TextEst{
-        color: white;
+        /* color: white; */
+        color: black;
         font-size: 1.2rem;
-        font-weight: 200;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
     }
     
 

@@ -30,7 +30,7 @@ import centroMoritas from "./Imagenes/centroMoritas.png";
 import dineroEtiqueta from './Imagenes/card-outline.svg';
 import comidaEtiqueta from './Imagenes/fast-food-outline.svg';
 import asistenciaEtiqueta from './Imagenes/alarm-outline.svg';
-import hogarEtiqueta from './Imagenes/home-outline.svg';
+// import hogarEtiqueta from './Imagenes/home-outline.svg';
 import escolarEtiqueta from './Imagenes/school-outline.svg';
 import ropaEtiqueta from './Imagenes/shirt-outline.svg';
 import medicamentosEtiqueta from './Imagenes/medkit-outline.svg';
@@ -87,10 +87,10 @@ const VerTodo = () => {
         {
             imagen: Casacuna,
             titulo: "Casa Cuna",
-            etiquetas: [asistenciaEtiqueta, hogarEtiqueta, escolarEtiqueta, ropaEtiqueta, juguetesEtiqueta],
+            etiquetas: [escolarEtiqueta, ropaEtiqueta, juguetesEtiqueta],
             horario: "9am - 4pm de lunes a viernes",
             url: "/casa-cuna",
-            tituloEtiquetas: ["Asistencia y voluntariados", "Elementos del hogar", "Útiles escolares", "Vestimenta", "Juguetes"]
+            tituloEtiquetas: ["Útiles escolares", "Vestimenta", "Juguetes"]
 
         },
 

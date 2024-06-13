@@ -8,7 +8,7 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(180deg, rgba(32,117,147,1) 13%, rgba(16,65,83,1) 53%, rgba(2,19,25,1) 98%);
+    background-color: #f3f6f9;
     padding: 5rem 0rem;
     gap: 30px;
 
@@ -19,7 +19,8 @@
 #TituloCategoria{
     font-size: 2rem;
     font-family: "Montserrat", sans-serif;
-    color: white;
+    color: rgb(48, 48, 48);
+    font-weight: 700;
 }
 
 /* Bloque Cards */
@@ -45,7 +46,7 @@
     width: 20%;
     border-radius: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.21);
-    background-color: #ebefff76;
+    background-color: #00000046;
     background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
     border:1px #ffffff62 solid;
     transition: .3s ease-in-out;

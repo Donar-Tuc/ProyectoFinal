@@ -10,8 +10,8 @@
     /* Corregido */
     align-items: center;
     /* height: 100vh; */
-    background: linear-gradient(180deg, rgba(32, 117, 147, 1) 13%, rgba(16, 65, 83, 1) 53%, rgba(2, 19, 25, 1) 98%);
-    font-family: "Montserrat", sans-serif;
+background-color: #f3f6f9;    
+font-family: "Montserrat", sans-serif;
     max-width: 100%;
 }
 
@@ -25,7 +25,7 @@
     align-items: center;
     flex-direction: column;
     padding: 0rem 0rem 2rem 0;
-    background-color: rgb(216, 210, 210);
+    background-color: rgb(239, 239, 239);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.562);
 }
 
@@ -71,11 +71,11 @@
 /* Estilo para el título de la etiqueta */
 .TituloEtiqueta {
     position: absolute;
-    width: 200px;
-    bottom: -90px;
+    width: auto;
+    /* bottom: 30px; */
     text-align: center;
-    left: 80%;
-    transform: translateX(-20%);
+    left: 110%;
+    transform: translateX(-80px);
     background-color: #ebefff;
     color: black;
     font-weight: 600;
@@ -92,7 +92,8 @@
 .EtiquetaContainer:hover .TituloEtiqueta {
     opacity: 1;
     visibility: visible;
-    bottom: -65px;
+    bottom: auto;
+    margin-top: 1rem;
 }
 
 

@@ -9,7 +9,7 @@ class Soporte extends Component {
 
           <input type="hidden" name="access_key" value="50e21fd4-36fa-4bfd-85c8-cb279489ba9b" />
 
-          <p className="title">Contactate con Soporte</p>
+          <p className="title">Soporte</p>
           <p className="message">Te ayudamos con cualquier duda que tengas</p>
 
         
@@ -31,7 +31,7 @@ class Soporte extends Component {
 
          
           <label>
-            <input className="input" name="Consulta" type="text" placeholder="" required="required" />
+          <textarea className="input" id="consulta" name="Consulta" type="text" placeholder="" required="required" maxlength="200"></textarea>
             <span>Describi tu consulta</span>
           </label>
 
@@ -49,6 +49,21 @@ class Soporte extends Component {
             <span>Enviar</span>
           </button>
         </form>
+
+        <div className="lineaHorizontal"></div>
+
+        <div className="FormularioBloque2">
+          <h3 className="TituloInfoNuestra">Nuestros Horarios</h3>
+          <p>Lunes - Viernes</p>
+          <p>8am a 5pm</p>
+          <p>Sabado - Domingo</p>
+          <p>Cerrado</p>
+          <h3 className="TituloInfoNuestra">Direccion</h3>
+          <p>IHC, 9 de Julio 165, T4000IHC San Miguel de Tucumán, Tucumán</p>
+          <h3 className="TituloInfoNuestra">Contacto</h3>
+          <p><a href="mailto:don.ar.tuc@gmail.com" className="ContactoForm">don.ar.tuc@gmail.com</a></p>
+          <p><a href="tel:+543814329876" className="ContactoForm">3814329876</a></p>        
+          </div>
       </div>
     );
   }

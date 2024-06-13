@@ -27,6 +27,7 @@ const categorias = [
 
 const Perfil = () => {
     const [editMode, setEditMode] = useState(false);
+    const [showAccountManagement, setShowAccountManagement] = useState(false);
     const [profile, setProfile] = useState({
         logo: BancoAlimentos,
         name: "Nombre de la organización",
@@ -35,12 +36,24 @@ const Perfil = () => {
         phone: "123456789",
         address: "Dirección de la organización",
         descripcion: "Cambiar descripción",
+        cuit: "30-12345678-9",
         donaciones: []
     });
+    const [accountInfo, setAccountInfo] = useState({
+        username: "nombreUsuario",
+        email: "correo@example.com",
+        password: ""
+    });
+    const [newAccountInfo, setNewAccountInfo] = useState(accountInfo);
+    const [currentPassword, setCurrentPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [message, setMessage] = useState("");
 
     const handleProfileUpdate = (formData) => {
         setProfile(formData);
         setEditMode(false);
+        setMessage("Perfil actualizado exitosamente.");
+        setTimeout(() => setMessage(""), 3000); // Clear message after 3 seconds
     };
 
     const handleChange = (e) => {
@@ -78,6 +91,53 @@ const Perfil = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         handleProfileUpdate(profile);
+    };
+
+    const handleAccountChange = (e) => {
+        const { name, value } = e.target;
+        setNewAccountInfo({
+            ...newAccountInfo,
+            [name]: value
+        });
+    };
+
+    const handleConfirmPasswordChange = (e) => {
+        setConfirmPassword(e.target.value);
+    };
+
+    const handleCurrentPasswordChange = (e) => {
+        setCurrentPassword(e.target.value);
+    };
+
+    const handleAccountSubmit = (e) => {
+        e.preventDefault();
+        if (currentPassword !== accountInfo.password) {
+            setMessage('La contraseña actual no es correcta.');
+            setTimeout(() => setMessage(""), 3000);
+            return;
+        }
+        if (newAccountInfo.password !== confirmPassword) {
+            setMessage('Las nuevas contraseñas no coinciden.');
+            setTimeout(() => setMessage(""), 3000);
+            return;
+        }
+        setAccountInfo(newAccountInfo);
+        setShowAccountManagement(false);
+        setMessage('Se ha realizado un cambio en la cuenta.');
+        setTimeout(() => setMessage(""), 3000);
+    };
+
+    const handleAccountDeletion = () => {
+        setMessage('Cuenta eliminada.');
+        setTimeout(() => setMessage(""), 3000);
+    };
+
+    const handleDeleteAccount = () => {
+        if (window.confirm('¿Estás seguro que deseas eliminar tu cuenta?')) {
+            // Lógica para eliminar la cuenta
+            setMessage('Tu cuenta ha sido eliminada exitosamente.');
+            setTimeout(() => setMessage(""), 3000);
+        }
     };
 
     return (
@@ -150,6 +210,16 @@ const Perfil = () => {
                                         onChange={handleChange}
                                     />
                                 </div>
+                                {/* <div className="mb-3">
+                                    <label className="form-label">CUIT</label>
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        name="cuit"
+                                        value={profile.cuit}
+                                        onChange={handleChange}
+                                    />
+                                </div> */}
                                 <div className="mb-3">
                                     <label className="form-label">Cambiar Imagen de Perfil</label>
                                     <input
@@ -176,8 +246,86 @@ const Perfil = () => {
                                         </div>
                                     ))}
                                 </div>
-                                <button type="submit" className="btn btn-primary">Guardar</button>
+                                <button type="submit" className="btn btn-primary" id="BotonGuardarPerfil">Guardar</button>
+                                <button onClick={() => setEditMode(false)}  className="btn btn-secondary" id="btnCancelarEdicion">Cancelar</button>
+
+                                {message && <div className="alert alert-success mt-3">{message}</div>}
                             </form>
+                        ) : showAccountManagement ? (
+                            <div className="AccountManagement">
+                                <h3 className="ManejoDeCuenteTitulo">Gestión de cuenta</h3>
+                                <form onSubmit={handleAccountSubmit}>
+                                    <div className="mb-3">
+                                        <label className="form-label">Nombre de Usuario</label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            name="username"
+                                            value={newAccountInfo.username}
+                                            onChange={handleAccountChange}
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label className="form-label">Correo Electrónico</label>
+                                        <input
+                                            type="email"
+                                            className="form-control"
+                                            name="email"
+                                            value={newAccountInfo.email}
+                                            onChange={handleAccountChange}
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label className="form-label">Contraseña Actual</label>
+                                        <input
+                                            type="password"
+                                            className="form-control"
+                                            name="currentPassword"
+                                            value={currentPassword}
+                                            onChange={handleCurrentPasswordChange}
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label className="form-label">Nueva Contraseña</label>
+                                        <input
+                                            type="password"
+                                            className="form-control"
+                                            name="password"
+                                            value={newAccountInfo.password}
+                                            onChange={handleAccountChange}
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label className="form-label">Repetir Nueva Contraseña</label>
+                                        <input
+                                            type="password"
+                                            className="form-control"
+                                            name="confirmPassword"
+                                            value={confirmPassword}
+                                            onChange={handleConfirmPasswordChange}
+                                        />
+                                    </div>
+
+                                    <div className="mb-3">
+                                                <label className="form-label">CUIT</label>
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    name="cuit"
+                                                    value={profile.cuit}
+                                                    onChange={handleChange}
+                                                />
+                                            </div>
+                                            
+                                            <div className="BotonesCambiarDatos">
+                                            <button type="submit" className="btn btn-primary" id="BotonGuardarCambioCuenta">Guardar Cambios</button>
+                                            <button type="button" onClick={handleDeleteAccount} className="btn btn-danger" id="BotonEliminarCambioCuenta">Eliminar Cuenta</button>
+                                            </div>   
+                                            <button onClick={() => setShowAccountManagement(!showAccountManagement)} className="btn btn-secondary" id="btnCancelarEdicion">Cancelar</button>
+                                 
+                                            {message && <div className="alert alert-success mt-3">{message}</div>}
+                                </form>
+                            </div>
                         ) : (
                             <div className="ContainerDataSave">
                                 <h2>{profile.name}</h2>
@@ -197,7 +345,9 @@ const Perfil = () => {
                                 <p className="DataPefil"><span className="DatoSave">Teléfono: </span> {profile.phone}</p>
                                 <p className="DataPefil"><span className="DatoSave">Dirección: </span> {profile.address}</p>
                                 <p className="DataPefil descripcion"><span className="DatoSave">Descripción: </span> {profile.descripcion}</p>
+                                {/* <p className="DataPefil"><span className="DatoSave">CUIT: </span> {profile.cuit}</p> */}
                                 <button onClick={() => setEditMode(true)} className="btn btn-primary" id="btnEditarPerfil">Editar Perfil</button>
+                                <button onClick={() => setShowAccountManagement(!showAccountManagement)} className="btn btn-secondary" id="btnGestionCuenta">Gestión de cuenta</button>
                             </div>
                         )}
                     </div>

@@ -1,22 +1,24 @@
 #AcordeonContainer{
-    background: rgb(2,19,25);
-    background: linear-gradient(180deg, rgba(2,19,25,1) 28%, rgba(16,65,83,1) 84%);
-    padding:  5rem 10rem;
+    /* background: rgb(2,19,25);
+    background: linear-gradient(180deg, rgba(2,19,25,1) 28%, rgba(16,65,83,1) 84%); */
+    color: white;
+    padding:  4rem 10rem;
     width: 100%;
 }
 
 #BloqueTituloPreguntas{
     text-align: center;
-    padding: 2rem;
+    padding-bottom: 2rem;
 }
 
 #tituloFaq{
-    font-size: 4rem;
-    background: radial-gradient(20% 50% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, 0.445) 100%);      
+    font-size: 2.5rem;
+    /* background: radial-gradient(20% 50% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, 0.445) 100%);      
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
+    color: black;
     font-family: "Montserrat", sans-serif;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .accordion-header {

@@ -5,13 +5,12 @@
     display: flex;
     justify-content: center;
     height: 100vh;
-    padding-top: 8rem;
-    background: linear-gradient(180deg, rgba(32, 117, 147, 1) 13%, rgba(16, 65, 83, 1) 53%, rgba(2, 19, 25, 1) 98%);
+    background-color: #ffffff;
 }
 
 .iconoInputForm {
     font-size: 64px;
-    color: red;
+    color: rgb(0, 0, 0);
 }
 
 /* Container de form */
@@ -28,7 +27,7 @@
 
 .bloque1 {
     width: 50%;
-    height: 675px;
+    height: 100vh;
     /* border: 2px yellow solid; */
 }
 
@@ -37,43 +36,39 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60%;
-    border-radius: 0 30px 30px 0px;
-    /* background-color: white; */
-
-    background-color: #ffffff38;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.086);
     background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
 }
 
 
 
 #FondoLogin {
-    width: 100%;
+    width: 80%;
 }
 
 #aclaracion {
     margin: 2em;
     text-align: center;
-    color: white ; /* el original es negro*/
+    color: black ; /* el original es negro*/
+    font-family: "Montserrat", sans-serif;
 }
 
 #heading {
     text-align: center;
-    /* color: black; */
-    color: white;
+    color: black;
     font-size: 2rem;
     font-family: "Montserrat", sans-serif;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .buttonSendRequestRegister {
-    padding: 0.5em;
-    padding-left: 2.3em;
-    padding-right: 2.3em;
+    padding: .8rem 3rem;
     border-radius: 30px;
     border: none;
     outline: none;
     transition: .2s ease-in-out;
+    font-family: "Montserrat", sans-serif;
     background-color: #0C6DFD;
     color: white;
     /* margin-bottom: 20px; */

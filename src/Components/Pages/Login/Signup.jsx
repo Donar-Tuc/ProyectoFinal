@@ -54,7 +54,7 @@ class Signup extends Component {
 
                                 <div class="field" id="descripcion">
                                     <ion-icon classname='iconoInputForm' name="help-outline"></ion-icon>
-                                    <input className="input-field" type="text" name="Descripcion" placeholder="Por qué necesitan la visibilidad?" required="required" id="firstname" />
+                                    <input className="input-field" type="text" name="Descripcion" placeholder="¿Por qué necesitan la visibilidad?" required="required" id="firstname" />
 
                                 </div>
 
