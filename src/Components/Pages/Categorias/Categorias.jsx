@@ -2,24 +2,24 @@ import React from "react";
 import "./Styles/Categorias.css";
 import { Link } from "react-router-dom";
 
-import dineroEtiqueta from './imagenes/card-outline.svg';
-import comidaEtiqueta from './imagenes/fast-food-outline.svg';
-import hogarEtiqueta from './imagenes/home-outline.svg';
-import escolarEtiqueta from './imagenes/school-outline.svg';
-import ropaEtiqueta from './imagenes/shirt-outline.svg';
-import asistenciaEtiqueta from './imagenes/alarm-outline.svg';
-import MedicamentosEtiqueta from './imagenes/medkit-outline.svg';
-import JugueteEtiqueta from './imagenes/extension-puzzle-outline.svg';
+import dineroEtiqueta from './Etiquetas/card-outline.svg';
+import comidaEtiqueta from './Etiquetas/fast-food-outline.svg';
+import hogarEtiqueta from './Etiquetas/home-outline.svg';
+import escolarEtiqueta from './Etiquetas/school-outline.svg';
+import ropaEtiqueta from './Etiquetas/shirt-outline.svg';
+import asistenciaEtiqueta from './Etiquetas/alarm-outline.svg';
+import MedicamentosEtiqueta from './Etiquetas/medkit-outline.svg';
+import JugueteEtiqueta from './Etiquetas/extension-puzzle-outline.svg';
 
 const categorias = [
-  { name: "Dinero", href: "/dinero", etiqueta: dineroEtiqueta },
-  { name: "Comida", href: "/comida", etiqueta: comidaEtiqueta },
-  { name: "Hogar", href: "/hogar", etiqueta: hogarEtiqueta },
-  { name: "Escolar", href: "/escolar", etiqueta: escolarEtiqueta },
-  { name: "Ropa", href: "/ropa", etiqueta: ropaEtiqueta },
-  { name: "Asistencia", href: "/asistencia", etiqueta: asistenciaEtiqueta },
-  { name: "Salud", href: "/medicamentos-y-higiene", etiqueta: MedicamentosEtiqueta },
-  { name: "Juguetes", href: "/juguetes", etiqueta: JugueteEtiqueta }
+  { name: "Dinero", href: "/categorias/Donaciones%20monetarias", etiqueta: dineroEtiqueta },
+  { name: "Comida", href: "/categorias/Alimentos%20no%20perecederos", etiqueta: comidaEtiqueta },
+  { name: "Hogar", href: "/categorias/El%20y%20voluntariados", etiqueta: hogarEtiqueta },
+  { name: "Escolar", href: "/categorias/Utiles%20escolares", etiqueta: escolarEtiqueta },
+  { name: "Ropa", href: "/categorias/Vestimenta", etiqueta: ropaEtiqueta },
+  { name: "Asistencia", href: "/categorias/Asistencia%20y%20voluntariados", etiqueta: asistenciaEtiqueta },
+  { name: "Salud", href: "/categorias/Medicamentos", etiqueta: MedicamentosEtiqueta },
+  { name: "Juguetes", href: "/categorias/Juguetes", etiqueta: JugueteEtiqueta }
 ];
 
 const verTodoCategoria = { name: "Ver todo", href: "/todo" };

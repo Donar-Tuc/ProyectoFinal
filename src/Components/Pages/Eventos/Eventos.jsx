@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useFetch } from "../../../logic/useFetch.js";
 import Card from "./CardsEventos.jsx";
 import "./css/eventos.css";
 
@@ -52,7 +53,6 @@ const Eventos = () => {
                         key={index}
                         imagen={card.imagen}
                         titulo={card.titulo}
-                        horario={card.horario}
                         etiquetas={card.etiquetas}
                         descripcion={card.descripcion}
                         url={card.url}

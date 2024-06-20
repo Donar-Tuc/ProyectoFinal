@@ -25,7 +25,7 @@ class FundacionManosSolidarias extends Component {
         mapa: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113927.31383965959!2d-65.30499545955571!3d-26.8326818466841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94223792d6c56903%3A0xf88d5b92b5c56527!2sSan%20Miguel%20de%20Tucum%C3%A1n%2C%20Tucum%C3%A1n%20Province!5e0!3m2!1sen!2sar!4v1715725096970!5m2!1sen!2sar",
         descripcion: "Nuestra fundación es un faro de solidaridad y compasión en nuestra comunidad, donde cada acción está impregnada de amor y dedicación. Desde programas de asistencia alimentaria hasta proyectos de desarrollo comunitario, trabajamos incansablemente para construir un futuro más justo y equitativo para todos. Invitamos a todos aquellos que deseen contribuir a esta noble causa a unirse a nosotros y ser parte de nuestra familia solidaria. ",
         tituloEtiquetas: ["Donaciones monetarias", "Alimentos no perecederos","Asistencia y voluntariados" ],
-        etiquetas: [dineroEtiqueta, comidaEtiqueta, asistenciaEtiqueta]      
+        etiquetas: [dineroEtiqueta, comidaEtiqueta, asistenciaEtiqueta]
 },
       
     ];
