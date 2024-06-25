@@ -5,9 +5,10 @@
   align-items: center;
   justify-content: center;
   background-color: #f3f6f9;
-  padding: 1rem 4rem;
+  padding: 30rem 4rem;
   font-family: "Montserrat", sans-serif;
   gap: 20px;
+  height: 50vh;
 }
 
 
@@ -205,6 +206,33 @@
   transform: scale(0.95);
 }
 
+
+/* Estilo para el mensaje de error en el formulario de soporte */
+
+/* Estilos para los mensajes de error */
+/* Estilos para el contenedor de mensajes de error */
+.error-containerSoporte {
+  text-align: left;
+  margin-bottom: 10px; /* Espacio entre mensaje de error y formulario */
+}
+
+/* Estilos para los mensajes de error */
+.error-messageSoporte {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  
+  color: #721c24;
+    font-size: 14px;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    padding: .8rem 2rem;
+    margin-top: 0; /* Espacio superior al mensaje de error */
+    background-color: #f8d7da; /* Fondo rojo solo cuando hay errores */
+}
+
+
 @keyframes fly-1 {
   from {
     transform: translateY(0.1em);
@@ -244,6 +272,7 @@
     padding: 4rem 0rem;
     font-family: "Montserrat", sans-serif;
     gap: 20px;
+    height: 100%;
   }
   
   

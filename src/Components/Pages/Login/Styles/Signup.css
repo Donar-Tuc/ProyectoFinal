@@ -132,7 +132,31 @@
     margin: 10px;
 }
 
+/* Estilo para el contenedor de mensajes de error */
+.error-container {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
 
+.error-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.error-container li {
+    margin: 5px 0;
+}
+
+.error-message {
+    font-weight: 600;
+}
+
+/* Restante de tus estilos aquí */
 
 @media (max-width: 900px) {
 

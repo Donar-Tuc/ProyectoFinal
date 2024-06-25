@@ -1,72 +1,148 @@
 import React, { Component } from "react";
-import "../Soporte/css/Soporte.css";
+import "./css/Soporte.css";
 
 class Soporte extends Component {
-  render() {
-    return (
-      <div className="ContainerForm">
-        <form className="formSoporte" action="https://api.web3forms.com/submit" method="POST">
+    constructor(props) {
+        super(props);
+        this.state = {
+            nombre: "",
+            numero: "",
+            email: "",
+            consulta: "",
+            errors: {}
+        };
+    }
 
-          <input type="hidden" name="access_key" value="50e21fd4-36fa-4bfd-85c8-cb279489ba9b" />
+    validateForm = () => {
+        const { nombre, numero, email, consulta } = this.state;
+        let errors = {};
+        let formIsValid = true;
 
-          <p className="title">Soporte</p>
-          <p className="message">Te ayudamos con cualquier duda que tengas</p>
+        // Validar Nombre
+        if (!nombre.trim()) {
+            formIsValid = false;
+            errors["nombre"] = "El nombre es requerido.";
+        }
 
-        
-            <label>
-              <input className="input" type="text" name="Nombre" placeholder="" required="required" id="firstname" />
-              <span>Nombre</span>
-            </label>
+        // Validar Número
+        if (!numero.trim()) {
+            formIsValid = false;
+            errors["numero"] = "El número es requerido.";
+        } else if (!/^\d+$/.test(numero)) {
+            formIsValid = false;
+            errors["numero"] = "Ingrese solo números.";
+        }
 
-          
-          <label>
-            <input className="input" type="text" name="Numero" placeholder="" required="required" id="Numero" />
-            <span>Numero</span>
-          </label>
-  
-          <label>
-            <input className="input" type="email" name="Email" placeholder="" required="required" id="email" />
-            <span>Email</span>
-          </label>
+        // Validar Email
+        if (!email.trim()) {
+            formIsValid = false;
+            errors["email"] = "El correo electrónico es requerido.";
+        } else {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!re.test(email)) {
+                formIsValid = false;
+                errors["email"] = "Ingrese un correo electrónico válido.";
+            }
+        }
 
-         
-          <label>
-          <textarea className="input" id="consulta" name="Consulta" type="text" placeholder="" required="required" maxlength="200"></textarea>
-            <span>Describi tu consulta</span>
-          </label>
+        // Validar Consulta
+        if (consulta.trim().length < 20) {
+            formIsValid = false;
+            errors["consulta"] = "La consulta debe tener al menos 20 caracteres.";
+        }
 
-          <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+        this.setState({ errors });
+        return formIsValid;
+    }
 
-          <button className="btnForm" type="submit">
-            <div className="svg-wrapper-1">
-              <div className="svg-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                  <path fill="none" d="M0 0h24v24H0z"></path>
-                  <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
-                </svg>
-              </div>
+    handleChange = (e) => {
+        const { name, value } = e.target;
+        this.setState({ [name]: value });
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        if (this.validateForm()) {
+            // Enviar el formulario si todas las validaciones son correctas
+            e.target.submit();
+        }
+    }
+
+    render() {
+        const { errors } = this.state;
+        const hasErrors = Object.keys(errors).length > 0;
+
+        return (
+            <div className="ContainerForm">
+               
+                <form className="formSoporte" action="https://api.web3forms.com/submit" method="POST" onSubmit={this.handleSubmit}>
+                    <input type="hidden" name="access_key" value="50e21fd4-36fa-4bfd-85c8-cb279489ba9b" />
+
+                    <p className="title">Soporte</p>
+                    <p className="message">Te ayudamos con cualquier duda que tengas</p>
+
+                    {hasErrors && (
+                    <div className="error-containerSoporte">
+                        <div className="error-messageSoporte">
+                            {Object.values(errors).map((error, index) => (
+                                <p key={index}>{error}</p>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                    <label>
+                        <input className="input" type="text" name="nombre" placeholder="" required="required" id="firstname" onChange={this.handleChange} />
+                        <span>Nombre</span>
+                    </label>
+
+                    <label>
+                        <input className="input" type="text" name="numero" placeholder="" required="required" id="Numero" onChange={this.handleChange} />
+                        <span>Número</span>
+                    </label>
+
+                    <label>
+                        <input className="input" type="email" name="email" placeholder="" required="required" id="email" onChange={this.handleChange} />
+                        <span>Email</span>
+                    </label>
+
+                    <label>
+                        <textarea className="input" id="consulta" name="consulta" type="text" placeholder="" required="required" maxLength="200" onChange={this.handleChange}></textarea>
+                        <span>Describe tu consulta</span>
+                    </label>
+
+                    <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+
+                    <button className="btnForm" type="submit">
+                        <div className="svg-wrapper-1">
+                            <div className="svg-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z"></path>
+                                    <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <span>Enviar</span>
+                    </button>
+                </form>
+
+                <div className="lineaHorizontal"></div>
+
+                <div className="FormularioBloque2">
+                    <h3 className="TituloInfoNuestra">Nuestros Horarios</h3>
+                    <p>Lunes - Viernes</p>
+                    <p>8am a 5pm</p>
+                    <p>Sábado - Domingo</p>
+                    <p>Cerrado</p>
+                    <h3 className="TituloInfoNuestra">Dirección</h3>
+                    <p>IHC, 9 de Julio 165, T4000IHC San Miguel de Tucumán, Tucumán</p>
+                    <h3 className="TituloInfoNuestra">Contacto</h3>
+                    <p><a href="mailto:don.ar.tuc@gmail.com" className="ContactoForm">don.ar.tuc@gmail.com</a></p>
+                    <p><a href="tel:+543814329876" className="ContactoForm">3814329876</a></p>
+                </div>
             </div>
-            <span>Enviar</span>
-          </button>
-        </form>
-
-        <div className="lineaHorizontal"></div>
-
-        <div className="FormularioBloque2">
-          <h3 className="TituloInfoNuestra">Nuestros Horarios</h3>
-          <p>Lunes - Viernes</p>
-          <p>8am a 5pm</p>
-          <p>Sabado - Domingo</p>
-          <p>Cerrado</p>
-          <h3 className="TituloInfoNuestra">Direccion</h3>
-          <p>IHC, 9 de Julio 165, T4000IHC San Miguel de Tucumán, Tucumán</p>
-          <h3 className="TituloInfoNuestra">Contacto</h3>
-          <p><a href="mailto:don.ar.tuc@gmail.com" className="ContactoForm">don.ar.tuc@gmail.com</a></p>
-          <p><a href="tel:+543814329876" className="ContactoForm">3814329876</a></p>        
-          </div>
-      </div>
-    );
-  }
+        );
+    }
 }
 
 export default Soporte;

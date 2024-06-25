@@ -4,6 +4,7 @@ import ScrollToTop from './ScrollToTop.js'; // Importa el componente ScrollToTop
 import { ScrollProvider } from './ScrollContext.js';
 import React, { useState } from 'react';
 
+
 import Navbar from './Components/Pages/General/Header.jsx';
 import Inicio from './Components/Pages/Home/Home.jsx';
 import Eventos from './Components/Pages/Eventos/Eventos.jsx';

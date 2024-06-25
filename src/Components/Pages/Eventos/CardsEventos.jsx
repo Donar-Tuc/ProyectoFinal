@@ -6,7 +6,7 @@ const CardEvento = ({ imagen, titulo, horario, etiquetas, url, descripcion, titu
     return (
         <div className="CardEventos">
             <div className="ImagenContainer">
-                <img src={imagen} alt="" id="ImagenCard" />
+                <img src={imagen} alt="Imagen del evento" id="ImagenCard" />
             </div>
 
             <div className="textoContainer">

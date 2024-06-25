@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import './css/formPopUp.css'; // Estilos personalizados (si los tienes)
+import moment from 'moment';
+import 'moment/locale/es'; // Importar el locale de español para moment
+import Datetime from 'react-datetime';
+import 'react-datetime/css/react-datetime.css';
 
 // Importar íconos correspondientes a cada categoría
 import dineroEtiqueta from './imagenes/card-outline.svg';
@@ -11,16 +15,28 @@ import ropaEtiqueta from './imagenes/shirt-outline.svg';
 import medicamentosEtiqueta from './imagenes/medkit-outline.svg';
 import juguetesEtiqueta from './imagenes/football-outline.svg';
 
+// Configurar moment para español y evitar GMT
+moment.locale('es');
+
 const PopUp = ({ addEvent, togglePopup }) => {
     const [nombreOrganizacion, setNombreOrganizacion] = useState('');
-    const [horarios, setHorarios] = useState('');
+    const [fechaInicio, setFechaInicio] = useState('');
+    const [fechaFin, setFechaFin] = useState('');
+    const [horaInicio, setHoraInicio] = useState('');
+    const [horaFin, setHoraFin] = useState('');
     const [descripcion, setDescripcion] = useState('');
     const [categoriasDonacion, setCategoriasDonacion] = useState([]);
 
     const handleCheckboxChange = (e) => {
         const { value, checked } = e.target;
 
-        // Si el checkbox está marcado, agregar la categoría; si no, quitarla
+        // Verificar cuántos checkboxes están marcados actualmente
+        if (checked && categoriasDonacion.length >= 5) {
+            // Si se intenta marcar más de 5, no se permite
+            return;
+        }
+
+        // Actualizar el estado de las categorías de donación
         if (checked) {
             setCategoriasDonacion([...categoriasDonacion, value]);
         } else {
@@ -31,11 +47,17 @@ const PopUp = ({ addEvent, togglePopup }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        // Validar la longitud de la descripción
+        if (descripcion.length < 100) {
+            alert('La descripción debe tener al menos 100 caracteres.');
+            return;
+        }
+
         // Crear objeto con los datos del evento
         const eventData = {
             imagen: '', // Aquí deberías establecer la imagen adecuada
             titulo: nombreOrganizacion, // Usar el nombre de la organización como título
-            horario: horarios,
+            horario: `${formatoHorario(fechaInicio)} a ${formatoHorario(fechaFin)}`, // Formatear inicio y fin de horario
             etiquetas: categoriasDonacion.map(cat => getIconoByCategoria(cat)), // Obtener los íconos según las categorías seleccionadas
             descripcion: descripcion,
             url: '', // Establecer la URL adecuada si es necesario
@@ -47,12 +69,20 @@ const PopUp = ({ addEvent, togglePopup }) => {
 
         // Limpiar el formulario y categorías seleccionadas
         setNombreOrganizacion('');
-        setHorarios('');
+        setFechaInicio('');
+        setFechaFin('');
+        setHoraInicio('');
+        setHoraFin('');
         setDescripcion('');
         setCategoriasDonacion([]);
 
         // Cerrar el popup
         togglePopup();
+    };
+
+    // Función para formatear la fecha sin hora
+    const formatoHorario = (fecha) => {
+        return moment(fecha).format('dddd D [de] MMMM');
     };
 
     // Función auxiliar para obtener el ícono según la categoría seleccionada
@@ -85,18 +115,36 @@ const PopUp = ({ addEvent, togglePopup }) => {
                 {/* Formulario para crear evento */}
                 <form onSubmit={handleSubmit} id='FormularioEventos'>
                     <div className='BoxTituloBotonEvento'>
-                    <span className="close" onClick={togglePopup}>&times;</span>
-                    <h2 className="TituloFormularioEvento">Crear Evento</h2>
+                        <span className="close" onClick={togglePopup}>&times;</span>
+                        <h2 className="TituloFormularioEvento">Crear Evento</h2>
                     </div>
-                
+
                     <div className="mb-3">
                         <label htmlFor="nombreOrganizacion" className='TextoFormEventos'>Nombre de la Organización:</label>
                         <input type="text" id="nombreOrganizacion" className='InputFormEventos form-control' placeholder='Ingresar el nombre de la organizacion' value={nombreOrganizacion} onChange={(e) => setNombreOrganizacion(e.target.value)} required />
                     </div>
 
                     <div className="mb-3">
-                        <label htmlFor="horarios" className='TextoFormEventos'>Horarios de Atención:</label>
-                        <input type="text" id="horarios" className='InputFormEventos form-control' placeholder='Ingresar horarios de atención' value={horarios} onChange={(e) => setHorarios(e.target.value)} required />
+                        <label htmlFor="horarios" className='TextoFormEventos'>Fechas del Evento:</label>
+                        <div>
+                            {/* Selector de fecha y hora para inicio */}
+                            <Datetime
+                                value={fechaInicio}
+                                onChange={date => setFechaInicio(date)}
+                                inputProps={{ placeholder: 'Fecha de inicio' }}
+                                dateFormat="dddd D [de] MMMM"
+                                timeFormat={false} // Deshabilitar el formato de hora
+                            />
+                            &nbsp;a&nbsp;
+                            {/* Selector de fecha y hora para fin */}
+                            <Datetime
+                                value={fechaFin}
+                                onChange={date => setFechaFin(date)}
+                                inputProps={{ placeholder: 'Fecha de fin' }}
+                                dateFormat="dddd D [de] MMMM"
+                                timeFormat={false} // Deshabilitar el formato de hora
+                            />
+                        </div>
                     </div>
 
                     {/* Checkboxes para seleccionar tipos de donación */}
@@ -153,18 +201,18 @@ const PopUp = ({ addEvent, togglePopup }) => {
                             </div>
                         </div>
                     </div>
-
                     <div className="mb-3">
-                        <label htmlFor="descripcion" className='TextoFormEventos'>Descripción del Evento:</label><br />
-                        <textarea id="descripcion" className='InputFormEventos form-control' placeholder='Ingrese una breve descripcion del evento' value={descripcion} onChange={(e) => setDescripcion(e.target.value)} rows="4" required></textarea>
-                    </div>
+                    <label htmlFor="descripcion" className='TextoFormEventos'>Descripción del Evento:</label><br />
+                    <textarea id="descripcion" className='InputFormEventos form-control' placeholder='Ingrese una breve descripcion del evento' value={descripcion} onChange={(e) => setDescripcion(e.target.value)} rows="4" required></textarea>
+                </div>
 
-                    {/* Botón para crear evento */}
-                    <button type="submit" className="btn btn-primary" id='BotonCrearEvento'>Crear Evento</button>
-                </form>
-            </div>
+                {/* Botón para crear evento */}
+                <button type="submit" className="btn btn-primary" id='BotonCrearEvento'>Crear Evento</button>
+            </form>
         </div>
-    );
+    </div>
+);
+
 };
 
 export default PopUp;

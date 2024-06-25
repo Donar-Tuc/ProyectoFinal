@@ -89,6 +89,20 @@
     transform: none;
 }
 
+
+/* Estilo para el mensaje de error en el formulario de recuperar contraseña */
+
+.error-message {
+    color: #721c24;
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: center;
+    padding: 5px;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+}
+
 @media (max-width: 900px) {
 
     .formRecuperar {

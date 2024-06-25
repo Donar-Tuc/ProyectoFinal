@@ -91,9 +91,14 @@ nav {
 }
 
 #BotonContainer {
-    padding: 0 1rem;
+    padding: 0 0rem;
     background-color: transparent;
     border: none;
+}
+
+.ContainerBotonHead{
+    display: flex;
+    gap: 20px;
 }
 
 .LogOutIcon {
@@ -194,13 +199,16 @@ nav {
         transform: none;
     }
 
-
-    #BotonContainer {
-        padding: 0 1rem;
-        background-color: transparent;
-        border: none;
+    .ContainerBotonHead{
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        /* border: 2px yellow solid; */
+        gap: 20px;
     }
-
     .ProfileLoginContainer {
         margin: 0 auto;
         display: flex;
@@ -210,11 +218,11 @@ nav {
     }
 
     .LogOutIcon {
-        width: 20px;
+        width: 35px;
     }
 
     .PerfilBtn {
-        width: 20px;
+        width: 35px;
     }
 
 
