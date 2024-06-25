@@ -1,0 +1,118 @@
+/* formPopup.css */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.popup-inner {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.FormularioPopUp {
+    display: flex;
+    flex-direction: column;
+}
+
+.LabelPopUp {
+    margin: 10px 0;
+}
+
+.inputPopUp, .textAreaPopUp {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Estilos Formulario Eventos */
+
+.BoxTituloBotonEvento{
+    padding-bottom: 1.2rem;
+    padding-top: 1rem;
+}
+
+.TituloFormularioEvento{
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: "Montserrat", sans-serif;
+}
+
+#FormularioEventos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2.5rem 3rem;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.562);
+    font-family: "Montserrat", sans-serif;
+}
+
+.TextoFormEventos{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+#BotonCrearEvento{
+    width: 30%;
+    margin: 0 auto;
+}
+
+.InputFormEventos{
+    border-radius: 10px;
+    padding: .7rem 1.3rem;
+    border: none;
+    background-color: #eaeaea;
+}
+
+.close{
+    text-align: right;
+    font-size: 40px;
+}
+
+/* estilo chacklist form */
+
+.container {
+    margin: 20px;
+}
+
+.checkbox-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}

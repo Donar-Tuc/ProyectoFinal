@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+
 import "./Styles/Navbar.css";
 import ProfileImage from './Images/account_circle_40dp.svg';
-import LogOut from './Images/log-in-outline.svg';
+import LogOutIcon from './Images/log-in-outline.svg'; // Asegúrate de importar el icono de logout
 
-
-const Navbar = () => {
+const Navbar = ({ isLoggedIn, onLogout }) => {
   const [clicked, setClicked] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const navigate = useNavigate(); // Inicializa useNavigate
+  const navigate = useNavigate();
 
   useEffect(() => {
     const closeMenu = () => {
       setClicked(false);
-      window.scrollTo(0, 0); // Desplazar hacia arriba al hacer clic en cualquier enlace
+      window.scrollTo(0, 0);
     };
 
     const links = document.querySelectorAll("#navbar li a");
@@ -29,38 +28,25 @@ const Navbar = () => {
   }, []);
 
   const links = [
-    {
-      name: "Inicio",
-      href: "/"
-    },
-    {
-      name: "Eventos",
-      href: "/eventos",
-    },
-    {
-      name: "Soporte",
-      href: "/soporte",
-    }
+    { name: "Inicio", href: "/" },
+    { name: "Eventos", href: "/eventos" },
+    { name: "Soporte", href: "/soporte" }
   ];
 
   const handleClick = () => {
     setClicked(!clicked);
   };
 
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-  };
-
   const handleLogout = () => {
-    setIsLoggedIn(false);
-    navigate('/'); // Navegar al inicio
+    onLogout();
+    navigate('/');
   };
 
   return (
     <>
       <nav>
         <a href="/" className="logo">
-          <svg
+        <svg
             id="logo-86"
             width="40"
             height="40"
@@ -99,12 +85,12 @@ const Navbar = () => {
                   <img src={ProfileImage} alt="Perfil" />
                 </Link>
                 <button onClick={handleLogout} id="BotonContainer">
-                  <img src={LogOut} alt="Cerrar Sesion" className="LogOutIcon" />
+                  <img src={LogOutIcon} alt="Cerrar Sesion" className="LogOutIcon" />
                 </button>
               </li>
             ) : (
               <li>
-                <Link className="btnLogin" to="/login" onClick={handleLogin}>
+                <Link className="btnLogin" to="/login" onClick={handleClick}>
                   Login
                 </Link>
               </li>
@@ -121,3 +107,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

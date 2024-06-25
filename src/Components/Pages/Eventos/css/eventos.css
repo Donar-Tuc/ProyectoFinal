@@ -131,7 +131,7 @@
 /* Estilo para la etiqueta */
 #EtiquetaCard {
     padding: .3rem .4rem;
-    background-color: rgba(233, 233, 233, 0.322);
+    background-color: rgba(32, 3, 3, 0.322);
     color: white;
     font-weight: 600;
     width: 100%;
@@ -252,3 +252,6 @@
 
 
 }
+
+
+
