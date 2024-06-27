@@ -14,7 +14,7 @@ class VallecitoGuada extends Component {
     const opcionesDePerfiles = [
       {
         logo: vallecitoGuada,
-        titulo: "El vallecito de la Guadalupe”",
+        titulo: "El vallecito de la Guadalupe",
         horario: "8am a 6pm",
         direccion: "Avenida Aconquija, Yerba buena",
         telefono: "3814321234",
