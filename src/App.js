@@ -23,12 +23,6 @@ import Fundaciones from './Components/Pages/Categorias/SeccionesCategorias/Funda
 
 import TemplatePerfil from './Components/Pages/Categorias/Perfiles/TemplatePerfil.jsx';
 
-/* 
-TODO: EVENTOS
-Actualizar API, model y controller.
-Crear un evento en la db
-Hacer tema fetch y demas
-*/
 
 function App() {
   return (
