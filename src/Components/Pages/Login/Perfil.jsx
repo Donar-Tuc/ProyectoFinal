@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Styles/Perfil.css";
+import { etiquetas } from "../Categorias/Etiquetas/index"
 
-// Import de fotos
-import BancoAlimentos from "../Categorias/SeccionesCategorias/VerTodo/Imagenes/BancoAlimentosLogo.png";
-
+/* 
 // Importar íconos
 import dineroEtiqueta from '../Categorias/SeccionesCategorias/VerTodo/Imagenes/card-outline.svg';
 import comidaEtiqueta from '../Categorias/SeccionesCategorias/VerTodo/Imagenes/fast-food-outline.svg';
@@ -13,23 +12,26 @@ import escolarEtiqueta from '../Categorias/SeccionesCategorias/VerTodo/Imagenes/
 import ropaEtiqueta from '../Categorias/SeccionesCategorias/VerTodo/Imagenes/shirt-outline.svg';
 import medicamentosEtiqueta from '../Categorias/SeccionesCategorias/VerTodo/Imagenes/medkit-outline.svg';
 import juguetesEtiqueta from '../Categorias/SeccionesCategorias/VerTodo/Imagenes/extension-puzzle-outline.svg';
-
-const categorias = [
-    { name: "dinero", label: "Dinero", icon: dineroEtiqueta },
-    { name: "comida", label: "Comida", icon: comidaEtiqueta },
-    { name: "asistencia", label: "Asistencia", icon: asistenciaEtiqueta },
-    { name: "hogar", label: "Hogar", icon: hogarEtiqueta },
-    { name: "escolar", label: "Escolar", icon: escolarEtiqueta },
-    { name: "ropa", label: "Ropa", icon: ropaEtiqueta },
-    { name: "medicamentos", label: "Salud", icon: medicamentosEtiqueta },
-    { name: "juguetes", label: "Juguetes", icon: juguetesEtiqueta }
-];
+*/
+// const categorias = [
+//     { name: "dinero", label: "Dinero", icon: dineroEtiqueta },
+//     { name: "comida", label: "Comida", icon: comidaEtiqueta },
+//     { name: "asistencia", label: "Asistencia", icon: asistenciaEtiqueta },
+//     { name: "hogar", label: "Hogar", icon: hogarEtiqueta },
+//     { name: "escolar", label: "Escolar", icon: escolarEtiqueta },
+//     { name: "ropa", label: "Ropa", icon: ropaEtiqueta },
+//     { name: "medicamentos", label: "Salud", icon: medicamentosEtiqueta },
+//     { name: "juguetes", label: "Juguetes", icon: juguetesEtiqueta }
+// ]; 
 
 const Perfil = () => {
     const [editMode, setEditMode] = useState(false);
     const [showAccountManagement, setShowAccountManagement] = useState(false);
+
+    const categorias = Object.entries(etiquetas);
+
     const [profile, setProfile] = useState({
-        logo: BancoAlimentos,
+        /* logo */
         name: "Nombre de la organización",
         hours: "Horarios de atención",
         email: "correo@example.com",
@@ -310,17 +312,17 @@ const Perfil = () => {
                                 </div>
                                 <div className="mb-3">
                                     <h3 className="TituloDropdown">Seleccione qué donaciones recibe</h3>
-                                    {categorias.map((categoria) => (
-                                        <div className="form-check" key={categoria.name}>
+                                    {categorias.map(([key, categoria]) => (
+                                        <div className="form-check" key={key}>
                                             <input
                                                 className="form-check-input"
                                                 type="checkbox"
-                                                name={categoria.name}
-                                                checked={profile.donaciones.includes(categoria.name)}
+                                                name={key}
+                                                checked={profile.donaciones.includes(key)}
                                                 onChange={handleCheckChange}
                                             />
-                                            <label className="form-check-label" htmlFor={categoria.name}>
-                                                {categoria.label}
+                                            <label className="form-check-label" htmlFor={key}>
+                                                {categoria.titulo}
                                             </label>
                                         </div>
                                     ))}
@@ -392,11 +394,11 @@ const Perfil = () => {
                                 <h2>{profile.name}</h2>
                                 <div id="etiquetasContainer">
                                     {profile.donaciones.map((donacion, index) => {
-                                        const categoria = categorias.find(cat => cat.name === donacion);
+                                        const categoria = categorias.find(cat => cat[1].titulo === donacion)[1];
                                         return (
                                             <div className="EtiquetaContainer" key={index}>
-                                                <img src={categoria.icon} id="EtiquetaCard" alt={categoria.label} />
-                                                <p className="TituloEtiqueta">{categoria.label}</p>
+                                                <img src={categoria?.imagen} id="EtiquetaCard" alt={categoria?.titulo} />
+                                                <p className="TituloEtiqueta">{categoria?.titulo}</p>
                                             </div>
                                         );
                                     })}
@@ -418,4 +420,3 @@ const Perfil = () => {
 };
 
 export default Perfil;
-

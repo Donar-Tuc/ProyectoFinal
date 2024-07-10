@@ -115,6 +115,7 @@
 
 input[type="checkbox"] {
     margin-right: 5px;
+<<<<<<< HEAD
 }
 
 @media (max-width: 900px) {
@@ -194,4 +195,6 @@ input[type="checkbox"] {
     margin-right: 5px;
 }
 
+=======
+>>>>>>> DON-49
 }

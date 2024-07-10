@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
 import './css/formPopUp.css'; // Estilos personalizados (si los tienes)
-import moment from 'moment';
-import 'moment/locale/es'; // Importar el locale de español para moment
-import Datetime from 'react-datetime';
-import 'react-datetime/css/react-datetime.css';
 
 // Importar íconos correspondientes a cada categoría
 import dineroEtiqueta from './imagenes/card-outline.svg';

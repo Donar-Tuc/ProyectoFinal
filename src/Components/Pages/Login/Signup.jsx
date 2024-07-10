@@ -97,7 +97,7 @@ class Signup extends Component {
                                     <p id="heading">Registro</p>
                                     <p id="aclaracion">Este formulario se enviará a nosotros, evaluamos los datos y te otorgamos el usuario y contraseña.</p>
                                 </div>
-                                
+
                                 {/* Contenedor de mensajes de error */}
                                 {this.state.errors.length > 0 && (
                                     <div className="error-container">
