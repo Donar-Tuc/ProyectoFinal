@@ -16,7 +16,7 @@ import Login from './Components/Pages/Login/Login.jsx';
 import Perfil from './Components/Pages/Login/Perfil.jsx';
 import OlvidasteContraseña from './Components/Pages/Login/OlvidasteContraseña.jsx';
 import Categorias from './Components/Pages/Categorias/Categorias.jsx';
-
+import PrivateRoute from './Components/Pages/Login/PrivateRoute.jsx';
 
 // Categorias secciones
 import Fundaciones from './Components/Pages/Categorias/SeccionesCategorias/Fundaciones/Fundaciones.jsx';
@@ -53,7 +53,12 @@ function App() {
             <Route path='/login' element={<Login onLogin={handleLogin}/>}></Route>
             <Route path='/registrarse' element={<Signup />}></Route>
             <Route path='/recuperar-contrasena' element={<OlvidasteContraseña />}></Route>
-            <Route path='/perfil' element={<Perfil />} />
+            <Route path='/perfil' element={
+                <PrivateRoute isLoggedIn={isLoggedIn}>
+                  <Perfil />
+                </PrivateRoute>
+              } 
+            />
 
             {/* Categorias */}
             <Route path='/categorias' element={<Categorias />}></Route> {/* Seleccionar categorias */}

@@ -9,20 +9,32 @@ const Login = ({ onLogin }) => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const url = "https://api-don-ar.vercel.app/users/login";
+
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    // DATOS DE INICIO DE SESION
-    const validEmail = "ejemplo@ejemplo.com";
-    const validPassword = "12345";
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
 
-    // Lógica de autenticación
-    if (email === validEmail && password === validPassword) {
-      setError("");
-      onLogin(true); // Aquí actualizamos el estado de autenticación
-      navigate('/perfil');
-    } else {
-      setError("Correo electrónico o contraseña incorrectos");
+      const data = await response.json();
+      console.log(data);
+      
+      if (response.ok) {
+        setError("");
+        onLogin(true);
+        navigate('/perfil/:id');
+      } else {
+        setError(data.message || "Error en el inicio de sesión");
+      }
+    } catch (error) {
+      setError("Error en la conexión con el servidor");
     }
   };
 
