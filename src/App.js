@@ -53,7 +53,7 @@ function App() {
             <Route path='/login' element={<Login onLogin={handleLogin}/>}></Route>
             <Route path='/registrarse' element={<Signup />}></Route>
             <Route path='/recuperar-contrasena' element={<OlvidasteContraseña />}></Route>
-            <Route path='/perfil' element={
+            <Route path='/perfil/:id' element={
                 <PrivateRoute isLoggedIn={isLoggedIn}>
                   <Perfil />
                 </PrivateRoute>

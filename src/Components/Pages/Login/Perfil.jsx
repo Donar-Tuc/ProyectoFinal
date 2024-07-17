@@ -1,28 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Styles/Perfil.css";
 import { etiquetas } from "../Categorias/Etiquetas/index"
-
-/* 
-// Importar íconos
-import dineroEtiqueta from '../Categorias/SeccionesCategorias/VerTodo/Imagenes/card-outline.svg';
-import comidaEtiqueta from '../Categorias/SeccionesCategorias/VerTodo/Imagenes/fast-food-outline.svg';
-import asistenciaEtiqueta from '../Categorias/SeccionesCategorias/VerTodo/Imagenes/alarm-outline.svg';
-import hogarEtiqueta from '../Categorias/SeccionesCategorias/VerTodo/Imagenes/home-outline.svg';
-import escolarEtiqueta from '../Categorias/SeccionesCategorias/VerTodo/Imagenes/school-outline.svg';
-import ropaEtiqueta from '../Categorias/SeccionesCategorias/VerTodo/Imagenes/shirt-outline.svg';
-import medicamentosEtiqueta from '../Categorias/SeccionesCategorias/VerTodo/Imagenes/medkit-outline.svg';
-import juguetesEtiqueta from '../Categorias/SeccionesCategorias/VerTodo/Imagenes/extension-puzzle-outline.svg';
-*/
-// const categorias = [
-//     { name: "dinero", label: "Dinero", icon: dineroEtiqueta },
-//     { name: "comida", label: "Comida", icon: comidaEtiqueta },
-//     { name: "asistencia", label: "Asistencia", icon: asistenciaEtiqueta },
-//     { name: "hogar", label: "Hogar", icon: hogarEtiqueta },
-//     { name: "escolar", label: "Escolar", icon: escolarEtiqueta },
-//     { name: "ropa", label: "Ropa", icon: ropaEtiqueta },
-//     { name: "medicamentos", label: "Salud", icon: medicamentosEtiqueta },
-//     { name: "juguetes", label: "Juguetes", icon: juguetesEtiqueta }
-// ]; 
+import { useFetch } from "../../../logic/useFetch";
+import { getUserData } from "../../../logic/getUserData";
 
 const Perfil = () => {
     const [editMode, setEditMode] = useState(false);
@@ -40,6 +20,39 @@ const Perfil = () => {
         descripcion: "Cambiar descripción",
         donaciones: []
     });
+
+    const {token, userId } = getUserData();
+
+    const { data, error, loading } = useFetch(`https://api-don-ar.vercel.app/fundaciones/${userId}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': token
+        }
+    })
+
+/* 
+// Ejemplo de almacenamiento en localStorage
+const storeToken = (token) => {
+    localStorage.setItem('authToken', token);
+};
+
+// Llamar a esta función después de recibir el token del servidor
+storeToken(response.data.token);
+
+const fetchUserData = async () => {
+    const token = getAuthToken();
+    const response = await fetch('http://tu-api.com/endpoint', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': token
+        }
+    });
+
+    const data = await response.json();
+    console.log(data);
+};*/
     const [initialProfile, setInitialProfile] = useState({});
     const [accountInfo, setAccountInfo] = useState({
         username: "nombreUsuario",
@@ -128,7 +141,7 @@ const Perfil = () => {
 
     const handleProfileUpdate = (formData) => {
         if (validateProfileForm()) {
-            setProfile(formData);
+            setProfile(formData); // hacer fetch put con todos los campos de form data y guardarlos en la BBDD
             setEditMode(false);
             setMessage("Perfil actualizado exitosamente.");
             setTimeout(() => setMessage(""), 3000); // Clear message after 3 seconds
