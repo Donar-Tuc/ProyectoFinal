@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./Styles/Login.css";
 import Fondo from './images/fondo.png';
 import { Link, useNavigate } from "react-router-dom";
-import { useFetch } from "../../../logic/useFetch";
 
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState("");
@@ -25,12 +24,10 @@ const Login = ({ onLogin }) => {
       });
 
       const data = await response.json();
-      const token = data.token;
-      const userId = data.userId;  
-      console.log(token + 'id:' + id);
 
       if (response.ok) {
         setError("");
+        const { token, userId } = data;
         onLogin(true);
         localStorage.setItem("token", token);
         localStorage.setItem("userId", userId);
@@ -95,62 +92,8 @@ const Login = ({ onLogin }) => {
 export default Login;
 
 
+
 /* 
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
-export function LoginComponent() {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
-    const navigate = useNavigate();
 
-    const handleLogin = async (e) => {
-        e.preventDefault();
-        const url = "https://api-don-ar.vercel.app/fundaciones/login";
-
-        try {
-            const response = await fetch(url, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ email, password }),
-            });
-            
-            const data = await response.json();
-            if (response.ok) {
-                setError("");
-                const token = data.token;
-                const id = data.userId;
-                // Aquí podrías guardar el token en localStorage o contexto
-                localStorage.setItem("token", token);
-                navigate(`/perfil/${id}`);
-            } else {
-                setError(data.message || "Error en el inicio de sesión");
-            }
-        } catch (error) {
-            setError("Error en la conexión con el servidor");
-        }
-    };
-
-    return (
-        <form onSubmit={handleLogin}>
-            <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email"
-            />
-            <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
-            />
-            <button type="submit">Login</button>
-            {error && <p>{error}</p>}
-        </form>
-    );
-}
 */

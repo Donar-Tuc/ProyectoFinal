@@ -1,241 +1,181 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import "./Styles/Perfil.css";
-import { etiquetas } from "../Categorias/Etiquetas/index"
+import { etiquetas } from "../Categorias/Etiquetas/index";
 import { useFetch } from "../../../logic/useFetch";
 import { getUserData } from "../../../logic/getUserData";
 
 const Perfil = () => {
-    const [editMode, setEditMode] = useState(false);
-    const [showAccountManagement, setShowAccountManagement] = useState(false);
+    const [modoEdicion, setModoEdicion] = useState(false);
+    const [mostrarGestionCuenta, setMostrarGestionCuenta] = useState(false);
+    const [perfilInicial, setPerfilInicial] = useState({});
+    const [mensaje, setMensaje] = useState("");
+    const [errores, setErrores] = useState({});
+
+    const [contrasenaActual, setContrasenaActual] = useState("");
+    const [confirmarContrasena, setConfirmarContrasena] = useState("");
+    const [infoCuenta, setInfoCuenta] = useState({
+        email: "",
+        nuevaContrasena: ""
+    });
+
+    const [perfil, setPerfil] = useState({
+        titulo: "Nombre de la organización",
+        horario: "Horarios de atención",
+        email: "correo@example.com",
+        telefono: "123456789",
+        direccion: "Dirección de la organización",
+        descripcion: "Cambiar descripción",
+        tituloEtiquetas: []
+    });
 
     const categorias = Object.entries(etiquetas);
+    const { token, userId } = getUserData();
 
-    const [profile, setProfile] = useState({
-        /* logo */
-        name: "Nombre de la organización",
-        hours: "Horarios de atención",
-        email: "correo@example.com",
-        phone: "123456789",
-        address: "Dirección de la organización",
-        descripcion: "Cambiar descripción",
-        donaciones: []
-    });
-
-    const {token, userId } = getUserData();
-
-    const { data, error, loading } = useFetch(`https://api-don-ar.vercel.app/fundaciones/${userId}`, {
+    const opciones = useMemo(() => ({
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': token
         }
-    })
+    }), [token]);
 
-/* 
-// Ejemplo de almacenamiento en localStorage
-const storeToken = (token) => {
-    localStorage.setItem('authToken', token);
-};
-
-// Llamar a esta función después de recibir el token del servidor
-storeToken(response.data.token);
-
-const fetchUserData = async () => {
-    const token = getAuthToken();
-    const response = await fetch('http://tu-api.com/endpoint', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': token
+    const { data, error, loading } = useFetch(`https://api-don-ar.vercel.app/fundaciones/${userId}`, opciones);
+    const { document } = data ? data : {};
+    
+    const datosFundacion = document ? {
+        titulo: document.titulo ? document.titulo : "Nombre de la fundacion",
+        horario: document.horario ? document.horario : "Horario",
+        email: document.email ? document.email : "Correo",
+        telefono: document.telefono ? document.telefono : "Telefono",
+        direccion: document.direccion ? document.direccion : "Direccion",
+        descripcion: document.descripcion ? document.descripcion : "descripción",
+        tituloEtiquetas: document.tituloEtiquetas ? document.tituloEtiquetas : []
+    } : {};
+    
+    useEffect(() => {
+        if (data) {
+            setPerfil(datosFundacion);
+            setPerfilInicial(datosFundacion);
         }
-    });
+    }, [data]);
 
-    const data = await response.json();
-    console.log(data);
-};*/
-    const [initialProfile, setInitialProfile] = useState({});
-    const [accountInfo, setAccountInfo] = useState({
-        username: "nombreUsuario",
-        email: "correo@example.com",
-        password: ""
-    });
-    const [newAccountInfo, setNewAccountInfo] = useState(accountInfo);
-    const [currentPassword, setCurrentPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
-    const [message, setMessage] = useState("");
-    const [errors, setErrors] = useState({});
+    console.log("El document es: ", document);
+    console.log("El perfil es: ", perfil);
 
     useEffect(() => {
-        setInitialProfile({ ...profile });
+        setPerfilInicial({ ...perfil });
     }, []);
 
-    const validateProfileForm = () => {
-        let errors = {};
-        let isValid = true;
-
-        if (!profile.name.trim()) {
-            errors.name = "Por favor ingresa el nombre de la organización.";
-            isValid = false;
-        }
-
-        if (!profile.hours.trim()) {
-            errors.hours = "Por favor ingresa los horarios de atención.";
-            isValid = false;
-        }
-
-        if (!profile.address.trim()) {
-            errors.address = "Por favor ingresa la dirección.";
-            isValid = false;
-        }
-
-        if (!profile.phone.trim()) {
-            errors.phone = "Por favor ingresa el número de teléfono.";
-            isValid = false;
-        } else if (!/^\d+$/.test(profile.phone)) {
-            errors.phone = "El número de teléfono debe contener solo números.";
-            isValid = false;
-        }
-
-        if (!profile.email.trim()) {
-            errors.email = "Por favor ingresa el correo electrónico.";
-            isValid = false;
-        } else if (!/\S+@\S+\.\S+/.test(profile.email)) {
-            errors.email = "Ingresa un correo electrónico válido.";
-            isValid = false;
-        }
-
-        if (!profile.descripcion.trim()) {
-            errors.descripcion = "Por favor ingresa una descripción.";
-            isValid = false;
-        }
-
-        setErrors(errors);
-        return isValid;
-    };
-
-    const validateAccountForm = () => {
-        let errors = {};
-        let isValid = true;
-
-        if (!newAccountInfo.email.trim()) {
-            errors.email = "Por favor ingresa el correo electrónico.";
-            isValid = false;
-        } else if (!/\S+@\S+\.\S+/.test(newAccountInfo.email)) {
-            errors.email = "Ingresa un correo electrónico válido.";
-            isValid = false;
-        }
-
-        if (!currentPassword) {
-            errors.currentPassword = "Por favor ingresa la contraseña actual.";
-            isValid = false;
-        }
-
-        if (newAccountInfo.password !== confirmPassword) {
-            errors.confirmPassword = "Las nuevas contraseñas no coinciden.";
-            isValid = false;
-        }
-
-        setErrors(errors);
-        return isValid;
-    };
-
-    const handleProfileUpdate = (formData) => {
-        if (validateProfileForm()) {
-            setProfile(formData); // hacer fetch put con todos los campos de form data y guardarlos en la BBDD
-            setEditMode(false);
-            setMessage("Perfil actualizado exitosamente.");
-            setTimeout(() => setMessage(""), 3000); // Clear message after 3 seconds
-        } else {
-            setMessage("Por favor completa correctamente todos los campos.");
-            setTimeout(() => setMessage(""), 3000);
-        }
-    };
+    if (loading) return <div>Cargando...</div>;
+    if (error) return <div>Error: {error}</div>;
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setProfile({
-            ...profile,
-            [name]: value
-        });
-    };
-
-    const handleImageChange = (e) => {
-        const file = e.target.files[0];
-        const reader = new FileReader();
-        reader.onloadend = () => {
-            setProfile({
-                ...profile,
-                logo: reader.result
-            });
-        };
-        if (file) {
-            reader.readAsDataURL(file);
-        }
+        setPerfil({ ...perfil, [name]: value });
     };
 
     const handleCheckChange = (e) => {
         const { name, checked } = e.target;
-        setProfile((prevProfile) => {
-            const updatedDonaciones = checked
-                ? [...prevProfile.donaciones, name]
-                : prevProfile.donaciones.filter((donacion) => donacion !== name);
-            return { ...prevProfile, donaciones: updatedDonaciones };
-        });
+        if (checked) {
+            setPerfil({ ...perfil, tituloEtiquetas: [...perfil.tituloEtiquetas, name] });
+        } else {
+            setPerfil({ ...perfil, tituloEtiquetas: perfil.tituloEtiquetas.filter(donacion => donacion !== name) });
+        }
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        handleProfileUpdate(profile);
+
+        const opciones = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': token
+            },
+            body: JSON.stringify(perfil)
+        };
+
+        try {
+            const response = await fetch(`https://api-don-ar.vercel.app/fundaciones/${userId}`, opciones);
+            if (!response.ok) {
+                throw new Error('Error al actualizar el perfil');
+            }
+
+            const data = await response.json();
+            const perfilActualizado = data.updated;
+
+            console.log(perfil)
+            setPerfil(perfilActualizado);
+            setPerfilInicial(perfilActualizado);
+            setModoEdicion(false);
+            setMensaje('Perfil actualizado con éxito');
+        } catch (error) {
+            setErrores({ ...errores, form: error.message });
+        }
+    };
+
+    const handleChangePasswordSubmit = async (e) => {
+        e.preventDefault();
+
+        if (infoCuenta.nuevaContrasena !== confirmarContrasena) {
+            setErrores({ ...errores, confirmPassword: 'Las contraseñas no coinciden' });
+            return;
+        }
+
+        const opciones = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': token
+            },
+            body: JSON.stringify({ 
+                password: infoCuenta.nuevaContrasena
+            })
+        };
+
+        try {
+            const response = await fetch(`https://api-don-ar.vercel.app/fundaciones/${userId}`, opciones);
+            if (!response.ok) {
+                throw new Error('Error al cambiar contraseña');
+            }
+
+            const data = await response.json();
+
+            setMensaje('Contraseña cambiada con éxito');
+        } catch (error) {
+            setErrores({ ...errores, form: error.message });
+        }
+    };
+
+    const handleCancelEdit = () => {
+        setPerfil(perfilInicial);
+        setModoEdicion(false);
+    };
+
+    const handleEditClick = () => {
+        setModoEdicion(true);
     };
 
     const handleAccountChange = (e) => {
         const { name, value } = e.target;
-        setNewAccountInfo({
-            ...newAccountInfo,
-            [name]: value
-        });
-    };
-
-    const handleConfirmPasswordChange = (e) => {
-        setConfirmPassword(e.target.value);
+        setInfoCuenta({ ...infoCuenta, [name]: value });
     };
 
     const handleCurrentPasswordChange = (e) => {
-        setCurrentPassword(e.target.value);
+        setContrasenaActual(e.target.value);
     };
 
-    const handleAccountSubmit = (e) => {
+    const handleConfirmPasswordChange = (e) => {
+        setConfirmarContrasena(e.target.value);
+    };
+
+    const handleAccountSubmit = async (e) => {
         e.preventDefault();
-        if (!validateAccountForm()) {
-            return;
-        }
-        if (currentPassword !== accountInfo.password) {
-            setMessage('La contraseña actual no es correcta.');
-            setTimeout(() => setMessage(""), 3000);
-            return;
-        }
-        setAccountInfo(newAccountInfo);
-        setShowAccountManagement(false);
-        setMessage('Se ha realizado un cambio en la cuenta.');
-        setTimeout(() => setMessage(""), 3000);
+        // Lógica para manejar la actualización de la información de la cuenta
     };
 
-    const handleDeleteAccount = () => {
-        if (window.confirm('¿Estás seguro que deseas eliminar tu cuenta?')) {
-            // Lógica para eliminar la cuenta
-            setMessage('Tu cuenta ha sido eliminada exitosamente.');
-            setTimeout(() => setMessage(""), 3000);
-        }
-    };
-
-    const handleEditProfile = () => {
-        setInitialProfile({ ...profile }); // Guarda una copia del perfil actual
-        setEditMode(true);
-    };
-
-    const handleCancelEdit = () => {
-        setProfile({ ...initialProfile }); // Restaura el perfil inicial
-        setEditMode(false);
+    const handleDeleteAccount = async () => {
+        // Lógica para manejar la eliminación de la cuenta
     };
 
     return (
@@ -244,75 +184,75 @@ const fetchUserData = async () => {
             <div className="ProfileInformation">
                 <div className="InfoGridContainer">
                     <div className="containerFoto">
-                        <img src={profile.logo} alt="Foto de perfil" className="ImagePerfil" />
+                        <img src={perfil.logo} alt="Foto de perfil" className="ImagePerfil" />
                     </div>
                     <div className="containerTextoPerfil">
-                        {editMode ? (
+                        {modoEdicion ? (
                             <form onSubmit={handleSubmit} className="FormPerfil">
                                 <div className="mb-3">
                                     <label className="form-label">Nombre de la Organización</label>
                                     <input
                                         type="text"
-                                        className={`form-control ${errors.name ? 'is-invalid' : ''}`}
-                                        name="name"
-                                        value={profile.name}
+                                        className={`form-control ${errores.titulo ? 'is-invalid' : ''}`}
+                                        name="titulo"
+                                        value={perfil.titulo}
                                         onChange={handleChange}
                                     />
-                                    {errors.name && <div className="invalid-feedback">{errors.name}</div>}
+                                    {errores.titulo && <div className="invalid-feedback">{errores.titulo}</div>}
                                 </div>
                                 <div className="mb-3">
                                     <label className="form-label">Horarios de atención</label>
                                     <input
                                         type="text"
-                                        className={`form-control ${errors.hours ? 'is-invalid' : ''}`}
-                                        name="hours"
-                                        value={profile.hours}
+                                        className={`form-control ${errores.horario ? 'is-invalid' : ''}`}
+                                        name="horario"
+                                        value={perfil.horario}
                                         onChange={handleChange}
                                     />
-                                    {errors.hours && <div className="invalid-feedback">{errors.hours}</div>}
+                                    {errores.horario && <div className="invalid-feedback">{errores.horario}</div>}
                                 </div>
                                 <div className="mb-3">
                                     <label className="form-label">Dirección</label>
                                     <input
                                         type="text"
-                                        className={`form-control ${errors.address ? 'is-invalid' : ''}`}
-                                        name="address"
-                                        value={profile.address}
+                                        className={`form-control ${errores.direccion ? 'is-invalid' : ''}`}
+                                        name="direccion"
+                                        value={perfil.direccion}
                                         onChange={handleChange}
                                     />
-                                    {errors.address && <div className="invalid-feedback">{errors.address}</div>}
+                                    {errores.direccion && <div className="invalid-feedback">{errores.direccion}</div>}
                                 </div>
                                 <div className="mb-3">
                                     <label className="form-label">Teléfono</label>
                                     <input
                                         type="text"
-                                        className={`form-control ${errors.phone ? 'is-invalid' : ''}`}
-                                        name="phone"
-                                        value={profile.phone}
+                                        className={`form-control ${errores.telefono ? 'is-invalid' : ''}`}
+                                        name="telefono"
+                                        value={perfil.telefono}
                                         onChange={handleChange}
                                     />
-                                    {errors.phone && <div className="invalid-feedback">{errors.phone}</div>}
+                                    {errores.telefono && <div className="invalid-feedback">{errores.telefono}</div>}
                                 </div>
                                 <div className="mb-3">
                                     <label className="form-label">Correo Electrónico</label>
                                     <input
                                         type="email"
-                                        className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                                        className={`form-control ${errores.email ? 'is-invalid' : ''}`}
                                         name="email"
-                                        value={profile.email}
+                                        value={perfil.email}
                                         onChange={handleChange}
                                     />
-                                    {errors.email && <div className="invalid-feedback">{errors.email}</div>}
+                                    {errores.email && <div className="invalid-feedback">{errores.email}</div>}
                                 </div>
                                 <div className="mb-3">
                                     <label className="form-label">Descripción</label>
                                     <textarea
-                                        className={`form-control ${errors.descripcion ? 'is-invalid' : ''}`}
+                                        className={`form-control ${errores.descripcion ? 'is-invalid' : ''}`}
                                         name="descripcion"
-                                        value={profile.descripcion}
+                                        value={perfil.descripcion}
                                         onChange={handleChange}
                                     />
-                                    {errors.descripcion && <div className="invalid-feedback">{errors.descripcion}</div>}
+                                    {errores.descripcion && <div className="invalid-feedback">{errores.descripcion}</div>}
                                 </div>
                                 <div className="mb-3">
                                     <label className="form-label">Cambiar Imagen de Perfil</label>
@@ -320,18 +260,18 @@ const fetchUserData = async () => {
                                         type="file"
                                         className="form-control"
                                         accept="image/*"
-                                        onChange={handleImageChange}
+                                        // onChange={handleImageChange}
                                     />
                                 </div>
                                 <div className="mb-3">
                                     <h3 className="TituloDropdown">Seleccione qué donaciones recibe</h3>
-                                    {categorias.map(([key, categoria]) => (
+                                    {categorias?.map(([key, categoria]) => (
                                         <div className="form-check" key={key}>
                                             <input
                                                 className="form-check-input"
                                                 type="checkbox"
                                                 name={key}
-                                                checked={profile.donaciones.includes(key)}
+                                                checked={perfil.tituloEtiquetas?.includes(key)}
                                                 onChange={handleCheckChange}
                                             />
                                             <label className="form-check-label" htmlFor={key}>
@@ -342,87 +282,79 @@ const fetchUserData = async () => {
                                 </div>
                                 <button type="submit" className="btn btn-primary" id="BotonGuardarPerfil">Guardar</button>
                                 <button type="button" onClick={handleCancelEdit} className="btn btn-secondary" id="btnCancelarEdicion">Cancelar</button>
-
-                                {message && <div className="alert alert-success mt-3">{message}</div>}
                             </form>
-                        ) : showAccountManagement ? (
+                        ) : mostrarGestionCuenta ? (
                             <div className="AccountManagement">
                                 <h3 className="ManejoDeCuentaTitulo">Gestión de cuenta</h3>
-                                <form onSubmit={handleAccountSubmit}>
+                                <form onSubmit={handleChangePasswordSubmit}>
                                     <div className="mb-3">
                                         <label className="form-label">Correo Electrónico</label>
                                         <input
                                             type="email"
-                                            className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                                            className={`form-control ${errores.email ? 'is-invalid' : ''}`}
                                             name="email"
-                                            value={newAccountInfo.email}
+                                            value={infoCuenta.email}
                                             onChange={handleAccountChange}
                                         />
-                                        {errors.email && <div className="invalid-feedback">{errors.email}</div>}
+                                        {errores.email && <div className="invalid-feedback">{errores.email}</div>}
                                     </div>
                                     <div className="mb-3">
                                         <label className="form-label">Contraseña Actual</label>
                                         <input
                                             type="password"
-                                            className={`form-control ${errors.currentPassword ? 'is-invalid' : ''}`}
-                                            name="currentPassword"
-                                            value={currentPassword}
+                                            className={`form-control ${errores.contrasenaActual ? 'is-invalid' : ''}`}
+                                            name="contrasenaActual"
+                                            value={contrasenaActual}
                                             onChange={handleCurrentPasswordChange}
                                         />
-                                        {errors.currentPassword && <div className="invalid-feedback">{errors.currentPassword}</div>}
+                                        {errores.contrasenaActual && <div className="invalid-feedback">{errores.contrasenaActual}</div>}
                                     </div>
                                     <div className="mb-3">
                                         <label className="form-label">Nueva Contraseña</label>
                                         <input
                                             type="password"
-                                            className={`form-control ${errors.password ? 'is-invalid' : ''}`}
-                                            name="password"
-                                            value={newAccountInfo.password}
+                                            className={`form-control ${errores.nuevaContrasena ? 'is-invalid' : ''}`}
+                                            name="nuevaContrasena"
+                                            value={infoCuenta.nuevaContrasena}
                                             onChange={handleAccountChange}
                                         />
-                                        {errors.password && <div className="invalid-feedback">{errors.password}</div>}
+                                        {errores.nuevaContrasena && <div className="invalid-feedback">{errores.nuevaContrasena}</div>}
                                     </div>
                                     <div className="mb-3">
-                                        <label className="form-label">Repetir Nueva Contraseña</label>
+                                        <label className="form-label">Confirmar Nueva Contraseña</label>
                                         <input
                                             type="password"
-                                            className={`form-control ${errors.confirmPassword ? 'is-invalid' : ''}`}
-                                            name="confirmPassword"
-                                            value={confirmPassword}
+                                            className={`form-control ${errores.confirmarContrasena ? 'is-invalid' : ''}`}
+                                            name="confirmarContrasena"
+                                            value={confirmarContrasena}
                                             onChange={handleConfirmPasswordChange}
                                         />
-                                        {errors.confirmPassword && <div className="invalid-feedback">{errors.confirmPassword}</div>}
+                                        {errores.confirmarContrasena && <div className="invalid-feedback">{errores.confirmarContrasena}</div>}
                                     </div>
-                                    <div className="BotonesCambiarDatos">
-                                        <button type="submit" className="btn btn-primary" id="BotonGuardarCambioCuenta">Guardar Cambios</button>
-                                        <button type="button" onClick={handleDeleteAccount} className="btn btn-danger" id="BotonEliminarCambioCuenta">Eliminar Cuenta</button>
-                                    </div>
-                                    <button onClick={() => setShowAccountManagement(!showAccountManagement)} className="btn btn-secondary" id="btnCancelarEdicion">Cancelar</button>
-
-                                    {message && <div className="alert alert-success mt-3">{message}</div>}
+                                    <button type="submit" className="btn btn-primary">Guardar Cambios</button>
+                                    <button type="button" onClick={() => setMostrarGestionCuenta(false)} className="btn btn-secondary" id="btnCancelarGestionCuenta">Cancelar</button>
+                                    {mensaje && <div className="alert alert-success mt-3">{mensaje}</div>}
                                 </form>
                             </div>
                         ) : (
-                            <div className="ContainerDataSave">
-                                <h2>{profile.name}</h2>
-                                <div id="etiquetasContainer">
-                                    {profile.donaciones.map((donacion, index) => {
-                                        const categoria = categorias.find(cat => cat[1].titulo === donacion)[1];
-                                        return (
-                                            <div className="EtiquetaContainer" key={index}>
-                                                <img src={categoria?.imagen} id="EtiquetaCard" alt={categoria?.titulo} />
-                                                <p className="TituloEtiqueta">{categoria?.titulo}</p>
-                                            </div>
-                                        );
-                                    })}
+                            <div className="Perfil">
+                                <h3>{perfil.titulo}</h3>
+                                <p>Horarios de atención: {perfil.horario}</p>
+                                <p>Dirección: {perfil.direccion}</p>
+                                <p>Teléfono: {perfil.telefono}</p>
+                                <p>Correo Electrónico: {perfil.email}</p>
+                                <p>Descripción: {perfil.descripcion}</p>
+                                <div>
+                                    <h3 className="TituloDropdown">Donaciones que recibe</h3>
+                                    <ul>
+                                        {perfil.tituloEtiquetas?.map((donacion) => (
+                                            <li key={donacion}>{categorias?.find(([key]) => key === donacion)[1].titulo}</li>
+                                        ))}
+                                    </ul>
                                 </div>
-                                <p className="DataPefil"><span className="DatoSave">Horarios: </span>{profile.hours}</p>
-                                <p className="DataPefil"><span className="DatoSave">Email: </span> {profile.email}</p>
-                                <p className="DataPefil"><span className="DatoSave">Teléfono: </span> {profile.phone}</p>
-                                <p className="DataPefil"><span className="DatoSave">Dirección: </span> {profile.address}</p>
-                                <p className="DataPefil descripcion"><span className="DatoSave">Descripción: </span> {profile.descripcion}</p>
-                                <button onClick={handleEditProfile} className="btn btn-primary" id="btnEditarPerfil">Editar Perfil</button>
-                                <button onClick={() => setShowAccountManagement(!showAccountManagement)} className="btn btn-secondary" id="btnGestionCuenta">Gestión de cuenta</button>
+                                {mensaje && <div className="alert alert-success mt-3">{mensaje}</div>}
+                                <button onClick={handleEditClick} className="btn btn-primary">Editar Perfil</button>
+                                <button onClick={() => setMostrarGestionCuenta(!mostrarGestionCuenta)} className="btn btn-secondary">Gestión de Cuenta</button>
                             </div>
                         )}
                     </div>
