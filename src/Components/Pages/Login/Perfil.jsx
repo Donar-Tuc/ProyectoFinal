@@ -15,6 +15,7 @@ const Perfil = () => {
     const [confirmarContrasena, setConfirmarContrasena] = useState("");
     const [infoCuenta, setInfoCuenta] = useState({
         email: "",
+        contrasena: "",
         nuevaContrasena: ""
     });
 
@@ -129,12 +130,13 @@ const Perfil = () => {
                 'Authorization': token
             },
             body: JSON.stringify({ 
-                password: infoCuenta.nuevaContrasena
+                password: infoCuenta.contrasena,
+                newPassword: infoCuenta.nuevaContrasena
             })
         };
 
         try {
-            const response = await fetch(`https://api-don-ar.vercel.app/fundaciones/${userId}`, opciones);
+            const response = await fetch(`https://api-don-ar.vercel.app/fundaciones/${userId}/change-password`, opciones);
             if (!response.ok) {
                 throw new Error('Error al cambiar contraseña');
             }
@@ -303,9 +305,9 @@ const Perfil = () => {
                                         <input
                                             type="password"
                                             className={`form-control ${errores.contrasenaActual ? 'is-invalid' : ''}`}
-                                            name="contrasenaActual"
-                                            value={contrasenaActual}
-                                            onChange={handleCurrentPasswordChange}
+                                            name="contrasena"
+                                            value={infoCuenta.contrasena}
+                                            onChange={handleAccountChange}
                                         />
                                         {errores.contrasenaActual && <div className="invalid-feedback">{errores.contrasenaActual}</div>}
                                     </div>
