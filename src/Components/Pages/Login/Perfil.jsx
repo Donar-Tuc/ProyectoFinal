@@ -163,10 +163,6 @@ const Perfil = () => {
         setInfoCuenta({ ...infoCuenta, [name]: value });
     };
 
-    const handleCurrentPasswordChange = (e) => {
-        setContrasenaActual(e.target.value);
-    };
-
     const handleConfirmPasswordChange = (e) => {
         setConfirmarContrasena(e.target.value);
     };
