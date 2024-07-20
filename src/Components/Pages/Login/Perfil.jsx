@@ -44,12 +44,12 @@ const Perfil = () => {
     const { document } = data ? data : {};
     
     const datosFundacion = document ? {
-        titulo: document.titulo ? document.titulo : "Nombre de la fundacion",
-        horario: document.horario ? document.horario : "Horario",
-        email: document.email ? document.email : "Correo",
-        telefono: document.telefono ? document.telefono : "Telefono",
-        direccion: document.direccion ? document.direccion : "Direccion",
-        descripcion: document.descripcion ? document.descripcion : "descripción",
+        titulo: document.titulo ? document.titulo : "No especificado",
+        horario: document.horario ? document.horario : "No especificado",
+        email: document.email ? document.email : "No especificado",
+        telefono: document.telefono ? document.telefono : "No especificado",
+        direccion: document.direccion ? document.direccion : "No especificado",
+        descripcion: document.descripcion ? document.descripcion : "No especificado",
         tituloEtiquetas: document.tituloEtiquetas ? document.tituloEtiquetas : []
     } : {};
     

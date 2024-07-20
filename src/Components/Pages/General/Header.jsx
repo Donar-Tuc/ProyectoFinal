@@ -3,10 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Styles/Navbar.css";
 import ProfileImage from './Images/account_circle_40dp.svg';
 import LogOutIcon from './Images/log-in-outline.svg'; // Asegúrate de importar el icono de logout
+import { getUserData } from "../../../logic/getUserData";
 
 const Navbar = ({ isLoggedIn, onLogout }) => {
   const [clicked, setClicked] = useState(false);
   const navigate = useNavigate();
+
+  const { token, userId } = getUserData();
 
   useEffect(() => {
     const closeMenu = () => {
@@ -80,7 +83,7 @@ const Navbar = ({ isLoggedIn, onLogout }) => {
 
             {isLoggedIn ? (
               <li className="ContainerBotonHead">
-                <Link to="/perfil">
+                <Link to={`/perfil/${userId}`}>
                   <img src={ProfileImage} alt="Perfil" className="PerfilBtn"/>
                 </Link>
                 <button onClick={handleLogout} id="BotonContainer">
