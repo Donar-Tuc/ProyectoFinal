@@ -3,6 +3,7 @@ import "./Styles/Perfil.css";
 import { etiquetas } from "../Categorias/Etiquetas/index";
 import { useFetch } from "../../../logic/useFetch";
 import { getUserData } from "../../../logic/getUserData";
+import useFetchImage from "../../../logic/useFetchImage";
 
 const Perfil = () => {
     const [modoEdicion, setModoEdicion] = useState(false);
@@ -20,6 +21,7 @@ const Perfil = () => {
     });
 
     const [perfil, setPerfil] = useState({
+        logo: "Foto de perfil",
         titulo: "Nombre de la organización",
         horario: "Horarios de atención",
         email: "correo@example.com",
@@ -41,16 +43,33 @@ const Perfil = () => {
     }), [token]);
 
     const { data, error, loading } = useFetch(`https://api-don-ar.vercel.app/fundaciones/${userId}`, opciones);
-    const { document } = data ? data : {};
     
+    const { document } = data ? data : {};
+    const logoUrl = document ? document.logo : "";
+    console.log("Logo url: ", logoUrl)
+    
+    const {
+        data: imageBlob,
+        error: imageError,
+        isLoading: isImageLoading,
+        isError: isImageError,
+        isSuccess: isImageSuccess,
+    } = useFetchImage(logoUrl);
+
+    let imageUrl;
+    if (imageBlob) {
+        imageUrl = URL.createObjectURL(imageBlob);
+    }
+
     const datosFundacion = document ? {
-        titulo: document.titulo ? document.titulo : "No especificado",
-        horario: document.horario ? document.horario : "No especificado",
-        email: document.email ? document.email : "No especificado",
-        telefono: document.telefono ? document.telefono : "No especificado",
-        direccion: document.direccion ? document.direccion : "No especificado",
-        descripcion: document.descripcion ? document.descripcion : "No especificado",
-        tituloEtiquetas: document.tituloEtiquetas ? document.tituloEtiquetas : []
+        logo: imageUrl || "",
+        titulo: document.titulo || "No especificado",
+        horario: document.horario || "No especificado",
+        email: document.email || "No especificado",
+        telefono: document.telefono || "No especificado",
+        direccion: document.direccion || "No especificado",
+        descripcion: document.descripcion || "No especificado",
+        tituloEtiquetas: document.tituloEtiquetas || []
     } : {};
     
     useEffect(() => {
