@@ -8,27 +8,16 @@ import useFetchImage from "../../../logic/useFetchImage";
 const Perfil = () => {
     const [modoEdicion, setModoEdicion] = useState(false);
     const [mostrarGestionCuenta, setMostrarGestionCuenta] = useState(false);
+    const [perfil, setPerfil] = useState({});
     const [perfilInicial, setPerfilInicial] = useState({});
     const [mensaje, setMensaje] = useState("");
     const [errores, setErrores] = useState({});
-
     const [contrasenaActual, setContrasenaActual] = useState("");
     const [confirmarContrasena, setConfirmarContrasena] = useState("");
     const [infoCuenta, setInfoCuenta] = useState({
         email: "",
         contrasena: "",
         nuevaContrasena: ""
-    });
-
-    const [perfil, setPerfil] = useState({
-        logo: "Foto de perfil",
-        titulo: "Nombre de la organización",
-        horario: "Horarios de atención",
-        email: "correo@example.com",
-        telefono: "123456789",
-        direccion: "Dirección de la organización",
-        descripcion: "Cambiar descripción",
-        tituloEtiquetas: []
     });
 
     const categorias = Object.entries(etiquetas);
@@ -38,40 +27,33 @@ const Perfil = () => {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': token
+            'Authorization': `Bearer ${token}`
         }
     }), [token]);
 
     const { data, error, loading } = useFetch(`https://api-don-ar.vercel.app/fundaciones/${userId}`, opciones);
     
-    const { document } = data ? data : {};
-    const logoUrl = document ? document.logo : "";
-    console.log("Logo url: ", logoUrl)
-    
+    const logoUrl = data?.document?.logo || "";
     const {
         data: imageBlob,
         error: imageError,
         isLoading: isImageLoading,
         isError: isImageError,
-        isSuccess: isImageSuccess,
     } = useFetchImage(logoUrl);
 
-    let imageUrl;
-    if (imageBlob) {
-        imageUrl = URL.createObjectURL(imageBlob);
-    }
+    const imageUrl = imageBlob ? URL.createObjectURL(imageBlob) : "";
 
-    const datosFundacion = document ? {
-        logo: imageUrl || "",
-        titulo: document.titulo || "No especificado",
-        horario: document.horario || "No especificado",
-        email: document.email || "No especificado",
-        telefono: document.telefono || "No especificado",
-        direccion: document.direccion || "No especificado",
-        descripcion: document.descripcion || "No especificado",
-        tituloEtiquetas: document.tituloEtiquetas || []
+    const datosFundacion = data?.document ? {
+        logo: imageUrl,
+        titulo: data.document.titulo || "No especificado",
+        horario: data.document.horario || "No especificado",
+        email: data.document.email || "No especificado",
+        telefono: data.document.telefono || "No especificado",
+        direccion: data.document.direccion || "No especificado",
+        descripcion: data.document.descripcion || "No especificado",
+        tituloEtiquetas: data.document.tituloEtiquetas || []
     } : {};
-    
+
     useEffect(() => {
         if (data) {
             setPerfil(datosFundacion);
@@ -79,28 +61,26 @@ const Perfil = () => {
         }
     }, [data]);
 
-    console.log("El document es: ", document);
-    console.log("El perfil es: ", perfil);
-
     useEffect(() => {
         setPerfilInicial({ ...perfil });
-    }, []);
+    }, [perfil]);
 
     if (loading) return <div>Cargando...</div>;
     if (error) return <div>Error: {error}</div>;
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setPerfil({ ...perfil, [name]: value });
+        setPerfil(prevPerfil => ({ ...prevPerfil, [name]: value }));
     };
 
     const handleCheckChange = (e) => {
         const { name, checked } = e.target;
-        if (checked) {
-            setPerfil({ ...perfil, tituloEtiquetas: [...perfil.tituloEtiquetas, name] });
-        } else {
-            setPerfil({ ...perfil, tituloEtiquetas: perfil.tituloEtiquetas.filter(donacion => donacion !== name) });
-        }
+        setPerfil(prevPerfil => ({
+            ...prevPerfil,
+            tituloEtiquetas: checked 
+                ? [...prevPerfil.tituloEtiquetas, name] 
+                : prevPerfil.tituloEtiquetas.filter(donacion => donacion !== name)
+        }));
     };
 
     const handleSubmit = async (e) => {
@@ -110,27 +90,21 @@ const Perfil = () => {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': token
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(perfil)
         };
 
         try {
             const response = await fetch(`https://api-don-ar.vercel.app/fundaciones/${userId}`, opciones);
-            if (!response.ok) {
-                throw new Error('Error al actualizar el perfil');
-            }
-
+            if (!response.ok) throw new Error('Error al actualizar el perfil');
             const data = await response.json();
-            const perfilActualizado = data.updated;
-
-            console.log(perfil)
-            setPerfil(perfilActualizado);
-            setPerfilInicial(perfilActualizado);
+            setPerfil(data.updated);
+            setPerfilInicial(data.updated);
             setModoEdicion(false);
             setMensaje('Perfil actualizado con éxito');
         } catch (error) {
-            setErrores({ ...errores, form: error.message });
+            setErrores(prevErrores => ({ ...prevErrores, form: error.message }));
         }
     };
 
@@ -138,7 +112,7 @@ const Perfil = () => {
         e.preventDefault();
 
         if (infoCuenta.nuevaContrasena !== confirmarContrasena) {
-            setErrores({ ...errores, confirmPassword: 'Las contraseñas no coinciden' });
+            setErrores(prevErrores => ({ ...prevErrores, confirmPassword: 'Las contraseñas no coinciden' }));
             return;
         }
 
@@ -146,7 +120,7 @@ const Perfil = () => {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': token
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify({ 
                 password: infoCuenta.contrasena,
@@ -156,15 +130,10 @@ const Perfil = () => {
 
         try {
             const response = await fetch(`https://api-don-ar.vercel.app/fundaciones/${userId}/change-password`, opciones);
-            if (!response.ok) {
-                throw new Error('Error al cambiar contraseña');
-            }
-
-            const data = await response.json();
-
+            if (!response.ok) throw new Error('Error al cambiar contraseña');
             setMensaje('Contraseña cambiada con éxito');
         } catch (error) {
-            setErrores({ ...errores, form: error.message });
+            setErrores(prevErrores => ({ ...prevErrores, form: error.message }));
         }
     };
 
@@ -173,27 +142,14 @@ const Perfil = () => {
         setModoEdicion(false);
     };
 
-    const handleEditClick = () => {
-        setModoEdicion(true);
-    };
+    const handleEditClick = () => setModoEdicion(true);
 
     const handleAccountChange = (e) => {
         const { name, value } = e.target;
-        setInfoCuenta({ ...infoCuenta, [name]: value });
+        setInfoCuenta(prevInfo => ({ ...prevInfo, [name]: value }));
     };
 
-    const handleConfirmPasswordChange = (e) => {
-        setConfirmarContrasena(e.target.value);
-    };
-
-    const handleAccountSubmit = async (e) => {
-        e.preventDefault();
-        // Lógica para manejar la actualización de la información de la cuenta
-    };
-
-    const handleDeleteAccount = async () => {
-        // Lógica para manejar la eliminación de la cuenta
-    };
+    const handleConfirmPasswordChange = (e) => setConfirmarContrasena(e.target.value);
 
     return (
         <div className="PerfilContainer">
@@ -282,13 +238,13 @@ const Perfil = () => {
                                 </div>
                                 <div className="mb-3">
                                     <h3 className="TituloDropdown">Seleccione qué donaciones recibe</h3>
-                                    {categorias?.map(([key, categoria]) => (
+                                    {categorias.map(([key, categoria]) => (
                                         <div className="form-check" key={key}>
                                             <input
                                                 className="form-check-input"
                                                 type="checkbox"
                                                 name={key}
-                                                checked={perfil.tituloEtiquetas?.includes(key)}
+                                                checked={perfil.tituloEtiquetas.includes(key)}
                                                 onChange={handleCheckChange}
                                             />
                                             <label className="form-check-label" htmlFor={key}>
@@ -364,8 +320,8 @@ const Perfil = () => {
                                 <div>
                                     <h3 className="TituloDropdown">Donaciones que recibe</h3>
                                     <ul>
-                                        {perfil.tituloEtiquetas?.map((donacion) => (
-                                            <li key={donacion}>{categorias?.find(([key]) => key === donacion)[1].titulo}</li>
+                                        {perfil.tituloEtiquetas.map(donacion => (
+                                            <li key={donacion}>{categorias.find(([key]) => key === donacion)?.[1].titulo || "Desconocido"}</li>
                                         ))}
                                     </ul>
                                 </div>
