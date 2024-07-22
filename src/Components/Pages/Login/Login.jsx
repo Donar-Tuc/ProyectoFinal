@@ -1,13 +1,16 @@
+// Login.js
 import React, { useState } from "react";
 import "./Styles/Login.css";
 import Fondo from './images/fondo.png';
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from '../../../logic/authContext';
 
-const Login = ({ onLogin }) => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const { login } = useAuth();  // Utiliza el hook useAuth
 
   const url = "https://api-don-ar.vercel.app/fundaciones/login";
 
@@ -28,8 +31,7 @@ const Login = ({ onLogin }) => {
       if (response.ok) {
         setError("");
         const { token, userId } = data;
-        onLogin(true);
-        localStorage.setItem("token", token);
+        login(token);  // Llamar a la función login del contexto
         localStorage.setItem("userId", userId);
         navigate(`/perfil/${userId}`);
       } else {
@@ -90,10 +92,3 @@ const Login = ({ onLogin }) => {
 };
 
 export default Login;
-
-
-
-/* 
-
-
-*/

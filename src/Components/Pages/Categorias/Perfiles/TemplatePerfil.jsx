@@ -8,13 +8,11 @@ const TemplatePerfil = (/* { id } */) => {
     const { id } = useParams(); // Obtener el parámetro de la URL 
     const { data, loading, error } = useFetch(`https://api-don-ar.vercel.app/fundaciones/${id}`) // Obtener los datos usando el id de la URL
     const fundacion = data ? data.document : "no se encontro la fundacion";
-    console.log(fundacion);
 
     /*    if (loading) return <div>Loading...</div>; // Manejar la carga
        if (error) return <div>Error: {error}</div>; // Manejar errores */
 
     const { logo, titulo, horario, direccion, telefono, sitioWeb, email, mapaBoton, mapa, descripcion, tituloEtiquetas } = fundacion; // Desestructurar los datos obtenidos
-    console.log(tituloEtiquetas); 
 
     // tituloEtiquetas = ["Donaciones Monetarias", "..."] ===> etiquetas.etiqueta.titulo
 
