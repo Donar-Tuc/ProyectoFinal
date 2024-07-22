@@ -1,0 +1,13 @@
+al descargar el codigo
+
+1. instalar dependencias
+
+    npm install
+
+2. En la terminal correr el test
+
+    npm test
+
+3. Para ver la cobertura del test
+
+    npm test-- --coverage
