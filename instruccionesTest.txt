@@ -6,11 +6,11 @@ al descargar el codigo
 
 2. En la terminal correr el test
 
-    npm test
+    npm test a
 
 3. Para ver la cobertura del test
 
-    npm test-- --coverage
+    npm test -- --coverage a 
 
 IMPORTANTE: si despues de ejecutar todo esto les sale el siguiente error
 
