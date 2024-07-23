@@ -11,3 +11,11 @@ al descargar el codigo
 3. Para ver la cobertura del test
 
     npm test-- --coverage
+
+IMPORTANTE: si despues de ejecutar todo esto les sale el siguiente error
+
+● Test suite failed to run
+
+    fatal: cannot use .git/info/exclude as an exclude file
+
+En ese caso de que les salga ese error, eliminen la carpeta ".git" y vuelvan a intentar
