@@ -32,7 +32,7 @@ const Perfil = () => {
     }), [token]);
 
     const { data, error, loading } = useFetch(`https://api-don-ar.vercel.app/fundaciones/${userId}`, opciones);
-    
+
     const logoUrl = data?.document?.logo || "";
     const {
         data: imageBlob,
@@ -42,6 +42,9 @@ const Perfil = () => {
     } = useFetchImage(logoUrl);
 
     const imageUrl = imageBlob ? URL.createObjectURL(imageBlob) : "";
+
+
+
 
     const datosFundacion = data?.document ? {
         logo: imageUrl,
@@ -77,8 +80,8 @@ const Perfil = () => {
         const { name, checked } = e.target;
         setPerfil(prevPerfil => ({
             ...prevPerfil,
-            tituloEtiquetas: checked 
-                ? [...prevPerfil.tituloEtiquetas, name] 
+            tituloEtiquetas: checked
+                ? [...prevPerfil.tituloEtiquetas, name]
                 : prevPerfil.tituloEtiquetas.filter(donacion => donacion !== name)
         }));
     };
@@ -122,7 +125,7 @@ const Perfil = () => {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
             },
-            body: JSON.stringify({ 
+            body: JSON.stringify({
                 password: infoCuenta.contrasena,
                 newPassword: infoCuenta.nuevaContrasena
             })
@@ -157,7 +160,9 @@ const Perfil = () => {
             <div className="ProfileInformation">
                 <div className="InfoGridContainer">
                     <div className="containerFoto">
-                        <img src={perfil.logo} alt="Foto de perfil" className="ImagePerfil" />
+                        <img src={perfil.logo} alt="Foto de perfil"
+                            className="ImagePerfil"
+                        />
                     </div>
                     <div className="containerTextoPerfil">
                         {modoEdicion ? (
@@ -233,7 +238,7 @@ const Perfil = () => {
                                         type="file"
                                         className="form-control"
                                         accept="image/*"
-                                        // onChange={handleImageChange}
+                                    // onChange={handleImageChange}
                                     />
                                 </div>
                                 <div className="mb-3">

@@ -10,7 +10,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const { login } = useAuth();  // Utiliza el hook useAuth
+  const { login } = useAuth(); // Utiliza el hook useAuth
 
   const url = "https://api-don-ar.vercel.app/fundaciones/login";
 
@@ -31,8 +31,7 @@ const Login = () => {
       if (response.ok) {
         setError("");
         const { token, userId } = data;
-        login(token);  // Llamar a la función login del contexto
-        localStorage.setItem("userId", userId);
+        login(userId, token); // Llamar a la función login del contexto con el userId y el token
         navigate(`/perfil/${userId}`);
       } else {
         setError(data.message || "Error en el inicio de sesión");

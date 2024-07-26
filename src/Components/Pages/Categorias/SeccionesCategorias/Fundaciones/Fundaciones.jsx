@@ -5,8 +5,6 @@ import "./Style.css";
 import { useFetch } from "../../../../../logic/useFetch.js";
 import { useParams } from "react-router-dom";
 
-
-
 const Fundaciones = () => {
     const { scrollPosition, setScrollPosition, page, setPage } = useScroll();
     const scrollRef = useRef();

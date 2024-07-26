@@ -1,114 +1,120 @@
-import React, { useState } from 'react';
-import './css/formPopUp.css'; // Estilos personalizados (si los tienes)
-
-// Importar íconos correspondientes a cada categoría
-import dineroEtiqueta from './imagenes/card-outline.svg';
-import comidaEtiqueta from './imagenes/fast-food-outline.svg';
-import asistenciaEtiqueta from './imagenes/alarm-outline.svg';
-import hogarEtiqueta from './imagenes/home-outline.svg';
-import escolarEtiqueta from './imagenes/school-outline.svg';
-import ropaEtiqueta from './imagenes/shirt-outline.svg';
-import medicamentosEtiqueta from './imagenes/medkit-outline.svg';
-import juguetesEtiqueta from './imagenes/football-outline.svg';
+import React, { useState, useEffect } from 'react';
+import './css/formPopUp.css';
+import moment from 'moment';
+import 'moment/locale/es';
+import Datetime from 'react-datetime';
+import 'react-datetime/css/react-datetime.css';
+import { getUserData } from "../../../logic/getUserData";
+import { etiquetas } from '../Categorias/Etiquetas/index';
+import { useFetch } from '../../../logic/useFetch';
+import { useNavigate } from 'react-router-dom';
 
 // Configurar moment para español y evitar GMT
 moment.locale('es');
 
 const PopUp = ({ addEvent, togglePopup }) => {
     const [nombreOrganizacion, setNombreOrganizacion] = useState('');
+    const [titulo, setTitulo] = useState('');
     const [fechaInicio, setFechaInicio] = useState('');
     const [fechaFin, setFechaFin] = useState('');
-    const [horaInicio, setHoraInicio] = useState('');
-    const [horaFin, setHoraFin] = useState('');
     const [descripcion, setDescripcion] = useState('');
     const [categoriasDonacion, setCategoriasDonacion] = useState([]);
+    const [error, setError] = useState('');
+
+    const { userId, token } = getUserData();
+    console.log(token);
+
+    const { data: user, loading, error: fetchError } = useFetch(`https://api-don-ar.vercel.app/fundaciones/${userId}`);
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (user) {
+            setNombreOrganizacion(user?.document?.titulo || user?.document?.userName);
+        }
+    }, [user]);
 
     const handleCheckboxChange = (e) => {
         const { value, checked } = e.target;
 
-        // Verificar cuántos checkboxes están marcados actualmente
         if (checked && categoriasDonacion.length >= 5) {
-            // Si se intenta marcar más de 5, no se permite
             return;
         }
 
-        // Actualizar el estado de las categorías de donación
         if (checked) {
             setCategoriasDonacion([...categoriasDonacion, value]);
         } else {
             setCategoriasDonacion(categoriasDonacion.filter(cat => cat !== value));
         }
     };
+    
 
-    const handleSubmit = (e) => {
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-
-        // Validar la longitud de la descripción
         if (descripcion.length < 100) {
             alert('La descripción debe tener al menos 100 caracteres.');
             return;
         }
 
-        // Crear objeto con los datos del evento
         const eventData = {
             imagen: '', // Aquí deberías establecer la imagen adecuada
-            titulo: nombreOrganizacion, // Usar el nombre de la organización como título
-            horario: `${formatoHorario(fechaInicio)} a ${formatoHorario(fechaFin)}`, // Formatear inicio y fin de horario
-            etiquetas: categoriasDonacion.map(cat => getIconoByCategoria(cat)), // Obtener los íconos según las categorías seleccionadas
+            titulo: titulo,
+            fechaInicio: fechaInicio,
+            fechaFin: fechaFin,
             descripcion: descripcion,
-            url: '', // Establecer la URL adecuada si es necesario
-            tituloEtiquetas: categoriasDonacion // Usar las categorías seleccionadas como título de etiquetas
+            tituloEtiquetas: categoriasDonacion
         };
 
-        // Llamar a la función para agregar el evento al estado de Eventos.jsx
-        addEvent(eventData);
+        try {
 
-        // Limpiar el formulario y categorías seleccionadas
-        setNombreOrganizacion('');
-        setFechaInicio('');
-        setFechaFin('');
-        setHoraInicio('');
-        setHoraFin('');
-        setDescripcion('');
-        setCategoriasDonacion([]);
+            const response = await fetch('https://api-don-ar.vercel.app/eventos/', {
+                method: "POST",
+                headers: {
+                    "Authorization": `${token}`,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(eventData)
+            });
 
-        // Cerrar el popup
-        togglePopup();
+            if (response.ok) {
+                setError("");
+                addEvent(eventData);
+                setNombreOrganizacion('');
+                setFechaInicio('');
+                setFechaFin('');
+                setDescripcion('');
+                setCategoriasDonacion([]);
+                togglePopup();
+                navigate(`/eventos/`);
+            } else {
+                const errorText = await response.text();
+                setError(errorText || "Error al crear el evento.");
+            }
+        } catch (error) {
+            setError("Error en la conexión con el servidor");
+        }
     };
 
-    // Función para formatear la fecha sin hora
     const formatoHorario = (fecha) => {
         return moment(fecha).format('dddd D [de] MMMM');
     };
 
-    // Función auxiliar para obtener el ícono según la categoría seleccionada
-    const getIconoByCategoria = (categoria) => {
-        switch (categoria) {
-            case 'dinero':
-                return dineroEtiqueta;
-            case 'comida':
-                return comidaEtiqueta;
-            case 'asistencia':
-                return asistenciaEtiqueta;
-            case 'hogar':
-                return hogarEtiqueta;
-            case 'escolar':
-                return escolarEtiqueta;
-            case 'ropa':
-                return ropaEtiqueta;
-            case 'medicamentos':
-                return medicamentosEtiqueta;
-            case 'juguetes':
-                return juguetesEtiqueta;
-            default:
-                return ''; // Manejo de caso por defecto si no se encuentra la categoría
-        }
-    };
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (fetchError) {
+        return <div>Error: {fetchError.message}</div>;
+    }
+
+    if (!user) {
+        return <div>No se encontraron datos del usuario.</div>;
+    }
 
     return (
         <div className="popup">
             <div className="popup-content">
-                {/* Formulario para crear evento */}
                 <form onSubmit={handleSubmit} id='FormularioEventos'>
                     <div className='BoxTituloBotonEvento'>
                         <span className="close" onClick={togglePopup}>&times;</span>
@@ -117,98 +123,89 @@ const PopUp = ({ addEvent, togglePopup }) => {
 
                     <div className="mb-3">
                         <label htmlFor="nombreOrganizacion" className='TextoFormEventos'>Nombre de la Organización:</label>
-                        <input type="text" id="nombreOrganizacion" className='InputFormEventos form-control' placeholder='Ingresar el nombre de la organizacion' value={nombreOrganizacion} onChange={(e) => setNombreOrganizacion(e.target.value)} required />
+                        <input 
+                            type="text" 
+                            id="nombreOrganizacion" 
+                            className='InputFormEventos form-control' 
+                            placeholder='Nombre de la organizacion' 
+                            value={nombreOrganizacion} 
+                            disabled={!user?.document?.admin} 
+                            onChange={(e) => setNombreOrganizacion(e.target.value)} 
+                        />
+                    </div>
+
+                    <div className="mb-3">
+                        <label htmlFor="titulo" className='TextoFormEventos'>Titulo:</label>
+                        <input 
+                            type="text" 
+                            id="titulo" 
+                            className='InputFormEventos form-control' 
+                            placeholder='Titulo del evento' 
+                            value={titulo} 
+                            onChange={(e) => setTitulo(e.target.value)} 
+                        />
                     </div>
 
                     <div className="mb-3">
                         <label htmlFor="horarios" className='TextoFormEventos'>Fechas del Evento:</label>
                         <div>
-                            {/* Selector de fecha y hora para inicio */}
                             <Datetime
                                 value={fechaInicio}
                                 onChange={date => setFechaInicio(date)}
                                 inputProps={{ placeholder: 'Fecha de inicio' }}
                                 dateFormat="dddd D [de] MMMM"
-                                timeFormat={false} // Deshabilitar el formato de hora
+                                timeFormat={false}
                             />
-                            &nbsp;a&nbsp;
-                            {/* Selector de fecha y hora para fin */}
+                            &nbsp;&nbsp;
                             <Datetime
                                 value={fechaFin}
                                 onChange={date => setFechaFin(date)}
                                 inputProps={{ placeholder: 'Fecha de fin' }}
                                 dateFormat="dddd D [de] MMMM"
-                                timeFormat={false} // Deshabilitar el formato de hora
+                                timeFormat={false}
                             />
                         </div>
                     </div>
 
-                    {/* Checkboxes para seleccionar tipos de donación */}
                     <div className="mb-3">
                         <label className='TextoFormEventos'>Tipos de Donación:</label><br />
                         <div className="row">
-                            <div className="col-md-3">
-                                <div className="form-check">
-                                    <input className="form-check-input" type="checkbox" id="dinero" value="dinero" onChange={handleCheckboxChange} />
-                                    <label className="form-check-label" htmlFor="dinero">Dinero</label>
+                            {Object.keys(etiquetas)?.map((key) => (
+                                <div className="col-md-3" key={key}>
+                                    <div className="form-check">
+                                        <input 
+                                            className="form-check-input" 
+                                            type="checkbox" 
+                                            id={key} 
+                                            value={key} 
+                                            onChange={handleCheckboxChange} 
+                                        />
+                                        <label className="form-check-label" htmlFor={key}>{etiquetas[key].titulo}</label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="col-md-3">
-                                <div className="form-check">
-                                    <input className="form-check-input" type="checkbox" id="comida" value="comida" onChange={handleCheckboxChange} />
-                                    <label className="form-check-label" htmlFor="comida">Comida</label>
-                                </div>
-                            </div>
-                            <div className="col-md-3">
-                                <div className="form-check">
-                                    <input className="form-check-input" type="checkbox" id="asistencia" value="asistencia" onChange={handleCheckboxChange} />
-                                    <label className="form-check-label" htmlFor="asistencia">Asistencia</label>
-                                </div>
-                            </div>
-                            <div className="col-md-3">
-                                <div className="form-check">
-                                    <input className="form-check-input" type="checkbox" id="hogar" value="hogar" onChange={handleCheckboxChange} />
-                                    <label className="form-check-label" htmlFor="hogar">Hogar</label>
-                                </div>
-                            </div>
-                            <div className="col-md-3">
-                                <div className="form-check">
-                                    <input className="form-check-input" type="checkbox" id="escolar" value="escolar" onChange={handleCheckboxChange} />
-                                    <label className="form-check-label" htmlFor="escolar">Escolar</label>
-                                </div>
-                            </div>
-                            <div className="col-md-3">
-                                <div className="form-check">
-                                    <input className="form-check-input" type="checkbox" id="ropa" value="ropa" onChange={handleCheckboxChange} />
-                                    <label className="form-check-label" htmlFor="ropa">Ropa</label>
-                                </div>
-                            </div>
-                            <div className="col-md-3">
-                                <div className="form-check">
-                                    <input className="form-check-input" type="checkbox" id="medicamentos" value="medicamentos" onChange={handleCheckboxChange} />
-                                    <label className="form-check-label" htmlFor="medicamentos">Medicamentos</label>
-                                </div>
-                            </div>
-                            <div className="col-md-3">
-                                <div className="form-check">
-                                    <input className="form-check-input" type="checkbox" id="juguetes" value="juguetes" onChange={handleCheckboxChange} />
-                                    <label className="form-check-label" htmlFor="juguetes">Juguetes</label>
-                                </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
+
                     <div className="mb-3">
-                    <label htmlFor="descripcion" className='TextoFormEventos'>Descripción del Evento:</label><br />
-                    <textarea id="descripcion" className='InputFormEventos form-control' placeholder='Ingrese una breve descripcion del evento' value={descripcion} onChange={(e) => setDescripcion(e.target.value)} rows="4" required></textarea>
-                </div>
+                        <label htmlFor="descripcion" className='TextoFormEventos'>Descripción del Evento:</label><br />
+                        <textarea 
+                            id="descripcion" 
+                            className='InputFormEventos form-control' 
+                            placeholder='Ingrese una breve descripcion del evento' 
+                            value={descripcion} 
+                            onChange={(e) => setDescripcion(e.target.value)} 
+                            rows="4" 
+                            required 
+                        ></textarea>
+                    </div>
 
-                {/* Botón para crear evento */}
-                <button type="submit" className="btn btn-primary" id='BotonCrearEvento'>Crear Evento</button>
-            </form>
+                    <button type="submit" className="btn btn-primary" id='BotonCrearEvento'>Crear Evento</button>
+                </form>
+                {error && <div className="alert alert-danger mt-3">{error}</div>}
+            </div>
         </div>
-    </div>
-);
-
+    );
 };
 
 export default PopUp;
