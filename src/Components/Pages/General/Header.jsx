@@ -90,7 +90,7 @@ const Navbar = ({ isLoggedIn, onLogout }) => {
             ) : (
               <li>
                 <Link className="btnLogin" to="/login" onClick={handleClick}>
-                  Login
+                  Acceder
                 </Link>
               </li>
             )}

@@ -15,7 +15,7 @@ class TomaAccion extends Component {
         <section id="AccionContainer" >
             <div className="content" data-aos="fade-up">
                 <h2 id="TituloAccion" >Toma Accion</h2>
-                <p id="DescripcionAccion" >Tu ayuda puede cambiar vidas. Doná hoy para apoyar causas importantes. Desde educación hasta justicia social, cada donación cuenta. Juntos, podemos crear un mundo mejor.</p>
+                <p id="DescripcionAccion" >Tu decisión de ayudar hoy puede transformar el mañana. En DON.AR, creemos en el poder de la comunidad y en cómo cada pequeña acción puede tener un gran impacto. Ya sea donando bienes, tiempo o dinero, estás contribuyendo a un cambio real en la vida de quienes más lo necesitan. Uní tu voz a la de miles de donantes y fundaciones que ya están marcando la diferencia.</p>
             </div>
             <img src= {TomaAccionImage} alt="" id="ImageDonar" data-aos="fade-up" />
         </section>

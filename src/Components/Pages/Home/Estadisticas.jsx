@@ -60,22 +60,21 @@ const Estadisticas = () => {
       <section id="EstadisticasContainer" ref={estadisticasRef}>
         <h2 id="TituloEstadisticas" >Nuestra Trayectoria</h2>
         <p className="descripcionEstadisticas">
-          Nos especializamos en guiar a personas que desean donar pero necesitan orientación. Con una trayectoria sólida, proporcionamos información confiable para que cada donante contribuya de manera informada y segura.
-        </p>
+        Nuestra trayectoria es un testimonio de la confianza que nos otorgan las fundaciones y la comunidad de donantes comprometidos con cambiar vidas.        </p>
         {/* <p className="descripcionEstadisticas">Facilitamos el proceso de donación, asegurando que cada acto de generosidad tenga un impacto positivo y significativo.</p> */}
 
         <div className="Bloqueestadisticas">
           <div className="Estadistica" >
             <h2 className="SignoMas">+ <span id="NumeroEst" className="count" data-start="0" data-end="4500" data-duration="1000">0</span></h2>
-            <h2 id="TextEst">Donaciones</h2>
+            <h2 id="TextEst">Donaciones recibidas</h2>
           </div>
           <div className="Estadistica" >
             <h2 className="SignoMas">+ <span id="NumeroEst" className="count" data-start="0" data-end="50" data-duration="1000">0</span></h2>
-            <h2 id="TextEst">Fundaciones</h2>
+            <h2 id="TextEst">Fundaciones asociadas</h2>
           </div>
           <div className="Estadistica" >
-          <h2 className="SignoMas">+ <span id="NumeroEst" className="count" data-start="0" data-end="10" data-duration="1000">0</span></h2>
-            <h2 id="TextEst">Años ayudando</h2>
+          <h2 className="SignoMas">+ <span id="NumeroEst" className="count" data-start="0" data-end="100" data-duration="1000">0</span></h2>
+            <h2 id="TextEst">Eventos promovidos</h2>
           </div>
         </div>
       </section>

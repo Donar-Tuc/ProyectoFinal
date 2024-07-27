@@ -60,9 +60,9 @@ class Signup extends Component {
         if (!description) {
             formIsValid = false;
             errors.push("La descripción es requerida.");
-        } else if (description.length > 100) {
+        } else if (description.length > 1000) {
             formIsValid = false;
-            errors.push("La descripción no puede exceder los 100 caracteres.");
+            errors.push("La descripción no puede exceder los 1000 caracteres.");
         }
 
         this.setState({ errors });
@@ -95,7 +95,7 @@ class Signup extends Component {
                                 <input type="hidden" name="access_key" value="50e21fd4-36fa-4bfd-85c8-cb279489ba9b" />
                                 <div className="TitulosContainer">
                                     <p id="heading">Registro</p>
-                                    <p id="aclaracion">Este formulario se enviará a nosotros, evaluamos los datos y te otorgamos el usuario y contraseña.</p>
+                                    <p id="aclaracion">Si deseas que tu organización sea parte de nuestra comunidad en DON.AR, por favor completa el siguiente formulario. Nuestro equipo revisará los datos proporcionados y, una vez verificados, te otorgaremos una cuenta para que puedas comenzar a recibir donaciones y gestionar tus eventos de caridad.</p>
                                 </div>
                                 
                                 {/* Contenedor de mensajes de error */}
@@ -115,11 +115,11 @@ class Signup extends Component {
                                 </div>
                                 <div className="field">
                                     <ion-icon className='iconoInputForm' name="call-outline"></ion-icon>
-                                    <input className="input-field" type="tel" name="contact" placeholder="Número de contacto" required="required" id="contact" onChange={this.handleChange} />
+                                    <input className="input-field" type="tel" name="contact" placeholder="Contacto" required="required" id="contact" onChange={this.handleChange} />
                                 </div>
                                 <div className="field">
                                     <ion-icon className='iconoInputForm' name="business-outline"></ion-icon>
-                                    <input className="input-field" type="text" name="institution" placeholder="Nombre de institución" required="required" id="institution" onChange={this.handleChange} />
+                                    <input className="input-field" type="text" name="institution" placeholder="Entidad" required="required" id="institution" onChange={this.handleChange} />
                                 </div>
                                 <div className="field">
                                     <ion-icon className='iconoInputForm' name="id-card-outline"></ion-icon>
@@ -127,11 +127,11 @@ class Signup extends Component {
                                 </div>
                                 <div className="field">
                                     <ion-icon className='iconoInputForm' name="navigate-circle-outline"></ion-icon>
-                                    <input className="input-field" type="text" name="address" placeholder="Dirección física" required="required" id="address" onChange={this.handleChange} />
+                                    <input className="input-field" type="text" name="address" placeholder="Dirección" required="required" id="address" onChange={this.handleChange} />
                                 </div>
                                 <div className="field" id="descripcion">
                                     <ion-icon className='iconoInputForm' name="help-outline"></ion-icon>
-                                    <input className="input-field" type="text" name="description" placeholder="¿Por qué necesitan la visibilidad?" required="required" id="description" onChange={this.handleChange} />
+                                    <input className="input-field" type="text" name="description" placeholder="Cuéntanos más sobre tu organización" required="required" id="description" onChange={this.handleChange} />
                                 </div>
                                 <input type="hidden" name="redirect" value="https://web3forms.com/success" />
                                 <div className="btnRegistrarse">

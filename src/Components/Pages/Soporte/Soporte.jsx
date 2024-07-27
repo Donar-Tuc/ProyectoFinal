@@ -79,7 +79,7 @@ class Soporte extends Component {
                     <input type="hidden" name="access_key" value="50e21fd4-36fa-4bfd-85c8-cb279489ba9b" />
 
                     <p className="title">Soporte</p>
-                    <p className="message">Te ayudamos con cualquier duda que tengas</p>
+                    <p className="message">¿Preguntas? Nuestro equipo de soporte está aquí para ayudarte.</p>
 
                     {hasErrors && (
                     <div className="error-containerSoporte">
@@ -91,23 +91,21 @@ class Soporte extends Component {
                     </div>
                 )}
 
+
                     <label>
-                        <input className="input" type="text" name="nombre" placeholder="" required="required" id="firstname" onChange={this.handleChange} />
-                        <span>Nombre</span>
+                        <input className="input" type="email" name="email" placeholder="" required="required" id="email" onChange={this.handleChange} />
+                        <span>Correo electrónico</span>
                     </label>
 
                     <label>
                         <input className="input" type="text" name="numero" placeholder="" required="required" id="Numero" onChange={this.handleChange} />
-                        <span>Número</span>
+                        <span>Contacto</span>
                     </label>
 
-                    <label>
-                        <input className="input" type="email" name="email" placeholder="" required="required" id="email" onChange={this.handleChange} />
-                        <span>Email</span>
-                    </label>
+
 
                     <label>
-                        <textarea className="input" id="consulta" name="consulta" type="text" placeholder="" required="required" maxLength="200" onChange={this.handleChange}></textarea>
+                        <textarea className="input" id="consulta" name="consulta" type="text" placeholder="" required="required" maxLength="1000" onChange={this.handleChange}></textarea>
                         <span>Describe tu consulta</span>
                     </label>
 

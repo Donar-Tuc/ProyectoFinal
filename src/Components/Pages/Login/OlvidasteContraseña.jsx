@@ -68,7 +68,7 @@ class OlvidasteContraseña extends Component {
                                 <input type="hidden" name="access_key" value="50e21fd4-36fa-4bfd-85c8-cb279489ba9b" />
                                 <div className="TitulosContainer">
                                     <p id="heading3">Recuperar contraseña</p>
-                                    <p id="aclaracion2">Ingresa tu correo y te mandaremos un correo con el código de recuperación</p>
+                                    <p id="aclaracion2">Ingresa tu correo y recibirás un código de recuperación para restablecer tu acceso.</p>
                                 </div>
                                 <div className="field">
                                     <ion-icon name="at-outline" className='iconoInputForm'></ion-icon>
