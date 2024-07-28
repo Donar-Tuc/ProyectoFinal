@@ -1,24 +1,24 @@
-#AcordeonContainer{
+#AcordeonContainer {
     /* background: rgb(2,19,25);
     background: linear-gradient(180deg, rgba(2,19,25,1) 28%, rgba(16,65,83,1) 84%); */
     color: white;
-    padding:  4rem 10rem;
+    padding: 4rem 10rem;
     width: 100%;
 }
 
-#BloqueTituloPreguntas{
+#BloqueTituloPreguntas {
     text-align: center;
     padding-bottom: 2rem;
 }
 
-#tituloFaq{
-    font-size: 2.5rem;
+#tituloFaq {
+    font-size: 2rem;
     /* background: radial-gradient(20% 50% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, 0.445) 100%);      
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; */
     color: black;
     font-family: "Montserrat", sans-serif;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .accordion-header {
@@ -41,7 +41,7 @@
     color: black;
     background-color: none;
     box-shadow: inset 0 calc(-1* var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
-    
+
 }
 
 
@@ -51,21 +51,20 @@
 
 
 @media (max-width: 900px) {
-    #AcordeonContainer{
-        padding:  2rem 1rem;
- 
+    #AcordeonContainer {
+        padding: 2rem 1rem;
+
     }
-    
-    #BloqueTituloPreguntas{
+
+    #BloqueTituloPreguntas {
         text-align: center;
         padding: 1rem;
     }
-    
-    #tituloFaq{
-        font-size: 2rem;
-        font-weight: 400;
+
+    #tituloFaq {
+        font-size: 1.5rem;
     }
-    
+
     .accordion-header {
         /* background-color: #f0f0f0; */
         color: #333;
@@ -73,19 +72,19 @@
         font-family: "Montserrat", sans-serif;
         /* padding: 10px; */
     }
-    
+
     .accordion-body {
         background-color: #fff;
         color: #0c0c0c;
         font-size: 1rem;
     }
-    
+
     .accordion-button:not(.collapsed) {
         color: black;
         background-color: none;
         box-shadow: inset 0 calc(-1* var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
-        
+
     }
-    
+
 
 }

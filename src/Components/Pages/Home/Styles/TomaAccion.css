@@ -3,14 +3,16 @@
 
 #AccionContainer {
     display: flex;
-    background-color: #f3f6f9;
+    background-color: #E7E7E7;
     /* background: rgb(16, 65, 83);
     background: linear-gradient(180deg, rgba(16, 65, 83, 1) 67%, rgba(16, 65, 83, 1)95%); */
     flex-direction: row;
     gap: 30px;
     padding: 3rem;
     width: 100%;
-    height: 100vh;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
 }
 
 .content {
@@ -30,7 +32,7 @@
     -webkit-text-fill-color: transparent; */
     color: rgb(17, 17, 17);
     font-family: "Montserrat", sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 2.5rem;
 
 }
@@ -38,15 +40,15 @@
 #DescripcionAccion {
     font-size: 1.2rem;
     color: black;
-    font-weight: 200;
+    font-weight: 300;
     font-family: "Montserrat", sans-serif;
 
 }
 
 #ImageDonar {
     flex: 1;
-    width: 50%;
-    height: auto;
+    width: 40%;
+    height: 90%;
     object-fit: cover;
     object-position: center;
     /* border-radius: 0px 40px 0 40px; */
@@ -75,8 +77,7 @@
     }
 
     #TituloAccion {
-        font-weight: 400;
-        font-size: 3rem;
+        font-weight: 600;
 
     }
 
@@ -90,4 +91,29 @@
         border-radius: 11px;
     }
 
+}
+
+@media (min-width: 750px) and (max-width: 900px) {
+
+    #AccionContainer {
+        display: flex;
+        background-color: #E7E7E7;
+        /* background: rgb(16, 65, 83);
+        background: linear-gradient(180deg, rgba(16, 65, 83, 1) 67%, rgba(16, 65, 83, 1)95%); */
+        flex-direction: column;
+        gap: 30px;
+        padding: 3rem;
+        width: 100%;
+        height: 60vh;
+    }
+
+    #ImageDonar {
+
+        width: 90%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+        /* border-radius: 0px 40px 0 40px; */
+        border-radius: 10px;
+    }
 }

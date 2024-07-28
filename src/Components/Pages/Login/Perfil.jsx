@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Styles/Perfil.css";
-
+// 
 // Import de fotos
 import BancoAlimentos from "../Categorias/SeccionesCategorias/VerTodo/Imagenes/BancoAlimentosLogo.png";
 
@@ -278,17 +278,7 @@ const Perfil = () => {
                                     />
                                     {errors.phone && <div className="invalid-feedback">{errors.phone}</div>}
                                 </div>
-                                <div className="mb-3">
-                                    <label className="form-label">Correo Electrónico</label>
-                                    <input
-                                        type="email"
-                                        className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-                                        name="email"
-                                        value={profile.email}
-                                        onChange={handleChange}
-                                    />
-                                    {errors.email && <div className="invalid-feedback">{errors.email}</div>}
-                                </div>
+
                                 <div className="mb-3">
                                     <label className="form-label">Descripción</label>
                                     <textarea

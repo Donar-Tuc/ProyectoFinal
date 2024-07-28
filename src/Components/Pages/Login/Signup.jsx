@@ -95,9 +95,9 @@ class Signup extends Component {
                                 <input type="hidden" name="access_key" value="50e21fd4-36fa-4bfd-85c8-cb279489ba9b" />
                                 <div className="TitulosContainer">
                                     <p id="heading">Registro</p>
-                                    <p id="aclaracion">Si deseas que tu organización sea parte de nuestra comunidad en DON.AR, por favor completa el siguiente formulario. Nuestro equipo revisará los datos proporcionados y, una vez verificados, te otorgaremos una cuenta para que puedas comenzar a recibir donaciones y gestionar tus eventos de caridad.</p>
+                                    <p id="aclaracion">Si quieres que tu organización se una a DON.AR, completa el formulario. Revisaremos tus datos y, una vez verificados, te daremos una cuenta para recibir donaciones y gestionar eventos de caridad.</p>
                                 </div>
-                                
+
                                 {/* Contenedor de mensajes de error */}
                                 {this.state.errors.length > 0 && (
                                     <div className="error-container">

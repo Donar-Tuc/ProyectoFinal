@@ -202,16 +202,16 @@ const PopUp = ({ addEvent, togglePopup }) => {
                         </div>
                     </div>
                     <div className="mb-3">
-                    <label htmlFor="descripcion" className='TextoFormEventos'>Descripción del Evento:</label><br />
-                    <textarea id="descripcion" className='InputFormEventos form-control' placeholder='Ingrese una breve descripcion del evento' value={descripcion} onChange={(e) => setDescripcion(e.target.value)} rows="4" required></textarea>
-                </div>
+                        <label htmlFor="descripcion" className='TextoFormEventos'>Descripción del Evento:</label><br />
+                        <textarea id="descripcion" className='InputFormEventos form-control' maxLength="150" placeholder='Ingrese una breve descripcion del evento' value={descripcion} onChange={(e) => setDescripcion(e.target.value)} rows="4" required></textarea>
+                    </div>
 
-                {/* Botón para crear evento */}
-                <button type="submit" className="btn btn-primary" id='BotonCrearEvento'>Crear Evento</button>
-            </form>
+                    {/* Botón para crear evento */}
+                    <button type="submit" className="btn btn-primary" id='BotonCrearEvento'>Crear Evento</button>
+                </form>
+            </div>
         </div>
-    </div>
-);
+    );
 
 };
 

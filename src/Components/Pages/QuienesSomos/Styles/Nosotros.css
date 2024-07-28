@@ -1,13 +1,17 @@
-#NosotrosContainer{
+#NosotrosContainer {
     display: flex;
     justify-content: center;
     padding: 8em 0;
- background-color: #f3f6f9;
+    background-color: #f3f6f9;
     color: white;
     font-family: "Montserrat", sans-serif;
 }
 
-#TextosNosotros{
+.TituloSobreNosotros {
+    font-weight: 700;
+}
+
+#TextosNosotros {
     color: black;
     width: 50%;
     padding: 0 1rem;
@@ -16,12 +20,12 @@
 
 
 @media (max-width: 900px) {
-    #NosotrosContainer{
+    #NosotrosContainer {
         padding: 8em 0;
         font-family: "Montserrat", sans-serif;
     }
-    
-    #TextosNosotros{
+
+    #TextosNosotros {
         width: 100%;
         padding: 0 1rem;
     }

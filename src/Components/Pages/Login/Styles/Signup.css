@@ -50,7 +50,8 @@
 #aclaracion {
     margin: 2em;
     text-align: center;
-    color: black ; /* el original es negro*/
+    color: black;
+    /* el original es negro*/
     font-family: "Montserrat", sans-serif;
 }
 

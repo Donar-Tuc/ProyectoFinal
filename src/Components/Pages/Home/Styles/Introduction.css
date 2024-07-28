@@ -7,9 +7,12 @@
     /* background: linear-gradient(180deg, rgba(32, 117, 147, 1) 13%, rgba(16, 65, 83, 1) 53%, rgba(2, 19, 25, 1) 98%); */
     background-image: url(../Images/BackgroundIntrouction.jpeg);
     background-repeat: no-repeat;
-    background-size: cover; /* Asegura que la imagen de fondo cubra todo el contenedor */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    background-position: center; /* Centra la imagen de fondo */
+    background-size: cover;
+    /* Asegura que la imagen de fondo cubra todo el contenedor */
+    background-repeat: no-repeat;
+    /* Evita que la imagen se repita */
+    background-position: center;
+    /* Centra la imagen de fondo */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -64,7 +67,8 @@
     background-color: #116ffd;
     color: white;
     transition: .3s all ease-in-out;
-    backdrop-filter: blur(1px); /* Aplica el filtro blur al fondo del botón */
+    backdrop-filter: blur(1px);
+    /* Aplica el filtro blur al fondo del botón */
 
 }
 
@@ -80,18 +84,22 @@
     font-family: "Montserrat", sans-serif;
     border-radius: 300px;
     padding: 0.8rem 2rem;
-    background-color: rgba(234, 235, 237, 0.621); /* Color de fondo semitransparente */
+    background-color: rgba(234, 235, 237, 0.621);
+    /* Color de fondo semitransparente */
     filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.546));
     border: 1px solid rgb(177, 175, 175);
     color: white;
     transition: 0.3s all ease-in-out;
-    backdrop-filter: blur(5px); /* Aplica el filtro blur al fondo del botón */
+    backdrop-filter: blur(5px);
+    /* Aplica el filtro blur al fondo del botón */
 }
 
 /* Opcional: cambiar la apariencia del botón al pasar el cursor */
 #btnAprenderMas:hover {
-    background-color: rgba(234, 235, 237, 0.682); /* Cambia ligeramente el fondo al pasar el cursor */
-    backdrop-filter: blur(12px); /* Aumenta el blur al pasar el cursor */
+    background-color: rgba(234, 235, 237, 0.682);
+    /* Cambia ligeramente el fondo al pasar el cursor */
+    backdrop-filter: blur(12px);
+    /* Aumenta el blur al pasar el cursor */
     transform: translateY(-2px);
 }
 
@@ -105,10 +113,8 @@
     filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.834));
     text-align: center;
     font-family: "Montserrat", sans-serif;
-    font-weight: 500;
+    font-weight: 600;
 }
-
-
 
 @media (max-width: 900px) {
     #Introduction {
@@ -118,15 +124,15 @@
     }
 
     #TituloIntroduction {
-        font-size: 2rem;
-        font-weight: 500;
+        font-size: 1.7rem;
+        font-weight: 600;
     }
 
     #DescripcionIntroduccion {
         font-size: 1rem;
         color: rgb(221, 215, 215);
         text-align: center;
-        font-weight: 200;
+        font-weight: 400;
 
 
     }
@@ -185,3 +191,54 @@
 
 
 }
+
+/* media querie para laptop */
+
+
+@media (min-width:1000px) and (max-width: 1300px) {
+    #Introduction {
+        padding: 5rem 1rem 0rem 1rem;
+        height: 100vh;
+    }
+
+    #TituloIntroduction {
+        font-size: 3rem;
+        font-weight: 600;
+    }
+
+    #DescripcionIntroduccion {
+        font-size: 1rem;
+        color: rgb(221, 215, 215);
+        text-align: center;
+        font-weight: 400;
+
+
+    }
+
+    #BotonesConteiner {
+
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    #EnlaceIntroduccion {
+        width: 100%;
+
+    }
+
+    #btnDondeDonar {
+        font-size: 1rem;
+        font-weight: 300;
+        padding: .5rem 1.5rem;
+    }
+
+    #btnAprenderMas {
+        font-size: 1rem;
+        font-weight: 300;
+        padding: .5rem 1.5rem;
+    }
+}
+
+/* fin media querie laptop */

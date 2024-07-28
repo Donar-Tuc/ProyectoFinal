@@ -74,7 +74,7 @@ class Soporte extends Component {
 
         return (
             <div className="ContainerForm">
-               
+
                 <form className="formSoporte" action="https://api.web3forms.com/submit" method="POST" onSubmit={this.handleSubmit}>
                     <input type="hidden" name="access_key" value="50e21fd4-36fa-4bfd-85c8-cb279489ba9b" />
 
@@ -82,14 +82,14 @@ class Soporte extends Component {
                     <p className="message">¿Preguntas? Nuestro equipo de soporte está aquí para ayudarte.</p>
 
                     {hasErrors && (
-                    <div className="error-containerSoporte">
-                        <div className="error-messageSoporte">
-                            {Object.values(errors).map((error, index) => (
-                                <p key={index}>{error}</p>
-                            ))}
+                        <div className="error-containerSoporte">
+                            <div className="error-messageSoporte">
+                                {Object.values(errors).map((error, index) => (
+                                    <p key={index}>{error}</p>
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                )}
+                    )}
 
 
                     <label>
@@ -124,20 +124,6 @@ class Soporte extends Component {
                     </button>
                 </form>
 
-                <div className="lineaHorizontal"></div>
-
-                <div className="FormularioBloque2">
-                    <h3 className="TituloInfoNuestra">Nuestros Horarios</h3>
-                    <p>Lunes - Viernes</p>
-                    <p>8am a 5pm</p>
-                    <p>Sábado - Domingo</p>
-                    <p>Cerrado</p>
-                    <h3 className="TituloInfoNuestra">Dirección</h3>
-                    <p>IHC, 9 de Julio 165, T4000IHC San Miguel de Tucumán, Tucumán</p>
-                    <h3 className="TituloInfoNuestra">Contacto</h3>
-                    <p><a href="mailto:don.ar.tuc@gmail.com" className="ContactoForm">don.ar.tuc@gmail.com</a></p>
-                    <p><a href="tel:+543814329876" className="ContactoForm">3814329876</a></p>
-                </div>
             </div>
         );
     }

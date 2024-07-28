@@ -1,17 +1,26 @@
 import React, { Component } from "react";
 import "./Styles/ManerasAyudar.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from "react-router-dom";
-
-const LinkCategorias = [
-  {
-    name: "Ver Mas",
-    href: "/categorias",
-  }
-];
 
 class CardsAyudar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showAll: false
+    };
+  }
+
+  toggleShowAll = () => {
+    this.setState(prevState => ({ showAll: !prevState.showAll }));
+  }
+
   render() {
+    const { showAll } = this.state;
+    const { opciones } = this.props;
+
+    // Muestra 4 tarjetas por defecto y el resto al hacer clic en el botón
+    const visibleOpciones = showAll ? opciones : opciones.slice(0, 4);
+
     return (
       <>
         <section id="ContainerAyudar">
@@ -21,7 +30,7 @@ class CardsAyudar extends Component {
           </div>
 
           <div id="BloqueCards" data-aos="fade-up">
-            {this.props.opciones.map((opcion, index) => (
+            {visibleOpciones.map((opcion, index) => (
               <div className="card" id="card" key={index}>
                 <div className="card-body">
                   <h5 className="card-title">{opcion.titulo}</h5>
@@ -34,13 +43,10 @@ class CardsAyudar extends Component {
             ))}
           </div>
 
-          {/* Enlace a la sección de categorías */}
-          <div id="EnlaceVerMas" data-aos="fade-up">
-            {LinkCategorias.map((x, index) => (
-              <li key={index}>
-                <Link className="btn btn-primary" id="BotonVerMas" to={x.href}>{x.name}</Link>
-              </li>
-            ))}
+          <div className="d-flex justify-content-center mt-4">
+            <button className="btn btn-secondary" id="BotonVerMas" onClick={this.toggleShowAll}>
+              {showAll ? 'Ver menos' : 'Ver más'}
+            </button>
           </div>
         </section>
       </>
@@ -49,3 +55,4 @@ class CardsAyudar extends Component {
 }
 
 export default CardsAyudar;
+

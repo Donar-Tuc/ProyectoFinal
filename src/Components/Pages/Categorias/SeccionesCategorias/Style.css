@@ -8,7 +8,7 @@
     align-items: center;
     gap: 20px;
     padding: 9rem 0rem;
-    background: #f3f6f9;
+    background: #e7e7e7;
 }
 
 /* CardsTemplate.jsx */
@@ -31,14 +31,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 25%;
-    height: 40%;
+    width: 28%;
+    height: auto;
     padding: 0;
-    border-radius: 30px;
-    background-color: #f3f2f2;
+    border-radius: 20px;
+    background-color: #E9E9E9;
     overflow: hidden;
     transition: .3s ease-in all;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.541);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.247);
 
 }
 
@@ -167,8 +167,8 @@
     font-size: 1rem;
     font-weight: 300;
     font-family: "Montserrat", sans-serif;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.329);
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.226);
     padding: .6rem 3rem;
     border: 1px rgba(132, 132, 132, 0.139) solid;
     background-color: #377ADB;
@@ -249,9 +249,10 @@ ion-icon {
 }
 
 
+/* media querie celular */
+
+
 @media (max-width: 900px) {
-
-
 
     .AsistenciaContainer {
         display: flex;
@@ -260,7 +261,10 @@ ion-icon {
         justify-content: center;
         align-items: center;
         gap: 20px;
-        padding: 7rem 0;
+        padding-top: 6rem;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 3rem;
         /*Padding lateral y de arriba del container*/
     }
 
@@ -272,8 +276,7 @@ ion-icon {
         justify-content: left;
         align-items: center;
         height: auto;
-        width: 90%;
-        border-radius: 30px;
+        width: 100%;
         transition: none;
     }
 
@@ -291,7 +294,7 @@ ion-icon {
 
     #ImagenCategoriaCard {
         height: 200px;
-        border-radius: 30px 30px 0px 0px;
+        border-radius: 20px 20px 0px 0px;
     }
 
     .textoAsistenciaContainer {
@@ -301,10 +304,9 @@ ion-icon {
 
     #TituloAsistenciaContainer {
         text-align: center;
-        font-size: 2.5rem;
+        font-size: 2rem;
         color: black;
         font-family: "Montserrat", sans-serif;
-        font-weight: 600;
         padding: 0rem 2rem;
     }
 
@@ -337,8 +339,8 @@ ion-icon {
         font-weight: 300;
         width: 100%;
         font-family: "Montserrat", sans-serif;
-        border-radius: 10px;
-        padding: .5rem 4rem;
+        /* border-radius: 30px; */
+        padding: .6rem 3rem;
         border: 1px rgba(195, 195, 195, 0.139) solid;
         transition: none;
     }
@@ -359,7 +361,6 @@ ion-icon {
     .BtnNextAndPrevious {
         display: flex;
         padding: .5rem 1rem;
-        border-radius: 40px;
         border: none;
         background-color: #2f74db;
         transition: .2s all ease-in;
@@ -434,5 +435,39 @@ ion-icon {
         bottom: -78px;
     }
 
+}
 
+@media (min-width: 700px) and (max-width: 1000px) {
+
+    /* Container padre */
+    .AsistenciaContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding-top: 8rem;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 3rem;
+    }
+
+    .containerCards {
+        display: flex;
+        width: 100%;
+        gap: 20px;
+    }
+
+    /* Cards container */
+
+    .CardAsistencia {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 45%;
+        height: auto;
+        transition: none;
+
+    }
 }
