@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 // Configurar moment para español y evitar GMT
 moment.locale('es');
 
-const PopUp = ({ addEvent, togglePopup }) => {
+const PopUp = ({ togglePopup }) => {
     const [nombreOrganizacion, setNombreOrganizacion] = useState('');
     const [titulo, setTitulo] = useState('');
     const [fechaInicio, setFechaInicio] = useState('');
@@ -78,15 +78,15 @@ const PopUp = ({ addEvent, togglePopup }) => {
             });
 
             if (response.ok) {
+                const responseData = await response.json();
                 setError("");
-                addEvent(eventData);
                 setNombreOrganizacion('');
                 setFechaInicio('');
                 setFechaFin('');
                 setDescripcion('');
                 setCategoriasDonacion([]);
                 togglePopup();
-                navigate(`/eventos/`);
+                navigate(`/eventos/${responseData.created._id}`);
             } else {
                 const errorText = await response.text();
                 setError(errorText || "Error al crear el evento.");
