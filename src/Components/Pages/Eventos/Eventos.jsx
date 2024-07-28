@@ -61,7 +61,7 @@ const Eventos = () => {
                     <Card
                         key={card._id}
                         id={card._id}
-                        imagen={card.imagen}
+                        imagen={card.logo}
                         titulo={card.titulo}
                         horario={card.horario}
                         etiquetas={card.etiquetas?.map(etiqueta => etiquetas[etiqueta]) || []} // Asegurarse de que etiquetas no sea undefined

@@ -3,10 +3,11 @@ import { useFetch } from "../../../logic/useFetch";
 import { useParams } from "react-router-dom";
 import { etiquetas } from "../../Pages/Categorias/Etiquetas/index";
 import moment from "moment";
-import "moment/locale/es";  // Import the Spanish locale
+import "moment/locale/es";  // Importar el locale en español
 import Datetime from 'react-datetime';
+import useFetchImage from "../../../logic/useFetchImage";
 
-moment.locale("es");  // Set the locale to Spanish
+moment.locale("es");  // Configurar el locale a español
 
 const TemplateEventos = () => {
     const { id } = useParams(); // Obtener el parámetro de la URL
@@ -24,17 +25,42 @@ const TemplateEventos = () => {
     );
     console.log("Fundacion Data:", fundacionData);
 
+    const { data: image, error: imageError, isLoading: imageIsLoading } = useFetchImage(evento?.logo);
+
+    let imageUrl;
+    if (image) {
+        imageUrl = URL.createObjectURL(image);
+    }
+
+    if (eventoLoading || fundacionLoading) {
+        return <div>Cargando...</div>;
+    }
+
+/*     if (eventoError || fundacionError) {
+        return <div>Error al cargar los datos: {eventoError?.message || fundacionError?.message}</div>;
+    } */
+
+/*     if (!evento) {
+        return <div>No se encontró el evento</div>;
+    } */
 
     const fundacionTitulo = fundacionData?.document?.titulo || fundacionData?.document?.userName || "Fundación desconocida";
 
     return (
         <section id="ContainerDineroPadre">
             <div className="DineroHijo">
+            <div className="ImagenContainer">
+                {   
+                    imageIsLoading ? <p>Cargando logo...</p> : 
+                    imageError ? <p>Error cargando el logo</p> : 
+                    <img src={imageUrl} alt={`logo ${fundacionTitulo}`} />
+                }
+            </div>
                 <div className="TextoDinero">
                     <div id="ContainerTituloBtn">
                         <div id="Box1Texto">
                             <h2 id="TituloDinero">{evento.titulo}</h2>
-                            <h3 id="TituloDinero">Organizado por: {fundacionTitulo}</h3>
+                            <h3>Organizado por: {fundacionTitulo}</h3>
 
                             <div id="etiquetasContainer">
                                 {evento.tituloEtiquetas?.map((etiqueta, index) => {

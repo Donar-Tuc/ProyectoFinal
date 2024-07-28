@@ -112,6 +112,11 @@
     height: 100%;
 }
 
+.ImagenContainer img {
+    height: 100%;
+    width: 100%;
+}
+
 #ImagenCategoriaCard {
     width: 100%;
     object-fit: cover;

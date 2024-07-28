@@ -16,10 +16,10 @@ const CardTemplate = ({ id, imagen, titulo, horario, tituloEtiquetas }) => {
     return (
         <div className="CardAsistencia">
             <div className="ImagenContainer">
-                {   
-                    isLoading ? <p>Cargando logo...</p> : 
-                    error ? <p>Error cargando el logo</p> : 
-                    <img src={imageUrl} alt={`logo ${titulo}`} id="ImagenCategoriaCard" />
+                {
+                    isLoading ? <p>Cargando logo...</p> :
+                    error ? <p>Error cargando el logo</p> :
+                    <img src={imageUrl} alt="Imagen del evento" id="ImagenCard" />
                 }
             </div>
             <div className="textoAsistenciaContainer">

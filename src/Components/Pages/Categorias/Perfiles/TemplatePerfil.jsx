@@ -1,6 +1,7 @@
 import React from "react";
 import "./Styles/Dinero.css";
 import { useFetch } from "../../../../logic/useFetch";
+import useFetchImage from "../../../../logic/useFetchImage";
 import { useParams } from "react-router-dom";
 import { etiquetas } from "../Etiquetas/index";
 
@@ -14,13 +15,23 @@ const TemplatePerfil = () => {
 
     const { logo, titulo, horario, direccion, telefono, sitioWeb, email, mapaBoton, mapa, descripcion, tituloEtiquetas } = fundacion; // Desestructurar los datos obtenidos
 
-    // tituloEtiquetas = ["Donaciones Monetarias", "..."] ===> etiquetas.etiqueta.titulo
+    const { data: image, error: imageError, isLoading: imageIsLoading } = useFetchImage(logo);
+
+    let imageUrl;
+    if (image) {
+        imageUrl = URL.createObjectURL(image);
+    }
 
     return (
         <section id="ContainerDineroPadre">
             <div className="DineroHijo">
-                <img src={logo} alt="Logo" id="LogoDinero" />
-
+                <div className="ImagenContainer">
+                {
+                    imageIsLoading ? <p>Cargando logo...</p> :
+                        imageError ? <p>Error cargando el logo</p> :
+                            <img src={imageUrl} alt={`logo ${titulo}`} />
+                }
+                </div>
                 <div className="TextoDinero">
                     <div id="ContainerTituloBtn">
                         <div id="Box1Texto">

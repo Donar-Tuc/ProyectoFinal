@@ -39,12 +39,7 @@ const Perfil = () => {
     console.log('Error de fetch:', error);
 
     const logoUrl = data?.document?.logo || "";
-    const {
-        data: imageBlob,
-        error: imageError,
-        isLoading: isImageLoading,
-        isError: isImageError,
-    } = useFetchImage(logoUrl);
+    const { data: imageBlob, error: imageError, isLoading: isImageLoading } = useFetchImage(logoUrl);
 
     console.log('Datos de imagen:', imageBlob);
     console.log('Error de imagen:', imageError);
@@ -75,8 +70,8 @@ const Perfil = () => {
         setPerfilInicial({ ...perfil });
     }, [perfil]);
 
-    if (loading) return <div>Cargando...</div>;
-    if (error) return <div>Error: {error}</div>;
+    if (loading || isImageLoading) return <div>Cargando...</div>;
+    if (error || imageError) return <div>Error: {error || imageError}</div>;
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -98,7 +93,7 @@ const Perfil = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log('Enviando formulario de perfil:', perfil);
-    
+
         const opciones = {
             method: 'PUT',
             headers: {
@@ -107,19 +102,19 @@ const Perfil = () => {
             },
             body: JSON.stringify(perfil)
         };
-    
+
         console.log('Opciones de solicitud:', opciones);
-    
+
         try {
             const response = await fetch(`https://api-don-ar.vercel.app/fundaciones/${userId}`, opciones);
             console.log('Respuesta del servidor:', response);
-    
+
             if (!response.ok) {
                 const errorData = await response.json();
                 console.error('Detalles del error del servidor:', errorData);
                 throw new Error('Error al actualizar el perfil');
             }
-    
+
             const data = await response.json();
             console.log('Respuesta de actualización:', data);
             setPerfil(data.updated);
@@ -131,7 +126,6 @@ const Perfil = () => {
             setErrores(prevErrores => ({ ...prevErrores, form: error.message }));
         }
     };
-    
 
     const handleChangePasswordSubmit = async (e) => {
         e.preventDefault();
@@ -186,7 +180,11 @@ const Perfil = () => {
             <div className="ProfileInformation">
                 <div className="InfoGridContainer">
                     <div className="containerFoto">
-                        <img src={perfil.logo} alt="Foto de perfil" className="ImagePerfil" />
+                        {
+                            isImageLoading ? <p>Cargando logo...</p> :
+                                imageError ? <p>Error cargando el logo</p> :
+                                    <img src={imageUrl} alt="Foto de perfil" className="ImagePerfil" />
+                        }
                     </div>
                     <div className="containerTextoPerfil">
                         {modoEdicion ? (
