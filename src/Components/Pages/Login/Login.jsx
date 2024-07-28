@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./Styles/Login.css";
 import Fondo from './images/fondo.png';
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from '../../../logic/authContext';
+import { useAuth } from "../../../logic/authContext";
 
 const Login = () => {
   const [email, setEmail] = useState("");

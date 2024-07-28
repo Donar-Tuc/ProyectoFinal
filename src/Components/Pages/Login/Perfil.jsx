@@ -2,8 +2,8 @@ import React, { useState, useEffect, useMemo } from "react";
 import "./Styles/Perfil.css";
 import { etiquetas } from "../Categorias/Etiquetas/index";
 import { useFetch } from "../../../logic/useFetch";
-import { getUserData } from "../../../logic/getUserData";
 import useFetchImage from "../../../logic/useFetchImage";
+import { useAuth } from "../../../logic/authContext"; // Asegúrate de ajustar la ruta de importación según tu estructura de carpetas
 
 const Perfil = () => {
     const [modoEdicion, setModoEdicion] = useState(false);
@@ -21,7 +21,7 @@ const Perfil = () => {
     });
 
     const categorias = Object.entries(etiquetas);
-    const { token, userId } = getUserData();
+    const { token, userId } = useAuth();
 
     const opciones = useMemo(() => ({
         method: 'GET',
@@ -31,7 +31,12 @@ const Perfil = () => {
         }
     }), [token]);
 
+    console.log('Opciones de fetch:', opciones);
+
     const { data, error, loading } = useFetch(`https://api-don-ar.vercel.app/fundaciones/${userId}`, opciones);
+
+    console.log('Datos de fetch:', data);
+    console.log('Error de fetch:', error);
 
     const logoUrl = data?.document?.logo || "";
     const {
@@ -41,10 +46,10 @@ const Perfil = () => {
         isError: isImageError,
     } = useFetchImage(logoUrl);
 
+    console.log('Datos de imagen:', imageBlob);
+    console.log('Error de imagen:', imageError);
+
     const imageUrl = imageBlob ? URL.createObjectURL(imageBlob) : "";
-
-
-
 
     const datosFundacion = data?.document ? {
         logo: imageUrl,
@@ -59,12 +64,14 @@ const Perfil = () => {
 
     useEffect(() => {
         if (data) {
+            console.log('Actualizando perfil con datos:', datosFundacion);
             setPerfil(datosFundacion);
             setPerfilInicial(datosFundacion);
         }
     }, [data]);
 
     useEffect(() => {
+        console.log('Perfil inicial actualizado:', perfilInicial);
         setPerfilInicial({ ...perfil });
     }, [perfil]);
 
@@ -73,11 +80,13 @@ const Perfil = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
+        console.log(`Cambiando ${name} a ${value}`);
         setPerfil(prevPerfil => ({ ...prevPerfil, [name]: value }));
     };
 
     const handleCheckChange = (e) => {
         const { name, checked } = e.target;
+        console.log(`Cambiando checkbox ${name} a ${checked}`);
         setPerfil(prevPerfil => ({
             ...prevPerfil,
             tituloEtiquetas: checked
@@ -88,7 +97,8 @@ const Perfil = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        console.log('Enviando formulario de perfil:', perfil);
+    
         const opciones = {
             method: 'PUT',
             headers: {
@@ -97,22 +107,35 @@ const Perfil = () => {
             },
             body: JSON.stringify(perfil)
         };
-
+    
+        console.log('Opciones de solicitud:', opciones);
+    
         try {
             const response = await fetch(`https://api-don-ar.vercel.app/fundaciones/${userId}`, opciones);
-            if (!response.ok) throw new Error('Error al actualizar el perfil');
+            console.log('Respuesta del servidor:', response);
+    
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error('Detalles del error del servidor:', errorData);
+                throw new Error('Error al actualizar el perfil');
+            }
+    
             const data = await response.json();
+            console.log('Respuesta de actualización:', data);
             setPerfil(data.updated);
             setPerfilInicial(data.updated);
             setModoEdicion(false);
             setMensaje('Perfil actualizado con éxito');
         } catch (error) {
+            console.error('Error al actualizar el perfil:', error);
             setErrores(prevErrores => ({ ...prevErrores, form: error.message }));
         }
     };
+    
 
     const handleChangePasswordSubmit = async (e) => {
         e.preventDefault();
+        console.log('Enviando cambio de contraseña:', infoCuenta);
 
         if (infoCuenta.nuevaContrasena !== confirmarContrasena) {
             setErrores(prevErrores => ({ ...prevErrores, confirmPassword: 'Las contraseñas no coinciden' }));
@@ -136,12 +159,14 @@ const Perfil = () => {
             if (!response.ok) throw new Error('Error al cambiar contraseña');
             setMensaje('Contraseña cambiada con éxito');
         } catch (error) {
+            console.error('Error al cambiar la contraseña:', error);
             setErrores(prevErrores => ({ ...prevErrores, form: error.message }));
         }
     };
 
     const handleCancelEdit = () => {
-        setPerfil(perfilInicial);
+        console.log('Cancelando edición, restaurando perfil inicial');
+        setPerfil(datosFundacion);
         setModoEdicion(false);
     };
 
@@ -149,6 +174,7 @@ const Perfil = () => {
 
     const handleAccountChange = (e) => {
         const { name, value } = e.target;
+        console.log(`Cambiando info de cuenta ${name} a ${value}`);
         setInfoCuenta(prevInfo => ({ ...prevInfo, [name]: value }));
     };
 
@@ -160,9 +186,7 @@ const Perfil = () => {
             <div className="ProfileInformation">
                 <div className="InfoGridContainer">
                     <div className="containerFoto">
-                        <img src={perfil.logo} alt="Foto de perfil"
-                            className="ImagePerfil"
-                        />
+                        <img src={perfil.logo} alt="Foto de perfil" className="ImagePerfil" />
                     </div>
                     <div className="containerTextoPerfil">
                         {modoEdicion ? (
@@ -229,115 +253,90 @@ const Perfil = () => {
                                         name="descripcion"
                                         value={perfil.descripcion}
                                         onChange={handleChange}
-                                    />
+                                    ></textarea>
                                     {errores.descripcion && <div className="invalid-feedback">{errores.descripcion}</div>}
                                 </div>
                                 <div className="mb-3">
-                                    <label className="form-label">Cambiar Imagen de Perfil</label>
-                                    <input
-                                        type="file"
-                                        className="form-control"
-                                        accept="image/*"
-                                    // onChange={handleImageChange}
-                                    />
-                                </div>
-                                <div className="mb-3">
-                                    <h3 className="TituloDropdown">Seleccione qué donaciones recibe</h3>
-                                    {categorias.map(([key, categoria]) => (
-                                        <div className="form-check" key={key}>
-                                            <input
-                                                className="form-check-input"
-                                                type="checkbox"
-                                                name={key}
-                                                checked={perfil.tituloEtiquetas.includes(key)}
-                                                onChange={handleCheckChange}
-                                            />
-                                            <label className="form-check-label" htmlFor={key}>
-                                                {categoria.titulo}
-                                            </label>
-                                        </div>
-                                    ))}
-                                </div>
-                                <button type="submit" className="btn btn-primary" id="BotonGuardarPerfil">Guardar</button>
-                                <button type="button" onClick={handleCancelEdit} className="btn btn-secondary" id="btnCancelarEdicion">Cancelar</button>
-                            </form>
-                        ) : mostrarGestionCuenta ? (
-                            <div className="AccountManagement">
-                                <h3 className="ManejoDeCuentaTitulo">Gestión de cuenta</h3>
-                                <form onSubmit={handleChangePasswordSubmit}>
-                                    <div className="mb-3">
-                                        <label className="form-label">Correo Electrónico</label>
-                                        <input
-                                            type="email"
-                                            className={`form-control ${errores.email ? 'is-invalid' : ''}`}
-                                            name="email"
-                                            value={infoCuenta.email}
-                                            onChange={handleAccountChange}
-                                        />
-                                        {errores.email && <div className="invalid-feedback">{errores.email}</div>}
-                                    </div>
-                                    <div className="mb-3">
-                                        <label className="form-label">Contraseña Actual</label>
-                                        <input
-                                            type="password"
-                                            className={`form-control ${errores.contrasenaActual ? 'is-invalid' : ''}`}
-                                            name="contrasena"
-                                            value={infoCuenta.contrasena}
-                                            onChange={handleAccountChange}
-                                        />
-                                        {errores.contrasenaActual && <div className="invalid-feedback">{errores.contrasenaActual}</div>}
-                                    </div>
-                                    <div className="mb-3">
-                                        <label className="form-label">Nueva Contraseña</label>
-                                        <input
-                                            type="password"
-                                            className={`form-control ${errores.nuevaContrasena ? 'is-invalid' : ''}`}
-                                            name="nuevaContrasena"
-                                            value={infoCuenta.nuevaContrasena}
-                                            onChange={handleAccountChange}
-                                        />
-                                        {errores.nuevaContrasena && <div className="invalid-feedback">{errores.nuevaContrasena}</div>}
-                                    </div>
-                                    <div className="mb-3">
-                                        <label className="form-label">Confirmar Nueva Contraseña</label>
-                                        <input
-                                            type="password"
-                                            className={`form-control ${errores.confirmarContrasena ? 'is-invalid' : ''}`}
-                                            name="confirmarContrasena"
-                                            value={confirmarContrasena}
-                                            onChange={handleConfirmPasswordChange}
-                                        />
-                                        {errores.confirmarContrasena && <div className="invalid-feedback">{errores.confirmarContrasena}</div>}
-                                    </div>
-                                    <button type="submit" className="btn btn-primary">Guardar Cambios</button>
-                                    <button type="button" onClick={() => setMostrarGestionCuenta(false)} className="btn btn-secondary" id="btnCancelarGestionCuenta">Cancelar</button>
-                                    {mensaje && <div className="alert alert-success mt-3">{mensaje}</div>}
-                                </form>
-                            </div>
-                        ) : (
-                            <div className="Perfil">
-                                <h3>{perfil.titulo}</h3>
-                                <p>Horarios de atención: {perfil.horario}</p>
-                                <p>Dirección: {perfil.direccion}</p>
-                                <p>Teléfono: {perfil.telefono}</p>
-                                <p>Correo Electrónico: {perfil.email}</p>
-                                <p>Descripción: {perfil.descripcion}</p>
-                                <div>
-                                    <h3 className="TituloDropdown">Donaciones que recibe</h3>
-                                    <ul>
-                                        {perfil.tituloEtiquetas.map(donacion => (
-                                            <li key={donacion}>{categorias.find(([key]) => key === donacion)?.[1].titulo || "Desconocido"}</li>
+                                    <label className="form-label">Etiquetas</label>
+                                    <div className="form-check">
+                                        {categorias.map(([key, categoria]) => (
+                                            <div key={key}>
+                                                <input
+                                                    type="checkbox"
+                                                    className="form-check-input"
+                                                    id={key}
+                                                    name={key}
+                                                    checked={perfil.tituloEtiquetas.includes(key)}
+                                                    onChange={handleCheckChange}
+                                                />
+                                                <label className="form-check-label" htmlFor={key}>
+                                                    {categoria.titulo}
+                                                </label>
+                                            </div>
                                         ))}
-                                    </ul>
+                                    </div>
                                 </div>
-                                {mensaje && <div className="alert alert-success mt-3">{mensaje}</div>}
-                                <button onClick={handleEditClick} className="btn btn-primary">Editar Perfil</button>
-                                <button onClick={() => setMostrarGestionCuenta(!mostrarGestionCuenta)} className="btn btn-secondary">Gestión de Cuenta</button>
+                                <button type="submit" className="btn btn-primary">Guardar</button>
+                                <button type="button" className="btn btn-secondary" onClick={handleCancelEdit}>Cancelar</button>
+                            </form>
+                        ) : (
+                            <div>
+                                <p><strong>Nombre de la Organización:</strong> {perfil.titulo}</p>
+                                <p><strong>Horarios de atención:</strong> {perfil.horario}</p>
+                                <p><strong>Dirección:</strong> {perfil.direccion}</p>
+                                <p><strong>Teléfono:</strong> {perfil.telefono}</p>
+                                <p><strong>Correo Electrónico:</strong> {perfil.email}</p>
+                                <p><strong>Descripción:</strong> {perfil.descripcion}</p>
+                                <p><strong>Etiquetas:</strong> {perfil.tituloEtiquetas.join(", ")}</p>
+                                <button className="btn btn-primary" onClick={handleEditClick}>Editar</button>
                             </div>
                         )}
                     </div>
                 </div>
+                <button className="btn btn-secondary" onClick={() => setMostrarGestionCuenta(!mostrarGestionCuenta)}>
+                    {mostrarGestionCuenta ? "Ocultar" : "Gestionar Cuenta"}
+                </button>
+                {mostrarGestionCuenta && (
+                    <div className="GestionCuentaContainer">
+                        <form onSubmit={handleChangePasswordSubmit}>
+                            <div className="mb-3">
+                                <label className="form-label">Contraseña Actual</label>
+                                <input
+                                    type="password"
+                                    className="form-control"
+                                    name="contrasena"
+                                    value={infoCuenta.contrasena}
+                                    onChange={handleAccountChange}
+                                />
+                            </div>
+                            <div className="mb-3">
+                                <label className="form-label">Nueva Contraseña</label>
+                                <input
+                                    type="password"
+                                    className="form-control"
+                                    name="nuevaContrasena"
+                                    value={infoCuenta.nuevaContrasena}
+                                    onChange={handleAccountChange}
+                                />
+                            </div>
+                            <div className="mb-3">
+                                <label className="form-label">Confirmar Nueva Contraseña</label>
+                                <input
+                                    type="password"
+                                    className="form-control"
+                                    name="confirmarContrasena"
+                                    value={confirmarContrasena}
+                                    onChange={handleConfirmPasswordChange}
+                                />
+                                {errores.confirmPassword && <div className="invalid-feedback">{errores.confirmPassword}</div>}
+                            </div>
+                            <button type="submit" className="btn btn-primary">Cambiar Contraseña</button>
+                        </form>
+                    </div>
+                )}
             </div>
+            {mensaje && <div className="alert alert-success">{mensaje}</div>}
+            {errores.form && <div className="alert alert-danger">{errores.form}</div>}
         </div>
     );
 };

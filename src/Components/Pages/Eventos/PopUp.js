@@ -71,7 +71,7 @@ const PopUp = ({ addEvent, togglePopup }) => {
             const response = await fetch('https://api-don-ar.vercel.app/eventos/', {
                 method: "POST",
                 headers: {
-                    "Authorization": `${token}`,
+                    "Authorization": `Bearer ${token}`,
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(eventData)

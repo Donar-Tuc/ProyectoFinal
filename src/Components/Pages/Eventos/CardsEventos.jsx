@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./css/eventos.css";
+import { etiquetas } from "../../../Components/Pages/Categorias/Etiquetas/index";
 
-const CardEvento = ({ imagen, titulo, horario, etiquetas, url, descripcion, tituloEtiquetas }) => {
+const CardEvento = ({ id, imagen, titulo, horario, descripcion, tituloEtiquetas }) => {
     return (
         <div className="CardEventos">
             <div className="ImagenContainer">
@@ -13,16 +14,19 @@ const CardEvento = ({ imagen, titulo, horario, etiquetas, url, descripcion, titu
                 <h3 id="TituloEventos">{titulo}</h3>
                 <p id="HorarioEventos">{horario}</p>
                 <div id="etiquetasContainer">
-                    {etiquetas.map((etiqueta, index) => (
-                        <div className="EtiquetaContainer" key={index}>
-                            <img src={etiqueta} id="EtiquetaCard" alt="categoria" />
-                            <p className="TituloEtiqueta">{tituloEtiquetas[index]}</p>
-                        </div>
-                    ))}
+                {   tituloEtiquetas?.map((etiqueta, index) => {
+                        const etiquetaData = etiquetas[etiqueta];
+                        return (
+                            <div className="EtiquetaContainer" key={index}>
+                                <img src={etiquetaData?.imagen} id="EtiquetaCard" alt="categoria" />
+                                <p className="TituloEtiqueta">{etiquetaData?.titulo}</p>
+                            </div>
+                        );
+                    })}
                 </div>
                 <p id="DecripcionEventos">{descripcion}</p>
                 <div className="containerBotonEvento">
-                    <Link to={url}>
+                    <Link to={`/eventos/${id}`}>
                         <button id="BotonLink">Saber Más</button>
                     </Link>
                 </div>

@@ -4,7 +4,7 @@ import { useFetch } from "../../../../logic/useFetch";
 import { useParams } from "react-router-dom";
 import { etiquetas } from "../Etiquetas/index";
 
-const TemplatePerfil = (/* { id } */) => {
+const TemplatePerfil = () => {
     const { id } = useParams(); // Obtener el parámetro de la URL 
     const { data, loading, error } = useFetch(`https://api-don-ar.vercel.app/fundaciones/${id}`) // Obtener los datos usando el id de la URL
     const fundacion = data ? data.document : "no se encontro la fundacion";

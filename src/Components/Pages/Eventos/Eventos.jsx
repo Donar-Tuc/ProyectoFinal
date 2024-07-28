@@ -57,15 +57,15 @@ const Eventos = () => {
             {showCreateForm && <PopUp addEvent={addEvent} togglePopup={togglePopup} />} {/* Mostrar el formulario si showCreateForm es verdadero */}
 
             <div className="containerCardsEventos">
-                {currentCards?.map((card, index) => (
+                {currentCards?.map((card) => (
                     <Card
-                        key={index}
+                        key={card._id}
+                        id={card._id}
                         imagen={card.imagen}
                         titulo={card.titulo}
                         horario={card.horario}
                         etiquetas={card.etiquetas?.map(etiqueta => etiquetas[etiqueta]) || []} // Asegurarse de que etiquetas no sea undefined
                         descripcion={card.descripcion}
-                        url={card.url}
                         tituloEtiquetas={card.tituloEtiquetas}
                     />
                 ))}

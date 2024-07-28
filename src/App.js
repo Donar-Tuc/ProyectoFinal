@@ -21,6 +21,7 @@ import Categorias from './Components/Pages/Categorias/Categorias.jsx';
 import PrivateRoute from './Components/Pages/Login/PrivateRoute.jsx';
 import Fundaciones from './Components/Pages/Categorias/SeccionesCategorias/Fundaciones/Fundaciones.jsx';
 import TemplatePerfil from './Components/Pages/Categorias/Perfiles/TemplatePerfil.jsx';
+import TemplateEventos from './Components/Pages/Eventos/TemplateEventos.jsx';
 
 function App() {
   return (
@@ -51,6 +52,10 @@ function App() {
               <Route path='/todo' element={<Fundaciones />} />
               <Route path='/categorias/:categoria' element={<Fundaciones />} />
               <Route path={`/fundaciones/:id`} element={<TemplatePerfil />} />
+
+              {/* Eventos */}
+              <Route path='/eventos/:id' element={<TemplateEventos />} />
+              
             </Routes>
             <Footer />
           </div>
