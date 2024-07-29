@@ -7,6 +7,8 @@ import { useAuth } from "../../../logic/authContext.js";
 
 // Importar etiquetas
 import { etiquetas } from '../Categorias/Etiquetas/index';
+import { useNavigate } from "react-router-dom";
+
 
 const Eventos = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -32,6 +34,7 @@ const Eventos = () => {
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
+    const navigate = useNavigate();
 
     const togglePopup = () => {
         setShowCreateForm(!showCreateForm); // Cambiar el estado para mostrar/ocultar el formulario
@@ -42,6 +45,10 @@ const Eventos = () => {
         setShowCreateForm(false); // Cerrar el formulario después de agregar el evento
     };
 
+    const handleMisEventosClick = () => {
+        navigate("/mis-eventos");
+    } 
+
     const totalPages = Math.ceil(allCards.length / cardsPerPage);
 
     return (
@@ -50,8 +57,10 @@ const Eventos = () => {
 
             {isLoggedIn && !showCreateForm && ( // Mostrar el botón solo si el usuario está autenticado y no se muestra el formulario
                 <div className="ContainerBoton">  
-                    <button onClick={togglePopup} id="BotonLink">Crear Evento</button>
+                    <button onClick={togglePopup} className="BtnEventosPrincipal">Crear Evento</button>
+                    <button onClick={ handleMisEventosClick } className="BtnEventosPrincipal">Mis Eventos</button>
                 </div>
+            
             )}
 
             {showCreateForm && <PopUp addEvent={addEvent} togglePopup={togglePopup} />} {/* Mostrar el formulario si showCreateForm es verdadero */}
@@ -63,8 +72,8 @@ const Eventos = () => {
                         id={card._id}
                         imagen={card.logo}
                         titulo={card.titulo}
-                        horario={card.horario}
-                        etiquetas={card.etiquetas?.map(etiqueta => etiquetas[etiqueta]) || []} // Asegurarse de que etiquetas no sea undefined
+                        fechaInicio={card.fechaInicio}
+                        fechaFin={card.fechaFin}
                         descripcion={card.descripcion}
                         tituloEtiquetas={card.tituloEtiquetas}
                     />

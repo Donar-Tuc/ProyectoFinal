@@ -9,8 +9,12 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
-    background-color: #f3f6f9;
-    padding: 9rem 0;
+    background-color: #e7e7e7;
+    padding-top: 8rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 4rem;
+    height: auto;
     /* Padding de arriba*/
 }
 
@@ -23,6 +27,14 @@
     gap: 30px;
 }
 
+.BtnEventosPrincipal {
+    border: none;
+    padding: 0;
+    background-color: #0C6DFD;
+    color: white;
+    padding: .6rem 1.5rem;
+    border-radius: 30px;
+}
 
 .CardEventos {
     display: flex;
@@ -30,26 +42,30 @@
     justify-content: left;
     align-items: center;
     width: 30%;
+    min-height: auto;
+    max-width: auto;
     padding: 0;
-    border-radius: 30px;
-    background-color: #f4f4f4;
+    border-radius: 20px;
+    background-color: #E9E9E9;
     border: 1px #f1f1f1bd solid;
     overflow: hidden;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.541);
-    transition: .3s all ease-in-out;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.247);
 }
 
-.CardEventos:hover {
-    transform: translateY(-3px);
-}
 
 .ImagenContainer {
     width: 20%;
+    height: 30%;
+}
+
+.ImagenContainer img {
+    height: 100%;
+    width: 100%;
 }
 
 #ImagenCard {
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
     object-position: center;
     /* border-radius: 30px 0 0px 30px; */
@@ -64,7 +80,7 @@
 #TituloEventosContainer {
     text-align: center;
     font-size: 3rem;
-    color: rgb(34, 34, 34);   
+    color: rgb(34, 34, 34);
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
 }
@@ -74,6 +90,7 @@
     font-family: "Montserrat", sans-serif;
     color: black;
     font-weight: 700;
+    word-wrap: break-word;
 }
 
 #HorarioEventos {
@@ -86,6 +103,7 @@
     font-size: 1rem;
     font-family: "Montserrat", sans-serif;
     color: black;
+    word-wrap: break-word;
 }
 
 #ContainerEventosBotones {
@@ -96,6 +114,11 @@
 .containerBotonEvento {
     display: flex;
     justify-content: center;
+}
+
+.ContainerBoton {
+    display: flex;
+    gap: 30px;
 }
 
 .BotonesEventos {
@@ -174,9 +197,28 @@
     bottom: -65px;
 }
 
+@media (max-width: 450px) {
+    .EventosContainer {
+        gap: 20px;
+        padding-top: 8rem;
+        padding-left: 0rem;
+        padding-right: 0rem;
+        padding-bottom: 0rem;
+        /* Padding de arriba*/
+    }
+}
 
 
-@media (max-width: 900px) {
+@media (max-width: 500px) {
+
+    .EventosContainer {
+        gap: 20px;
+        padding-top: 8rem;
+        padding-left: 0rem;
+        padding-right: 0rem;
+        padding-bottom: 2rem;
+        /* Padding de arriba*/
+    }
 
     .ImagenContainer {
         width: 100%;
@@ -188,7 +230,7 @@
         height: 100%;
         object-fit: cover;
         object-position: center;
-        border-radius: 30px 30px 0px 0px;
+        border-radius: 15px 15px 0px 0px;
     }
 
     .EventosContainer {
@@ -200,12 +242,16 @@
 
     .CardEventos {
         display: flex;
-        width: 95%;
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        max-height: auto;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 0rem 0rem;
         transition: none;
+        border-radius: 15px;
     }
 
     .CardEventos:hover {
@@ -250,8 +296,40 @@
     }
 
 
-
+    /* media querie para ipad */
 }
 
+@media (min-width: 700px) and (max-width: 1000px) {
+    .EventosContainer {
+        gap: 20px;
+        padding-top: 8rem;
+        padding-left: 0rem;
+        padding-right: 0rem;
+        padding-bottom: 2rem;
+        /* Padding de arriba*/
+    }
 
+    .EventosContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 6rem 0rem;
+    }
 
+    .CardEventos {
+        width: 48%;
+        min-height: auto;
+        max-width: auto;
+        padding: 0;
+    }
+
+    #TituloEventosContainer {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    #ImagenCard {
+        width: 100%;
+        height: 170px;
+    }
+}

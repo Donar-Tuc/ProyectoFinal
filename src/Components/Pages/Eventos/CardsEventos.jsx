@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./css/eventos.css";
+import "./css/cardEventosPrueba.css";
+import "./css/eventos.css"
 import { etiquetas } from "../../../Components/Pages/Categorias/Etiquetas/index";
 import useFetchImage from "../../../logic/useFetchImage";
 
-const CardEvento = ({ id, imagen, titulo, horario, descripcion, tituloEtiquetas }) => {
+const CardEvento = ({ id, imagen, titulo, fechaInicio, fechaFin, descripcion, tituloEtiquetas }) => {
 
     const { data, error, isLoading } = useFetchImage(imagen);
 
@@ -15,7 +16,7 @@ const CardEvento = ({ id, imagen, titulo, horario, descripcion, tituloEtiquetas 
 
 
     return (
-        <div className="CardEventos">
+        <div className="CardEventos CardMiEventos">
             <div className="ImagenContainer">
                 {
                     isLoading ? <p>Cargando logo...</p> :
@@ -26,7 +27,8 @@ const CardEvento = ({ id, imagen, titulo, horario, descripcion, tituloEtiquetas 
 
             <div className="textoContainer">
                 <h3 id="TituloEventos">{titulo}</h3>
-                <p id="HorarioEventos">{horario}</p>
+                <p id="HorarioEventos">{fechaInicio}</p>
+                <p id="HorarioEventos">{fechaFin}</p>
                 <div id="etiquetasContainer">
                     {tituloEtiquetas?.map((etiqueta, index) => {
                         const etiquetaData = etiquetas[etiqueta];

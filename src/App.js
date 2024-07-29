@@ -10,6 +10,7 @@ import { ScrollProvider } from './ScrollContext.js';
 import Navbar from './Components/Pages/General/Header.jsx';
 import Inicio from './Components/Pages/Home/Home.jsx';
 import Eventos from './Components/Pages/Eventos/Eventos.jsx';
+import MisEventos from './Components/Pages/Eventos/MisEventos.jsx';
 import Footer from './Components/Pages/General/Footer.jsx';
 import Nosotros from './Components/Pages/QuienesSomos/Nosotros.jsx';
 import Soporte from './Components/Pages/Soporte/Soporte.jsx';
@@ -34,6 +35,7 @@ function App() {
               {/* Secciones */}
               <Route path='/' element={<Inicio />} />
               <Route path='/eventos' element={<Eventos />} />
+
               <Route path='/soporte' element={<Soporte />} />
               <Route path='/nosotros' element={<Nosotros />} />
 
@@ -55,6 +57,7 @@ function App() {
 
               {/* Eventos */}
               <Route path='/eventos/:id' element={<TemplateEventos />} />
+              <Route path='/mis-eventos' element={<MisEventos />} />
               
             </Routes>
             <Footer />
