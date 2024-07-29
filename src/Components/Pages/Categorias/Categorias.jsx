@@ -15,7 +15,7 @@ const categorias = [
   { name: "Dinero", href: "/categorias/Donaciones%20monetarias", etiqueta: dineroEtiqueta },
   { name: "Comida", href: "/categorias/Alimentos%20no%20perecederos", etiqueta: comidaEtiqueta },
   { name: "Hogar", href: "/categorias/Elementos%20del%20hogar", etiqueta: hogarEtiqueta },
-  { name: "Escolar", href: "/categorias/Utiles%20escolares", etiqueta: escolarEtiqueta },
+  { name: "Escolar", href: "/categorias/Útiles%20escolares", etiqueta: escolarEtiqueta },
   { name: "Ropa", href: "/categorias/Vestimenta", etiqueta: ropaEtiqueta },
   { name: "Asistencia", href: "/categorias/Asistencia%20y%20voluntariados", etiqueta: asistenciaEtiqueta },
   { name: "Salud", href: "/categorias/Medicamentos", etiqueta: MedicamentosEtiqueta },

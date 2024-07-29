@@ -4,7 +4,7 @@ import { default as asistencia } from "./alarm-outline.svg";
 import { default as ropa } from "./shirt-outline.svg";
 import { default as juguetes } from "./extension-puzzle-outline.svg";
 import { default as medicamentos } from "./medkit-outline.svg";
-import { default as escolar } from "./school-outline.svg";
+import { default as escolar } from './school-outline.svg';
 import { default as hogar } from "./home-outline.svg";
 
 export const etiquetas = {
@@ -32,8 +32,8 @@ export const etiquetas = {
         titulo: "Medicamentos",
         imagen: medicamentos
     },
-    "Utiles escolares": {
-        titulo: "Utiles escolares",
+    "Útiles escolares": {
+        titulo: "Útiles escolares",
         imagen: escolar
     },
     "Elementos del hogar": {
