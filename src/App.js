@@ -8,6 +8,12 @@ import React, { useState } from 'react';
 import Navbar from './Components/Pages/General/Header.jsx';
 import Inicio from './Components/Pages/Home/Home.jsx';
 import Eventos from './Components/Pages/Eventos/Eventos.jsx';
+
+// ! ESTO ES LO NUEVO QUE AGREGUE PARA MIS EVENTOS
+
+import MisEventos from './Components/Pages/Eventos/MisEventos.jsx'
+
+
 import Footer from './Components/Pages/General/Footer.jsx';
 import Soporte from './Components/Pages/Soporte/Soporte.jsx';
 import Signup from './Components/Pages/Login/Signup.jsx';
@@ -67,6 +73,11 @@ function App() {
           <Routes>
             <Route path='/' element={<Inicio />} />
             <Route path='/eventos' element={<Eventos isLoggedIn={isLoggedIn} />} />
+            <Route path='/mis-eventos' element={<MisEventos isLoggedIn={isLoggedIn} />} />
+
+
+
+
             <Route path='/soporte' element={<Soporte />} />
             <Route path='/nosotros' element={<Nosotros />} />
             <Route path='/login' element={<Login onLogin={handleLogin} />} />
@@ -74,6 +85,8 @@ function App() {
             <Route path='/recuperar-contrasena' element={<OlvidasteContraseña />} />
             <Route path='/perfil' element={<Perfil />} />
             <Route path='/categorias' element={<Categorias />} />
+
+            {/* categorias */}
             <Route path='/asistencia' element={<Asistencia />} />
             <Route path='/comida' element={<Comida />} />
             <Route path='/dinero' element={<Dinero />} />
@@ -83,6 +96,11 @@ function App() {
             <Route path='/medicamentos-y-higiene' element={<Medicamentos />} />
             <Route path='/juguetes' element={<Juguetes />} />
             <Route path='/todo' element={<VerTodo />} />
+
+
+
+
+            {/* Organizaciones */}
             <Route path='/banco-alimentos' element={<BancoAlimentosPerfil />} />
             <Route path='/leon' element={<LeonPerfil />} />
             <Route path='/fann' element={<FannPerfil />} />

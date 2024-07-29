@@ -4,7 +4,7 @@ import "./css/eventos.css";
 
 const CardEvento = ({ imagen, titulo, horario, etiquetas, url, descripcion, tituloEtiquetas }) => {
     return (
-        <div className="CardEventos">
+        <div className="CardEventos CardMiEventos">
             <div className="ImagenContainer">
                 <img src={imagen} alt="Imagen del evento" id="ImagenCard" />
             </div>

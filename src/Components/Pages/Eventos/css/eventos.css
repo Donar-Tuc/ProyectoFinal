@@ -27,6 +27,14 @@
     gap: 30px;
 }
 
+.BtnEventosPrincipal {
+    border: none;
+    padding: 0;
+    background-color: #0C6DFD;
+    color: white;
+    padding: .6rem 1.5rem;
+    border-radius: 30px;
+}
 
 .CardEventos {
     display: flex;
@@ -42,12 +50,8 @@
     border: 1px #f1f1f1bd solid;
     overflow: hidden;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.247);
-    transition: .3s all ease-in-out;
 }
 
-.CardEventos:hover {
-    transform: translateY(-3px);
-}
 
 .ImagenContainer {
     width: 20%;
@@ -104,6 +108,11 @@
 .containerBotonEvento {
     display: flex;
     justify-content: center;
+}
+
+.ContainerBoton {
+    display: flex;
+    gap: 30px;
 }
 
 .BotonesEventos {
