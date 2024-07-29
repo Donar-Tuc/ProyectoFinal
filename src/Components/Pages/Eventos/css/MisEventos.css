@@ -52,6 +52,14 @@
     width: 100%;
 }
 
+/* input color */
+
+.InputFormEventos {
+    background-color: rgb(255, 255, 255);
+    border: 1px rgba(192, 192, 192, 0.555) solid;
+    border-radius: 7px;
+}
+
 .editButton {
     font-size: 1rem;
     font-weight: 300;
@@ -104,7 +112,7 @@
 .deletePopupContent,
 .editPopupContent {
     font-family: "Montserrat", sans-serif;
-    background: #fff;
+    background: #e4e4e4;
     padding: 3rem;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0);

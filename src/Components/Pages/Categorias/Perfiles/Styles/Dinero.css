@@ -170,6 +170,19 @@
     border-radius: 16px;
 }
 
+.ContainerMP {
+    width: 100%;
+    padding-top: 1rem;
+}
+
+.BtnMercadopago {
+    border: none;
+    background-color: #4181E2;
+    padding: .7rem 1rem;
+    border-radius: 10px;
+    color: white;
+}
+
 /* Media Query */
 @media (max-width: 900px) {
     #ContainerDineroPadre {
