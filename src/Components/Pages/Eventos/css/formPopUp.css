@@ -9,7 +9,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    z-index: 1000;
+    /* Asegura que esté por encima de otros elementos */
 }
 
 .popup-inner {
@@ -43,7 +44,8 @@
     margin: 10px 0;
 }
 
-.inputPopUp, .textAreaPopUp {
+.inputPopUp,
+.textAreaPopUp {
     padding: 10px;
     margin-top: 5px;
     border-radius: 5px;
@@ -52,18 +54,18 @@
 
 /* Estilos Formulario Eventos */
 
-.BoxTituloBotonEvento{
+.BoxTituloBotonEvento {
     padding-bottom: 1.2rem;
     padding-top: 1rem;
 }
 
-.TituloFormularioEvento{
+.TituloFormularioEvento {
     font-size: 2rem;
     font-weight: 700;
     font-family: "Montserrat", sans-serif;
 }
 
-#FormularioEventos{
+#FormularioEventos {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -74,24 +76,24 @@
     font-family: "Montserrat", sans-serif;
 }
 
-.TextoFormEventos{
+.TextoFormEventos {
     font-size: 1.2rem;
     font-weight: 500;
 }
 
-#BotonCrearEvento{
+#BotonCrearEvento {
     width: 30%;
     margin: 0 auto;
 }
 
-.InputFormEventos{
+.InputFormEventos {
     border-radius: 10px;
     padding: .7rem 1.3rem;
     border: none;
     background-color: #eaeaea;
 }
 
-.close{
+.close {
     text-align: right;
     font-size: 40px;
 }
@@ -120,78 +122,79 @@ input[type="checkbox"] {
 @media (max-width: 900px) {
     /* formPopup.css */
 
-.inputPopUp, .textAreaPopUp {
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
+    .inputPopUp,
+    .textAreaPopUp {
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
 
-/* Estilos Formulario Eventos */
+    /* Estilos Formulario Eventos */
 
-.BoxTituloBotonEvento{
-    padding-bottom: 1.2rem;
-    padding-top: 1rem;
-}
+    .BoxTituloBotonEvento {
+        padding-bottom: 1.2rem;
+        padding-top: 1rem;
+    }
 
-.TituloFormularioEvento{
-    font-size: 1.3rem;
-    font-weight: 700;
-    font-family: "Montserrat", sans-serif;
-}
+    .TituloFormularioEvento {
+        font-size: 1.3rem;
+        font-weight: 700;
+        font-family: "Montserrat", sans-serif;
+    }
 
-#FormularioEventos{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2.5rem 2rem;
-    background-color: white;
-    border-radius: 0;
-    box-shadow:none;
-    font-family: "Montserrat", sans-serif;
-}
+    #FormularioEventos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2.5rem 2rem;
+        background-color: white;
+        border-radius: 0;
+        box-shadow: none;
+        font-family: "Montserrat", sans-serif;
+    }
 
-.TextoFormEventos{
-    font-size: 1.2rem;
-    font-weight: 500;
-}
+    .TextoFormEventos {
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
 
-#BotonCrearEvento{
-    width: 50%;
-    margin: 0 auto;
-}
+    #BotonCrearEvento {
+        width: 50%;
+        margin: 0 auto;
+    }
 
-.InputFormEventos{
-    border-radius: 10px;
-    padding: .7rem 1.3rem;
-    border: none;
-    background-color: #eaeaea;
-}
+    .InputFormEventos {
+        border-radius: 10px;
+        padding: .7rem 1.3rem;
+        border: none;
+        background-color: #eaeaea;
+    }
 
-.close{
-    text-align: right;
-    font-size: 40px;
-}
+    .close {
+        text-align: right;
+        font-size: 40px;
+    }
 
-/* estilo chacklist form */
+    /* estilo chacklist form */
 
-.container {
-    margin: 20px;
-}
+    .container {
+        margin: 20px;
+    }
 
-.checkbox-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 10px;
-}
+    .checkbox-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
+    }
 
-.checkbox-item {
-    display: flex;
-    align-items: center;
-}
+    .checkbox-item {
+        display: flex;
+        align-items: center;
+    }
 
-input[type="checkbox"] {
-    margin-right: 5px;
-}
+    input[type="checkbox"] {
+        margin-right: 5px;
+    }
 
 }

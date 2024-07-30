@@ -4,13 +4,46 @@ import CardsAyudar from "./CardsManerasAyuda.jsx";
 class ManerasAyudar extends Component {
   render() {
     const opcionesDeAyuda = [
-      { titulo: "Dinero", descripcion: "Dona dinero. Ayuda causas importantes.", url: "/dinero" },
-      { titulo: "Comida", descripcion: "Dona comida. Alimenta a quienes lo necesitan.", url: "/comida" },
-      { titulo: "Hogar", descripcion: "Dona electrodomesticos y muebles. Ayuda a quienes mas necesitan.", url: "/hogar" },
-      // { titulo: "Escolar", descripcion: "Dona material escolar. Facilita el acceso a la educación.", url: "/escolar" },
-      // { titulo: "Vestimenta", descripcion: "Dona ropa. Ayuda a personas a vestirse adecuadamente.", url: "/ropa" },
-      // { titulo: "Asistencia", descripcion: "Proporciona asistencia directa a personas necesitadas.", url: "/asistencia" },
-      // Agrega más opciones de ayuda aquí según sea necesario
+      {
+        titulo: "Dinero",
+        descripcion: "Apoya causas con contribuciones monetarias.",
+        url: "/categorias/Donaciones%20monetarias",
+      },
+      {
+        titulo: "Comida",
+        descripcion: "Ayuda con alimentos para quienes lo necesitan.",
+        url: "/categorias/Alimentos%20no%20perecederos",
+      },
+      {
+        titulo: "Hogar",
+        descripcion: "Proporciona muebles y electrodomésticos.",
+        url: "/categorias/Elementos%20del%20hogar",
+      },
+      {
+        titulo: "Escolar",
+        descripcion: "Ofrece útiles escolares para la educación.",
+        url: "/categorias/Útiles%20escolares",
+      },
+      {
+        titulo: "Ropa",
+        descripcion: "Comparte ropa con quienes lo necesitan",
+        url: "/categorias/Vestimenta",
+      },
+      {
+        titulo: "Asistencia",
+        descripcion: "Dona tu tiempo y unite a nuestros voluntariados.",
+        url: "/categorias/Asistencia%20y%20voluntariados",
+      },
+      {
+        titulo: "Salud",
+        descripcion: "Medicación y productos de higiene.",
+        url: "/categorias/Medicamentos",
+      },
+      {
+        titulo: "Juguetes",
+        descripcion: "Comparte juguetes con los niños.",
+        url: "/categorias/Juguetes",
+      },
     ];
 
     return (

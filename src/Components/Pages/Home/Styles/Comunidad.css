@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 
-#ComunidadContainer{
+#ComunidadContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,42 +14,84 @@
     height: auto;
 }
 
-#ComunidadContainer{
+#ComunidadContainer {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.TituloComunidad{
-    font-size: 2.7rem;
+.TituloComunidad {
+    font-size: 2rem;
     padding: 2rem 5rem;
     color: black;
     font-family: "Montserrat", sans-serif;
-    font-weight: 600;
-    
+    font-weight: 700;
+
 }
 
-#DescripcionContainer{
+#DescripcionContainer {
     width: 100%;
     padding: 3rem;
 
-    
+
 }
 
-.DescripcionComunidad{
-    font-size: 1.5rem;
+/* estilo de newsteller */
+
+/* Icons de inputs */
+.fieldNewsteller ion-icon {
+    font-size: 24px;
+    /* color: rgb(99, 98, 98); */
+    /*color original*/
+    color: rgb(117, 117, 117);
+    margin-right: .5rem;
+    margin-left: .2rem;
+}
+
+/* inputs  */
+.fieldNewsteller {
+    display: flex;
+    align-items: center;
+    width: 500px;
+    justify-content: center;
+    gap: 0.5em;
+    border-radius: 10px;
+    /*   30px original*/
+    padding: 0.7em;
+    /* border: 1px rgba(19, 19, 19, 0.071) solid; */
+    border: 1px rgba(255, 255, 255, 0.574) solid;
+    outline: none;
+    /* color: black; */
+    color: black;
+    background-color: rgb(228, 228, 228);
+    font-family: "Montserrat", sans-serif;
+}
+
+.input-field {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: black;
+}
+
+
+/* fin de estilo newsteller */
+
+.DescripcionComunidad {
+    font-size: 1.2rem;
     color: black;
     width: 100%;
     font-family: "Montserrat", sans-serif;
-    font-weight: 300;
-    
+    font-weight: 400;
+
 }
 
-.FotoComunidad{
+.FotoComunidad {
     width: 80%;
 }
 
-#btnComunidad{
+#btnComunidad {
     display: flex;
     flex-direction: row;
     justify-content: left;
@@ -61,67 +103,80 @@
     border-radius: 35px;
     background-color: #0dd27af4;
     background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
-    border:1px #e8e4e471 solid;
+    border: 1px #e8e4e471 solid;
     transition: .3s all ease-in-out;
 }
 
-#btnComunidad:hover{
+#btnComunidad:hover {
     background-color: #16b26cf4;
     transform: translateY(-3px);
-}   
-
-
-
-
+}
 
 
 @media (max-width: 900px) {
-    #ComunidadContainer{
+    #ComunidadContainer {
         display: flex;
         padding: 2rem 1.5rem;
         gap: 5px;
         width: 100%;
         height: auto;
     }
-    
-    #ComunidadContainer{
+
+    #ComunidadContainer {
         display: flex;
         justify-content: center;
         align-items: center;
-   
+
     }
-    
-    .TituloComunidad{
-        font-size: 1.8rem;
-        padding:0rem;
+
+    .TituloComunidad {
+        font-size: 1.5rem;
+        padding: 0rem;
         color: black;
         font-family: "Montserrat", sans-serif;
-        font-weight: 600;
-        
+
     }
-    
-    #DescripcionContainer{
+
+    #DescripcionContainer {
         width: 90%;
         padding: 3rem;
 
-    
-        
+
+
     }
-    
-    .DescripcionComunidad{
-        font-size: 1.2rem;
+
+    /* estilo de newsteller */
+
+    /* Icons de inputs */
+    .fieldNewsteller ion-icon {
+        font-size: 24px;
+        /* color: rgb(99, 98, 98); */
+        /*color original*/
+        color: rgb(117, 117, 117);
+        margin-right: .5rem;
+        margin-left: .2rem;
+    }
+
+    /* inputs  */
+    .fieldNewsteller {
+        width: 100%;
+    }
+
+    /* fin de estilo newsteller */
+
+    .DescripcionComunidad {
+        font-size: 1rem;
         color: black;
         width: 100%;
         font-family: "Montserrat", sans-serif;
-        font-weight: 300;
-        
+
     }
-    
-    .FotoComunidad{
+
+    .FotoComunidad {
         width: 80%;
     }
-    
-    #btnComunidad{
+
+    #btnComunidad {
         align-items: center;
         gap: 10px;
         font-size: 1.2rem;
@@ -130,11 +185,11 @@
         border-radius: 35px;
         transition: none;
     }
-    
-    #btnComunidad:hover{
+
+    #btnComunidad:hover {
         background-color: #0dd27af4;
         transform: none;
-    }  
+    }
 
 
 }

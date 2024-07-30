@@ -87,6 +87,7 @@ const PopUp = ({ togglePopup }) => {
                 setCategoriasDonacion([]);
                 togglePopup();
                 navigate(`/eventos/${responseData.created._id}`);
+                alert('Evento creado con éxito');
             } else {
                 const errorText = await response.text();
                 setError(errorText || "Error al crear el evento.");

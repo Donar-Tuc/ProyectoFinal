@@ -4,11 +4,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f3f6f9;
+  background-color: #E7E7E7;
   padding: 30rem 4rem;
   font-family: "Montserrat", sans-serif;
   gap: 20px;
-  height: 50vh;
+  height: 90vh;
 }
 
 
@@ -18,25 +18,13 @@
   height: 100vh;
   flex-direction: column;
   justify-content: center;
-  gap: 10px; 
+  gap: 10px;
   /* padding: 2rem; */
   position: relative;
   transition: .6s ease-in-out all;
 
 }
 
-.FormularioBloque2{
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  width: 50%;
-  flex-direction: column;
-  gap: 10px; 
-  padding: 2rem;
-  position: relative;
-  transition: .6s ease-in-out all;
-
-}
 
 
 
@@ -97,7 +85,7 @@
 }
 
 .formSoporte label .input {
-  background-color: #5151510f;
+  background-color: #eeeeee;
   width: 100%;
   padding: 20px 05px 05px 10px;
   outline: 0;
@@ -135,17 +123,17 @@
   font-size: medium;
 }
 
-.TituloInfoNuestra{
+.TituloInfoNuestra {
   font-weight: 700;
 }
 
-.ContactoForm{
+.ContactoForm {
   text-decoration: none;
   color: black;
   cursor: pointer;
 }
 
-.ContactoForm:hover{
+.ContactoForm:hover {
   text-decoration: none;
   color: rgb(101, 101, 101);
   cursor: pointer;
@@ -168,7 +156,7 @@
   transition: all 0.2s;
   cursor: pointer;
   margin-top: 2rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.295);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.171);
 
 }
 
@@ -213,7 +201,8 @@
 /* Estilos para el contenedor de mensajes de error */
 .error-containerSoporte {
   text-align: left;
-  margin-bottom: 10px; /* Espacio entre mensaje de error y formulario */
+  margin-bottom: 10px;
+  /* Espacio entre mensaje de error y formulario */
 }
 
 /* Estilos para los mensajes de error */
@@ -222,14 +211,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: left;
-  
+
   color: #721c24;
-    font-size: 14px;
-    border: 1px solid #f5c6cb;
-    border-radius: 4px;
-    padding: .8rem 2rem;
-    margin-top: 0; /* Espacio superior al mensaje de error */
-    background-color: #f8d7da; /* Fondo rojo solo cuando hay errores */
+  font-size: 14px;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  padding: .8rem 2rem;
+  margin-top: 0;
+  /* Espacio superior al mensaje de error */
+  background-color: #f8d7da;
+  /* Fondo rojo solo cuando hay errores */
 }
 
 
@@ -272,82 +263,68 @@
     padding: 4rem 0rem;
     font-family: "Montserrat", sans-serif;
     gap: 20px;
-    height: 100%;
+    height: 100vh;
   }
-  
-  
+
+
   .formSoporte {
     display: flex;
     width: 80%;
     flex-direction: column;
     justify-content: center;
-    gap: 10px; 
+    gap: 10px;
     padding-top: 2rem;
     padding-bottom: 2rem;
     position: relative;
     transition: .6s ease-in-out all;
     height: auto;
-  
+
   }
-  
-  .FormularioBloque2{
+
+  .FormularioBloque2 {
     display: flex;
     justify-content: start;
     height: auto;
     width: 90%;
     flex-direction: column;
-    gap: 10px; 
+    gap: 10px;
     padding: 0 2rem;
     position: relative;
     transition: .6s ease-in-out all;
-  
+
   }
-  
-  
-  
+
+
+
   .title {
     font-size: 2rem;
     font-family: "Montserrat", sans-serif;
     /* padding-left: 0px; */
-    color: #6d87d6;
   }
-  
+
   .message,
   .signin {
     font-size: 1.1rem;
-    color: rgba(21, 21, 21, 0.817);
   }
-  
+
   .signin {
     text-align: center;
   }
-  
-  .signin a:hover {
-    text-decoration: underline #6d87d6;
-  }
-  
-  .signin a {
-    color: #00bfff;
-  }
-  
-  
+
+
   .formSoporte label {
     position: relative;
   }
-  
+
   .formSoporte label .input {
-    background-color: #5151510f;
     width: 100%;
     padding: 20px 05px 05px 10px;
     outline: 0;
-    border: 2px solid rgba(237, 237, 237, 0.695);
     border-radius: 7px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.378);
-  
+
   }
-  
+
   .formSoporte label .input+span {
-    color: #727070;
     position: absolute;
     left: 10px;
     top: 0px;
@@ -355,12 +332,12 @@
     cursor: text;
     transition: 0.3s ease;
   }
-  
+
   .formSoporte label .input:placeholder-shown+span {
     top: 12.5px;
     font-size: 1rem;
   }
-  
+
   .formSoporte label .input:focus+span,
   .formSoporte label .input:valid+span {
     color: #6d87d6;
@@ -369,34 +346,32 @@
     font-weight: 600;
     padding-top: .2rem;
   }
-  
+
   .input {
     font-size: medium;
   }
-  
-  .TituloInfoNuestra{
+
+  .TituloInfoNuestra {
     font-weight: 700;
   }
-  
-  .ContactoForm{
+
+  .ContactoForm {
     text-decoration: none;
     color: black;
     cursor: pointer;
   }
-  
-  .ContactoForm:hover{
+
+  .ContactoForm:hover {
     text-decoration: none;
     color: rgb(101, 101, 101);
     cursor: pointer;
   }
-  
+
   .btnForm {
     width: 150px;
     font-family: inherit;
     margin: 0 auto;
     font-size: 1rem;
-    background: #1B7DFC;
-    color: white;
     padding: 0.9rem .7rem;
     /* padding-left: 0.9em; */
     display: flex;
@@ -404,64 +379,64 @@
     border: none;
     border-radius: 10px;
     overflow: hidden;
-    transition: all 0.2s;
+    transition: none;
     cursor: pointer;
-    margin-top: 2rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.295);
-  
+    margin-top: 0%;
+
+
   }
-  
+
   .btnForm:hover {
     background-color: #1B7DFC;
   }
-  
+
   .btnForm span {
     display: block;
     margin-left: 1rem;
-    transition: all 0.3s ease-in-out;
+    transition: none;
     font-weight: 500;
   }
-  
+
   .btnForm svg {
     display: block;
     margin-left: .5rem;
     transform-origin: center center;
-    transition: transform 0.3s ease-in-out;
+    transition: none;
   }
-  
+
   .btnForm:hover .svg-wrapper {
-    animation: fly-1 0.6s ease-in-out infinite alternate;
+    animation: none;
   }
-  
+
   .btnForm:hover svg {
-    transform: translateX(2.5rem) rotate(45deg) scale(1.1);
+    transform: none;
   }
-  
+
   .btnForm:hover span {
-    transform: translateX(8rem);
+    transform: none;
   }
-  
+
   .btnForm:active {
-    transform: scale(0.95);
+    transform: none;
   }
-  
+
   @keyframes fly-1 {
     from {
       transform: translateY(0.1em);
     }
-  
+
     to {
       transform: translateY(-0.1em);
     }
   }
-  
-  
+
+
   @keyframes pulse {
     from {
       transform: scale(0.9);
       opacity: 1;
     }
-  
+
     to {
       transform: scale(1.8);
       opacity: 0;

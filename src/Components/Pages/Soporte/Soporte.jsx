@@ -126,20 +126,6 @@ class Soporte extends Component {
                     </button>
                 </form>
 
-                <div className="lineaHorizontal"></div>
-
-                <div className="FormularioBloque2">
-                    <h3 className="TituloInfoNuestra">Nuestros Horarios</h3>
-                    <p>Lunes - Viernes</p>
-                    <p>8am a 5pm</p>
-                    <p>Sábado - Domingo</p>
-                    <p>Cerrado</p>
-                    <h3 className="TituloInfoNuestra">Dirección</h3>
-                    <p>IHC, 9 de Julio 165, T4000IHC San Miguel de Tucumán, Tucumán</p>
-                    <h3 className="TituloInfoNuestra">Contacto</h3>
-                    <p><a href="mailto:don.ar.tuc@gmail.com" className="ContactoForm">don.ar.tuc@gmail.com</a></p>
-                    <p><a href="tel:+543814329876" className="ContactoForm">3814329876</a></p>
-                </div>
             </div>
         );
     }

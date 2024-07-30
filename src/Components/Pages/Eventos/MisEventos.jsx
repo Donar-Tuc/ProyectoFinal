@@ -19,7 +19,6 @@ const MisEventos = () => {
     const [showDeletePopup, setShowDeletePopup] = useState(false);
     const [eventToDelete, setEventToDelete] = useState(null);
     const [error, setError] = useState(null);  // Definir estado para error
-    const [success, setSuccess] = useState(null);  // Estado para el mensaje de éxito
 
     const navigate = useNavigate();
     const {isLoggedIn, token, userId} = useAuth();
@@ -59,11 +58,8 @@ const MisEventos = () => {
             if (response.ok) {
                 refetch();
                 setShowDeletePopup(false);
-                setSuccess("Evento eliminado con éxito.");
-                setTimeout(() => {
-                    setSuccess(null); 
-                    navigate(`/mis-eventos`);
-                }, 1500);
+                navigate(`/mis-eventos`);
+
             } else {
                 const errorText = await response.text();
                 setError(errorText || "Error al eliminar el evento.");
@@ -93,7 +89,6 @@ const MisEventos = () => {
             <h2 id="TituloMisEventosContainer">Mis Eventos</h2>
             {isLoading && <p>Cargando...</p>}
             {error && <p>Error al cargar los eventos.</p>}
-            {success && <p>{success}</p>}
             <div className="containerCardsEventos">
                 {eventos.map((evento) => (
                     <div key={evento._id} className="eventCard">

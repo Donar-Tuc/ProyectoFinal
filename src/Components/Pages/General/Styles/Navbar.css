@@ -5,7 +5,7 @@ nav {
     justify-content: right;
     align-items: right;
     background-color: rgba(0, 0, 0, 0.445);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(50px);
     padding: 15px 60px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
     position: fixed;
@@ -14,8 +14,15 @@ nav {
 }
 
 .logo {
-    flex: 0 0 auto;
-    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 100%;
+}
+
+.LogoDonAR {
+    width: 100%;
 }
 
 #Menu {
@@ -96,7 +103,7 @@ nav {
     border: none;
 }
 
-.ContainerBotonHead{
+.ContainerBotonHead {
     display: flex;
     gap: 20px;
 }
@@ -109,15 +116,16 @@ nav {
     display: none;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 900px) {
 
     nav {
         display: flex;
         justify-content: center;
         align-items: center;
         background-color: rgba(0, 0, 0, 0.445);
-        backdrop-filter: blur(20px);
-        padding: 15px 40px;
+        height: 60px;
+        padding-left: 2rem;
+        padding-right: 3rem;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
         position: fixed;
         width: 100%;
@@ -130,7 +138,7 @@ nav {
         align-items: center;
         justify-content: flex-start;
         position: fixed;
-        top: 70px;
+        top: 60px;
         right: -300px;
         width: 300px;
         height: 100vh;
@@ -139,6 +147,15 @@ nav {
         padding: 40px 0 0 15px;
         transition: 0.3s ease-in-out;
         z-index: 999;
+    }
+
+    .logo {
+        width: 100px;
+        height: 100%;
+    }
+
+    .LogoDonAR {
+        width: 100%;
     }
 
     #navbar.active {
@@ -199,7 +216,7 @@ nav {
         transform: none;
     }
 
-    .ContainerBotonHead{
+    .ContainerBotonHead {
         display: flex;
         width: 100%;
         flex-direction: row;
@@ -209,6 +226,7 @@ nav {
         /* border: 2px yellow solid; */
         gap: 20px;
     }
+
     .ProfileLoginContainer {
         margin: 0 auto;
         display: flex;
@@ -225,6 +243,46 @@ nav {
         width: 35px;
     }
 
+
+
+}
+
+
+
+/* media querie para ipad */
+
+@media screen and (min-width: 740px) and (max-width: 900px) {
+
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
+        padding-left: 2rem;
+        padding-right: 3rem;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        height: 70px;
+    }
+
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        position: fixed;
+        top: 70px;
+        right: -300px;
+        width: 300px;
+        height: 100vh;
+        background-color: #2a3239;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        padding: 40px 0 0 15px;
+        transition: 0.3s ease-in-out;
+        z-index: 999;
+    }
 
 
 }

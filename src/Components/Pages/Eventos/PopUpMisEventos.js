@@ -7,6 +7,7 @@ import 'moment/locale/es';
 
 import { etiquetas } from '../../Pages/Categorias/Etiquetas/index';
 import { useAuth } from '../../../logic/authContext';
+import { useNavigate } from 'react-router-dom';
 
 const PopUpMisEventos = ({ event, togglePopup, onSave }) => {
     
@@ -16,6 +17,7 @@ const PopUpMisEventos = ({ event, togglePopup, onSave }) => {
     const [categoriasDonacion, setCategoriasDonacion] = useState(event.tituloEtiquetas);
     const [descripcion, setDescripcion] = useState(event.descripcion);
     const { token } = useAuth();
+    const navigate = useNavigate();
 
     useEffect(() => {
         setTitulo(event.titulo);
@@ -31,17 +33,6 @@ const PopUpMisEventos = ({ event, togglePopup, onSave }) => {
             checked ? [...prev, value] : prev.filter(item => item !== value)
         );
     };
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     if (typeof onSave === 'function') {
-    //         const updatedEvent = { ...event, titulo, horario, descripcion, tituloEtiquetas: categoriasDonacion };
-    //         onSave(updatedEvent); // Pasa el evento editado a MisEventos
-    //     } else {
-    //         console.error('onSave no es una función');
-    //     }
-    //     togglePopup(); // Cierra el popup
-    // };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -70,21 +61,27 @@ const PopUpMisEventos = ({ event, togglePopup, onSave }) => {
             }
 
             const data = await response.json();
+
             console.log('Respuesta de actualización:', data);
             setTitulo(data.updated.titulo);
             setFechaInicio(data.updated.fechaInicio);
             setFechaFin(data.updated.fechaFin)
             setCategoriasDonacion(data.updated.tituloEtiquetas)
             togglePopup();
-            alert('Perfil actualizado con éxito');
+            navigate(`/eventos/${data.updated._id}`);
+            alert('Evento actualizado con éxito');
         } catch (error) {
-            console.error('Error al actualizar el perfil:', error);
+            console.error('Error al actualizar el evento:', error);
             
         }
     };
     moment.locale('es');
     const fechaInicioFormateada = moment(fechaInicio).format('D [de] MMMM [del] YYYY');
     const fechaFinFormateada = moment(fechaFin).format('D [de] MMMM [del] YYYY');
+
+    const cancelEdit = () => {
+        togglePopup();
+    }
 
     return (
         <div className="editPopup">
@@ -121,50 +118,50 @@ const PopUpMisEventos = ({ event, togglePopup, onSave }) => {
                         <div className="row">
                             <div className="col-md-3">
                                 <div className="form-check">
-                                    <input className="form-check-input" type="checkbox" id="dinero" value="Dinero" checked={categoriasDonacion.includes('Dinero')} onChange={handleCheckboxChange} />
-                                    <label className="form-check-label" htmlFor="dinero">Dinero</label>
+                                    <input className="form-check-input" type="checkbox" id="Donaciones monetarias" value="Donaciones monetarias" checked={categoriasDonacion.includes('Donaciones monetarias')} onChange={handleCheckboxChange} />
+                                    <label className="form-check-label" htmlFor="Donaciones monetarias">Donaciones monetarias</label>
                                 </div>
                             </div>
                             <div className="col-md-3">
                                 <div className="form-check">
-                                    <input className="form-check-input" type="checkbox" id="comida" value="Comida" checked={categoriasDonacion.includes('Comida')} onChange={handleCheckboxChange} />
-                                    <label className="form-check-label" htmlFor="comida">Comida</label>
+                                    <input className="form-check-input" type="checkbox" id="Alimentos no perecederos" value="Alimentos no perecederos" checked={categoriasDonacion.includes('Alimentos no perecederos')} onChange={handleCheckboxChange} />
+                                    <label className="form-check-label" htmlFor="comida">Alimentos no perecederos</label>
                                 </div>
                             </div>
                             <div className="col-md-3">
                                 <div className="form-check">
-                                    <input className="form-check-input" type="checkbox" id="asistencia" value="Asistencia" checked={categoriasDonacion.includes('Asistencia')} onChange={handleCheckboxChange} />
-                                    <label className="form-check-label" htmlFor="asistencia">Asistencia</label>
+                                    <input className="form-check-input" type="checkbox" id="Asistencia y voluntariados" value="Asistencia y voluntariados" checked={categoriasDonacion.includes('Asistencia y voluntariados')} onChange={handleCheckboxChange} />
+                                    <label className="form-check-label" htmlFor="Asistencia y voluntariados">Asistencia y voluntariados</label>
                                 </div>
                             </div>
                             <div className="col-md-3">
                                 <div className="form-check">
-                                    <input className="form-check-input" type="checkbox" id="hogar" value="Hogar" checked={categoriasDonacion.includes('Hogar')} onChange={handleCheckboxChange} />
-                                    <label className="form-check-label" htmlFor="hogar">Hogar</label>
+                                    <input className="form-check-input" type="checkbox" id="Elementos del hogar" value="Elementos del hogar" checked={categoriasDonacion.includes('Elementos del hogar')} onChange={handleCheckboxChange} />
+                                    <label className="form-check-label" htmlFor="Elementos del hogar">Elementos del hogar</label>
                                 </div>
                             </div>
                             <div className="col-md-3">
                                 <div className="form-check">
-                                    <input className="form-check-input" type="checkbox" id="escolar" value="Escolar" checked={categoriasDonacion.includes('Escolar')} onChange={handleCheckboxChange} />
-                                    <label className="form-check-label" htmlFor="escolar">Escolar</label>
+                                    <input className="form-check-input" type="checkbox" id="Útiles escolares" value="Útiles escolares" checked={categoriasDonacion.includes('Útiles escolares')} onChange={handleCheckboxChange} />
+                                    <label className="form-check-label" htmlFor="Útiles escolares">Útiles escolares</label>
                                 </div>
                             </div>
                             <div className="col-md-3">
                                 <div className="form-check">
-                                    <input className="form-check-input" type="checkbox" id="ropa" value="Ropa" checked={categoriasDonacion.includes('Ropa')} onChange={handleCheckboxChange} />
-                                    <label className="form-check-label" htmlFor="ropa">Ropa</label>
+                                    <input className="form-check-input" type="checkbox" id="Vestimenta" value="Vestimenta" checked={categoriasDonacion.includes('Vestimenta')} onChange={handleCheckboxChange} />
+                                    <label className="form-check-label" htmlFor="Vestimenta">Vestimenta</label>
                                 </div>
                             </div>
                             <div className="col-md-3">
                                 <div className="form-check">
-                                    <input className="form-check-input" type="checkbox" id="medicamentos" value="Medicamentos" checked={categoriasDonacion.includes('Medicamentos')} onChange={handleCheckboxChange} />
-                                    <label className="form-check-label" htmlFor="medicamentos">Medicamentos</label>
+                                    <input className="form-check-input" type="checkbox" id="Medicamentos" value="Medicamentos" checked={categoriasDonacion.includes('Medicamentos')} onChange={handleCheckboxChange} />
+                                    <label className="form-check-label" htmlFor="Medicamentos">Medicamentos</label>
                                 </div>
                             </div>
                             <div className="col-md-3">
                                 <div className="form-check">
-                                    <input className="form-check-input" type="checkbox" id="juguetes" value="Juguetes" checked={categoriasDonacion.includes('Juguetes')} onChange={handleCheckboxChange} />
-                                    <label className="form-check-label" htmlFor="juguetes">Juguetes</label>
+                                    <input className="form-check-input" type="checkbox" id="Juguetes" value="Juguetes" checked={categoriasDonacion.includes('Juguetes')} onChange={handleCheckboxChange} />
+                                    <label className="form-check-label" htmlFor="Juguetes">Juguetes</label>
                                 </div>
                             </div>
                         </div>
@@ -173,8 +170,8 @@ const PopUpMisEventos = ({ event, togglePopup, onSave }) => {
                         <label htmlFor="descripcion" className='TextoFormEventos'>Descripción:</label>
                         <textarea id="descripcion" className='InputFormEventos form-control' value={descripcion} onChange={(e) => setDescripcion(e.target.value)} rows="4" required></textarea>
                     </div>
+                    <button onClick={cancelEdit} className="cancelDeleteButton BtnGuardarMisEventos">Descartar Cambios</button>
                     <button type="submit" className="btn btn-primary BtnGuardarMisEventos">Guardar Cambios</button>
-                    {/* <button onClick={cancelEdit} className="btn btn-delete BtnGuardarMisEventos">Guardar Cambios</button> */}
 
                 </form>
             </div>

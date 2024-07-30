@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Styles/Navbar.css";
+import LogoDonar from "./Images/logo.png";
 import ProfileImage from './Images/account_circle_40dp.svg';
 import LogOutIcon from './Images/log-in-outline.svg'; // Asegúrate de importar el icono de logout
 import { useAuth } from '../../../logic/authContext'; // Asegúrate de que el path sea correcto
@@ -46,16 +47,7 @@ const Navbar = () => {
   return (
     <nav>
       <a href="/" className="logo">
-        <svg
-          id="logo-86"
-          width="40"
-          height="40"
-          viewBox="0 0 40 40"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {/* SVG Paths */}
-        </svg>
+        <img src={LogoDonar} alt="" className="LogoDonAR" />
       </a>
 
       <div id="Menu">
@@ -69,10 +61,14 @@ const Navbar = () => {
           {isLoggedIn ? (
             <li className="ContainerBotonHead">
               <Link to={`/perfil/${userId}`}>
-                <img src={ProfileImage} alt="Perfil" className="PerfilBtn"/>
+                <img src={ProfileImage} alt="Perfil" className="PerfilBtn" />
               </Link>
               <button onClick={handleLogout} id="BotonContainer">
-                <img src={LogOutIcon} alt="Cerrar Sesion" className="LogOutIcon" />
+                <img
+                  src={LogOutIcon}
+                  alt="Cerrar Sesion"
+                  className="LogOutIcon"
+                />
               </button>
             </li>
           ) : (

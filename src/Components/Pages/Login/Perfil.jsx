@@ -12,13 +12,13 @@ const Perfil = () => {
     const [perfilInicial, setPerfilInicial] = useState({});
     const [mensaje, setMensaje] = useState("");
     const [errores, setErrores] = useState({});
-    const [contrasenaActual, setContrasenaActual] = useState("");
     const [confirmarContrasena, setConfirmarContrasena] = useState("");
     const [infoCuenta, setInfoCuenta] = useState({
         email: "",
         contrasena: "",
         nuevaContrasena: ""
     });
+    const [file, setFile] = useState(null); // Estado para manejar el archivo seleccionado
 
     const categorias = Object.entries(etiquetas);
     const { token, userId } = useAuth();
@@ -36,13 +36,13 @@ const Perfil = () => {
     const { data, error, loading } = useFetch(`https://api-don-ar.vercel.app/fundaciones/${userId}`, opciones);
 
     console.log('Datos de fetch:', data);
-    console.log('Error de fetch:', error);
+    // console.log('Error de fetch:', error);
 
     const logoUrl = data?.document?.logo || "";
     const { data: imageBlob, error: imageError, isLoading: isImageLoading } = useFetchImage(logoUrl);
 
-    console.log('Datos de imagen:', imageBlob);
-    console.log('Error de imagen:', imageError);
+    // console.log('Datos de imagen:', imageBlob);
+    // console.log('Error de imagen:', imageError);
 
     const imageUrl = imageBlob ? URL.createObjectURL(imageBlob) : "";
 
@@ -127,6 +127,32 @@ const Perfil = () => {
         }
     };
 
+    const handleChangeEmailSubmit = async (e) => {
+      e.preventDefault();
+      const updatedPerfil = {...perfil, email: infoCuenta.email}
+      console.log('Enviando cambio de mail:', updatedPerfil.email);
+      const opciones = {
+          method: 'PUT',
+          headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify(updatedPerfil)
+      };
+
+      try {
+          const response = await fetch(`https://api-don-ar.vercel.app/fundaciones/${userId}`, opciones);
+          if (!response.ok) throw new Error('Error al cambiar email');
+          setPerfil(updatedPerfil);
+          setMensaje('Email cambiado con éxito');
+      } catch (error) {
+          console.error('Error al cambiar email:', error);
+          console.log('perfil con error:', updatedPerfil);
+          setErrores(prevErrores => ({ ...prevErrores, form: error.message }));
+      }
+  };
+
+
     const handleChangePasswordSubmit = async (e) => {
         e.preventDefault();
         console.log('Enviando cambio de contraseña:', infoCuenta);
@@ -168,174 +194,262 @@ const Perfil = () => {
 
     const handleAccountChange = (e) => {
         const { name, value } = e.target;
-        console.log(`Cambiando info de cuenta ${name} a ${value}`);
         setInfoCuenta(prevInfo => ({ ...prevInfo, [name]: value }));
     };
 
     const handleConfirmPasswordChange = (e) => setConfirmarContrasena(e.target.value);
 
     return (
-        <div className="PerfilContainer">
-            <h2 className="TituloPerfil">Configuración de tu Perfil</h2>
-            <div className="ProfileInformation">
-                <div className="InfoGridContainer">
-                    <div className="containerFoto">
-                        {
-                            isImageLoading ? <p>Cargando logo...</p> :
-                                imageError ? <p>Error cargando el logo</p> :
-                                    <img src={imageUrl} alt="Foto de perfil" className="ImagePerfil" />
-                        }
-                    </div>
-                    <div className="containerTextoPerfil">
-                        {modoEdicion ? (
-                            <form onSubmit={handleSubmit} className="FormPerfil">
-                                <div className="mb-3">
-                                    <label className="form-label">Nombre de la Organización</label>
-                                    <input
-                                        type="text"
-                                        className={`form-control ${errores.titulo ? 'is-invalid' : ''}`}
-                                        name="titulo"
-                                        value={perfil.titulo}
-                                        onChange={handleChange}
-                                    />
-                                    {errores.titulo && <div className="invalid-feedback">{errores.titulo}</div>}
-                                </div>
-                                <div className="mb-3">
-                                    <label className="form-label">Horarios de atención</label>
-                                    <input
-                                        type="text"
-                                        className={`form-control ${errores.horario ? 'is-invalid' : ''}`}
-                                        name="horario"
-                                        value={perfil.horario}
-                                        onChange={handleChange}
-                                    />
-                                    {errores.horario && <div className="invalid-feedback">{errores.horario}</div>}
-                                </div>
-                                <div className="mb-3">
-                                    <label className="form-label">Dirección</label>
-                                    <input
-                                        type="text"
-                                        className={`form-control ${errores.direccion ? 'is-invalid' : ''}`}
-                                        name="direccion"
-                                        value={perfil.direccion}
-                                        onChange={handleChange}
-                                    />
-                                    {errores.direccion && <div className="invalid-feedback">{errores.direccion}</div>}
-                                </div>
-                                <div className="mb-3">
-                                    <label className="form-label">Teléfono</label>
-                                    <input
-                                        type="text"
-                                        className={`form-control ${errores.telefono ? 'is-invalid' : ''}`}
-                                        name="telefono"
-                                        value={perfil.telefono}
-                                        onChange={handleChange}
-                                    />
-                                    {errores.telefono && <div className="invalid-feedback">{errores.telefono}</div>}
-                                </div>
-                                <div className="mb-3">
-                                    <label className="form-label">Correo Electrónico</label>
-                                    <input
-                                        type="email"
-                                        className={`form-control ${errores.email ? 'is-invalid' : ''}`}
-                                        name="email"
-                                        value={perfil.email}
-                                        onChange={handleChange}
-                                    />
-                                    {errores.email && <div className="invalid-feedback">{errores.email}</div>}
-                                </div>
-                                <div className="mb-3">
-                                    <label className="form-label">Descripción</label>
-                                    <textarea
-                                        className={`form-control ${errores.descripcion ? 'is-invalid' : ''}`}
-                                        name="descripcion"
-                                        value={perfil.descripcion}
-                                        onChange={handleChange}
-                                    ></textarea>
-                                    {errores.descripcion && <div className="invalid-feedback">{errores.descripcion}</div>}
-                                </div>
-                                <div className="mb-3">
-                                    <label className="form-label">Etiquetas</label>
-                                    <div className="form-check">
-                                        {categorias.map(([key, categoria]) => (
-                                            <div key={key}>
-                                                <input
-                                                    type="checkbox"
-                                                    className="form-check-input"
-                                                    id={key}
-                                                    name={key}
-                                                    checked={perfil.tituloEtiquetas.includes(key)}
-                                                    onChange={handleCheckChange}
-                                                />
-                                                <label className="form-check-label" htmlFor={key}>
-                                                    {categoria.titulo}
-                                                </label>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                                <button type="submit" className="btn btn-primary">Guardar</button>
-                                <button type="button" className="btn btn-secondary" onClick={handleCancelEdit}>Cancelar</button>
-                            </form>
-                        ) : (
-                            <div>
-                                <p><strong>Nombre de la Organización:</strong> {perfil.titulo}</p>
-                                <p><strong>Horarios de atención:</strong> {perfil.horario}</p>
-                                <p><strong>Dirección:</strong> {perfil.direccion}</p>
-                                <p><strong>Teléfono:</strong> {perfil.telefono}</p>
-                                <p><strong>Correo Electrónico:</strong> {perfil.email}</p>
-                                <p><strong>Descripción:</strong> {perfil.descripcion}</p>
-                                <p><strong>Etiquetas:</strong> {perfil.tituloEtiquetas.join(", ")}</p>
-                                <button className="btn btn-primary" onClick={handleEditClick}>Editar</button>
-                            </div>
-                        )}
-                    </div>
-                </div>
-                <button className="btn btn-secondary" onClick={() => setMostrarGestionCuenta(!mostrarGestionCuenta)}>
-                    {mostrarGestionCuenta ? "Ocultar" : "Gestionar Cuenta"}
-                </button>
-                {mostrarGestionCuenta && (
-                    <div className="GestionCuentaContainer">
-                        <form onSubmit={handleChangePasswordSubmit}>
-                            <div className="mb-3">
-                                <label className="form-label">Contraseña Actual</label>
-                                <input
-                                    type="password"
-                                    className="form-control"
-                                    name="contrasena"
-                                    value={infoCuenta.contrasena}
-                                    onChange={handleAccountChange}
-                                />
-                            </div>
-                            <div className="mb-3">
-                                <label className="form-label">Nueva Contraseña</label>
-                                <input
-                                    type="password"
-                                    className="form-control"
-                                    name="nuevaContrasena"
-                                    value={infoCuenta.nuevaContrasena}
-                                    onChange={handleAccountChange}
-                                />
-                            </div>
-                            <div className="mb-3">
-                                <label className="form-label">Confirmar Nueva Contraseña</label>
-                                <input
-                                    type="password"
-                                    className="form-control"
-                                    name="confirmarContrasena"
-                                    value={confirmarContrasena}
-                                    onChange={handleConfirmPasswordChange}
-                                />
-                                {errores.confirmPassword && <div className="invalid-feedback">{errores.confirmPassword}</div>}
-                            </div>
-                            <button type="submit" className="btn btn-primary">Cambiar Contraseña</button>
-                        </form>
-                    </div>
-                )}
+      <div className="PerfilContainer">
+        <h2 className="TituloPerfil">Configuración de tu Perfil</h2>
+        <div className="ProfileInformation">
+          <div className="InfoGridContainer">
+            <div className="containerFoto">
+              {isImageLoading ? (
+                <p>Cargando logo...</p>
+              ) : imageError ? (
+                <p>Error cargando el logo</p>
+              ) : (
+                <img
+                  src={imageUrl}
+                  alt="Foto de perfil"
+                  className="ImagePerfil"
+                />
+              )}
             </div>
-            {mensaje && <div className="alert alert-success">{mensaje}</div>}
-            {errores.form && <div className="alert alert-danger">{errores.form}</div>}
+            <div className="containerTextoPerfil">
+              {modoEdicion ? (
+                <form onSubmit={handleSubmit} className="FormPerfil">
+                  <div className="mb-3">
+                    <label className="form-label">
+                      Nombre de la Organización
+                    </label>
+                    <input
+                      type="text"
+                      className={`form-control ${
+                        errores.titulo ? "is-invalid" : ""
+                      }`}
+                      name="titulo"
+                      value={perfil.titulo}
+                      onChange={handleChange}
+                    />
+                    {errores.titulo && (
+                      <div className="invalid-feedback">{errores.titulo}</div>
+                    )}
+                  </div>
+                  <div className="mb-3">
+                    <label className="form-label">Horarios de atención</label>
+                    <input
+                      type="text"
+                      className={`form-control ${
+                        errores.horario ? "is-invalid" : ""
+                      }`}
+                      name="horario"
+                      value={perfil.horario}
+                      onChange={handleChange}
+                    />
+                    {errores.horario && (
+                      <div className="invalid-feedback">{errores.horario}</div>
+                    )}
+                  </div>
+                  <div className="mb-3">
+                    <label className="form-label">Dirección</label>
+                    <input
+                      type="text"
+                      className={`form-control ${
+                        errores.direccion ? "is-invalid" : ""
+                      }`}
+                      name="direccion"
+                      value={perfil.direccion}
+                      onChange={handleChange}
+                    />
+                    {errores.direccion && (
+                      <div className="invalid-feedback">
+                        {errores.direccion}
+                      </div>
+                    )}
+                  </div>
+                  <div className="mb-3">
+                    <label className="form-label">Teléfono</label>
+                    <input
+                      type="text"
+                      className={`form-control ${
+                        errores.telefono ? "is-invalid" : ""
+                      }`}
+                      name="telefono"
+                      value={perfil.telefono}
+                      onChange={handleChange}
+                    />
+                    {errores.telefono && (
+                      <div className="invalid-feedback">{errores.telefono}</div>
+                    )}
+                  </div>
+                  <div className="mb-3">
+                    <label className="form-label">Descripción</label>
+                    <textarea
+                      className={`form-control ${
+                        errores.descripcion ? "is-invalid" : ""
+                      }`}
+                      name="descripcion"
+                      value={perfil.descripcion}
+                      onChange={handleChange}
+                    ></textarea>
+                    {errores.descripcion && (
+                      <div className="invalid-feedback">
+                        {errores.descripcion}
+                      </div>
+                    )}
+
+                    <div className="mb-3">
+                      <label className="form-label">
+                        Cambiar Imagen de Perfil
+                      </label>
+                      <input
+                        type="file"
+                        className="form-control"
+                        accept="image/*"
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </div>
+                  <div className="mb-3">
+                    <label className="form-label">Categoria</label>
+                    <div className="form-check">
+                      {categorias.map(([key, categoria]) => (
+                        <div key={key}>
+                          <input
+                            type="checkbox"
+                            className="form-check-input"
+                            id={key}
+                            name={key}
+                            checked={perfil.tituloEtiquetas.includes(key)}
+                            onChange={handleCheckChange}
+                          />
+                          <label className="form-check-label" htmlFor={key}>
+                            {categoria.titulo}
+                          </label>
+                        </div>
+                      ))}
+                    </div>
+                      <button
+                    type="submit"
+                    className="btn btn-primary"
+                    id="BotonGuardarPerfil"
+                  >
+                    Guardar
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleCancelEdit}
+                    className="btn btn-secondary"
+                    id="btnCancelarEdicion"
+                  >
+                    Cancelar
+                  </button>
+                  </div>
+                </form>
+              ) : (
+                <div>
+                  <p>
+                    <strong>Nombre de la Organización:</strong> {perfil.titulo}
+                  </p>
+                  <p>
+                    <strong>Horarios de atención:</strong> {perfil.horario}
+                  </p>
+                  <p>
+                    <strong>Dirección:</strong> {perfil.direccion}
+                  </p>
+                  <p>
+                    <strong>Teléfono:</strong> {perfil.telefono}
+                  </p>
+                  <p>
+                    <strong>Descripción:</strong> {perfil.descripcion}
+                  </p>
+                  <p>
+                    <strong>Etiquetas:</strong>{" "}
+                    {perfil.tituloEtiquetas.join(", ")}
+                  </p>
+                  <button className="btn btn-primary" onClick={handleEditClick}>
+                    Editar
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+          <button
+            className="btn btn-secondary"
+            onClick={() => setMostrarGestionCuenta(!mostrarGestionCuenta)}
+          >
+            {mostrarGestionCuenta ? "Ocultar" : "Gestionar Cuenta"}
+          </button>
+          {mostrarGestionCuenta && (
+            <div className="GestionCuentaContainer">
+              <form onSubmit={handleChangeEmailSubmit}>
+                <p>
+                  <strong>Correo electronico actual:</strong> {perfil.email}
+                </p>
+                <label className="form-label">Nuevo </label>
+                <input
+                      type="email"
+                      className="form-control"
+                      name="email"
+                      value={infoCuenta.email}
+                      onChange={handleAccountChange}
+                    />
+                <button type="submit" className="btn btn-primary">
+                    Cambiar Email
+                </button>          
+              </form>
+              <form onSubmit={handleChangePasswordSubmit}>
+                <div className="mb-3">
+                  <label className="form-label">Introduzca su contraseña actual</label>
+                  <input
+                    type="password"
+                    className="form-control"
+                    name="contrasena"
+                    value={infoCuenta.contrasena}
+                    onChange={handleAccountChange}
+                  />
+                </div>
+                <div className="mb-3">
+                  <label className="form-label">Nueva Contraseña:</label>
+                  <input
+                    type="password"
+                    className="form-control"
+                    name="nuevaContrasena"
+                    value={infoCuenta.nuevaContrasena}
+                    onChange={handleAccountChange}
+                  />
+                </div>
+                <div className="mb-3">
+                  <label className="form-label">
+                    Confirmar Nueva Contraseña
+                  </label>
+                  <input
+                    type="password"
+                    className="form-control"
+                    name="confirmarContrasena"
+                    value={confirmarContrasena}
+                    onChange={handleConfirmPasswordChange}
+                  />
+                  {errores.confirmPassword && (
+                    <div className="invalid-feedback">
+                      {errores.confirmPassword}
+                    </div>
+                  )}
+                </div>
+                <button type="submit" className="btn btn-primary">
+                  Cambiar Contraseña
+                </button>
+              </form>
+            </div>
+          )}
         </div>
+        {mensaje && <div className="alert alert-success">{mensaje}</div>}
+        {errores.form && (
+          <div className="alert alert-danger">{errores.form}</div>
+        )}
+      </div>
     );
 };
 

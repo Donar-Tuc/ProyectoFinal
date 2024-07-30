@@ -1,13 +1,12 @@
 .PerfilContainer {
     display: flex;
-    background-color: #f3f6f9;
+    background-color: #e6e6e6;
     flex-direction: column;
     padding: 8rem 3rem;
     justify-content: center;
     align-items: center;
     width: 100%;
     font-family: "Montserrat", sans-serif;
-    /* Esto hay que cambiar, no puede ser fijo el valor  */
 }
 
 .TituloPerfil {
@@ -18,11 +17,25 @@
     color: black;
 }
 
+/* card de perfil - Donde se ve la informacion - container padre */
 .ProfileInformation {
-    background-color: rgb(238, 238, 238);
-    border-radius: 35px;
-    max-width: 50%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.562);
+    display: flex;
+    justify-content: center;
+    background-color: rgb(236, 236, 236);
+    border-radius: 20px;
+    width: 50%;
+    /* Con esto regulo el ancho de la card padre, son dos container este y el infogrid */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.169);
+}
+
+.InfoGridContainer {
+    width: 100%;
+    /* con esto regulo el ancho del texto dentro de la card, son como dos card dentro de si mismas */
+}
+
+
+.TituloCardPrincipal {
+    word-wrap: break-word;
 }
 
 .containerFoto {
@@ -32,7 +45,7 @@
 }
 
 .ImagePerfil {
-    overflow:hidden ;
+    overflow: hidden;
     object-fit: cover;
     width: 100%;
     height: auto;
@@ -63,7 +76,7 @@
 
 }
 
-.TituloDataSave{
+.TituloDataSave {
     font-weight: 600;
 
 
@@ -78,14 +91,14 @@
     font-size: 1.2rem;
 }
 
-.BotonesPerfil{
+.BotonesPerfil {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
 #btnEditarPerfil {
-    width: auto;
+    width: 100%;
     padding: .4rem 2rem;
     margin-top: 20px;
     /* Agregamos un margen superior para separarlo del resto de los elementos */
@@ -107,44 +120,45 @@
 
 /* estilo datos modificables */
 
-.containerTextoPerfil{
+.containerTextoPerfil {
     padding: 2rem;
 }
 
-#BotonGuardarPerfil{
+#BotonGuardarPerfil {
     width: 100%;
     padding: .7rem 2rem;
-    border-radius: 30px;
+    border-radius: 10px;
     border: none;
     outline: none;
     transition: .4s ease-in-out;
-    background-color: #31a44c;
+    background-color: #387CDF;
     color: white;
 }
 
-#BotonGuardarPerfil:hover{
-    background-color: #41cb61;
+#BotonGuardarPerfil:hover {
+    background-color: #387CDF;
 }
 
 /* gestion de cuenta */
 
-.AccountManagement{
+.AccountManagement {
     padding: 1rem 0;
     width: 100%;
 }
 
-.ManejoDeCuenteTitulo{
+.ManejoDeCuenteTitulo {
     margin-bottom: 2rem;
     font-weight: 700;
     text-align: center;
 }
-#FormManejoCuenta{
+
+#FormManejoCuenta {
     padding: 1rem;
     display: flex;
     flex-direction: column;
 }
 
-.GestionCuentaTitulo{
+.GestionCuentaTitulo {
     text-align: center;
     padding: 0 2rem;
     padding-bottom: 2rem;
@@ -152,18 +166,19 @@
     color: black;
 }
 
-.BotonesCambiarDatos{
+.BotonesCambiarDatos {
     display: flex;
     justify-content: center;
     align-self: center;
     flex-direction: row;
     gap: 20px;
 }
-#BotonGuardarCambioCuenta{
-    margin: 0 auto ;
-    width: 50%;
-    padding: .7rem 2rem;
-    border-radius: 30px;
+
+#BotonGuardarCambioCuenta {
+    margin: 0 auto;
+    width: 100%;
+    padding: .6rem 2rem;
+    border-radius: 10px;
     border: none;
     outline: none;
     transition: .4s ease-in-out;
@@ -173,18 +188,18 @@
     /* margin: 1rem; */
 }
 
-#BotonGuardarCambioCuenta:hover{
+#BotonGuardarCambioCuenta:hover {
     background-color: #336fc9;
 }
 
 /* boton cancelar edicion */
 
-#btnCancelarEdicion{
+#btnCancelarEdicion {
     margin: 0 auto;
     margin-top: 1rem;
     width: 100%;
     padding: .7rem 2rem;
-    border-radius: 30px;
+    border-radius: 10px;
     border: none;
     outline: none;
     transition: .4s ease-in-out;
@@ -193,16 +208,17 @@
     color: white;
 }
 
-#btnCancelarEdicion:hover{
-    background-color: #626262;}
+#btnCancelarEdicion:hover {
+    background-color: #626262;
+}
 
 /* eliminar cuenta */
 
-#BotonEliminarCambioCuenta{
-    margin: 0 auto ;
+#BotonEliminarCambioCuenta {
+    margin: 0 auto;
     width: 50%;
     padding: .7rem 2rem;
-    border-radius: 30px;
+    border-radius: 10px;
     border: none;
     outline: none;
     transition: .4s ease-in-out;
@@ -212,27 +228,27 @@
     /* margin: 1rem; */
 }
 
-#BotonEliminarCambioCuenta:hover{
+#BotonEliminarCambioCuenta:hover {
     background-color: #e23a3a;
 }
 
-#btnEditarPerfil{
-    width: auto;
+#btnEditarPerfil {
+    width: 50%;
     padding: .7rem 2rem;
-    border-radius: 30px;
+    border-radius: 10px;
     border: none;
     outline: none;
     transition: .4s ease-in-out;
     background-color: #387CDF;
     color: white;
-    margin: 1rem;
+    margin-bottom: 1rem;
 }
 
-#btnGestionCuenta{
+#btnGestionCuenta {
     margin: 0 auto;
-    width: auto;
+    width: 50%;
     padding: .7rem 2rem;
-    border-radius: 30px;
+    border-radius: 10px;
     border: none;
     outline: none;
     transition: .4s ease-in-out;
@@ -240,48 +256,66 @@
     color: white;
 }
 
-@media (max-width: 900px) {
 
 
+@media (min-width:700px) and (max-width: 1300px) {
     .PerfilContainer {
-        padding: 6rem 1rem;
+        padding: 8rem 0rem;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    /* card de perfil - Donde se ve la informacion - container padre */
+    .ProfileInformation {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.169);
+        height: auto;
+    }
+}
+
+@media (max-width: 900px) {
+    .PerfilContainer {
+        padding-top: 6rem;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
         justify-content: center;
         align-items: center;
         width: 100%;
     }
-    
+
+    /* titulo - "configuracion de tu perfil" */
     .TituloPerfil {
         text-align: center;
-        padding: 1rem 4rem;
+        padding: 0 1rem;
+        font-size: 1.3rem;
+        padding-bottom: 1rem;
     }
-    
+
+    /* card de perfil - Donde se ve la informacion - container padre */
     .ProfileInformation {
-        border-radius: 35px;
-        max-width: 100%;
-    }
-    
-    .containerFoto {
         display: flex;
-        width: 100%;
         justify-content: center;
+        border-radius: 0px;
+        width: 100%;
+        /* Con esto regulo el ancho de la card padre, son dos container este y el infogrid */
+        box-shadow: none;
+        padding: 0 .5rem;
+        /* Padding de costado de la card principal*/
     }
-    
+
     .ImagePerfil {
-        overflow:hidden ;
-        object-fit: cover;
         width: 100%;
         height: auto;
-        border-radius: 30px 30px 0 0;
-    
+        border-radius: 0;
+
     }
-    
+
     .infoPerfil {
-        font-family: inherit;
-        display: flex;
-        flex-direction: column;
         padding: 4rem;
     }
-    
+
     .ContainerDataSave {
         width: 100%;
         display: flex;
@@ -291,150 +325,184 @@
         padding: 0rem;
         box-sizing: border-box;
     }
-    
+
     .form-label {
         font-weight: 600;
         font-size: 1rem;
-    
+
     }
-    
-    .TituloDataSave{
+
+    .TituloDataSave {
         font-weight: 600;
-        text-align: center;
-    
+
+
     }
-    
+
     .DatoSave {
         font-weight: 600;
     }
-    
+
     .TituloDropdown {
         font-weight: 600;
         font-size: 1.2rem;
     }
-    
+
+    .BotonesPerfil {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #btnEditarPerfil {
+        width: 100%;
+        padding: .4rem 2rem;
+        margin-top: 20px;
+        /* Agregamos un margen superior para separarlo del resto de los elementos */
+    }
+
     .DataPefil {
         margin: 10px 0;
         width: 100%;
         word-wrap: break-word;
     }
-    
+
     .descripcion {
         width: 100%;
         white-space: pre-wrap;
         word-wrap: break-word;
         overflow-wrap: break-word;
     }
-    
-    
+
+
     /* estilo datos modificables */
-    
-    .containerTextoPerfil{
+
+    .containerTextoPerfil {
         padding: 2rem;
     }
 
+    #BotonGuardarPerfil {
+        width: 100%;
+        padding: .7rem 2rem;
+        border: none;
+        outline: none;
+        transition: .4s ease-in-out;
+        background-color: #387CDF;
+        color: white;
+    }
+
+    #BotonGuardarPerfil:hover {
+        background-color: #387CDF;
+    }
 
     /* gestion de cuenta */
 
-#FormManejoCuenta{
-    padding: 0 .2rem;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.GestionCuentaTitulo{
-    text-align: center;
-    padding: 0 1rem;
-    padding-bottom: 1.5rem;
-    color: black;
-}
-
-.BotonesCambiarDatos{
-    display: flex;
-    justify-content: center;
-    align-self: center;
-    flex-direction: column;
-    gap: 20px;
-}
-
-#BotonGuardarCambioCuenta{
-    margin: 0 auto ;
-    width: auto;
-    transition: none;
-    background-color: #387CDF;
-}
-
-#BotonGuardarCambioCuenta:hover{
-    background-color: #387CDF;
-}
-
-/* boton cancelar edicion */
-
-#btnCancelarEdicion{
-    display: flex;
-    width: auto;
-    margin: 0 auto;
-    margin-top: 1rem;
-    padding: .7rem 2rem;
-    transition: none;
-}
-
-#btnCancelarEdicion:hover{
-    background-color: #434343;
-    
-}
-
-/* eliminar cuenta */
-
-#BotonEliminarCambioCuenta{
-    width: auto;
-    border: none;
-    background-color: #ed2121;
-}
-
-#BotonEliminarCambioCuenta:hover{
-    background-color: #ed2121;
-}
-
-#btnEditarPerfil{
-    width: auto;
-    transition: none;
-    background-color: #387CDF;
-}
-
-#btnEditarPerfil:hover{
-    background-color: #387CDF;
-}
-
-#btnGestionCuenta{
-    width: auto;
-    transition: none;
-    background-color: #31a44c;
-}
-
-#btnGestionCuenta:hover{
-    background-color: #31a44c;
-}
-
-
-
-#BotonGuardarCambioCuenta{
-    width: auto;
-    padding: .7rem 2rem;
-    border-radius: 30px;
-    border: none;
-    outline: none;
-    transition: .4s ease-in-out;
-    background-color: #387CDF;
-    transition: .2s all ease;
-    color: white;
-    /* margin: 1rem; */
-}
-
-#BotonGuardarCambioCuenta:hover{
-    background-color: #336fc9;
-}
-
-    
+    .AccountManagement {
+        padding: 1rem 0;
+        width: 100%;
     }
+
+    .ManejoDeCuenteTitulo {
+        margin-bottom: 2rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    #FormManejoCuenta {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .GestionCuentaTitulo {
+        text-align: center;
+        padding: 0 2rem;
+        padding-bottom: 2rem;
+        font-weight: 700;
+        color: black;
+    }
+
+    .BotonesCambiarDatos {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #BotonGuardarCambioCuenta {
+        margin: 0 auto;
+        width: 100%;
+        padding: .6rem 2rem;
+        border: none;
+        outline: none;
+        transition: .4s ease-in-out;
+        background-color: #387CDF;
+        transition: .2s all ease;
+        color: white;
+        /* margin: 1rem; */
+    }
+
+    #BotonGuardarCambioCuenta:hover {
+        background-color: #336fc9;
+    }
+
+    /* boton cancelar edicion */
+
+    #btnCancelarEdicion {
+        margin: 0 auto;
+        margin-top: 1rem;
+        width: 100%;
+        padding: .7rem 2rem;
+        border: none;
+        outline: none;
+        transition: .4s ease-in-out;
+        background-color: #434343;
+        transition: .2s all ease;
+        color: white;
+    }
+
+    #btnCancelarEdicion:hover {
+        background-color: #626262;
+    }
+
+    /* eliminar cuenta */
+
+    #BotonEliminarCambioCuenta {
+        margin: 0 auto;
+        width: 100%;
+        padding: .7rem 2rem;
+        border: none;
+        outline: none;
+        transition: .4s ease-in-out;
+        background-color: #ed2121;
+        transition: .2s all ease;
+        color: white;
+        /* margin: 1rem; */
+    }
+
+    #BotonEliminarCambioCuenta:hover {
+        background-color: #e23a3a;
+    }
+
+    #btnEditarPerfil {
+        width: 100%;
+        padding: .6rem 1rem;
+        border: none;
+        outline: none;
+        transition: .4s ease-in-out;
+        background-color: #387CDF;
+        color: white;
+        margin-bottom: 1rem;
+    }
+
+    #btnGestionCuenta {
+        width: 100%;
+        padding: .6rem 1rem;
+        border: none;
+        outline: none;
+        transition: .4s ease-in-out;
+        background-color: #31a44c;
+        color: white;
+    }
+
+}
