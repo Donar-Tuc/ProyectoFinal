@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     height: auto;
+    padding-top: 4rem;
 }
 
 /* Titulo header */
@@ -39,7 +40,7 @@
 
 #FondoLogin {
     width: 100%;
-    object-fit:fill;
+    object-fit: cover;
     object-position: center;
     height: 100vh;
     /* border-radius: 30px 0 0 30px; */
@@ -54,7 +55,7 @@
     align-items: center;
     width: 50%;
     /* border-radius: 0 30px 30px 0px; */
-    background-color: rgba(213, 212, 212, 0.337);
+    background-color: #e6e6e6;
     background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
 
 
@@ -88,7 +89,8 @@
 /* Icons de inputs */
 .field ion-icon {
     font-size: 24px;
-    /* color: rgb(99, 98, 98); */  /*color original*/
+    /* color: rgb(99, 98, 98); */
+    /*color original*/
     color: rgb(166, 166, 166);
     margin-right: .5rem;
     margin-left: .2rem;
@@ -100,7 +102,8 @@
     align-items: center;
     justify-content: center;
     gap: 0.5em;
-    border-radius: 10px;  /*   30px original*/
+    border-radius: 10px;
+    /*   30px original*/
     padding: 0.7em;
     /* border: 1px rgba(19, 19, 19, 0.071) solid; */
     border: 1px rgba(255, 255, 255, 0.574) solid;
@@ -129,7 +132,6 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    /* border: 2px yellow solid; */
     justify-content: center;
     /* margin-top: 2.5em; */
     font-family: "Montserrat", sans-serif;
@@ -137,10 +139,9 @@
 
 /* Boton acceder */
 .buttonLoginAccess {
-    width: 50%;
+    width: 300px;
     padding: .7rem 2rem;
     border-radius: 30px;
-    margin-right: 0.5em;
     border: none;
     outline: none;
     transition: .2s ease-in-out;
@@ -155,7 +156,7 @@
 /* Boton registrarse */
 
 .buttonRegister {
-    width: 100%;
+    width: 300px;
     padding: .7rem 2rem;
     border-radius: 30px;
     border: none;
@@ -201,8 +202,7 @@
         justify-content: center;
         padding-top: 4.4rem;
         width: 100%;
-        padding: rem 0;
-        padding: 4.3rem 0rem 0rem 0rem;
+        padding: 2rem 0rem 0rem 0rem;
 
     }
 
@@ -214,6 +214,24 @@
         width: 100%;
         /* border: 2px yellow solid; */
 
+    }
+
+
+    /* Boton acceder */
+    .buttonLoginAccess {
+        width: 170px;
+        padding: .5rem 1rem;
+    }
+
+    .buttonLoginAccess:hover {
+        background-color: #3d85f0;
+    }
+
+    /* Boton registrarse */
+
+    .buttonRegister {
+        width: 170px;
+        padding: .5rem 1rem;
     }
 
     /* Bloques 1 y 2 */
@@ -253,7 +271,7 @@
     .field {
 
         gap: 0.8em;
-        border-radius: 10px;  
+        border-radius: 10px;
         padding: 0.7em;
         border: 1px rgba(19, 19, 19, 0.071) solid;
     }
@@ -302,5 +320,123 @@
     }
 
 
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 1000px) {
+
+    /* Estilo de container grande */
+    .LoginContainer {
+        justify-content: center;
+        padding-top: 0;
+        width: 100%;
+        height: 90vh;
+        padding: 0;
+
+    }
+
+
+    /* Boton acceder */
+    .buttonLoginAccess {
+        width: 300px;
+        padding: .8rem 2rem;
+    }
+
+    .buttonLoginAccess:hover {
+        background-color: #3d85f0;
+    }
+
+    /* Boton registrarse */
+
+    .buttonRegister {
+        width: 300px;
+        padding: .8rem 2rem;
+    }
+
+    /* Bloques 1 y 2 */
+
+    .bloque1 {
+        display: none;
+    }
+
+
+
+    .bloque2 {
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+        display: flex;
+        direction: column;
+    }
+
+
+    .form1 {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: 20px;
+        padding: 5rem 2rem;
+        /* border: 2px yellow solid; */
+    }
+
+    .form1:hover {
+        box-shadow: none;
+    }
+
+    .formRecuperar.hover {
+        box-shadow: none
+    }
+
+    .field {
+
+        gap: 0.8em;
+        border-radius: 10px;
+        padding: 0.7em;
+        border: 1px rgba(19, 19, 19, 0.071) solid;
+    }
+
+    .botonesLogincontainer {
+        display: flex;
+        width: 80%;
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    .button1 {
+        width: 100%;
+        margin-bottom: .5rem;
+        outline: none;
+        transition: none;
+    }
+
+    .button1:hover {
+        transform: none;
+    }
+
+    .button2 {
+        width: 100%;
+        transition: none;
+
+    }
+
+    .button2:hover {
+        transform: none;
+    }
+
+    .button3 {
+        width: 100%;
+        transition: none;
+    }
+
+    .button3:hover {
+        transform: none;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
 }

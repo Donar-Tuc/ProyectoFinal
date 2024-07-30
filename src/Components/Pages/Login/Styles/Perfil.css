@@ -33,7 +33,6 @@
     /* con esto regulo el ancho del texto dentro de la card, son como dos card dentro de si mismas */
 }
 
-
 .TituloCardPrincipal {
     word-wrap: break-word;
 }
@@ -63,10 +62,10 @@
 .ContainerDataSave {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     flex-direction: column;
-    align-items: center;
-    padding: 2rem;
+    align-items: left;
+    padding: 1rem 0;
     box-sizing: border-box;
 }
 
@@ -121,17 +120,27 @@
 /* estilo datos modificables */
 
 .containerTextoPerfil {
-    padding: 2rem;
+    padding-top: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 2rem;
+}
+
+.containerBtnGuardarCancelar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #BotonGuardarPerfil {
-    width: 100%;
+    width: 50%;
     padding: .7rem 2rem;
     border-radius: 10px;
     border: none;
     outline: none;
     transition: .4s ease-in-out;
-    background-color: #387CDF;
+    background-color: #0c6dfd;
     color: white;
 }
 
@@ -142,21 +151,89 @@
 /* gestion de cuenta */
 
 .AccountManagement {
-    padding: 1rem 0;
+    padding: 3rem 2.5rem;
     width: 100%;
 }
 
-.ManejoDeCuenteTitulo {
+.ManejoDeCuentaTitulo {
     margin-bottom: 2rem;
     font-weight: 700;
     text-align: center;
 }
 
 #FormManejoCuenta {
-    padding: 1rem;
+    /* padding: 1rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#FormManejoCuenta .form-label {
+    text-align: left;
+}
+
+.containerBtnCambiarEmail {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1.5rem;
+    padding-top: 1rem;
+}
+
+/* estilo de boton cambiar email */
+.btnCambiarEmail {
+    width: 50%;
+}
+
+/* container para de btn cambiar contrasena */
+
+.containerGuardarContrasena {
+    display: flex;
+    justify-content: center;
+}
+
+/* estilos de boton cambiar contrasena */
+.BtnGuardarContrasena {
+    width: 50%;
+}
+
+.ContainerBotonGestionCuenta {
     display: flex;
     flex-direction: column;
 }
+
+.containerEditarInformacion {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    border: ;
+}
+
+#BtnEditarInfo {
+    background-color: #0c6dfd;
+    margin: 0 auto;
+    width: 50%;
+    padding: .6rem 2rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    transition: .2s all ease;
+    color: white;
+}
+
+.BtnGestionOcultar {
+    background-color: #31A44C;
+    margin: 0 auto;
+    width: 50%;
+    padding: .6rem 2rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    transition: .2s all ease;
+    color: white;
+}
+
 
 .GestionCuentaTitulo {
     text-align: center;
@@ -197,7 +274,7 @@
 #btnCancelarEdicion {
     margin: 0 auto;
     margin-top: 1rem;
-    width: 100%;
+    width: 50%;
     padding: .7rem 2rem;
     border-radius: 10px;
     border: none;
@@ -323,6 +400,7 @@
         flex-direction: column;
         align-items: center;
         padding: 0rem;
+        padding-bottom: 0;
         box-sizing: border-box;
     }
 
@@ -386,12 +464,11 @@
         border: none;
         outline: none;
         transition: .4s ease-in-out;
-        background-color: #387CDF;
         color: white;
     }
 
     #BotonGuardarPerfil:hover {
-        background-color: #387CDF;
+        background-color: #0c6dfd;
     }
 
     /* gestion de cuenta */

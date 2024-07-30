@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useScroll } from '../../../../../ScrollContext.js';
 import CardVerTodo from "./CardTemplate.jsx";
-import "../Style.css";
+import "../Fundaciones/Styles/CardsFundaciones.css"
 
 // Imagenes 
 import BancoAlimentos from "./Imagenes/BancoAlimentosLogo.png";

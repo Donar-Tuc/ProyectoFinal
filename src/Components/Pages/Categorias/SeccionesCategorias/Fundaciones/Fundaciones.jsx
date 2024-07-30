@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useScroll } from '../../../../../ScrollContext.js';
 import CardVerTodo from "./CardTemplate.jsx";
-import "./Style.css";
+import "./Styles/CardsFundaciones.css";
 import { useFetch } from "../../../../../logic/useFetch.js";
 import { useParams } from "react-router-dom";
 
@@ -62,7 +62,7 @@ const Fundaciones = () => {
 
     return (
         <div className="AsistenciaContainer" ref={scrollRef} style={{ height: '100%', overflowY: 'scroll' }}>
-            <h2 id="TituloAsistenciaContainer">{categoria ? categoria: "Ver todo"}</h2>
+            <h2 className="TituloDeCategoria" id="TituloAsistenciaContainer">{categoria ? categoria : "Ver todo"}</h2>
             <div className="containerCards">
 
                 {currentCards.map((card, /* index */) => (

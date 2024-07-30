@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./css/cardEventosPrueba.css";
 import "./css/eventos.css"
 import { etiquetas } from "../../../Components/Pages/Categorias/Etiquetas/index";
 import useFetchImage from "../../../logic/useFetchImage";
@@ -24,8 +23,8 @@ const CardEvento = ({ id, imagen, titulo, fechaInicio, fechaFin, descripcion, ti
             <div className="ImagenContainer">
                 {
                     isLoading ? <p>Cargando logo...</p> :
-                    error ? <p>Error cargando el logo</p> :
-                    <img src={imageUrl} alt="Imagen del evento" id="ImagenCard" />
+                        error ? <p>Error cargando el logo</p> :
+                            <img src={imageUrl} alt="Imagen del evento" id="ImagenCard" />
                 }
             </div>
 
@@ -45,7 +44,7 @@ const CardEvento = ({ id, imagen, titulo, fechaInicio, fechaFin, descripcion, ti
                 </div>
             </div>
             <div className="containerDescripcion">
-                <p id="Decripcion">{descripcion}</p>
+                <p id="DescripcionDeCardEventos">{descripcion}</p>
             </div>
             <div className="containerBotonEvento">
                 <Link to={`/eventos/${id}`}>

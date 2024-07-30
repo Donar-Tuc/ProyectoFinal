@@ -17,6 +17,12 @@ const TemplatePerfil = () => {
 
     const { data: image, error: imageError, isLoading: imageIsLoading } = useFetchImage(logo);
 
+
+
+    // Con esto obtengo la URL Actual para compararla despues con los perfiles que si aceptan donaciones monetarias, basicamente desaparece
+    const currentUrl = window.location.pathname;
+
+
     let imageUrl;
     if (image) {
         imageUrl = URL.createObjectURL(image);
@@ -26,11 +32,11 @@ const TemplatePerfil = () => {
         <section id="ContainerDineroPadre">
             <div className="DineroHijo">
                 <div className="ImagenContainer">
-                {
-                    imageIsLoading ? <p>Cargando logo...</p> :
-                        imageError ? <p>Error cargando el logo</p> :
-                            <img src={imageUrl} alt={`logo ${titulo}`} />
-                }
+                    {
+                        imageIsLoading ? <p>Cargando logo...</p> :
+                            imageError ? <p>Error cargando el logo</p> :
+                                <img src={imageUrl} alt={`logo ${titulo}`} />
+                    }
                 </div>
                 <div className="TextoDinero">
                     <div id="ContainerTituloBtn">
@@ -50,6 +56,36 @@ const TemplatePerfil = () => {
                             </div>
                             <p>{horario}</p>
                             <a href={mapaBoton}>{direccion}</a>
+
+                            {
+                                fundacion.tituloEtiquetas?.includes("Donaciones monetarias") &&
+                                (
+                                    <div className="ContainerMP">
+                                        <a href="http://link.mercadopago.com.ar/donarorganizacion">
+                                            <button className="BtnMercadopago">Donar Online</button>
+                                        </a>
+                                    </div>)
+                            }
+
+                            {/* mercado pago */}
+
+                            {/* CORREGIR ESTA LOGICA, TOME UNA URL PARA HACERLO FUNCIONAR.
+                            
+                            1. HABRIA QUE FILTRAR SEGUN LOS IDS '/FUNDACIONES/{ID}, ALGO ASI. QUE SEAN SOLO LO DE DINERO
+
+                            2. PONGAN EL MISMO LINK EN LA BASE DE DATOS, NO NOS VAMOS A PONER A CREAR MIL CUENTAS DE MERCADOPAGO.
+                            
+                            */}
+                            {/* 
+                            {currentUrl === '/fundaciones/667c34f75c8e82a0f678e51b' && (
+                                <div className="ContainerMP">
+                                    <a href="http://link.mercadopago.com.ar/donarorganizacion">
+                                        <button className="BtnMercadopago">Donar Online</button>
+                                    </a>
+                                </div>
+                            )} */}
+
+                            {/* fin mercado pago */}
                         </div>
 
                         <div className="Box2Btn">
@@ -70,7 +106,7 @@ const TemplatePerfil = () => {
                         </div>
                     </div>
 
-                    <p>{descripcion}</p>
+                    <p id="DecripcionEventos" >{descripcion}</p>
                 </div>
 
                 <div className="Mapa">

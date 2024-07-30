@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from 'react-query';
-import "./Style.css";
+import "./Styles/CardsFundaciones.css";
 import { etiquetas } from "../../Etiquetas/index";
 import useFetchImage from "../../../../../logic/useFetchImage";
 
@@ -18,8 +18,8 @@ const CardTemplate = ({ id, imagen, titulo, horario, tituloEtiquetas }) => {
             <div className="ImagenContainer">
                 {
                     isLoading ? <p>Cargando logo...</p> :
-                    error ? <p>Error cargando el logo</p> :
-                    <img src={imageUrl} alt="Imagen del evento" id="ImagenCard" />
+                        error ? <p>Error cargando el logo</p> :
+                            <img src={imageUrl} alt="Imagen del evento" id="ImagenCard" />
                 }
             </div>
             <div className="textoAsistenciaContainer">
