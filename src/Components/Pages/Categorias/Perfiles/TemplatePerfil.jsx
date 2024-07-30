@@ -61,31 +61,11 @@ const TemplatePerfil = () => {
                                 fundacion.tituloEtiquetas?.includes("Donaciones monetarias") &&
                                 (
                                     <div className="ContainerMP">
-                                        <a href="http://link.mercadopago.com.ar/donarorganizacion">
+                                        <a href="http://link.mercadopago.com.ar/donarorganizacion"> {/* Esto tiene que ser dinamico */}
                                             <button className="BtnMercadopago">Donar Online</button>
                                         </a>
                                     </div>)
                             }
-
-                            {/* mercado pago */}
-
-                            {/* CORREGIR ESTA LOGICA, TOME UNA URL PARA HACERLO FUNCIONAR.
-                            
-                            1. HABRIA QUE FILTRAR SEGUN LOS IDS '/FUNDACIONES/{ID}, ALGO ASI. QUE SEAN SOLO LO DE DINERO
-
-                            2. PONGAN EL MISMO LINK EN LA BASE DE DATOS, NO NOS VAMOS A PONER A CREAR MIL CUENTAS DE MERCADOPAGO.
-                            
-                            */}
-                            {/* 
-                            {currentUrl === '/fundaciones/667c34f75c8e82a0f678e51b' && (
-                                <div className="ContainerMP">
-                                    <a href="http://link.mercadopago.com.ar/donarorganizacion">
-                                        <button className="BtnMercadopago">Donar Online</button>
-                                    </a>
-                                </div>
-                            )} */}
-
-                            {/* fin mercado pago */}
                         </div>
 
                         <div className="Box2Btn">
