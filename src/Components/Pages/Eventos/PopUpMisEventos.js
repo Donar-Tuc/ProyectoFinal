@@ -1,20 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import './css/MisEventos.css';
+import Datetime from 'react-datetime';
+import 'react-datetime/css/react-datetime.css';
+import moment from 'moment';
+import 'moment/locale/es';
 
-// Importar íconos correspondientes a cada categoría
 import { etiquetas } from '../../Pages/Categorias/Etiquetas/index';
+import { useAuth } from '../../../logic/authContext';
 
 const PopUpMisEventos = ({ event, togglePopup, onSave }) => {
+    
     const [titulo, setTitulo] = useState(event.titulo);
-    const [horario, setHorario] = useState(event.horario);
-    const [descripcion, setDescripcion] = useState(event.descripcion);
+    const [fechaInicio, setFechaInicio] = useState(event.fechaInicio);
+    const [fechaFin, setFechaFin] = useState(event.fechaFin);
     const [categoriasDonacion, setCategoriasDonacion] = useState(event.tituloEtiquetas);
+    const [descripcion, setDescripcion] = useState(event.descripcion);
+    const { token } = useAuth();
 
     useEffect(() => {
         setTitulo(event.titulo);
-        setHorario(event.horario);
-        setDescripcion(event.descripcion);
+        setFechaInicio(event.fechaInicio);
+        setFechaFin(event.fechaFin);
         setCategoriasDonacion(event.tituloEtiquetas);
+        setDescripcion(event.descripcion);
     }, [event]);
 
     const handleCheckboxChange = (e) => {
@@ -24,16 +32,59 @@ const PopUpMisEventos = ({ event, togglePopup, onSave }) => {
         );
     };
 
-    const handleSubmit = (e) => {
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     if (typeof onSave === 'function') {
+    //         const updatedEvent = { ...event, titulo, horario, descripcion, tituloEtiquetas: categoriasDonacion };
+    //         onSave(updatedEvent); // Pasa el evento editado a MisEventos
+    //     } else {
+    //         console.error('onSave no es una función');
+    //     }
+    //     togglePopup(); // Cierra el popup
+    // };
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        if (typeof onSave === 'function') {
-            const updatedEvent = { ...event, titulo, horario, descripcion, tituloEtiquetas: categoriasDonacion };
-            onSave(updatedEvent); // Pasa el evento editado a MisEventos
-        } else {
-            console.error('onSave no es una función');
+        const updatedEvent = { ...event, titulo, fechaInicio, fechaFin, descripcion, tituloEtiquetas: categoriasDonacion };
+        console.log('Enviando PUT de evento:', updatedEvent);
+
+        const opciones = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(updatedEvent)
+        };
+
+        console.log('Opciones de solicitud:', opciones);
+
+        try {
+            const response = await fetch(`https://api-don-ar.vercel.app/eventos/${event._id}`, opciones);
+            console.log('Respuesta del servidor:', response);
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error('Detalles del error del servidor:', errorData);
+                throw new Error('Error al actualizar el evento');
+            }
+
+            const data = await response.json();
+            console.log('Respuesta de actualización:', data);
+            setTitulo(data.updated.titulo);
+            setFechaInicio(data.updated.fechaInicio);
+            setFechaFin(data.updated.fechaFin)
+            setCategoriasDonacion(data.updated.tituloEtiquetas)
+            togglePopup();
+            alert('Perfil actualizado con éxito');
+        } catch (error) {
+            console.error('Error al actualizar el perfil:', error);
+            
         }
-        togglePopup(); // Cierra el popup
     };
+    moment.locale('es');
+    const fechaInicioFormateada = moment(fechaInicio).format('D [de] MMMM [del] YYYY');
+    const fechaFinFormateada = moment(fechaFin).format('D [de] MMMM [del] YYYY');
 
     return (
         <div className="editPopup">
@@ -45,8 +96,25 @@ const PopUpMisEventos = ({ event, togglePopup, onSave }) => {
                         <input id="titulo" className='InputFormEventos form-control' type="text" value={titulo} onChange={(e) => setTitulo(e.target.value)} required />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="horario" className='TextoFormEventos'>Horario:</label>
-                        <input id="horario" className='InputFormEventos form-control' type="text" value={horario} onChange={(e) => setHorario(e.target.value)} required />
+                        <label htmlFor="horarios" className='TextoFormEventos'>Fechas del Evento:</label>
+                        <div>
+                            <Datetime
+                                value={fechaInicioFormateada}
+                                onChange={date => setFechaInicio(date)}
+                                inputProps={{ placeholder: 'Fecha de inicio' }}
+                                dateFormat="D [de] MMMM [del] YYYY"
+                                timeFormat={false}
+                            />
+                            &nbsp;&nbsp;
+                            <Datetime
+                                value={fechaFinFormateada}
+                                onChange={date => setFechaFin(date)}
+                                inputProps={{ placeholder: 'Fecha de fin' }}
+                                dateFormat="D [de] MMMM [del] YYYY"
+                                timeFormat={false}
+                                isValidDate={(current) => !fechaInicio || current.isAfter(fechaInicio)}
+                            />
+                        </div>
                     </div>
                     <div className="mb-3">
                         <label className='TextoFormEventos'>Categorías de Donación:</label>
@@ -106,6 +174,8 @@ const PopUpMisEventos = ({ event, togglePopup, onSave }) => {
                         <textarea id="descripcion" className='InputFormEventos form-control' value={descripcion} onChange={(e) => setDescripcion(e.target.value)} rows="4" required></textarea>
                     </div>
                     <button type="submit" className="btn btn-primary BtnGuardarMisEventos">Guardar Cambios</button>
+                    {/* <button onClick={cancelEdit} className="btn btn-delete BtnGuardarMisEventos">Guardar Cambios</button> */}
+
                 </form>
             </div>
         </div>

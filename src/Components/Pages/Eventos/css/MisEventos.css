@@ -42,14 +42,14 @@
     box-shadow: none;
 }
 
-.eventCard .CardMiEventos #DecripcionEventos{
+.containerDescripcion{
+    min-height: min-content;
+    max-height: 50%;
+    height: 35%;
     overflow: hidden;
-    height: 20%;
-} 
+}
 
-/* .eventCard .CardMiEventos .ImagenContainer{
-    min-height: 300px;
-} */
+
 /* Estilos para la acción de eventos */
 .eventActions {
     padding-bottom: 2rem;
@@ -326,6 +326,7 @@
         }
         
         .textoContainer {
+            max-height: 35%;
             padding: 2rem;
             width: 100%;
             color: rgb(34, 34, 34);
@@ -368,6 +369,7 @@
         .containerBotonEvento {
             display: flex;
             justify-content: center;
+            padding: 15px;
         }
         
         .ContainerBoton {

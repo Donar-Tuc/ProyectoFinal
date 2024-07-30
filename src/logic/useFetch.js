@@ -1,20 +1,23 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export function useFetch(url, options) {
     const [data, setData] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
+    const refetch = useCallback(() => {
         setLoading(true);
 
         fetch(url, options)
-            .then(res => res.json()) // obj list
+            .then(res => res.json())
             .then(data => setData(data))
             .catch(error => setError(error))
             .finally(() => setLoading(false));
     }, [url, options]);
 
-    return { data, error, loading };
-}
+    useEffect(() => {
+        refetch();
+    }, [refetch]);
 
+    return { data, error, loading, refetch };
+}

@@ -96,10 +96,6 @@ const PopUp = ({ togglePopup }) => {
         }
     };
 
-    const formatoHorario = (fecha) => {
-        return moment(fecha).format('dddd D [de] MMMM');
-    };
-
     if (loading) {
         return <div>Loading...</div>;
     }
@@ -163,6 +159,7 @@ const PopUp = ({ togglePopup }) => {
                                 inputProps={{ placeholder: 'Fecha de fin' }}
                                 dateFormat="dddd D [de] MMMM"
                                 timeFormat={false}
+                                isValidDate={(current) => !fechaInicio || current.isAfter(fechaInicio)}
                             />
                         </div>
                     </div>

@@ -18,13 +18,13 @@ const MisEventos = () => {
     const [eventToEdit, setEventToEdit] = useState(null);
     const [showDeletePopup, setShowDeletePopup] = useState(false);
     const [eventToDelete, setEventToDelete] = useState(null);
-    
-    const navigate = useNavigate();
-    const isLoggedIn = useAuth();
-    const { userId } = getUserData(); 
+    const [error, setError] = useState(null);  // Definir estado para error
+    const [success, setSuccess] = useState(null);  // Estado para el mensaje de éxito
 
-    const url = `https://api-don-ar.vercel.app/eventos/fundacion/${userId}`;
-    const { data, isLoading, error } = useFetch(url);
+    const navigate = useNavigate();
+    const {isLoggedIn, token, userId} = useAuth();
+
+    const { data, isLoading, error: fetchError, refetch } = useFetch(`https://api-don-ar.vercel.app/eventos/fundacion/${userId}`);
 
     useEffect(() => {
         if (data) {
@@ -42,19 +42,47 @@ const MisEventos = () => {
         setShowDeletePopup(true);
     };
 
-    const confirmDelete = () => {
-        setEventos(eventos.filter(evento => evento.id !== eventToDelete.id));
-        setShowDeletePopup(false);
+
+    const confirmDelete = async (e) => {
+        e.preventDefault();
+        
+        try {
+            
+            const response = await fetch(`https://api-don-ar.vercel.app/eventos/${eventToDelete._id}/delete-event`, {
+                method: "DELETE",
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                    "Content-Type": "application/json"
+                }
+            });
+            
+            if (response.ok) {
+                refetch();
+                setShowDeletePopup(false);
+                setSuccess("Evento eliminado con éxito.");
+                setTimeout(() => {
+                    setSuccess(null); 
+                    navigate(`/mis-eventos`);
+                }, 1500);
+            } else {
+                const errorText = await response.text();
+                setError(errorText || "Error al eliminar el evento.");
+            }
+        } catch (error) {
+            setError("Error en la conexión con el servidor");
+        }
     };
+
 
     const cancelDelete = () => {
         setShowDeletePopup(false);
     };
 
     const handleSaveEdit = (updatedEvent) => {
-        setEventos(eventos.map(evento => evento.id === updatedEvent.id ? updatedEvent : evento));
+        refetch();
         setIsEditing(false);
     };
+
 
     if (!isLoggedIn) {
         return <p>Debes iniciar sesión para ver tus eventos.</p>;
@@ -65,6 +93,7 @@ const MisEventos = () => {
             <h2 id="TituloMisEventosContainer">Mis Eventos</h2>
             {isLoading && <p>Cargando...</p>}
             {error && <p>Error al cargar los eventos.</p>}
+            {success && <p>{success}</p>}
             <div className="containerCardsEventos">
                 {eventos.map((evento) => (
                     <div key={evento._id} className="eventCard">
