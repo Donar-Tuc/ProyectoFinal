@@ -12,12 +12,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const closeMenu = () => {
-      setClicked(false);
-      window.scrollTo(0, 0);
-    };
-
-    const links = document.querySelectorAll("#navbar li a");
+    const links = document.querySelectorAll("#navbar li a, .btnLogin");
     links.forEach(link => {
       link.addEventListener("click", closeMenu);
     });
@@ -39,8 +34,14 @@ const Navbar = () => {
     setClicked(!clicked);
   };
 
+  const closeMenu = () => {
+    setClicked(false);
+    window.scrollTo(0, 0);
+  };
+
   const handleLogout = () => {
     logout(); // Llama al método de logout del contexto
+    closeMenu(); // Cierra el menú
     navigate('/');
   };
 
@@ -54,13 +55,13 @@ const Navbar = () => {
         <ul id="navbar" className={clicked ? "navbar active" : "navbar"}>
           {links.map((x, index) => (
             <li key={index}>
-              <Link to={x.href}>{x.name}</Link>
+              <Link to={x.href} onClick={closeMenu}>{x.name}</Link>
             </li>
           ))}
 
           {isLoggedIn ? (
             <li className="ContainerBotonHead">
-              <Link to={`/perfil/${userId}`}>
+              <Link to={`/perfil/${userId}`} onClick={closeMenu}>
                 <img src={ProfileImage} alt="Perfil" className="PerfilBtn" />
               </Link>
               <button onClick={handleLogout} id="BotonContainer">
@@ -73,8 +74,8 @@ const Navbar = () => {
             </li>
           ) : (
             <li>
-              <Link className="btnLogin" to="/login" onClick={handleClick}>
-                Login
+              <Link className="btnLogin" to="/login" onClick={closeMenu}>
+                Acceder
               </Link>
             </li>
           )}

@@ -1,6 +1,6 @@
 .PerfilContainer {
     display: flex;
-    background-color: #e6e6e6;
+    background-color: #eeeeee;
     flex-direction: column;
     padding: 8rem 3rem;
     justify-content: center;
@@ -48,7 +48,7 @@
     object-fit: cover;
     width: 100%;
     height: auto;
-    border-radius: 30px 30px 0 0;
+    border-radius: 20px 20px 0 0;
 
 }
 
@@ -120,10 +120,12 @@
 /* estilo datos modificables */
 
 .containerTextoPerfil {
+    background-color: #f3f2f2;
+    border-radius: 0 0 30px 30px;
     padding-top: 2rem;
     padding-left: 3rem;
     padding-right: 3rem;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
 }
 
 .containerBtnGuardarCancelar {
@@ -378,9 +380,10 @@
         width: 100%;
         /* Con esto regulo el ancho de la card padre, son dos container este y el infogrid */
         box-shadow: none;
-        padding: 0 .5rem;
+        padding: 0;
         /* Padding de costado de la card principal*/
     }
+    
 
     .ImagePerfil {
         width: 100%;
@@ -396,10 +399,10 @@
     .ContainerDataSave {
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: left;
         flex-direction: column;
-        align-items: center;
-        padding: 0rem;
+        align-items: safe;
+        padding: 1.2rem;
         padding-bottom: 0;
         box-sizing: border-box;
     }
@@ -414,6 +417,41 @@
         font-weight: 600;
 
 
+    }
+
+    .containerEditarInformacion {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .ContainerBotonGestionCuenta {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 1rem 0;
+    }
+    
+    .BtnGestionOcultar {
+        margin: 0 auto;
+        width: 70%;
+        padding: .6rem 2rem;
+        border-radius: 10px;
+        transition: none;
+        transition: none;
+    }
+
+    #BtnEditarInfo {
+        background-color: #0c6dfd;
+        margin: 0 auto;
+        width: 70%;
+        padding: .6rem 2rem;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        transition: .4s ease-in-out;
+        transition: .2s all ease;
+        color: white;
     }
 
     .DatoSave {
@@ -455,9 +493,15 @@
     /* estilo datos modificables */
 
     .containerTextoPerfil {
-        padding: 2rem;
+        padding-top: 0;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-bottom: 1rem;
     }
 
+    .FormPerfil{
+        padding-top: 2rem;
+    }
     #BotonGuardarPerfil {
         width: 100%;
         padding: .7rem 2rem;
@@ -474,7 +518,7 @@
     /* gestion de cuenta */
 
     .AccountManagement {
-        padding: 1rem 0;
+        padding: 2rem 0rem ;
         width: 100%;
     }
 
@@ -567,7 +611,6 @@
         border: none;
         outline: none;
         transition: .4s ease-in-out;
-        background-color: #387CDF;
         color: white;
         margin-bottom: 1rem;
     }
@@ -578,7 +621,6 @@
         border: none;
         outline: none;
         transition: .4s ease-in-out;
-        background-color: #31a44c;
         color: white;
     }
 

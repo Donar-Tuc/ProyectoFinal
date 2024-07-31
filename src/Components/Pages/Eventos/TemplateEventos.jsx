@@ -48,8 +48,8 @@ const TemplateEventos = () => {
   const fundacionTitulo = fundacionData?.document?.titulo || fundacionData?.document?.userName || "Fundación desconocida";
 
   return (
-    <section id="ContainerDineroPadre">
-      <div className="DineroHijo">
+    <section id="ContainerDineroPadre" className="ContainerEventoNuevo">
+      <div className="DineroHijo CardNuevoEvento">
         <div className="ImagenContainer">
           {imageIsLoading ? (
             <p>Cargando logo...</p>

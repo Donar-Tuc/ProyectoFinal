@@ -9,7 +9,6 @@ import { etiquetas } from '../Categorias/Etiquetas/index';
 import { useFetch } from '../../../logic/useFetch';
 import { useNavigate } from 'react-router-dom';
 
-// Configurar moment para español y evitar GMT
 moment.locale('es');
 
 const PopUp = ({ togglePopup }) => {
@@ -20,9 +19,9 @@ const PopUp = ({ togglePopup }) => {
     const [descripcion, setDescripcion] = useState('');
     const [categoriasDonacion, setCategoriasDonacion] = useState([]);
     const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
 
     const { userId, token } = getUserData();
-    console.log(token);
 
     const { data: user, loading, error: fetchError } = useFetch(`https://api-don-ar.vercel.app/fundaciones/${userId}`);
 
@@ -47,18 +46,20 @@ const PopUp = ({ togglePopup }) => {
             setCategoriasDonacion(categoriasDonacion.filter(cat => cat !== value));
         }
     };
-    
-
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (descripcion.length < 100) {
-            alert('La descripción debe tener al menos 100 caracteres.');
+
+        if (descripcion.length < 50) {
+            setError('La descripción debe tener al menos 50 caracteres.');
+            return;
+        } else if (descripcion.length > 150) {
+            setError('La descripción no puede exceder los 150 caracteres.');
             return;
         }
 
         const eventData = {
-            imagen: '', // Aquí deberías establecer la imagen adecuada
+            imagen: '',
             titulo: titulo,
             fechaInicio: fechaInicio,
             fechaFin: fechaFin,
@@ -67,7 +68,6 @@ const PopUp = ({ togglePopup }) => {
         };
 
         try {
-
             const response = await fetch('https://api-don-ar.vercel.app/eventos/', {
                 method: "POST",
                 headers: {
@@ -80,6 +80,7 @@ const PopUp = ({ togglePopup }) => {
             if (response.ok) {
                 const responseData = await response.json();
                 setError("");
+                setSuccess("Evento creado con éxito.");
                 setNombreOrganizacion('');
                 setFechaInicio('');
                 setFechaFin('');
@@ -87,13 +88,14 @@ const PopUp = ({ togglePopup }) => {
                 setCategoriasDonacion([]);
                 togglePopup();
                 navigate(`/eventos/${responseData.created._id}`);
-                alert('Evento creado con éxito');
             } else {
                 const errorText = await response.text();
                 setError(errorText || "Error al crear el evento.");
+                setSuccess("");
             }
         } catch (error) {
             setError("Error en la conexión con el servidor");
+            setSuccess("");
         }
     };
 
@@ -198,9 +200,11 @@ const PopUp = ({ togglePopup }) => {
                         ></textarea>
                     </div>
 
+                    {error && <div className="alert alert-danger mt-3">{error}</div>}
+                    {success && <div className="alert alert-success mt-3">{success}</div>}
+
                     <button type="submit" className="btn btn-primary" id='BotonCrearEvento'>Crear Evento</button>
                 </form>
-                {error && <div className="alert alert-danger mt-3">{error}</div>}
             </div>
         </div>
     );

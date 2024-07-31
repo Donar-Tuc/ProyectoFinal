@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #E7E7E7;
+  background-color: #eeeeee;
   padding: 30rem 4rem;
   font-family: "Montserrat", sans-serif;
   gap: 20px;
@@ -85,12 +85,12 @@
 }
 
 .formSoporte label .input {
-  background-color: #eeeeee;
+  background-color: #f7f7f7;
   width: 100%;
   padding: 20px 05px 05px 10px;
   outline: 0;
-  border: 2px solid rgba(237, 237, 237, 0.695);
-  border-radius: 7px;
+  border: 1px solid rgba(237, 237, 237, 0.695);
+  border-radius: 9px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.378);
 
 }

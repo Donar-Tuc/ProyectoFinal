@@ -44,6 +44,10 @@
 
 }
 
+.HorarioPerfil{
+    padding-top: 1.5rem;
+}
+
 
 /* Etiquetas container */
 
@@ -213,8 +217,7 @@
 /* Media Query */
 @media (max-width: 900px) {
     #ContainerDineroPadre {
-        padding-top: 3rem;
-        /* Con esto corrigo el padding de arriba la card */
+        padding-top: 0rem;
         padding-left: 0;
         padding-right: 0;
         padding-bottom: 0;
@@ -276,12 +279,12 @@
 
 
     .TextoDinero {
-        padding: 2rem;
+        padding: 0 1.5rem;
         /* Ajustado */
     }
 
     #TituloDinero {
-        font-size: 2.5rem;
+        font-size: 2rem;
         /* Ajustado */
     }
 

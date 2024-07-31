@@ -54,7 +54,7 @@ const TemplatePerfil = () => {
                                     );
                                 })}
                             </div>
-                            <p>{horario}</p>
+                            <p className="HorarioPerfil">{horario}</p>
                             <a href={mapaBoton}>{direccion}</a>
 
                             {

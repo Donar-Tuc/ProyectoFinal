@@ -93,7 +93,7 @@
 .deletePopup,
 .editPopup {
     position: fixed;
-    top: 15%;
+    top: 5%;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
@@ -104,7 +104,7 @@
     z-index: 1050;
     overflow: auto;
     /* Permitir desplazamiento */
-    height: 80%;
+    height: 90%;
     /* Ajusta esto según sea necesario */
 }
 
@@ -227,6 +227,7 @@
     .editPopup {
         top: 10%;
         height: 90%;
+        width: 100%;
         /* Ajusta esto según sea necesario */
         transform: translateX(-50%);
     }
@@ -242,6 +243,24 @@
         max-height: 100%;
         /* Ajuste máximo de altura para permitir desplazamiento */
     }
+
+    .containerBtnModeventos{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .BtnGuardarMisEventos {
+        border-radius: 10px;
+        padding: .5rem 2rem;
+        margin-bottom: 1rem;
+        transition: none;
+        width: 100%;
+    }
+
 
     /* Botones de confirmación y cancelación */
     .confirmDeleteButton,
