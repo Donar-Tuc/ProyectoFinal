@@ -31,18 +31,10 @@ const Perfil = () => {
     }
   }), [token]);
 
-  console.log('Opciones de fetch:', opciones);
-
   const { data, error, loading } = useFetch(`https://api-don-ar.vercel.app/fundaciones/${userId}`, opciones);
-
-  console.log('Datos de fetch:', data);
-  // console.log('Error de fetch:', error);
 
   const logoUrl = data?.document?.logo || "";
   const { data: imageBlob, error: imageError, isLoading: isImageLoading } = useFetchImage(logoUrl);
-
-  // console.log('Datos de imagen:', imageBlob);
-  // console.log('Error de imagen:', imageError);
 
   const imageUrl = imageBlob ? URL.createObjectURL(imageBlob) : "";
 
@@ -59,29 +51,37 @@ const Perfil = () => {
 
   useEffect(() => {
     if (data) {
-      console.log('Actualizando perfil con datos:', datosFundacion);
       setPerfil(datosFundacion);
       setPerfilInicial(datosFundacion);
     }
   }, [data]);
 
   useEffect(() => {
-    console.log('Perfil inicial actualizado:', perfilInicial);
     setPerfilInicial({ ...perfil });
   }, [perfil]);
+
+  useEffect(() => {
+    return () => {
+      if (imageBlob) {
+        URL.revokeObjectURL(imageUrl);
+      }
+    };
+  }, [imageBlob, imageUrl]);
 
   if (loading || isImageLoading) return <div>Cargando...</div>;
   if (error || imageError) return <div>Error: {error || imageError}</div>;
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    console.log(`Cambiando ${name} a ${value}`);
-    setPerfil(prevPerfil => ({ ...prevPerfil, [name]: value }));
+    const { name, value, files } = e.target;
+    if (files) {
+      setFile(files[0]);
+    } else {
+      setPerfil(prevPerfil => ({ ...prevPerfil, [name]: value }));
+    }
   };
 
   const handleCheckChange = (e) => {
     const { name, checked } = e.target;
-    console.log(`Cambiando checkbox ${name} a ${checked}`);
     setPerfil(prevPerfil => ({
       ...prevPerfil,
       tituloEtiquetas: checked
@@ -92,52 +92,50 @@ const Perfil = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Enviando formulario de perfil:', perfil);
+
+    const formData = new FormData();
+    formData.append('titulo', perfil.titulo);
+    formData.append('horario', perfil.horario);
+    formData.append('direccion', perfil.direccion);
+    formData.append('telefono', perfil.telefono);
+    formData.append('descripcion', perfil.descripcion);
+    formData.append('tituloEtiquetas', perfil.tituloEtiquetas);
+    console.log(perfil);
+    if (file) {
+      formData.append('logo', file); // 'logo' debe coincidir con el campo de archivo esperado por tu servidor
+    }
 
     const opciones = {
       method: 'PUT',
       headers: {
-        'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
       },
-      body: JSON.stringify(perfil)
+      body: formData
     };
-
-    console.log('Opciones de solicitud:', opciones);
 
     try {
       const response = await fetch(`https://api-don-ar.vercel.app/fundaciones/${userId}`, opciones);
-      console.log('Respuesta del servidor:', response);
-
       if (!response.ok) {
         const errorData = await response.json();
-        console.error('Detalles del error del servidor:', errorData);
-        throw new Error('Error al actualizar el perfil');
+        throw new Error(errorData.message || 'Error al actualizar el perfil');
       }
 
       const data = await response.json();
-      console.log('Respuesta de actualización:', data);
       setPerfil(data.updated);
       setPerfilInicial(data.updated);
       setModoEdicion(false);
       setMensaje('Perfil actualizado con éxito');
     } catch (error) {
-      console.error('Error al actualizar el perfil:', error);
       setErrores(prevErrores => ({ ...prevErrores, form: error.message }));
     }
   };
 
-
-
   const handleCancelEdit = () => {
-    console.log('Cancelando edición, restaurando perfil inicial');
     setPerfil(datosFundacion);
     setModoEdicion(false);
   };
 
   const handleEditClick = () => setModoEdicion(true);
-
-
 
   const handleConfirmPasswordChange = (e) => setConfirmarContrasena(e.target.value);
 
@@ -146,30 +144,18 @@ const Perfil = () => {
     setInfoCuenta(prevInfo => ({ ...prevInfo, [name]: value }));
   };
 
-
   const handleUpdateAccountSubmit = async (e) => {
     e.preventDefault();
-    console.log('Enviando cambio de contraseña:', infoCuenta);
 
     if (infoCuenta.nuevaContrasena !== confirmarContrasena) {
       setErrores(prevErrores => ({ ...prevErrores, confirmPassword: 'Las contraseñas no coinciden' }));
       return;
     }
 
-    // Construir el objeto body solo con los campos que no están vacíos
     const body = {};
-
-    if (infoCuenta.contrasena) {
-      body.password = infoCuenta.contrasena;
-    }
-
-    if (infoCuenta.nuevaContrasena) {
-      body.newPassword = infoCuenta.nuevaContrasena;
-    }
-
-    if (infoCuenta.email) {
-      body.email = infoCuenta.email;
-    }
+    if (infoCuenta.contrasena) body.password = infoCuenta.contrasena;
+    if (infoCuenta.nuevaContrasena) body.newPassword = infoCuenta.nuevaContrasena;
+    if (infoCuenta.email) body.email = infoCuenta.email;
 
     const opciones = {
       method: 'PUT',
@@ -185,10 +171,10 @@ const Perfil = () => {
       if (!response.ok) throw new Error('Error al cambiar contraseña');
       setMensaje('Cuenta actualizada con éxito');
     } catch (error) {
-      console.error('Error al actualizar cuenta:', error);
       setErrores(prevErrores => ({ ...prevErrores, form: error.message }));
     }
   };
+
 
   return (
     <div className="PerfilContainer">
@@ -314,11 +300,8 @@ const Perfil = () => {
                       </div>
                     )}
                   </div>
-
                   <div className="mb-3">
-                    <label className="form-label">
-                      Cambiar Imagen de Perfil
-                    </label>
+                    <label className="form-label">Cambiar Imagen de Perfil</label>
                     <input
                       type="file"
                       className="form-control"
@@ -413,11 +396,12 @@ const Perfil = () => {
                       <p>
                         <strong>Correo electronico actual:</strong> {perfil.email}
                       </p>
-                      <label className="form-label">Nuevo </label>
+                      <label className="form-label">Nuevo Correo</label>
                       <input
                         type="email"
                         className="form-control"
                         name="email"
+                        placeholder="Introduzca un nuevo correo si desea cambiarlo"
                         value={infoCuenta.email}
                         onChange={handleAccountChange}
                       />
