@@ -52,13 +52,18 @@
 .BtnEventosPrincipal {
     border: none;
     padding: 0;
-    background-color: #0C6DFD;
+    background-color: #1871E3;
     color: white;
     padding: .6rem 1.5rem;
-    border-radius: 30px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.205);
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.13);
+    transition: .3s all ease-in-out;
 }
 
+.BtnEventosPrincipal:hover{
+    transform: translateY(-1px);
+    background-color: #2c7be3;
+}
 /* estilos de las cards individuales */
 
 .CardEventos {
@@ -237,6 +242,14 @@
         padding-bottom: 0rem;
         /* Padding de arriba*/
     }
+
+    .BtnEventosPrincipal{
+        transition: none;
+    }
+    .BtnEventosPrincipal:hover{
+        transform:none;
+        background-color: none;
+    }
 }
 
 
@@ -348,6 +361,14 @@
         justify-content: left;
         gap: 10px;
     }
+
+    .BtnEventosPrincipal{
+        transition: none;
+    }
+    .BtnEventosPrincipal:hover{
+        transform:none;
+        background-color: none;
+    }
     
 
     /* media querie para ipad */
@@ -406,5 +427,13 @@
         height: 70px;
         overflow-y: auto;
         /*con esto existe un scroll en la descripcion de cada evento pero la card no se va a romper*/
+    }
+
+    .BtnEventosPrincipal{
+        transition: none;
+    }
+    .BtnEventosPrincipal:hover{
+        transform:none;
+        background-color: none;
     }
 }

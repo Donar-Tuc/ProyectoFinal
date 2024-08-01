@@ -36,7 +36,7 @@
   align-items: center;
   font-family: "Montserrat", sans-serif;
   padding-left: 30px;
-  color: #6d87d6;
+  color: #1871E3;
 }
 
 .title::before {
@@ -58,7 +58,7 @@
   width: 16px;
   border-radius: 50%;
   left: 0px;
-  background-color: #6d87d6;
+  background-color: #1871E3;
 }
 
 .message,
@@ -72,7 +72,7 @@
 }
 
 .signin a:hover {
-  text-decoration: underline #6d87d6;
+  text-decoration: underline #1871E3;
 }
 
 .signin a {
@@ -144,7 +144,7 @@
   font-family: inherit;
   margin: 0 auto;
   font-size: 1rem;
-  background: #1B7DFC;
+  background: #1871E3;
   color: white;
   padding: 0.9rem .7rem;
   /* padding-left: 0.9em; */
@@ -161,7 +161,7 @@
 }
 
 .btnForm:hover {
-  background-color: #1B7DFC;
+  background-color: #1871E3;
 }
 
 .btnForm span {
@@ -260,10 +260,14 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 4rem 0rem;
+    padding-top: 4rem;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 1rem;
     font-family: "Montserrat", sans-serif;
     gap: 20px;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
   }
 
 
@@ -357,13 +361,11 @@
 
   .ContactoForm {
     text-decoration: none;
-    color: black;
     cursor: pointer;
   }
 
   .ContactoForm:hover {
     text-decoration: none;
-    color: rgb(101, 101, 101);
     cursor: pointer;
   }
 
