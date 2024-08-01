@@ -58,13 +58,13 @@ const Estadisticas = () => {
   return (
     <>
       <section id="EstadisticasContainer" ref={estadisticasRef}>
-        <h2 id="TituloEstadisticas" >Nuestra Trayectoria</h2>
-        <p className="descripcionEstadisticas">
+        <h2 id="TituloEstadisticas" data-aos="fade-up">Nuestra Trayectoria</h2>
+        <p className="descripcionEstadisticas" data-aos="fade-up">
           Nos especializamos en guiar a personas que desean donar pero necesitan orientación. Con una trayectoria sólida, proporcionamos información confiable para que cada donante contribuya de manera informada y segura.
         </p>
         {/* <p className="descripcionEstadisticas">Facilitamos el proceso de donación, asegurando que cada acto de generosidad tenga un impacto positivo y significativo.</p> */}
 
-        <div className="Bloqueestadisticas">
+        <div className="Bloqueestadisticas" data-aos="fade-up">
           <div className="Estadistica" >
             <h2 className="SignoMas">+ <span id="NumeroEst" className="count" data-start="0" data-end="4500" data-duration="1000">0</span></h2>
             <h2 id="TextEst">Donaciones</h2>

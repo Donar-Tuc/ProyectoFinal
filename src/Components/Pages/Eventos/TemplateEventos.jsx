@@ -4,9 +4,8 @@ import { useParams } from "react-router-dom";
 import { etiquetas } from "../../Pages/Categorias/Etiquetas/index";
 import moment from "moment";
 import "moment/locale/es";  // Importar el locale en español
-import Datetime from 'react-datetime';
 import useFetchImage from "../../../logic/useFetchImage";
-import "../Categorias/SeccionesCategorias/Fundaciones/Styles/CardsFundaciones.css";
+import '../Eventos/css/MisEventos.css'
 
 moment.locale("es");  // Configurar el locale a español
 
@@ -48,48 +47,47 @@ const TemplateEventos = () => {
   const fundacionTitulo = fundacionData?.document?.titulo || fundacionData?.document?.userName || "Fundación desconocida";
 
   return (
-    <section id="ContainerDineroPadre" className="ContainerEventoNuevo">
-      <div className="DineroHijo CardNuevoEvento">
-        <div className="ImagenContainer">
+    <section id="ContainerMievento" >
+      <div className="CardNuevoEvento">
+        <div id="ContainerImagenNuevoEvento">
           {imageIsLoading ? (
             <p>Cargando logo...</p>
           ) : imageError ? (
             <p>Error cargando el logo</p>
           ) : (
-            <img src={imageUrl} alt={`logo ${fundacionTitulo}`} />
+            <img src={imageUrl} alt={`logo ${fundacionTitulo}`} id="imagenNuevoEvento"/>
           )}
         </div>
-        <div className="TextoDinero">
-          <div id="ContainerTituloBtn">
-            <div id="Box1Texto">
-              <h2 id="TituloDinero">{evento.titulo}</h2>
-              <h3>Organizado por: {fundacionTitulo}</h3>
-
-              <div id="etiquetasContainer">
+        <div className="ContainertextoNuevoevento">
+              <h2 id="TituloDeMiEventoPrincipal">{evento.titulo}</h2>
+              {/* Etiquetas - Se muestran las categorias */}
+              <div id="etiquetasContainerMisEventosID">
                 {evento.tituloEtiquetas?.map((etiqueta, index) => {
                   const etiquetaData = etiquetas[etiqueta];
                   return (
-                    <div className="EtiquetaContainer" key={index}>
+                    <div className="EtiquetaContainerMisEventosImg" key={index}>
                       <img
                         src={etiquetaData?.imagen}
-                        id="EtiquetaCard"
+                        id="EtiquetaCardMisEventos"
                         alt="categoria"
                       />
-                      <p className="TituloEtiqueta">{etiquetaData?.titulo}</p>
+                      <p className="TituloEtiquetaMisEventos">{etiquetaData?.titulo}</p>
                     </div>
                   );
                 })}
               </div>
-              <p>
-                Del: {moment(evento.fechaInicio).format("dddd D [de] MMMM")}
+              <div className="ContainerInfoMievento">
+              <h3 className="TituloMieventoInfo">Informacion Sobre el evento</h3>
+              <p className="TextoMiEventoInfo"><strong>Organizado por:</strong>  {fundacionTitulo}</p>
+              <p className="TextoMiEventoInfo">
+               <strong>Fecha de Inicio: </strong>{moment(evento.fechaInicio).format("dddd D [de] MMMM")}
               </p>
-              <p>Al: {moment(evento.fechaFin).format("dddd D [de] MMMM")}</p>
+              <p className="TextoMiEventoInfo"><strong>Fecha de Finalizacion:</strong> {moment(evento.fechaFin).format("dddd D [de] MMMM")}</p>
+              <p id="DecripcionMisEventos">{evento.descripcion}</p>
+              </div>
             </div>
-            <div className="Box2Btn"></div>
           </div>
-          <p id="DecripcionEventos">{evento.descripcion}</p>
-        </div>
-      </div>
+         
     </section>
   );
 }

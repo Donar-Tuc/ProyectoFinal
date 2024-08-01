@@ -4,10 +4,7 @@ import Card from './CardsEventos.jsx';
 import './css/MisEventos.css';
 import PopUpMisEventos from './PopUpMisEventos.js';
 import { useAuth } from '../../../logic/authContext.js';
-import { getUserData } from '../../../logic/getUserData.js';
-
 // Importar etiquetas
-import { etiquetas } from '../Categorias/Etiquetas/index';
 
 // Icons para etiquetas
 import { useFetch } from '../../../logic/useFetch.js';

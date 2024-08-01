@@ -50,6 +50,8 @@
   animation: pulse 1s linear infinite;
 }
 
+/* efecto breath */
+
 .title::before,
 .title::after {
   position: absolute;
@@ -112,7 +114,7 @@
 
 .formSoporte label .input:focus+span,
 .formSoporte label .input:valid+span {
-  color: #6d87d6;
+  color: #1871E3;
   top: 0px;
   font-size: .9rem;
   font-weight: 600;

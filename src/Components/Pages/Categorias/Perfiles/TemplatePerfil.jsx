@@ -13,7 +13,7 @@ const TemplatePerfil = () => {
     /*    if (loading) return <div>Loading...</div>; // Manejar la carga
        if (error) return <div>Error: {error}</div>; // Manejar errores */
 
-    const { logo, titulo, horario, direccion, telefono, sitioWeb, email, mapaBoton, mapa, descripcion, tituloEtiquetas } = fundacion; // Desestructurar los datos obtenidos
+    const { logo, titulo, horario, direccion, telefono, sitioWeb, email, mapaBoton, mapa, descripcion, tituloEtiquetas, linkMercadoPago } = fundacion; // Desestructurar los datos obtenidos
 
     const { data: image, error: imageError, isLoading: imageIsLoading } = useFetchImage(logo);
 
@@ -35,7 +35,7 @@ const TemplatePerfil = () => {
                     {
                         imageIsLoading ? <p>Cargando logo...</p> :
                             imageError ? <p>Error cargando el logo</p> :
-                                <img src={imageUrl} alt={`logo ${titulo}`} />
+                                <img src={imageUrl} alt={`logo ${titulo}`} className="LogoCardPerfilCategoria"/>
                     }
                 </div>
                 <div className="TextoDinero">
@@ -61,7 +61,7 @@ const TemplatePerfil = () => {
                                 fundacion.tituloEtiquetas?.includes("Donaciones monetarias") &&
                                 (
                                     <div className="ContainerMP">
-                                        <a href="http://link.mercadopago.com.ar/donarorganizacion"> {/* Esto tiene que ser dinamico */}
+                                        <a href={linkMercadoPago}> {/* Esto tiene que ser dinamico */}
                                             <button className="BtnMercadopago">Donar Online</button>
                                         </a>
                                     </div>)

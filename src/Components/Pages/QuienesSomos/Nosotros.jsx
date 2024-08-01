@@ -28,7 +28,7 @@ const Nosotros = () => {
         <h2 className="TituloSobreNosotros">Nuestro Equipo</h2>
         <br></br>
         <ul>
-          <li>Tomas Fernandez Murga - Desarrollador Front End</li>
+          <li>Tomás Fernandez Murga - Desarrollador Front End</li>
           <li>Tiziano Carranza - Desarrollador Back End</li>
           <li>Martin Fort - Desarrollador Back End</li>
           <li>Sebastian Brahim - QA</li>

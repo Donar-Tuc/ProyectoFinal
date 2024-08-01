@@ -28,7 +28,7 @@ const CardEvento = ({ id, imagen, titulo, fechaInicio, fechaFin, descripcion, ti
                 }
             </div>
 
-            <div className="textoContainer">
+            <div className="textoContainer MisEventosContainerTexto">
                 <h3 id="TituloEventos">{titulo}</h3>
                 <p id="HorarioEventos">Desde el {fechaInicioFormateada} hasta el {fechaFinFormateada}</p>
                 <div id="etiquetasContainer">
@@ -43,7 +43,7 @@ const CardEvento = ({ id, imagen, titulo, fechaInicio, fechaFin, descripcion, ti
                     })}
                 </div>
             </div>
-            <div className="containerDescripcion">
+            <div className="containerDescripcion MisEventosDescripcion" >
                 <p id="DescripcionDeCardEventos">{descripcion}</p>
             </div>
             <div className="containerBotonEvento">

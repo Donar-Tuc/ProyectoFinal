@@ -11,8 +11,8 @@ class Comunidad extends Component {
     return (
       <>
         <section id="ComunidadContainer">
-          <h2 className="TituloComunidad">Unite a la Comunidad</h2>
-          <p className="DescripcionComunidad">
+          <h2 className="TituloComunidad" data-aos="fade-up">Unite a la Comunidad</h2>
+          <p className="DescripcionComunidad" data-aos="fade-up">
             Suscríbete a nuestra lista de correos y mantente informado sobre las
             últimas iniciativas, eventos de caridad, y oportunidades para hacer
             la diferencia. Recibe actualizaciones exclusivas directamente en tu
@@ -24,6 +24,7 @@ class Comunidad extends Component {
             action="https://api.web3forms.com/submit"
             method="POST"
             onSubmit={this.handleSubmit}
+            data-aos="fade-up"
           >
             <input
               type="hidden"
@@ -55,7 +56,7 @@ class Comunidad extends Component {
             </div>
           </form>
 
-          <img src={fotoComunidad} alt="comunidad" className="FotoComunidad" />
+          <img src={fotoComunidad} alt="comunidad" data-aos="fade-up" className="FotoComunidad" />
         </section>
       </>
     );

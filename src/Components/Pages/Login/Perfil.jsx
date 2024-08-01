@@ -18,7 +18,7 @@ const Perfil = () => {
     contrasena: "",
     nuevaContrasena: ""
   });
-  const [file, setFile] = useState(null); // Estado para manejar el archivo seleccionado
+  const [file, setFile] = useState(null); 
 
   const categorias = Object.entries(etiquetas);
   const { token, userId } = useAuth();
@@ -46,6 +46,7 @@ const Perfil = () => {
     telefono: data.document.telefono || "No especificado",
     direccion: data.document.direccion || "No especificado",
     descripcion: data.document.descripcion || "No especificado",
+    linkMercadoPago: data.document.linkMercadoPago || "",
     tituloEtiquetas: data.document.tituloEtiquetas || []
   } : {};
 
@@ -98,6 +99,7 @@ const Perfil = () => {
     formData.append('horario', perfil.horario);
     formData.append('direccion', perfil.direccion);
     formData.append('telefono', perfil.telefono);
+    formData.append("linkMercadoPago", perfil.linkMercadoPago)
     formData.append('descripcion', perfil.descripcion);
     formData.append('tituloEtiquetas', perfil.tituloEtiquetas);
     console.log(perfil);
@@ -265,6 +267,25 @@ const Perfil = () => {
                   )}
                 </div>
 
+                <div className="mb-3">
+                  <label className="form-label">Link Mercado Pago</label>
+                  <input
+                    type="text"
+                    className={`form-control ${errores.linkMercadoPago ? "is-invalid" : ""
+                      }`}
+                    name="linkMercadoPago"
+                    value={perfil.linkMercadoPago}
+                    onChange={handleChange}
+                    placeholder="http://link.mercadopago.com.ar/()"
+                    pattern="link\.mercadopago\.com\.ar\/.*"
+                    title="El enlace debe comenzar con http://link.mercadopago.com.ar/"
+                  />
+                  {errores.linkMercadoPago && (
+                    <div className="invalid-feedback">{errores.linkMercadoPago}
+                       El enlace debe comenzar con "http://link.mercadopago.com.ar/"
+                    </div>
+                  )}
+                </div>
 
                 <div className="mb-3">
                   <label className="form-label">Descripción</label>
@@ -364,6 +385,9 @@ const Perfil = () => {
                 </p>
                 <p>
                   <strong>Teléfono:</strong> {perfil.telefono}
+                </p>
+                <p>
+                  <strong>Link de mercado pago:</strong> <a href={perfil.linkMercadoPago}>{perfil.linkMercadoPago}</a>
                 </p>
                 <p>
                   <strong>Descripción:</strong> {perfil.descripcion}

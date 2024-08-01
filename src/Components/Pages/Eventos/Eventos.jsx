@@ -80,7 +80,7 @@ const Eventos = () => {
                 ))}
             </div>
 
-            <div id="PaginationButtons">
+            <div id="PaginationButtonsEventos">
                 <button
                     className="BtnNextAndPrevious"
                     onClick={() => paginate(currentPage - 1)}
