@@ -4,6 +4,9 @@ import { etiquetas } from "../Categorias/Etiquetas/index";
 import { useFetch } from "../../../logic/useFetch";
 import useFetchImage from "../../../logic/useFetchImage";
 import { useAuth } from "../../../logic/authContext"; // Asegúrate de ajustar la ruta de importación según tu estructura de carpetas
+import { useGeoCode } from "../../../logic/useGeoCode";
+
+/* 9b278a0a4aa142a5be0464d52bf05dbd */
 
 const Perfil = () => {
   const [modoEdicion, setModoEdicion] = useState(false);
@@ -18,10 +21,11 @@ const Perfil = () => {
     contrasena: "",
     nuevaContrasena: ""
   });
-  const [file, setFile] = useState(null); 
+  const [file, setFile] = useState(null); // Estado para manejar el archivo seleccionado
 
   const categorias = Object.entries(etiquetas);
   const { token, userId } = useAuth();
+  const { getGeocode } = useGeoCode();
 
   const opciones = useMemo(() => ({
     method: 'GET',
@@ -44,9 +48,9 @@ const Perfil = () => {
     horario: data.document.horario || "No especificado",
     email: data.document.email || "No especificado",
     telefono: data.document.telefono || "No especificado",
+    linkMercadoPago: data.document.linkMercadoPago || "",
     direccion: data.document.direccion || "No especificado",
     descripcion: data.document.descripcion || "No especificado",
-    linkMercadoPago: data.document.linkMercadoPago || "",
     tituloEtiquetas: data.document.tituloEtiquetas || []
   } : {};
 
@@ -74,6 +78,7 @@ const Perfil = () => {
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
+
     if (files) {
       setFile(files[0]);
     } else {
@@ -94,6 +99,12 @@ const Perfil = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const location = await getGeocode(perfil.direccion);
+    const { latitud, longitud } = location;
+
+    console.log(getGeocode(perfil.direccion))
+    console.log(latitud, longitud);
+
     const formData = new FormData();
     formData.append('titulo', perfil.titulo);
     formData.append('horario', perfil.horario);
@@ -102,6 +113,8 @@ const Perfil = () => {
     formData.append("linkMercadoPago", perfil.linkMercadoPago)
     formData.append('descripcion', perfil.descripcion);
     formData.append('tituloEtiquetas', perfil.tituloEtiquetas);
+    formData.append("latitud", latitud);
+    formData.append("longitud", longitud);
     console.log(perfil);
     if (file) {
       formData.append('logo', file); // 'logo' debe coincidir con el campo de archivo esperado por tu servidor
@@ -238,6 +251,7 @@ const Perfil = () => {
                   <label className="form-label">Dirección</label>
                   <input
                     type="text"
+                    placeholder="Calle y número, departamento, provincia"
                     className={`form-control ${errores.direccion ? "is-invalid" : ""
                       }`}
                     name="direccion"
@@ -250,7 +264,6 @@ const Perfil = () => {
                     </div>
                   )}
                 </div>
-
 
                 <div className="mb-3">
                   <label className="form-label">Teléfono</label>
@@ -276,13 +289,13 @@ const Perfil = () => {
                     name="linkMercadoPago"
                     value={perfil.linkMercadoPago}
                     onChange={handleChange}
-                    placeholder="http://link.mercadopago.com.ar/()"
+                    placeholder="link.mercadopago.com.ar/tu-link"
                     pattern="link\.mercadopago\.com\.ar\/.*"
-                    title="El enlace debe comenzar con http://link.mercadopago.com.ar/"
+                    title="El enlace debe comenzar con link.mercadopago.com.ar/"
                   />
                   {errores.linkMercadoPago && (
                     <div className="invalid-feedback">{errores.linkMercadoPago}
-                       El enlace debe comenzar con "http://link.mercadopago.com.ar/"
+                      El enlace debe comenzar con "link.mercadopago.com.ar/"
                     </div>
                   )}
                 </div>
@@ -301,26 +314,6 @@ const Perfil = () => {
                       {errores.descripcion}
                     </div>
                   )}
-
-                  {/* MODIFICAR ESTO CON LOS DATOS DE MERCADO PAGO */}
-
-                  <div className="mb-3">
-                    <br />
-                    <label className="form-label">Enlace de Mercado Pago para donaciones</label>
-                    <input
-                      type="text"
-                      className={`form-control ${errores.direccion ? "is-invalid" : ""
-                        }`}
-                      name="direccion"
-                      value={perfil.direccion}
-                      onChange={handleChange}
-                    />
-                    {errores.direccion && (
-                      <div className="invalid-feedback">
-                        {errores.direccion}
-                      </div>
-                    )}
-                  </div>
                   <div className="mb-3">
                     <label className="form-label">Cambiar Imagen de Perfil</label>
                     <input
