@@ -78,9 +78,6 @@ const PopUp = ({ togglePopup }) => {
         formData.append("logo", file); 
     }
 
-   console.log([...formData.entries()]);
-   console.log(tituloEtiquetas);
-
     
     try {
       const response = await fetch("https://api-don-ar.vercel.app/eventos/", {

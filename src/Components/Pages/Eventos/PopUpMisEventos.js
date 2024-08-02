@@ -12,11 +12,9 @@ import { useNavigate } from "react-router-dom";
 
 const PopUpMisEventos = ({ event, togglePopup, onSave }) => {
   const [titulo, setTitulo] = useState(event.titulo);
-  const [fechaInicio, setFechaInicio] = useState(event.fechaInicio);
-  const [fechaFin, setFechaFin] = useState(event.fechaFin);
-  const [tituloEtiquetas, setTituloEtiquetas] = useState(
-    event.tituloEtiquetas
-  );
+  const [fechaInicio, setFechaInicio] = useState(event.fechaInicio ? moment(event.fechaInicio) : moment());
+  const [fechaFin, setFechaFin] = useState(event.fechaFin ? moment(event.fechaFin) : moment().add(1, 'days'));
+  const [tituloEtiquetas, setTituloEtiquetas] = useState(event.tituloEtiquetas);
   const [descripcion, setDescripcion] = useState(event.descripcion);
   const [file, setFile] = useState("");
   const [error, setError] = useState("");
@@ -26,8 +24,8 @@ const PopUpMisEventos = ({ event, togglePopup, onSave }) => {
 
   useEffect(() => {
     setTitulo(event.titulo);
-    setFechaInicio(event.fechaInicio);
-    setFechaFin(event.fechaFin);
+    setFechaInicio(event.fechaInicio ? moment(event.fechaInicio) : moment());
+    setFechaFin(event.fechaFin ? moment(event.fechaFin) : moment().add(1, 'days'));
     setTituloEtiquetas(event.tituloEtiquetas);
     setDescripcion(event.descripcion);
   }, [event]);
@@ -44,7 +42,6 @@ const PopUpMisEventos = ({ event, togglePopup, onSave }) => {
     );
   };
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -58,13 +55,13 @@ const PopUpMisEventos = ({ event, togglePopup, onSave }) => {
 
     const formData = new FormData();
     formData.append("titulo", titulo);
-    formData.append("fechaInicio", fechaInicio);
-    formData.append("fechaFin", fechaFin);
+    formData.append("fechaInicio", fechaInicio.toISOString());
+    formData.append("fechaFin", fechaFin.toISOString());
     formData.append("descripcion", descripcion);
     formData.append("tituloEtiquetas", tituloEtiquetas);
-        
+
     if (file) {
-        formData.append("logo", file);
+      formData.append("logo", file);
     }
 
     const opciones = {
@@ -75,14 +72,13 @@ const PopUpMisEventos = ({ event, togglePopup, onSave }) => {
       body: formData,
     };
 
-    console.log("Opciones de solicitud:", opciones);
+
 
     try {
       const response = await fetch(
         `https://api-don-ar.vercel.app/eventos/${event._id}`,
         opciones
       );
-      console.log("Respuesta del servidor:", response);
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -93,7 +89,6 @@ const PopUpMisEventos = ({ event, togglePopup, onSave }) => {
 
       const data = await response.json();
 
-      console.log("Respuesta de actualización:", data);
       setTitulo(data.updated.titulo);
       setFechaInicio(data.updated.fechaInicio);
       setFechaFin(data.updated.fechaFin);
@@ -145,7 +140,7 @@ const PopUpMisEventos = ({ event, togglePopup, onSave }) => {
             </label>
             <div>
               <Datetime
-                value={fechaInicioFormateada}
+                value={fechaInicio}
                 onChange={(date) => setFechaInicio(date)}
                 inputProps={{ placeholder: "Fecha de inicio" }}
                 dateFormat="D [de] MMMM [del] YYYY"
@@ -153,7 +148,7 @@ const PopUpMisEventos = ({ event, togglePopup, onSave }) => {
               />
               &nbsp;&nbsp;
               <Datetime
-                value={fechaFinFormateada}
+                value={fechaFin}
                 onChange={(date) => setFechaFin(date)}
                 inputProps={{ placeholder: "Fecha de fin" }}
                 dateFormat="D [de] MMMM [del] YYYY"
@@ -280,13 +275,13 @@ const PopUpMisEventos = ({ event, togglePopup, onSave }) => {
                   <input
                     className="form-check-input"
                     type="checkbox"
-                    id="Medicamentos"
-                    value="Medicamentos"
-                    checked={tituloEtiquetas.includes("Medicamentos")}
+                    id="Juguetes"
+                    value="Juguetes"
+                    checked={tituloEtiquetas.includes("Juguetes")}
                     onChange={handleCheckboxChange}
                   />
-                  <label className="form-check-label" htmlFor="Medicamentos">
-                    Medicamentos
+                  <label className="form-check-label" htmlFor="Juguetes">
+                    Juguetes
                   </label>
                 </div>
               </div>
@@ -295,13 +290,13 @@ const PopUpMisEventos = ({ event, togglePopup, onSave }) => {
                   <input
                     className="form-check-input"
                     type="checkbox"
-                    id="Juguetes"
-                    value="Juguetes"
-                    checked={tituloEtiquetas.includes("Juguetes")}
+                    id="Medicamentos"
+                    value="Medicamentos"
+                    checked={tituloEtiquetas.includes("Medicamentos")}
                     onChange={handleCheckboxChange}
                   />
-                  <label className="form-check-label" htmlFor="Juguetes">
-                    Juguetes
+                  <label className="form-check-label" htmlFor="Medicamentos">
+                    Medicamentos
                   </label>
                 </div>
               </div>
@@ -314,35 +309,42 @@ const PopUpMisEventos = ({ event, togglePopup, onSave }) => {
             <textarea
               id="descripcion"
               className="InputFormEventos form-control"
+              rows="4"
               value={descripcion}
               onChange={(e) => setDescripcion(e.target.value)}
               required
             />
+            {error && <p className="text-danger">{error}</p>}
           </div>
           <div className="mb-3">
-            <label className="form-label">Cambiar imagen del evento</label>
+            <label htmlFor="imagen" className="TextoFormEventos">
+              Subir Imagen:
+            </label>
             <input
+              id="imagen"
               type="file"
-              className="form-control"
-              accept="image/*"
+              className="form-control-file"
               onChange={handleSetImg}
             />
           </div>
-          <button
-            onClick={cancelEdit}
-            className="cancelDeleteButton BtnGuardarMisEventos"
-          >
-            Descartar Cambios
-          </button>
-          <button
-            type="submit"
-            className="btn btn-primary BtnGuardarMisEventos"
-          >
-            Guardar Cambios
-          </button>
+          <div className="d-flex justify-content-between">
+            <button
+              type="submit"
+              className="btn btn-primary BotonAceptarEvento"
+            >
+              Guardar Cambios
+            </button>
+            <button
+              type="button"
+              className="btn btn-secondary BotonCancelarEvento"
+              onClick={cancelEdit}
+            >
+              Cancelar
+            </button>
+          </div>
         </form>
-        <ToastContainer />
       </div>
+      <ToastContainer />
     </div>
   );
 };

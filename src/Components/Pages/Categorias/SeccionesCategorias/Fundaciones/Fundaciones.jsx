@@ -9,7 +9,10 @@ import { useGeoCode } from "../../../../../logic/useGeoCode.js";
 const Fundaciones = () => {
     const { scrollPosition, setScrollPosition, page, setPage } = useScroll();
     const scrollRef = useRef();
-    const [showSortedFundaciones, setShowSortedFundaciones] = useState(false);
+    const [showSortedFundaciones, setShowSortedFundaciones] = useState(() => {
+        const saved = localStorage.getItem('showSortedFundaciones');
+        return saved !== null ? JSON.parse(saved) : false;
+    });
     const categoria = useParams().categoria;
     let url = categoria
         ? `https://api-don-ar.vercel.app/fundaciones/etiqueta?etiqueta=${categoria}`
@@ -59,6 +62,10 @@ const Fundaciones = () => {
         localStorage.setItem("currentPage", page);
         window.scrollTo(0, 0);
     }, [page]);
+
+    useEffect(() => {
+        localStorage.setItem('showSortedFundaciones', JSON.stringify(showSortedFundaciones));
+    }, [showSortedFundaciones]);
 
     const paginate = (pageNumber) => {
         setPage(pageNumber);

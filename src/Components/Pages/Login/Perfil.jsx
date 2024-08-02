@@ -102,8 +102,6 @@ const Perfil = () => {
     const location = await getGeocode(perfil.direccion);
     const { latitud, longitud } = location;
 
-    console.log(getGeocode(perfil.direccion))
-    console.log(latitud, longitud);
 
     const formData = new FormData();
     formData.append('titulo', perfil.titulo);
@@ -115,7 +113,6 @@ const Perfil = () => {
     formData.append('tituloEtiquetas', perfil.tituloEtiquetas);
     formData.append("latitud", latitud);
     formData.append("longitud", longitud);
-    console.log(perfil);
     if (file) {
       formData.append('logo', file); // 'logo' debe coincidir con el campo de archivo esperado por tu servidor
     }
@@ -380,7 +377,7 @@ const Perfil = () => {
                   <strong>Teléfono:</strong> {perfil.telefono}
                 </p>
                 <p>
-                  <strong>Link de mercado pago:</strong> <a href={perfil.linkMercadoPago}>{perfil.linkMercadoPago}</a>
+                  <strong>Link de mercado pago:</strong> <a href={`https://${perfil.linkMercadoPago}`} target="_blank" rel="noopener noreferrer">{perfil.linkMercadoPago}</a>
                 </p>
                 <p>
                   <strong>Descripción:</strong> {perfil.descripcion}

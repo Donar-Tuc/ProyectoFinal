@@ -11,19 +11,19 @@ moment.locale("es");  // Configurar el locale a español
 
 const TemplateEventos = () => {
   const { id } = useParams(); // Obtener el parámetro de la URL
-  console.log("Evento ID:", id);
+
 
   const { data: eventoData, loading: eventoLoading, error: eventoError } = useFetch(`https://api-don-ar.vercel.app/eventos/${id}`);
   const evento = eventoData ? eventoData.document : null;
-  console.log("Evento Data:", evento);
+
 
   const fundacionId = evento ? evento.fundacionOrganizadora : null;
-  console.log("Fundacion ID:", fundacionId);
+
 
   const { data: fundacionData, loading: fundacionLoading, error: fundacionError } = useFetch(
     fundacionId ? `https://api-don-ar.vercel.app/fundaciones/${fundacionId}` : null
   );
-  console.log("Fundacion Data:", fundacionData);
+
 
   const { data: image, error: imageError, isLoading: imageIsLoading } = useFetchImage(evento?.logo);
 

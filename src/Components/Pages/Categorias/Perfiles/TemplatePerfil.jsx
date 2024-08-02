@@ -61,7 +61,7 @@ const TemplatePerfil = () => {
                                 fundacion.tituloEtiquetas?.includes("Donaciones monetarias") &&
                                 (
                                     <div className="ContainerMP">
-                                        <a href={linkMercadoPago}> {/* Esto tiene que ser dinamico */}
+                                        <a href={`https://${linkMercadoPago}`} target="_blank" rel="noopener noreferrer">
                                             <button className="BtnMercadopago">Donar Online</button>
                                         </a>
                                     </div>)

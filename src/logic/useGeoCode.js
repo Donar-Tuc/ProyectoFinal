@@ -14,8 +14,6 @@ export function useGeoCode() {
 
             if (data.status.code === 200) {
                 const location = data.results[0].geometry;
-                console.log(location);
-                console.log(`Latitud: ${location.lat}, Longitud: ${location.lng}`);
                 return { latitud: location.lat, longitud: location.lng };
             } else {
                 console.error('Error en la geocodificación:', data.status.message);
