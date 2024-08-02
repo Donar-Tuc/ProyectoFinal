@@ -153,7 +153,7 @@
     font-size: 1rem;
     font-family: "Montserrat", sans-serif;
     color: black;
-    word-wrap: break-word;
+    word-break:keep-all;
 }
 
 #DescripcionDeCardEventos {
@@ -162,7 +162,7 @@
     color: black;
     word-wrap: break-word;
     /* Alternativa: usar word-break: break-word; */
-    word-break: break-all;
+    word-break:keep-all;
     /* Alternativa: usar break-word para cortar palabras largas sin guiones */
     padding: 0 2rem;
     height: 70px;

@@ -172,9 +172,9 @@
 
 .DescripcionPerfil {
     font-size: 1rem;
-    word-wrap: break-word;
+    word-break:keep-all;
     /* Alternativa: usar word-break: break-word; */
-    word-break: break-all;
+    /* word-break: break-all; */
     /* Alternativa: usar break-word para cortar palabras largas sin guiones */
 
 }
@@ -185,9 +185,12 @@
 
     padding-top: 0;
     padding-bottom: 1rem;
-    word-wrap: break-word;
+    /* word-wrap: break-word; */
+    /* word-break:keep-all; */
+    word-break:keep-all;
+
     /* Alternativa: usar word-break: break-word; */
-    word-break: break-all;
+    /* word-break: break-all; */
     /* Alternativa: usar break-word para cortar palabras largas sin guiones */
 }
 
@@ -290,6 +293,7 @@
 
     #TituloDinero {
         font-size: 2rem;
+        padding-top: 1.3rem;
         /* Ajustado */
     }
 

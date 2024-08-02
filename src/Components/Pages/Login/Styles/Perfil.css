@@ -34,7 +34,8 @@
 }
 
 .TituloCardPrincipal {
-    word-wrap: break-word;
+    word-break:keep-all;
+
 }
 
 .containerFoto {
@@ -110,14 +111,15 @@
 .DataPefil {
     margin: 10px 0;
     width: 100%;
-    word-wrap: break-word;
+    word-break:keep-all;
+
 }
 
 .descripcion {
     width: 100%;
     white-space: pre-wrap;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+    word-break:keep-all;
+
 }
 
 
@@ -487,14 +489,14 @@
     .DataPefil {
         margin: 10px 0;
         width: 100%;
-        word-wrap: break-word;
+        word-break:keep-all;
     }
 
     .descripcion {
         width: 100%;
         white-space: pre-wrap;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
+        word-break:keep-all;
+
     }
 
 
