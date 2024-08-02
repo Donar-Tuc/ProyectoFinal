@@ -83,7 +83,7 @@ const TemplateEventos = () => {
                <strong>Fecha de Inicio: </strong>{moment(evento.fechaInicio).format("dddd D [de] MMMM")}
               </p>
               <p className="TextoMiEventoInfo"><strong>Fecha de Finalizacion:</strong> {moment(evento.fechaFin).format("dddd D [de] MMMM")}</p>
-              <p id="DecripcionMisEventos">{evento.descripcion}</p>
+              <p className="TextoMiEventoInfo"><strong>Descripcion:</strong><br />{evento.descripcion}</p>
               </div>
             </div>
           </div>
