@@ -160,7 +160,7 @@
     font-size: 1rem;
     font-family: "Montserrat", sans-serif;
     color: black;
-    word-wrap: break-word;
+    /* word-wrap: break-word; */
     /* Alternativa: usar word-break: break-word; */
     word-break:keep-all;
     /* Alternativa: usar break-word para cortar palabras largas sin guiones */
@@ -366,9 +366,9 @@
         font-size: 1rem;
         font-family: "Montserrat", sans-serif;
         color: black;
-        word-wrap: break-word;
+        /* word-wrap: break-word; */
         /* Alternativa: usar word-break: break-word; */
-        word-break: break-all;
+        /* word-break: break-all; */
         /* Alternativa: usar break-word para cortar palabras largas sin guiones */
         padding: 0 1.5rem;
         height: 70px;
