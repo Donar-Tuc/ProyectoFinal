@@ -376,7 +376,7 @@ const Perfil = () => {
                 <p>
                   <strong>Teléfono:</strong> {perfil.telefono}
                 </p>
-                <p>
+                <p className="TextoVentanaPrincipal">
                   <strong>Link de mercado pago:</strong> <a href={`https://${perfil.linkMercadoPago}`} target="_blank" rel="noopener noreferrer">{perfil.linkMercadoPago}</a>
                 </p>
                 <p>

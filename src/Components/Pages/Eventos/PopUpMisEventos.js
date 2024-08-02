@@ -330,13 +330,13 @@ const PopUpMisEventos = ({ event, togglePopup, onSave }) => {
           <div className="d-flex justify-content-between">
             <button
               type="submit"
-              className="btn btn-primary BotonAceptarEvento"
+              className="BotonGuardarEventos"
             >
               Guardar Cambios
             </button>
             <button
               type="button"
-              className="btn btn-secondary BotonCancelarEvento"
+              className="BotonCancelarEvento"
               onClick={cancelEdit}
             >
               Cancelar

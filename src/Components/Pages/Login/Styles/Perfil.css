@@ -43,6 +43,10 @@
     justify-content: center;
 }
 
+.TextoVentanaPrincipal{
+    word-break: break-all;
+}
+
 .ImagePerfil {
     overflow: hidden;
     object-fit: cover;
@@ -72,7 +76,6 @@
 .form-label {
     font-weight: 600;
     font-size: 1rem;
-
 }
 
 .TituloDataSave {
@@ -80,6 +83,7 @@
 
 
 }
+
 
 .DatoSave {
     font-weight: 600;
@@ -420,6 +424,9 @@
 
     }
 
+    .mb-3{
+        margin-top: 1rem;
+    }
     .containerEditarInformacion {
         display: flex;
         justify-content: center;

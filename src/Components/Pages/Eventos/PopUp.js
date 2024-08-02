@@ -243,7 +243,7 @@ const PopUp = ({ togglePopup }) => {
 
           <button
             type="submit"
-            className="btn btn-primary"
+            className="BtnCrearEventoPopUp"
             id="BotonCrearEvento"
           >
             Crear Evento

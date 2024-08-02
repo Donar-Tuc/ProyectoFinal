@@ -11,6 +11,19 @@
     background: #eeeeee;
 }
 
+.BtnOrdenarGeolocalizacion{
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 300;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.226);
+    padding: .6rem 3rem;
+    border: 1px rgba(132, 132, 132, 0.139) solid;
+    background-color: #377ADB;
+    color: white;
+    transition: .3s all ease-in-out;
+}
 /* CardsTemplate.jsx */
 
 /* Estilos de cards */

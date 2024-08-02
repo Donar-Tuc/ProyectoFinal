@@ -79,7 +79,7 @@ const Fundaciones = () => {
         <div className="AsistenciaContainer" ref={scrollRef} style={{ height: '100%', overflowY: 'scroll' }}>
             <h2 className="TituloDeCategoria" id="TituloAsistenciaContainer">{categoria ? categoria : "Ver todo"}</h2>
             <button
-                className="btn btn-outline-secondary"
+                className="BtnOrdenarGeolocalizacion"
                 onClick={handleShowFundacionesSorted}
             >
                 {showSortedFundaciones ? "No ordenar por más cercanos" : "Ordenar por más cercanos"}

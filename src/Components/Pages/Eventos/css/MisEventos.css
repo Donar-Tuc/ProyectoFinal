@@ -62,6 +62,7 @@
     border-radius: 7px;
 }
 
+/* boton para editar - color verde */
 .editButton {
     font-size: 1rem;
     font-weight: 300;
@@ -73,7 +74,7 @@
     color: white;
     transition: .3s all ease-in-out;
 }
-
+/* boton de eliminar */
 .deleteButton {
     font-size: 1rem;
     font-weight: 300;
@@ -88,7 +89,7 @@
 
 .editButton:hover,
 .deleteButton:hover {
-    background-color: #0056b3;
+    background-color: #90959b;
 }
 
 /* Estilo del contenedor del popup */
@@ -114,7 +115,7 @@
 .deletePopupContent,
 .editPopupContent {
     font-family: "Montserrat", sans-serif;
-    background: #e4e4e4;
+    background: #f5f5f5;
     padding: 3rem;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0);
@@ -138,21 +139,19 @@
     margin-right: 10px;
 }
 
-.confirmDeleteButton,
-.saveEditButton {
+.BotonGuardarEventos {
     font-size: 1rem;
     font-weight: 300;
     font-family: "Montserrat", sans-serif;
     border-radius: 10px;
     padding: .5rem 2rem;
     border: 1px rgba(132, 132, 132, 0.139) solid;
-    background-color: #ca2532;
+    background-color: #1871E3;
     color: white;
     transition: .3s all ease-in-out;
 }
 
-.cancelDeleteButton,
-.cancelEditButton {
+.BotonCancelarEvento {
     background-color: #6c757d;
     font-size: 1rem;
     font-weight: 300;
@@ -164,16 +163,29 @@
     transition: .3s all ease-in-out;
 }
 
-.BtnGuardarMisEventos {
+.confirmDeleteButton {
     font-size: 1rem;
     font-weight: 300;
     font-family: "Montserrat", sans-serif;
     border-radius: 10px;
     padding: .5rem 2rem;
+    background-color: red;
     border: 1px rgba(132, 132, 132, 0.139) solid;
     color: white;
     transition: .3s all ease-in-out;
 }
+
+.cancelDeleteButton{
+        font-size: 1rem;
+        font-weight: 300;
+        font-family: "Montserrat", sans-serif;
+        border-radius: 10px;
+        padding: .5rem 2rem;
+        background-color: #6c757d;
+        border: 1px rgba(132, 132, 132, 0.139) solid;
+        color: white;
+        transition: .3s all ease-in-out;
+    }
 
 .MisEventosDescripcion{
     max-height: 150px;
