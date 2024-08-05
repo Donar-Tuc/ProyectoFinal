@@ -2,7 +2,7 @@
 
 
 #ContainerAyudar {
-    background-color: white;
+    background-color: #ffffff;
     /* background: rgb(2,19,25);
     background: linear-gradient(180deg, rgba(2,19,25,1) 28%, rgba(16,65,83,1) 84%); */
     display: flex;
@@ -54,7 +54,7 @@
     text-align: left;
     width: 23%;
     border-radius: 20px;
-    background-color: #f0f0f0;
+    background-color: #e2e2e2;
     background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
     border: 1px #ffffff62 solid;
     transition: .3s ease-in-out;
@@ -203,7 +203,8 @@
 
     #botonDonar {
         transition: none;
-        background-color: #0C6DFD; ;
+        background-color: #0C6DFD;
+        ;
     }
 
     .botonVerMas {
@@ -230,7 +231,7 @@
 }
 
 
-@media (min-width:650px) and (max-width: 900px) {
+@media (min-width:650px) and (max-width: 1199px) {
 
     #ContainerAyudar {
         width: 100%;
@@ -263,12 +264,12 @@
 /* media querie laptop */
 
 
-@media (min-width:900px) and (max-width: 1270px) {
+@media (min-width:1200px) and (max-width: 1273px) {
     #ContainerAyudar {
         width: 100%;
         height: 100%;
-        padding: 3rem 0;
-       
+        padding: 1rem 0;
+
     }
 
     #BloqueCards {
@@ -282,14 +283,14 @@
         height: 220px;
         line-height: 26px;
         padding: 1rem 1rem;
-        width: 38%;
+        width: 30%;
 
         /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.531); */
 
     }
 }
 
-@media (min-width:1200px) and (max-width: 1669px) {
+@media (min-width:1274px) and (max-width: 1669px) {
     #ContainerAyudar {
         width: 100%;
         height: 100%;

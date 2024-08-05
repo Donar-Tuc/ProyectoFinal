@@ -87,13 +87,13 @@
 }
 
 .formSoporte label .input {
-  background-color: #f7f7f7;
+  background-color: rgb(224, 224, 224);
   width: 100%;
   padding: 20px 05px 05px 10px;
   outline: 0;
   border: 1px solid rgba(237, 237, 237, 0.695);
   border-radius: 9px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.378);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.226);
 
 }
 

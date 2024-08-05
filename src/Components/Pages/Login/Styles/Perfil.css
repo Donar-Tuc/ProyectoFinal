@@ -21,8 +21,8 @@
 .ProfileInformation {
     display: flex;
     justify-content: center;
-    background-color: rgb(236, 236, 236);
-    border-radius: 20px;
+    background-color: #ececec;
+    border-radius: 30px;
     width: 50%;
     /* Con esto regulo el ancho de la card padre, son dos container este y el infogrid */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.169);
@@ -34,7 +34,7 @@
 }
 
 .TituloCardPrincipal {
-    word-break:keep-all;
+    word-break: keep-all;
 
 }
 
@@ -44,7 +44,7 @@
     justify-content: center;
 }
 
-.TextoVentanaPrincipal{
+.TextoVentanaPrincipal {
     word-break: break-all;
 }
 
@@ -111,14 +111,14 @@
 .DataPefil {
     margin: 10px 0;
     width: 100%;
-    word-break:keep-all;
+    word-break: keep-all;
 
 }
 
 .descripcion {
     width: 100%;
     white-space: pre-wrap;
-    word-break:keep-all;
+    word-break: keep-all;
 
 }
 
@@ -126,7 +126,7 @@
 /* estilo datos modificables */
 
 .containerTextoPerfil {
-    background-color: #f3f2f2;
+    background-color: #e7e6e6;
     border-radius: 0 0 30px 30px;
     padding-top: 2rem;
     padding-left: 3rem;
@@ -390,7 +390,7 @@
         padding: 0;
         /* Padding de costado de la card principal*/
     }
-    
+
 
     .ImagePerfil {
         width: 100%;
@@ -426,9 +426,10 @@
 
     }
 
-    .mb-3{
+    .mb-3 {
         margin-top: 1rem;
     }
+
     .containerEditarInformacion {
         display: flex;
         justify-content: center;
@@ -441,7 +442,7 @@
         width: 100%;
         padding: 1rem 0;
     }
-    
+
     .BtnGestionOcultar {
         margin: 0 auto;
         width: 70%;
@@ -489,13 +490,13 @@
     .DataPefil {
         margin: 10px 0;
         width: 100%;
-        word-break:keep-all;
+        word-break: keep-all;
     }
 
     .descripcion {
         width: 100%;
         white-space: pre-wrap;
-        word-break:keep-all;
+        word-break: keep-all;
 
     }
 
@@ -509,9 +510,10 @@
         padding-bottom: 1rem;
     }
 
-    .FormPerfil{
+    .FormPerfil {
         padding-top: 2rem;
     }
+
     #BotonGuardarPerfil {
         width: 100%;
         padding: .7rem 2rem;
@@ -528,7 +530,7 @@
     /* gestion de cuenta */
 
     .AccountManagement {
-        padding: 2rem 0rem ;
+        padding: 2rem 0rem;
         width: 100%;
     }
 

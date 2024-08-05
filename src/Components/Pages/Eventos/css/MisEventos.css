@@ -1,8 +1,9 @@
 /* Estilos generales */
 .MisEventosContainer {
-    padding: 8rem 4rem;
+    padding: 8rem 0rem;
     width: 100%;
     background-color: #e7e7e7;
+    /* border: 2px yellow solid; */
 }
 
 #TituloMisEventosContainer {
@@ -18,6 +19,7 @@
     gap: 20px;
     width: 100%;
     justify-content: center;
+    padding: 0;
 }
 
 .row {
@@ -25,12 +27,13 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 30px;
+
 }
 
 /* Tarjetas de eventos */
 .eventCard {
     border-radius: 8px;
-    width: 30%;
+    width: 28%;
     text-align: center;
 }
 
@@ -43,7 +46,7 @@
 
 
 
-/* Estilos para la acción de eventos */
+/* Estilos para la parte de abajo de las cards donde estan los botones */
 .eventActions {
     padding-bottom: 2rem;
     display: flex;
@@ -74,6 +77,11 @@
     color: white;
     transition: .3s all ease-in-out;
 }
+
+.editButton:hover {
+    background-color: #0fa55f;
+}
+
 /* boton de eliminar */
 .deleteButton {
     font-size: 1rem;
@@ -87,16 +95,33 @@
     transition: .3s all ease-in-out;
 }
 
-.editButton:hover,
 .deleteButton:hover {
-    background-color: #90959b;
+    background-color: #d81b2b;
 }
 
 /* Estilo del contenedor del popup */
-.deletePopup,
+
 .editPopup {
     position: fixed;
-    top: 5%;
+    top: 9%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 900px;
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+    overflow: auto;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.267);
+}
+
+
+.deletePopup {
+    position: fixed;
+    top: 40%;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
@@ -106,25 +131,30 @@
     justify-content: center;
     z-index: 1050;
     overflow: auto;
-    /* Permitir desplazamiento */
-    height: 90%;
-    /* Ajusta esto según sea necesario */
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.267);
 }
+
 
 /* Estilo del contenido del popup */
 .deletePopupContent,
 .editPopupContent {
     font-family: "Montserrat", sans-serif;
-    background: #f5f5f5;
+    background: #e9e9e9;
     padding: 3rem;
     border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
     overflow-y: auto;
     /* Permitir desplazamiento en el contenido */
     max-height: 100%;
     /* Ajuste máximo de altura para permitir desplazamiento */
     width: 100%;
     box-sizing: border-box;
+}
+
+/* Ocultar la barra de desplazamiento en los popups */
+.deletePopupContent::-webkit-scrollbar,
+.editPopupContent::-webkit-scrollbar {
+    display: none;
 }
 
 .TituloEditarEvento {
@@ -175,19 +205,19 @@
     transition: .3s all ease-in-out;
 }
 
-.cancelDeleteButton{
-        font-size: 1rem;
-        font-weight: 300;
-        font-family: "Montserrat", sans-serif;
-        border-radius: 10px;
-        padding: .5rem 2rem;
-        background-color: #6c757d;
-        border: 1px rgba(132, 132, 132, 0.139) solid;
-        color: white;
-        transition: .3s all ease-in-out;
-    }
+.cancelDeleteButton {
+    font-size: 1rem;
+    font-weight: 300;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 10px;
+    padding: .5rem 2rem;
+    background-color: #6c757d;
+    border: 1px rgba(132, 132, 132, 0.139) solid;
+    color: white;
+    transition: .3s all ease-in-out;
+}
 
-.MisEventosDescripcion{
+.MisEventosDescripcion {
     max-height: 150px;
     overflow-y: scroll;
 }
@@ -197,7 +227,7 @@
     display: none;
 }
 
-.MisEventosContainerTexto{
+.MisEventosContainerTexto {
     padding-left: 2rem;
     padding-right: 2rem;
     padding-bottom: 2rem;
@@ -205,7 +235,7 @@
 
 /* -------------------- Estilos de mi evento, cuando se abre el evento post creacion -------------------------*/
 
-#ContainerMievento{
+#ContainerMievento {
     display: flex;
     padding-top: 8rem;
     padding-bottom: 3rem;
@@ -213,62 +243,67 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: #EEEEEE ;
+    background-color: #e9e9e9;
     font-family: "Montserrat", sans-serif;
 }
 
-.CardNuevoEvento{
-    background-color: #F3F2F2;
+.CardNuevoEvento {
+    background-color: #e2e2e2;
     border-radius: 20px;
     width: 45%;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.247);
 
 }
 
-#ContainerImagenNuevoEvento{
+#ContainerImagenNuevoEvento {
     width: 100%;
     min-height: 400px;
     max-height: 400px;
     overflow: hidden;
 }
-#imagenNuevoEvento{
+
+#imagenNuevoEvento {
     width: 100%;
     object-fit: fill;
     object-position: center;
     border-radius: 20px 20px 0 0;
 }
+
 /* container grande texto */
-.ContainertextoNuevoevento{
+.ContainertextoNuevoevento {
     padding: 1.5rem 3rem;
-    
+
 }
 
-#TituloDeMiEventoPrincipal{
+#TituloDeMiEventoPrincipal {
     font-size: 1.5rem;
     font-weight: 600;
     text-align: center;
 }
 
 /* container que guarda todo el texto de mi evento */
-.ContainerInfoMievento{
+.ContainerInfoMievento {
     /* border: 2px yellow solid; */
     display: flex;
     flex-direction: column;
     gap: 10px;
-    word-break:keep-all;
-    
+    word-break: normal;
+    /* Las palabras no se cortan arbitrariamente */
+    overflow-wrap: break-word;
+
+
 }
 
 /* tamano de titulo de mi evento */
 
-.TituloMieventoInfo{
+.TituloMieventoInfo {
     font-size: 1.5rem;
     font-weight: 700;
     font-family: "Montserrat", sans-serif;
 }
 
 /* tamano de letras de la info del evento */
-.TextoMiEventoInfo{
+.TextoMiEventoInfo {
     font-size: 1.1rem;
 }
 
@@ -302,13 +337,14 @@
     padding: .3rem .4rem;
     background-color: rgba(116, 116, 116, 0.432);
     background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.356);
     color: white;
     font-weight: 600;
     width: 100%;
     border-radius: 10px;
 }
 
-.TituloEtiquetaMisEventos{
+.TituloEtiquetaMisEventos {
     position: absolute;
     width: auto;
     /* bottom: 30px; */
@@ -328,7 +364,7 @@
 }
 
 
-.EtiquetaContainerMisEventosImg:hover .TituloEtiquetaMisEventos  {
+.EtiquetaContainerMisEventosImg:hover .TituloEtiquetaMisEventos {
     opacity: 1;
     visibility: visible;
     bottom: auto;
@@ -339,7 +375,7 @@
 
 
 
-@media (max-width: 600px) {
+@media (max-width: 917px) {
 
     /* Estilos generales */
     .MisEventosContainer {
@@ -354,7 +390,9 @@
     /* Contenedor de tarjetas */
     .containerCardsEventos {
         display: flex;
+        padding-top: 1rem;
         flex-direction: column;
+        align-items: center;
         gap: 20px;
         width: 100%;
         justify-content: center;
@@ -363,7 +401,7 @@
     /* Tarjetas de eventos */
     .eventCard {
         border-radius: 8px;
-        width: 100%;
+        width: 90%;
         text-align: center;
     }
 
@@ -408,7 +446,7 @@
         /* Ajuste máximo de altura para permitir desplazamiento */
     }
 
-    .containerBtnModeventos{
+    .containerBtnModeventos {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -432,7 +470,7 @@
         margin-bottom: .5rem;
     }
 
-    #ContainerMievento{
+    #ContainerMievento {
         display: flex;
         padding-top: 3rem;
         padding-bottom: 0rem;
@@ -441,63 +479,65 @@
         align-items: center;
         width: 100%;
     }
-    
-    .CardNuevoEvento{
+
+    .CardNuevoEvento {
         border-radius: 0;
         width: 100%;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.247);
-    
+
     }
-    
-    #ContainerImagenNuevoEvento{
+
+    #ContainerImagenNuevoEvento {
         width: 100%;
         min-height: auto;
         max-height: 200px;
         overflow: hidden;
     }
-    #imagenNuevoEvento{
+
+    #imagenNuevoEvento {
         width: 100%;
         object-fit: fill;
         object-position: center;
-        border-radius:0;
+        border-radius: 0;
     }
+
     /* container grande texto */
-    .ContainertextoNuevoevento{
+    .ContainertextoNuevoevento {
         padding: 1.5rem;
     }
-    
+
     /* container que guarda todo el texto de mi evento */
-    .ContainerInfoMievento{
+    .ContainerInfoMievento {
         gap: 5px;
     }
 
-    
+
     /* tamano de titulo de mi evento */
 
-    #TituloDeMiEventoPrincipal{
+    #TituloDeMiEventoPrincipal {
         font-size: 1.3rem;
         font-weight: 600;
         text-align: center;
     }
-    
-    .TituloMieventoInfo{
+
+    .TituloMieventoInfo {
         font-size: 1.2rem;
         font-weight: 700;
         margin-bottom: 1rem;
     }
-    
+
     /* tamano de letras de la info del evento */
-    .TextoMiEventoInfo{
+    .TextoMiEventoInfo {
         font-size: 1rem;
     }
-    
+
     #etiquetasContainerMisEventosID {
         margin-bottom: 1rem;
         padding-left: .5rem;
         padding-right: .5rem;
     }
-    
-    
+
+
     /* etiquetas */
 }
 
@@ -505,60 +545,66 @@
 
 /* Media querie para ipad */
 
-@media (min-width:800px) and (max-width: 900px) {
+@media (min-width:800px) and (max-width: 1000px) {
 
-/* Estilos de mi evento, cuando se abre el evento post creacion */
+    /* Estilos de mi evento, cuando se abre el evento post creacion */
 
-#ContainerMievento{
-    display: flex;
-    padding-top: 1rem;
-    padding-bottom: 3rem;
-    width: 100%;
-    min-height: 90vh;
-}
+    #ContainerMievento {
+        display: flex;
+        padding-top: 1rem;
+        padding-bottom: 3rem;
+        width: 100%;
+        min-height: 90vh;
+    }
 
-.CardNuevoEvento{
-    border-radius: 20px;
-    width: 70%;
+    .CardNuevoEvento {
+        border-radius: 20px;
+        width: 70%;
 
-}
+    }
 
-#ContainerImagenNuevoEvento{
-    width: 100%;
-    min-height: 250px;
-    max-height: 250px;
-    overflow: hidden;
-}
-#imagenNuevoEvento{
-    width: 100%;
-    object-fit: fill;
-    object-position: center;
-    border-radius: 20px 20px 0 0;
-}
-/* container grande texto */
-.ContainertextoNuevoevento{
-    padding: 1.5rem 2.5rem;
-}
+    #ContainerImagenNuevoEvento {
+        width: 100%;
+        min-height: 250px;
+        max-height: 250px;
+        overflow: hidden;
+    }
 
-/* container que guarda todo el texto de mi evento */
-.ContainerInfoMievento{
-    /* border: 2px yellow solid; */
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+    #imagenNuevoEvento {
+        width: 100%;
+        object-fit: fill;
+        object-position: center;
+        border-radius: 20px 20px 0 0;
+    }
 
-/* tamano de titulo de mi evento */
+    /* container grande texto */
+    .ContainertextoNuevoevento {
+        padding: 1.5rem 2.5rem;
+    }
 
-.TituloMieventoInfo{
-    font-size: 1.5rem;
-    font-weight: 700;
-}
+    /* container que guarda todo el texto de mi evento */
+    .ContainerInfoMievento {
+        /* border: 2px yellow solid; */
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 
-/* tamano de letras de la info del evento */
-.TextoMiEventoInfo{
-    font-size: 1.1rem;
-}
+    /* tamano de titulo de mi evento */
+
+    .TituloMieventoInfo {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    /* tamano de letras de la info del evento */
+    .TextoMiEventoInfo {
+        font-size: 1.1rem;
+    }
+
+    .eventCard {
+        width: 40%;
+    }
 
 }
 
@@ -594,7 +640,7 @@
 
 
 
-.TituloEtiquetaMisEventos{
+.TituloEtiquetaMisEventos {
     position: absolute;
     width: auto;
     /* bottom: 30px; */
@@ -624,43 +670,52 @@
 /* Fin Media querie ipad */
 
 
-@media (min-width: 1100px) and (max-width: 1400px){
-    #ContainerMievento{
+@media (min-width: 1000px) and (max-width: 1400px) {
+    #ContainerMievento {
         padding-top: 8rem;
         padding-bottom: 3rem;
         width: 100%;
     }
-    
-    .CardNuevoEvento{
+
+    .CardNuevoEvento {
         border-radius: 20px;
         width: 50%;
-    
+
     }
-    
-    #ContainerImagenNuevoEvento{
+
+    /* Tarjetas de eventos */
+    .eventCard {
+        border-radius: 8px;
+        width: 40%;
+        text-align: center;
+    }
+
+    #ContainerImagenNuevoEvento {
         width: 100%;
         min-height: 320px;
         max-height: 320px;
         overflow: hidden;
     }
-    #imagenNuevoEvento{
+
+    #imagenNuevoEvento {
         width: 100%;
     }
+
     /* container grande texto */
-    .ContainertextoNuevoevento{
+    .ContainertextoNuevoevento {
         padding: 2rem 3rem;
     }
-    
+
     /* container que guarda todo el texto de mi evento */
-    .ContainerInfoMievento{
+    .ContainerInfoMievento {
         gap: 8px;
-        
+
     }
-    
+
     /* tamano de letras de la info del evento */
-    .TextoMiEventoInfo{
+    .TextoMiEventoInfo {
         font-size: 1.1rem;
     }
-    
+
 
 }

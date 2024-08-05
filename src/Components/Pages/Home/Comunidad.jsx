@@ -1,61 +1,38 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./Styles/Comunidad.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 import fotoComunidad from "./Images/Community image.png";
 
+const LinkDescubriEventos = [
+  {
+    name: "Ver eventos",
+    href: "/eventos",
+  }
+];
+
 class Comunidad extends Component {
-  render() {
+  componentDidMount() {
     AOS.init();
+  }
+
+  render() {
     return (
       <>
         <section id="ComunidadContainer">
-          <h2 className="TituloComunidad" data-aos="fade-up">Unite a la Comunidad</h2>
+          <h2 className="TituloComunidad" data-aos="fade-up">Haz la Diferencia</h2>
           <p className="DescripcionComunidad" data-aos="fade-up">
-            Suscríbete a nuestra lista de correos y mantente informado sobre las
-            últimas iniciativas, eventos de caridad, y oportunidades para hacer
-            la diferencia. Recibe actualizaciones exclusivas directamente en tu
-            bandeja de entrada.
+            Asiste a eventos y contribuye a buenas causas. Participar en nuestros eventos es una manera efectiva de apoyar a diversas organizaciones y proyectos que necesitan tu ayuda. Cada evento es una oportunidad para marcar la diferencia en la vida de muchas personas.
           </p>
-
-          <form
-            className="formEmail"
-            action="https://api.web3forms.com/submit"
-            method="POST"
-            onSubmit={this.handleSubmit}
-            data-aos="fade-up"
-          >
-            <input
-              type="hidden"
-              name="access_key"
-              value="50e21fd4-36fa-4bfd-85c8-cb279489ba9b"
-            />
-            <div className="fieldNewsteller">
-              <ion-icon name="at-outline" className="iconoInputForm"></ion-icon>
-              <input
-                className="input-field inputComunidad"
-                type="email"
-                name="email"
-                placeholder="Correo Electrónico"
-                required="required"
-                id="CorreoElectronico"
-                onChange={this.handleChange}
-              />
-            </div>
-            {/* Mensaje de error */}
-            <input
-              type="hidden"
-              name="redirect"
-              value="https://web3forms.com/success"
-            />
-            <div className="ContainerBotonOlvideContrasena">
-              <button id="btnSendCode" type="submit">
-                Subscribirme
+          <div className="ContainerBotonOlvideContrasena" data-aos="fade-up">
+            <Link to="/eventos">
+              <button id="btnSendCode">
+                Ver Eventos
               </button>
-            </div>
-          </form>
-
+            </Link>
+          </div>
           <img src={fotoComunidad} alt="comunidad" data-aos="fade-up" className="FotoComunidad" />
         </section>
       </>
@@ -64,3 +41,4 @@ class Comunidad extends Component {
 }
 
 export default Comunidad;
+
