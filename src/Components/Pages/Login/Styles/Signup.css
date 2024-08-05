@@ -5,7 +5,7 @@
     display: flex;
     justify-content: center;
     height: 100vh;
-    background-color: #ffffff;
+    background-color: #f1f1f1;
 }
 
 .iconoInputForm {
@@ -37,8 +37,7 @@
     justify-content: center;
     align-items: center;
     width: 50%;
-    background-color: rgba(0, 0, 0, 0.086);
-    background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
+    background-color: #f1f1f1;
 }
 
 
@@ -97,18 +96,9 @@
 
 
 
-/* .field {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5em;
-    border-radius: 25px;
-    padding: 0.6em;
-    border: none;
-    outline: none;
-    color: black;
+.field {
     background-color: white;
-} */
+}
 
 .input-icon {
     height: 1.3em;

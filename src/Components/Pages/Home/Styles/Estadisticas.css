@@ -1,7 +1,5 @@
 #EstadisticasContainer {
-    /* background: rgb(2,20,25);
-    background: linear-gradient(0deg, rgba(2,20,25,1) 12%, rgba(8,71,88,1) 75%); */
-    background-color: #e9e9e9;
+    background-color: #f3f3f3;
     padding: 5rem 10rem;
     max-width: 100%;
 }

@@ -39,7 +39,7 @@
 
 .eventCard .CardMiEventos {
     width: 100%;
-    background-color: #f3f3f3;
+    background-color: #f1f1f1;
     border-radius: 20px 20px 0px 0px;
     box-shadow: none;
 }
@@ -52,7 +52,7 @@
     display: flex;
     justify-content: center;
     gap: 20px;
-    background-color: #f3f3f3;
+    background-color: #f1f1f1;
     border-radius: 0px 0px 20px 20px;
     width: 100%;
 }
@@ -248,7 +248,7 @@
 }
 
 .CardNuevoEvento {
-    background-color: #e2e2e2;
+    background-color: #f1f1f1;
     border-radius: 20px;
     width: 45%;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.247);

@@ -79,8 +79,7 @@
     width: 50%;
     border-radius: 0 30px 30px 0px;
     /* background-color: white; */
-    background-color: rgba(0, 0, 0, 0.086);
-    background-image: url(/src/Components/Pages/Home/Images/Noiseimage.png);
+    background-color: #f1f1f1;
 }
 
 .bloque4:hover {

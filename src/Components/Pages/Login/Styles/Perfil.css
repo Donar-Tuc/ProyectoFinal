@@ -21,7 +21,7 @@
 .ProfileInformation {
     display: flex;
     justify-content: center;
-    background-color: #ececec;
+    background-color: #dd4c4c;
     border-radius: 30px;
     width: 50%;
     /* Con esto regulo el ancho de la card padre, son dos container este y el infogrid */
